@@ -1,0 +1,114 @@
+/*!
+/* @settings
+
+name: Banner Settings
+id: css-banner-settings
+description: Change the banner settings.
+settings:
+    -
+        id: banner-content-offset
+        title: Content offset
+        type: variable-number
+        default: 240
+        format: px
+    - 
+        id: banner-image-height
+        title: Banner Height
+        type: variable-number
+        default: 240
+        format: px
+    -
+        id: banner-image-offset-x
+        title: Banner side spacing
+        type: variable-number-slider
+        default: 8
+        min: 0
+        max: 80
+        format: px
+    -
+        id: banner-icon-size
+        title: Icon size
+        type: variable-number
+        default: 48
+        format: px
+*/
+
+.banner:not(.banner-icon) {
+  --banner-icon-size: 0px !important;
+}
+.banner-icon:not(.banner) {
+  --banner-image-height: 0px !important;
+}
+
+// Banner: Global
+.banner {
+  .markdown-preview-pusher,
+  .cm-sizer {
+    margin-top: calc(var(--banner-image-height, 0px) + var(--banner-icon-size, 0px) + var(--banner-content-fade-offset, 0px) + var(--banner-content-offset, 0px)) !important;
+  }
+  .cm-callout:has(.callout[data-callout="banner-icon"]),
+  .image-embed:has(img[alt="banner"]) {
+    display: contents !important;
+  }
+}
+
+// Banner: Image
+.banner {
+  --banner-image-height: 240px;
+
+  img[alt="banner"] {
+    position: absolute;
+    inset: 0 0 auto;
+    height: var(--banner-image-height);
+    object-fit: var(--banner-image-object-fit, cover);
+    padding-inline: var(--banner-image-offset-x, 8px);
+  }
+}
+.banner-fade {
+  --banner-content-fade-offset: -64px;
+
+  img[alt="banner"] {
+    mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 15%, hsla(0, 0%, 0%, 0.951) 28.2%, hsla(0, 0%, 0%, 0.896) 39.7%, hsla(0, 0%, 0%, 0.825) 49.6%, hsla(0, 0%, 0%, 0.741) 58.1%, hsla(0, 0%, 0%, 0.648) 65.4%, hsla(0, 0%, 0%, 0.55) 71.6%, hsla(0, 0%, 0%, 0.45) 76.9%, hsla(0, 0%, 0%, 0.352) 81.4%, hsla(0, 0%, 0%, 0.259) 85.2%, hsla(0, 0%, 0%, 0.175) 88.5%, hsla(0, 0%, 0%, 0.104) 91.5%, hsla(0, 0%, 0%, 0.049) 94.3%, hsla(0, 0%, 0%, 0.013) 97.1%, hsla(0, 0%, 0%, 0) 100%);
+  }
+}
+
+// Banner: Style Settings
+.banner-image-contain {
+  --banner-image-object-fit: contain;
+}
+.banner-image-cover {
+  --banner-image-object-fit: cover;
+}
+.banner-image-fill {
+  --banner-image-object-fit: fill;
+}
+
+// Banner: Icon
+.banner-icon {
+  --banner-icon-size: 48px;
+
+  .callout[data-callout="banner-icon"] {
+    // Positioning
+    position: absolute;
+    top: calc(var(--file-margins-block) + var(--banner-image-height, 0px));
+
+    // Styling
+    border: none !important;
+    background-color: transparent !important;
+    padding: 0;
+    margin: 0;
+    font-size: var(--banner-icon-size);
+    width: 1em;
+    height: 1em;
+    overflow: visible;
+
+    .callout-title-inner {
+      line-height: 100%;
+    }
+
+    .callout-icon,
+    .callout-content {
+      display: none;
+    }
+  }
+}
