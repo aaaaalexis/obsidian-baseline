@@ -1,5 +1,5 @@
 body:not(.is-mobile):not(.zoom-off) .workspace-leaf-content[data-type="markdown"] {
-  .image-embed:not(.canvas-node-content, [alt="banner"]),
+  .image-embed:not(.canvas-node-content),
   img[referrerpolicy="no-referrer"],
   .cm-content > img {
     cursor: zoom-in;
@@ -7,7 +7,7 @@ body:not(.is-mobile):not(.zoom-off) .workspace-leaf-content[data-type="markdown"
 }
 
 body:not(.is-mobile):not(.zoom-off) .markdown-preview-view {
-  .image-embed:not(.canvas-node-content):active img:not([alt="banner"]),
+  .image-embed:not(.canvas-node-content):active img,
   img[referrerpolicy="no-referrer"]:active {
     position: fixed;
     z-index: 1000;
@@ -18,12 +18,14 @@ body:not(.is-mobile):not(.zoom-off) .markdown-preview-view {
     height: 100%;
     max-height: unset;
     object-fit: contain;
+    mask: none;
+    padding: 0;
   }
 }
 
 body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
-  .image-embed:not(.canvas-node-content, [alt="banner"]):active,
-  .cm-content > img:not([alt="banner"]):active {
+  .image-embed:not(.canvas-node-content):active,
+  .cm-content > img:active {
     position: fixed;
     z-index: 1000;
     cursor: zoom-out;
@@ -32,7 +34,7 @@ body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
   }
 
   .image-embed:not(.canvas-node-content):active {
-    display: flex;
+    display: flex !important;
     justify-content: center;
 
     img {
@@ -41,6 +43,9 @@ body:not(.is-mobile):not(.zoom-off) .markdown-source-view {
       height: auto;
       max-height: unset;
       object-fit: contain;
+      mask: none;
+      position: relative;
+      padding: 0;
     }
   }
 

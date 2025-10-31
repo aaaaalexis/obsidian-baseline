@@ -5,74 +5,69 @@ name: Banner Settings
 id: css-banner-settings
 description: Change the banner settings.
 settings:
-    -
-        id: banner-content-offset
-        title: Content offset
-        type: variable-number
-        default: 240
-        format: px
-    - 
-        id: banner-image-height
-        title: Banner Height
-        type: variable-number
-        default: 240
-        format: px
-    -
-        id: banner-image-offset-x
-        title: Banner side spacing
-        type: variable-number-slider
-        default: 8
-        min: 0
-        max: 80
-        format: px
-    -
-        id: banner-icon-size
-        title: Icon size
-        type: variable-number
-        default: 48
-        format: px
+	-
+		id: banner-content-offset
+		title: Content offset
+		type: variable-text
+		allowEmpty: false
+		default: 0px
+	-
+		id: banner-content-offset-fade
+		title: Content offset (Fade)
+		type: variable-text
+		allowEmpty: false
+		default: 64px
+	- 
+		id: banner-image-height
+		title: Banner image height
+		type: variable-text
+		allowEmpty: false
+		default: 320px
+	-
+		id: banner-image-inset
+		title: Banner image side spacing
+		type: variable-text
+		allowEmpty: false
+		default: 8px
+	-
+		id: banner-image-object-fit
+		title: Banner image fit
+		type: class-select
+		default: banner-image-cover
+		options:
+			-
+				label: Cover
+				value: banner-image-cover
+			-
+				label: Contain
+				value: banner-image-contain
+			-
+				label: Fill
+				value: banner-image-fill
+	-
+		id: banner-icon-size
+		title: Banner icon size
+		type: variable-text
+		allowEmpty: false
+		default: 48px
 */
 
-.banner:not(.banner-icon) {
-  --banner-icon-size: 0px !important;
-}
-.banner-icon:not(.banner) {
-  --banner-image-height: 0px !important;
-}
-
 // Banner: Global
-.banner {
+.banner,
+.banner-icon {
   .markdown-preview-pusher,
   .cm-sizer {
-    margin-top: calc(var(--banner-image-height, 0px) + var(--banner-icon-size, 0px) + var(--banner-content-fade-offset, 0px) + var(--banner-content-offset, 0px)) !important;
+    margin-top: calc(var(--banner-image-height, 0px) + var(--banner-icon-size, 0px) + var(--banner-icon-spacer, 0px) + (-1 * var(--banner-content-offset-fade, 0px)) + var(--banner-content-offset, 0px)) !important;
   }
   .cm-callout:has(.callout[data-callout="banner-icon"]),
   .image-embed:has(img[alt="banner"]) {
     display: contents !important;
   }
-}
 
-// Banner: Image
-.banner {
-  --banner-image-height: 240px;
-
-  img[alt="banner"] {
-    position: absolute;
-    inset: 0 0 auto;
-    height: var(--banner-image-height);
-    object-fit: var(--banner-image-object-fit, cover);
-    padding-inline: var(--banner-image-offset-x, 8px);
+  &:not(.banner-fade) {
+    --banner-content-offset-fade: 0px !important;
   }
 }
-.banner-fade {
-  --banner-content-fade-offset: -64px;
-
-  img[alt="banner"] {
-    mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 15%, hsla(0, 0%, 0%, 0.951) 28.2%, hsla(0, 0%, 0%, 0.896) 39.7%, hsla(0, 0%, 0%, 0.825) 49.6%, hsla(0, 0%, 0%, 0.741) 58.1%, hsla(0, 0%, 0%, 0.648) 65.4%, hsla(0, 0%, 0%, 0.55) 71.6%, hsla(0, 0%, 0%, 0.45) 76.9%, hsla(0, 0%, 0%, 0.352) 81.4%, hsla(0, 0%, 0%, 0.259) 85.2%, hsla(0, 0%, 0%, 0.175) 88.5%, hsla(0, 0%, 0%, 0.104) 91.5%, hsla(0, 0%, 0%, 0.049) 94.3%, hsla(0, 0%, 0%, 0.013) 97.1%, hsla(0, 0%, 0%, 0) 100%);
-  }
-}
-
-// Banner: Style Settings
 .banner-image-contain {
   --banner-image-object-fit: contain;
 }
@@ -83,32 +78,80 @@ settings:
   --banner-image-object-fit: fill;
 }
 
+// Banner: Image
+.banner {
+  --banner-image-height: 320px;
+
+  &:not(.banner-icon) {
+    --banner-icon-size: 0px !important;
+  }
+
+  img[alt="banner"] {
+    position: absolute;
+    inset: 0 0 auto;
+    padding-inline: var(--banner-image-inset, 8px);
+    height: var(--banner-image-height, 320px);
+    object-fit: var(--banner-image-object-fit, cover);
+  }
+}
+.banner.banner-fade {
+  --banner-content-offset-fade: 64px;
+
+  img[alt="banner"] {
+    mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 15%, hsla(0, 0%, 0%, 0.951) 28.2%, hsla(0, 0%, 0%, 0.896) 39.7%, hsla(0, 0%, 0%, 0.825) 49.6%, hsla(0, 0%, 0%, 0.741) 58.1%, hsla(0, 0%, 0%, 0.648) 65.4%, hsla(0, 0%, 0%, 0.55) 71.6%, hsla(0, 0%, 0%, 0.45) 76.9%, hsla(0, 0%, 0%, 0.352) 81.4%, hsla(0, 0%, 0%, 0.259) 85.2%, hsla(0, 0%, 0%, 0.175) 88.5%, hsla(0, 0%, 0%, 0.104) 91.5%, hsla(0, 0%, 0%, 0.049) 94.3%, hsla(0, 0%, 0%, 0.013) 97.1%, hsla(0, 0%, 0%, 0) 100%);
+  }
+}
+@for $i from 0 through 100 {
+  .banner.y#{$i} {
+    img[alt="banner"] {
+      object-position: center #{percentage($i / 100)};
+    }
+  }
+}
+
 // Banner: Icon
 .banner-icon {
   --banner-icon-size: 48px;
+  --banner-icon-spacer: 16px;
+
+  &:not(.banner) {
+    --banner-image-height: 0px !important;
+    --banner-content-offset: 0px !important;
+  }
 
   .callout[data-callout="banner-icon"] {
     // Positioning
     position: absolute;
-    top: calc(var(--file-margins-block) + var(--banner-image-height, 0px));
+    top: calc(var(--file-margins-block) + var(--banner-image-height, 0px) + calc(-1 * var(--banner-content-offset-fade, 0px)) + var(--banner-content-offset, 0px));
+    z-index: 100;
+    margin: 0;
 
     // Styling
     border: none !important;
     background-color: transparent !important;
     padding: 0;
-    margin: 0;
-    font-size: var(--banner-icon-size);
     width: 1em;
     height: 1em;
     overflow: visible;
+    font-size: 0;
 
-    .callout-title-inner {
+    .callout-title-inner::first-letter {
       line-height: 100%;
+      font-size: var(--banner-icon-size, 48px);
     }
 
     .callout-icon,
     .callout-content {
       display: none;
     }
+  }
+}
+.banner-icon.banner-title {
+  .inline-title:not([data-level]) {
+    position: absolute;
+    margin: 0;
+    margin-left: calc(var(--banner-icon-size, 48px) + 16px);
+    top: calc(var(--file-margins-block) + var(--banner-image-height, 0px) + calc(-1 * var(--banner-content-offset-fade, 0px)) + (var(--banner-icon-size, 48px) / 2) - (1em / 2));
+    max-width: calc(var(--file-line-width) - (var(--banner-icon-size, 48px) + 16px));
   }
 }
