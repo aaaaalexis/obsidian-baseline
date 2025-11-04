@@ -51,5 +51,11 @@
     "author": "kepano",
     "url": "https://github.com/kepano/obsidian-minimal",
     "description": "A distraction-free experience for your vault."
+  },
+    "Darkos": {
+    "id": "darkos",
+    "author": "Dheeraz101",
+    "url": "https://github.com/dheeraz101/obsidian-baseline",
+    "description": "Inspired by Macos with Dark Themed and UI Asethetics."
   }
 }
