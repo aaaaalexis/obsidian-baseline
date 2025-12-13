@@ -21,7 +21,7 @@ body.input-cupertino {
   }
   .cm-tooltip,
   .notice {
-    backdrop-filter: var(--raised-blur);
+    backdrop-filter: var(--blur-s);
     border: none;
     background-color: var(--modal-background);
   }
@@ -253,7 +253,7 @@ body.input-cupertino {
 body.input-cupertino.is-mobile {
   .notice {
     margin-bottom: 0;
-    box-shadow: var(--raised-shadow);
+    box-shadow: var(--shadow-xs);
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-muted);

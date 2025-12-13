@@ -2,7 +2,7 @@ body {
   --prompt-border-color: var(--background-modifier-border-hover);
   --prompt-input-height: 64px;
 }
-body.is-tablet {
+body.is-mobile {
   --prompt-input-height: 64px;
 }
 
@@ -37,13 +37,6 @@ body.is-phone {
   }
   .prompt .prompt-results {
     padding: var(--navbar-side-padding);
-  }
-  .prompt .prompt-input-container {
-    width: auto;
-    margin: auto var(--navbar-side-padding) var(--keyboard-spacing);
-  }
-  .prompt .prompt-input {
-    background-color: var(--background-primary);
   }
   .prompt .suggestion-item {
     padding: calc(16px * var(--density-modifier)) 16px;

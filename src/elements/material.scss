@@ -191,18 +191,9 @@ body.input-material.is-mobile {
     --modal-sidebar-background: var(--background-secondary);
     --settings-background: var(--background-secondary);
   }
-  .modal.mod-settings {
-    --setting-items-background: transparent;
-    --setting-items-padding: 0;
-
-    .setting-group .setting-item:not(:last-child):not(.setting-item-heading) {
-      margin-bottom: 2px;
-    }
-
-    .setting-item-control button:not(.clickable-icon) {
-      width: fit-content;
-      padding: 16px;
-    }
+  .modal.mod-settings .setting-item-control button:not(.clickable-icon) {
+    width: fit-content;
+    padding: 16px;
   }
 }
 

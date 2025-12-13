@@ -3164,18 +3164,6 @@ settings:
   color: var(--text-normal) !important;
 }
 
-.style-settings-container .setting-item {
-  border-radius: 0;
-  margin-bottom: 0;
-}
-.style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-top-left-radius: var(--setting-items-radius);
-  border-top-right-radius: var(--setting-items-radius);
-}
-.style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-bottom-left-radius: var(--setting-items-radius);
-  border-bottom-right-radius: var(--setting-items-radius);
-}
 .style-settings-container .themed-color-wrapper > div {
   background-color: transparent;
   color: var(--color-base-100);

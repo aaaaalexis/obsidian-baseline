@@ -161,10 +161,10 @@ body:is(.layout-cupertino, .layout-macos).is-mobile .view-content.notebook-navig
 
   .nn-back-button,
   .nn-mobile-toolbar {
-    backdrop-filter: var(--raised-blur);
-    box-shadow: var(--raised-shadow);
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
     border: none;
-    background-color: var(--raised-background);
+    background-color: var(--liquid-glass-background);
     border-radius: 100vh;
   }
 }

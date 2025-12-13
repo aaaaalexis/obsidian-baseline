@@ -9,23 +9,26 @@ body.input-cupertino.is-mobile {
   &.is-phone .prompt-input,
   &.is-phone .prompt-input-container .prompt-input-cta:not(:empty),
   &.is-phone .prompt-input-container .search-input-clear-button,
+  &.is-phone .mod-root .view-header > div > .view-action,
   &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
+  &.is-phone .mobile-navbar .mobile-navbar-actions,
+  &.is-phone .mobile-toolbar-options-list,
   &.is-phone .workspace-drawer-header-icon,
   &.is-phone .mobile-tab-switcher-menu-button,
   &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
   .modal-close-button,
-  .pull-action {
-    backdrop-filter: var(--raised-blur);
-    box-shadow: var(--raised-shadow);
+  .workspace-drawer .nav-header .nav-buttons-container {
+    backdrop-filter: var(--blur-s);
+    box-shadow: var(--shadow-xs);
     border: none;
-    background-color: var(--raised-background);
+    background-color: var(--liquid-glass-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
 
     @starting-style {
       opacity: 0;
-      filter: var(--raised-blur);
+      filter: var(--blur-s);
       transform: scale(0.75);
     }
   }
@@ -49,7 +52,7 @@ body.input-cupertino.is-mobile {
     --nav-item-weight-active: var(--font-normal);
 
     border-radius: var(--radius-m);
-    background-color: var(--setting-items-background);
+    background-color: var(--background-primary);
 
     > .tree-item:nth-child(2) > .tree-item-self {
       border-top-left-radius: var(--radius-m);
@@ -91,11 +94,7 @@ body.input-cupertino.is-mobile {
   }
 
   // HDR element
-  &.theme-dark .mod-raised::after {
-    content: none !important;
-  }
   &.is-ios.theme-light {
-    .mod-raised::after,
     &.is-phone .prompt-input-container::after,
     &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
     &.is-phone .prompt-input-container .search-input-clear-button::before,
@@ -104,21 +103,24 @@ body.input-cupertino.is-mobile {
     &.is-phone .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
+    .mod-root .view-header > div > .view-action::after,
     .workspace-drawer-header-icon::after,
     .workspace-drawer .nav-buttons-container::after,
+    .mobile-navbar-actions::after,
+    .mobile-toolbar-options-list::after,
     .modal-setting-back-button::after,
     .modal-close-button::after,
     .notice::after {
       position: absolute;
       z-index: 1;
-      backdrop-filter: brightness(var(--blur-brightness));
-      mask: var(--raised-mask);
-      mask-composite: var(--raised-mask-composite);
+      backdrop-filter: brightness(1.1);
+      mask: linear-gradient(white, white) padding-box, linear-gradient(white, white) border-box;
+      mask-composite: exclude, add;
       filter: blur(1px);
       inset: 0;
-      border: var(--raised-mask-border-width) solid transparent;
+      border: 1px solid transparent;
       border-radius: inherit;
-      background: var(--raised-mask-background);
+      background: linear-gradient(to bottom left, white, transparent, white) border-box no-repeat;
       pointer-events: none;
       content: "";
     }
@@ -177,12 +179,6 @@ body.input-cupertino.is-phone {
         display: none;
       }
     }
-  }
-
-  // Navigaition bar
-  .mobile-navbar {
-    border: none !important;
-    background-color: var(--raised-background) !important;
   }
 
   // Tab switcher

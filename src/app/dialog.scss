@@ -99,6 +99,9 @@ body.is-phone .modal:not(.mod-sidebar-layout) {
     border-bottom: none;
     padding-top: 24px;
   }
+  .modal-title {
+    padding-left: var(--safe-area-inset-side);
+  }
 
   .modal-content {
     padding: var(--safe-area-inset-side);

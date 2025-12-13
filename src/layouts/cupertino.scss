@@ -32,7 +32,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     }
     .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
       background-color: var(--background-primary);
-      box-shadow: var(--raised-shadow);
+      box-shadow: var(--shadow-xs);
     }
 
     .workspace-tab-header {
