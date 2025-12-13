@@ -224,12 +224,11 @@ body.input-cupertino.is-phone {
 body.input-cupertino {
   .notice-container {
     display: flex;
+    top: unset;
+    bottom: var(--safe-area-inset-bottom);
     flex-direction: column;
     gap: 8px;
     overflow: visible;
-  }
-  &.is-mobile .notice {
-    box-shadow: var(--raised-shadow);
   }
   .notice {
     margin-bottom: 0;
@@ -238,15 +237,6 @@ body.input-cupertino {
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-muted);
     overflow: hidden;
-  }
-  .notice:last-child {
-    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
-
-    @starting-style {
-      transform: translateY(-50%) scaleX(0.5) !important;
-      filter: blur(4px);
-      opacity: 0;
-    }
   }
 
   .tooltip {
@@ -258,6 +248,15 @@ body.input-cupertino {
     padding: 8px 16px;
     color: var(--text-muted);
     font-weight: var(--font-normal);
+  }
+}
+body.input-cupertino.is-mobile {
+  .notice {
+    margin-bottom: 0;
+    box-shadow: var(--raised-shadow);
+    border-radius: var(--radius-m);
+    padding: calc(16px * var(--density-modifier)) var(--side-padding);
+    color: var(--text-muted);
   }
 }
 

@@ -152,7 +152,7 @@ body.input-fluent:not(.is-mobile) {
   .modal,
   .notice {
     background-color: var(--modal-background);
-    backdrop-filter: var(--blur-l);
+    backdrop-filter: blur(8px);
   }
 
   .modal-bg {
@@ -263,24 +263,27 @@ body.input-fluent:not(.is-mobile) {
   &.theme-light .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
   }
-  &.theme-dark .modal.mod-sidebar-layout:not(.mod-community-modal) .setting-item:not(.setting-item-heading) {
-    background-color: var(--background-secondary);
-  }
   .modal.mod-sidebar-layout:not(.mod-community-modal) {
+    background-color: var(--modal-background);
+
     .vertical-tab-content {
       animation: workspaceLeafInFluent var(--anim-duration-moderate);
     }
 
-    .setting-item-heading {
-      margin-left: 20px;
+    .setting-item {
+      padding: calc(16px * var(--density-modifier));
     }
     .setting-item:not(.setting-item-heading) {
       border: var(--border-width) solid var(--background-modifier-hover);
       border-radius: var(--radius-m);
-      padding: calc(16px * var(--density-modifier)) 20px;
+      background-color: var(--background-primary);
 
       &:not(:first-child) {
         margin-top: 6px;
+      }
+
+      &::after {
+        content: none !important;
       }
     }
 
@@ -290,6 +293,7 @@ body.input-fluent:not(.is-mobile) {
       position: relative;
     }
     .vertical-tab-nav-item.is-active {
+      --background-modifier-hover: var(--nav-item-background-active);
       background-color: var(--background-modifier-hover);
       color: var(--text-normal);
 
@@ -305,6 +309,10 @@ body.input-fluent:not(.is-mobile) {
         margin-left: unset;
         height: unset;
       }
+    }
+
+    .setting-item-name {
+      font-size: var(--font-ui-medium);
     }
   }
 }
