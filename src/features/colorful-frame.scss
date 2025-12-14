@@ -63,7 +63,7 @@ body.colorful-frame.is-hidden-frameless:not(.is-mobile):not(.layout-frame, .layo
   &:not(.layout-viewfinder):not(.stacked-nav-off) .mod-sidedock.mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-cards .mod-sidedock.mod-right-split .workspace-tabs .workspace-tab-header-container,
   &:not(.layout-viewfinder).stacked-nav-off .workspace-tabs.mod-top .workspace-tab-header-container,
-  &:not(.layout-frame, .layout-viewfinder) .titlebar-inner,
+  &:not(.layout-viewfinder) .titlebar-inner,
   &:is(.layout-cards, .layout-border) .workspace-ribbon.mod-left {
     --icon-color: var(--colorful-frame-content-color);
     --icon-color-hover: var(--icon-color);

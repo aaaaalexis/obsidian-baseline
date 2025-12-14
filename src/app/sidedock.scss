@@ -31,7 +31,6 @@ body.is-mobile {
 }
 
 // File explorer
-
 body.full-item-name {
   --nav-item-white-space: none;
 }
@@ -116,18 +115,25 @@ body:not(.mod-macos):not(.is-mobile).stacked-nav-off .workspace-ribbon.mod-left 
 }
 
 // Desktop sidedock
-body:not(.is-mobile) .mod-sidedock {
-  & > .workspace-leaf-resize-handle:not(:hover) {
+body:not(.is-mobile) {
+  &:not(.layout-macos).stacked-nav-off .mod-sidedock.mod-left-split .sidebar-toggle-button {
+    order: -1;
+  }
+  &:not(.layout-macos):not(.input-cupertino).stacked-nav-off .mod-sidedock.mod-left-split .sidebar-toggle-button {
+    margin-right: 8px;
+  }
+
+  .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }
 
-  .workspace-leaf:not([style*="display: none"]) {
+  .mod-sidedock .workspace-leaf:not([style*="display: none"]) {
     animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
 
   // Sidedock padding
-  .workspace-leaf-content > .node-insert-event,
-  .workspace-leaf-content > .view-content {
+  .mod-sidedock .workspace-leaf-content > .node-insert-event,
+  .mod-sidedock .workspace-leaf-content > .view-content {
     padding: 2px 16px;
 
     > .node-insert-event {
