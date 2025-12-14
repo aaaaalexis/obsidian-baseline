@@ -5,8 +5,8 @@ body {
   --input-radius: var(--radius-s);
   --radius-s: calc(8px * var(--radius-modifier));
   --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(16px * var(--radius-modifier));
-  --radius-xl: calc(24px * var(--radius-modifier));
+  --radius-l: calc(20px * var(--radius-modifier));
+  --radius-xl: calc(28px * var(--radius-modifier));
 
   --background-modifier-form-field: var(--interactive-normal);
 
@@ -27,7 +27,7 @@ body {
   --background-modifier-form-field: var(--interactive-normal);
 }
 
-body:is(.input-baseline, :not([class*="input-"])) {
+body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-font-weight: var(--font-medium);
 
   &.is-mobile {

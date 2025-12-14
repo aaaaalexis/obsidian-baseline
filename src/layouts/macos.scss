@@ -106,7 +106,7 @@ body.layout-macos:not(.is-mobile) {
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-sidedock);
-    border-radius: var(--radius-m);
+    border-radius: calc(var(--modal-radius) - 8px);
     background-color: var(--sidedock-background);
   }
 }

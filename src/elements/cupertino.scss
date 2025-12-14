@@ -31,11 +31,6 @@ body.input-cupertino {
   --blur-m: blur(4px) saturate(1.5) brightness(1.025);
   --blur-l: blur(8px) saturate(1.5) brightness(1.025);
 
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(20px * var(--radius-modifier));
-  --radius-xl: calc(28px * var(--radius-modifier));
-
   --clickable-icon-radius: 100vh;
   --button-radius: var(--input-radius);
   --input-radius: var(--radius-s);
@@ -78,6 +73,11 @@ body.input-cupertino {
     --background-modifier-form-field: var(--interactive-normal);
   }
   &.is-mobile {
+    --radius-s: calc(16px * var(--radius-modifier));
+    --radius-m: calc(24px * var(--radius-modifier));
+    --radius-l: calc(32px * var(--radius-modifier));
+    --radius-xl: calc(40px * var(--radius-modifier));
+
     --slider-thumb-height: 25px;
     --slider-thumb-y: -10px;
     --slider-thumb-width: 38px;
@@ -89,11 +89,6 @@ body.input-cupertino {
 
     --input-padding: 0 var(--side-padding);
     --dropdown-padding: 0 32px 0 var(--side-padding);
-
-    --radius-s: calc(16px * var(--radius-modifier));
-    --radius-m: calc(24px * var(--radius-modifier));
-    --radius-l: calc(32px * var(--radius-modifier));
-    --radius-xl: calc(40px * var(--radius-modifier));
 
     --input-radius: var(--radius-l);
     --input-height: 48px;

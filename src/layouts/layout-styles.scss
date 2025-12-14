@@ -134,7 +134,7 @@ body.contrast-light-vivid.theme-light:is(.layout-frame, .layout-viewfinder) .mod
   border: none;
 }
 
-body:is(.layout-baseline, :not([class*="layout-"])):not(.is-phone):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) .mod-root {
+body:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) .mod-root {
   z-index: 1;
 
   .workspace-tabs {

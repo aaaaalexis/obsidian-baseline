@@ -1,9 +1,5 @@
 body.input-tactile {
   --corner-smoothing: 100%;
-  --radius-s: calc(12px * var(--radius-modifier));
-  --radius-m: calc(16px * var(--radius-modifier));
-  --radius-l: calc(20px * var(--radius-modifier));
-  --radius-xl: calc(24px * var(--radius-modifier));
   --clickable-icon-radius: 100vh;
 
   --input-shadow-base: 0px 8px 4px -2px rgba(0, 0, 0, 0.01), 0px 2px 4px -1px rgba(0, 0, 0, 0.025), 0px 2px 2px -1px rgba(0, 0, 0, 0.025);

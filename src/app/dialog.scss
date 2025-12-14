@@ -174,7 +174,7 @@ body.is-phone {
 
   .menu,
   .suggestion-container {
-    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
     overflow: hidden;
 
     .menu-grabber {
@@ -190,6 +190,14 @@ body.is-phone {
       font-size: var(--nav-item-size);
       gap: 16px;
       border-radius: 0;
+    }
+    .menu-group .menu-item:first-child {
+      border-top-left-radius: var(--radius-s);
+      border-top-right-radius: var(--radius-s);
+    }
+    .menu-group .menu-item:last-child {
+      border-bottom-left-radius: var(--radius-s);
+      border-bottom-right-radius: var(--radius-s);
     }
     .menu-item:only-child {
       border-radius: var(--radius-s);

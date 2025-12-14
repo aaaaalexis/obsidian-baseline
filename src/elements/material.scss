@@ -124,10 +124,6 @@ body.input-material {
 
   // Settings
   .modal.mod-settings {
-    .setting-item-heading,
-    .setting-item:not(.setting-item-heading):not(.setting-items .setting-item) {
-      padding-inline: 16px !important;
-    }
     .vertical-tab-header-group-title {
       display: none;
     }
@@ -151,7 +147,7 @@ body.input-material {
       border-top: none;
       border-radius: var(--radius-s);
       background-color: var(--background-primary);
-      padding: calc(16px * var(--density-modifier)) 16px;
+      padding-inline: 16px;
       margin-bottom: 2px;
     }
 
@@ -171,18 +167,18 @@ body.input-material {
       font-weight: var(--font-medium);
     }
 
-    .installed-plugins-container .setting-items .setting-item {
+    .setting-group .setting-group-search {
+      background-color: transparent;
+      padding-inline: 0;
+    }
+
+    .installed-plugins-container .setting-item {
       border: none;
     }
   }
 }
 
 body.input-material.is-mobile {
-  --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(16px * var(--radius-modifier));
-  --radius-l: calc(24px * var(--radius-modifier));
-  --radius-xl: calc(32px * var(--radius-modifier));
-
   --nav-item-radius: var(--clickable-icon-radius);
   --nav-item-padding: calc(16px * var(--density-modifier)) 24px;
 
@@ -242,9 +238,10 @@ body.input-material:not(.is-phone) {
 
 body.input-material.is-phone {
   // Editor
-  .mobile-navbar,
-  .mobile-toolbar-options-list-container,
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  .mobile-navbar-actions,
+  .mobile-toolbar-options-list,
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
+  .nav-buttons-container {
     border: none !important;
   }
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
@@ -279,7 +276,12 @@ body.input-material.is-phone {
 
   // Settings
   .modal.mod-settings {
+    .vertical-tab-header-group {
+      padding-inline: var(--safe-area-inset-side);
+    }
     .vertical-tab-header-group-items {
+      border-radius: var(--radius-l);
+      overflow: hidden;
       gap: 2px;
     }
     .vertical-tab-nav-item {
@@ -297,12 +299,7 @@ body.input-material.is-phone {
 
   // Prompt
   .prompt {
-    .prompt-input {
-      border-radius: 100vh;
-      border: 2px solid transparent;
-    }
     .prompt-input:focus {
-      border-color: var(--interactive-accent);
       box-shadow: none;
     }
   }
