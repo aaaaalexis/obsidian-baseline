@@ -14,17 +14,14 @@ body.colorful-folders-side {
   }
 }
 
-body.colorful-folders-dot {
-  .nav-files-container > div > .nav-folder > .nav-folder-title > .collapse-icon::before {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--radius-s);
-    content: "";
-  }
+body.colorful-folders-dot .nav-files-container > div > .nav-folder > .nav-folder-title > .collapse-icon::before {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-s);
+  content: "";
 }
 
-body.colorful-folders-side,
-body.colorful-folders-dot {
+body:is(.colorful-folders-side, .colorful-folders-dot) {
   .nav-files-container > div > .nav-folder > .nav-folder-title > .collapse-icon svg {
     display: none;
   }
@@ -63,7 +60,13 @@ body.colorful-folders-dot {
   }
 }
 
-body.colorful-folders-subtle {
+body.colorful-folders-frame .nav-files-container > div > .nav-folder {
+  --nav-item-tint: 75%;
+  border: var(--border-width) solid var(--nav-item-color);
+  margin-bottom: 4px;
+}
+
+body:is(.colorful-folders-subtle, .colorful-folders-frame) {
   .nav-files-container {
     --collapse-icon-color: var(--text-normal);
   }
@@ -72,38 +75,41 @@ body.colorful-folders-subtle {
     --nav-item-color-hover: var(--nav-item-color);
     --nav-collapse-icon-color: var(--nav-item-color);
   }
+  .nav-files-container > div > .nav-folder > .nav-folder-title {
+    margin-bottom: 0;
+  }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
-    --nav-item-color: color-mix(in srgb, var(--color-red), var(--text-normal));
-    background-color: rgba(var(--color-red-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-red) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-red-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
-    --nav-item-color: color-mix(in srgb, var(--color-orange), var(--text-normal));
-    background-color: rgba(var(--color-orange-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-orange) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-orange-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
-    --nav-item-color: color-mix(in srgb, var(--color-yellow), var(--text-normal));
-    background-color: rgba(var(--color-yellow-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-yellow) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-yellow-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
-    --nav-item-color: color-mix(in srgb, var(--color-green), var(--text-normal));
-    background-color: rgba(var(--color-green-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-green) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-green-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
-    --nav-item-color: color-mix(in srgb, var(--color-cyan), var(--text-normal));
-    background-color: rgba(var(--color-cyan-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-cyan) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-cyan-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
-    --nav-item-color: color-mix(in srgb, var(--color-blue), var(--text-normal));
-    background-color: rgba(var(--color-blue-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-blue) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-blue-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
-    --nav-item-color: color-mix(in srgb, var(--color-purple), var(--text-normal));
-    background-color: rgba(var(--color-purple-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-purple) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-purple-rgb), 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
-    --nav-item-color: color-mix(in srgb, var(--color-pink), var(--text-normal));
-    background-color: rgba(var(--color-pink-rgb), 0.1);
+    --nav-item-color: color-mix(in srgb, var(--color-pink) var(--nav-item-tint), var(--text-normal));
+    background-color: rgba(var(--color-pink-rgb), 0.15);
   }
 }
 
@@ -116,6 +122,9 @@ body.colorful-folders-strong {
     --nav-item-color: white;
     --nav-item-color-hover: var(--nav-item-color);
     --nav-collapse-icon-color: var(--nav-item-color);
+  }
+  .nav-files-container > div > .nav-folder > .nav-folder-title {
+    margin-bottom: 0;
   }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
@@ -141,40 +150,5 @@ body.colorful-folders-strong {
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
     background-color: var(--color-pink);
-  }
-}
-
-body.colorful-folders-mono {
-  .nav-files-container {
-    --collapse-icon-color: var(--text-normal);
-  }
-  .nav-files-container > div > .nav-folder {
-    border-radius: var(--radius-s);
-    --nav-item-color: var(--text-normal);
-  }
-
-  .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
-    background-color: rgba(var(--mono-rgb-100), 0.24);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
-    background-color: rgba(var(--mono-rgb-100), 0.21);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
-    background-color: rgba(var(--mono-rgb-100), 0.18);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
-    background-color: rgba(var(--mono-rgb-100), 0.15);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
-    background-color: rgba(var(--mono-rgb-100), 0.12);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
-    background-color: rgba(var(--mono-rgb-100), 0.09);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
-    background-color: rgba(var(--mono-rgb-100), 0.06);
-  }
-  .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
-    background-color: rgba(var(--mono-rgb-100), 0.03);
   }
 }
