@@ -73,6 +73,7 @@ body.input-material {
   input[type="range"]::-webkit-slider-thumb {
     outline: 6px solid var(--background-primary);
     background-color: var(--interactive-accent);
+    border: none;
   }
   input[type="range"]:active {
     --slider-thumb-y: -23px;

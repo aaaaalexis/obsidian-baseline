@@ -360,7 +360,7 @@ body.is-tablet {
   }
 
   .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-    color: var(--icon-color-focused);
+    color: var(--icon-color-focused) !important;
   }
 }
 

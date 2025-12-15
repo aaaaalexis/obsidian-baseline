@@ -237,6 +237,10 @@ body.input-cupertino {
     .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
       background-color: var(--background-primary);
       box-shadow: var(--shadow-xs);
+
+      .workspace-tab-header-inner-icon {
+        color: var(--text-normal) !important;
+      }
     }
 
     .workspace-tab-header {

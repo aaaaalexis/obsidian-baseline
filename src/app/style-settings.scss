@@ -982,6 +982,9 @@ settings:
 			-
 				label: Strong
 				value: colorful-folders-strong
+			-
+				label: Monochrome
+				value: colorful-folders-mono
 	-
 		id: nav-item-size
 		title: Item name size
@@ -3312,9 +3315,9 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
 
     .setting-item:not(:last-child) {
       flex: 1;
-      border-radius: var(--radius-m);
+      border-radius: var(--radius-m) !important;
       border: var(--border-width) solid var(--background-modifier-border);
-      background-color: var(--background-primary);
+      background-color: var(--background-primary) !important;
       padding: calc(16px * var(--density-modifier)) !important;
       align-items: flex-start;
       position: relative;

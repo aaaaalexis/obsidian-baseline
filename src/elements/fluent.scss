@@ -121,7 +121,6 @@ body.input-fluent {
     }
 
     .vertical-tab-content {
-      animation: workspaceLeafInFluent var(--anim-duration-moderate);
       background-color: transparent;
     }
 
@@ -295,6 +294,11 @@ body.input-fluent:not(.is-mobile) {
       margin: 0 -24px -16px;
     }
   }
+
+  // Settings
+  .modal.mod-sidebar-layout .vertical-tab-content {
+    animation: workspaceLeafInFluent var(--anim-duration-moderate);
+  }
 }
 
 body.input-fluent.is-phone {
@@ -311,7 +315,6 @@ body.input-fluent.is-phone {
     }
     .vertical-tab-content {
       background-color: var(--settings-background);
-      animation: none;
     }
 
     .setting-item-name {

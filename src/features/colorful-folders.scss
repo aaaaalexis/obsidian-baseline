@@ -62,8 +62,7 @@ body:is(.colorful-folders-side, .colorful-folders-dot) {
 
 body.colorful-folders-frame .nav-files-container > div > .nav-folder {
   --nav-item-tint: 75%;
-  border: var(--border-width) solid var(--nav-item-color);
-  margin-bottom: 4px;
+  box-shadow: inset 0 0 0 var(--border-width) var(--nav-item-color);
 }
 
 body:is(.colorful-folders-subtle, .colorful-folders-frame) {
@@ -74,9 +73,6 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
     border-radius: var(--radius-s);
     --nav-item-color-hover: var(--nav-item-color);
     --nav-collapse-icon-color: var(--nav-item-color);
-  }
-  .nav-files-container > div > .nav-folder > .nav-folder-title {
-    margin-bottom: 0;
   }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
@@ -123,9 +119,6 @@ body.colorful-folders-strong {
     --nav-item-color-hover: var(--nav-item-color);
     --nav-collapse-icon-color: var(--nav-item-color);
   }
-  .nav-files-container > div > .nav-folder > .nav-folder-title {
-    margin-bottom: 0;
-  }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
     background-color: var(--color-red);
@@ -150,5 +143,40 @@ body.colorful-folders-strong {
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
     background-color: var(--color-pink);
+  }
+}
+
+body.colorful-folders-mono {
+  .nav-files-container {
+    --collapse-icon-color: var(--text-normal);
+  }
+  .nav-files-container > div > .nav-folder {
+    border-radius: var(--radius-s);
+    --nav-item-color: var(--text-normal);
+  }
+
+  .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
+    background-color: rgba(var(--mono-rgb-100), 0.24);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
+    background-color: rgba(var(--mono-rgb-100), 0.21);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
+    background-color: rgba(var(--mono-rgb-100), 0.18);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
+    background-color: rgba(var(--mono-rgb-100), 0.15);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
+    background-color: rgba(var(--mono-rgb-100), 0.12);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
+    background-color: rgba(var(--mono-rgb-100), 0.09);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
+    background-color: rgba(var(--mono-rgb-100), 0.06);
+  }
+  .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
+    background-color: rgba(var(--mono-rgb-100), 0.03);
   }
 }
