@@ -134,13 +134,21 @@ body.contrast-light-vivid.theme-light:is(.layout-frame, .layout-viewfinder) .mod
   border: none;
 }
 
-body:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) .mod-root {
-  z-index: 1;
+body:is(.layout-baseline, :not(.css-settings-manager)):not(.is-phone):is(.is-translucent, .contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.is-mobile.theme-dark) {
+  &.status-bar-full {
+    .horizontal-main-container,
+    .workspace {
+      overflow: visible;
+    }
+  }
 
-  .workspace-tabs {
+  .mod-root {
+    z-index: 1;
+  }
+  .mod-root .workspace-tabs {
     overflow: visible;
   }
-  .workspace-tab-container {
+  .mod-root .workspace-tab-container {
     outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }

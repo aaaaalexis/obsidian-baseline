@@ -1,4 +1,4 @@
-body:not(.status-bar-default, .status-bar-cupertino) .status-bar {
+body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar {
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   border: none;
   transform-origin: bottom right;
@@ -6,7 +6,7 @@ body:not(.status-bar-default, .status-bar-cupertino) .status-bar {
   min-height: 8px;
   height: calc-size(auto, size);
 }
-body:not(.status-bar-default, .status-bar-cupertino) .status-bar::before {
+body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar::before {
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   content: "";
   position: absolute;
@@ -18,16 +18,28 @@ body:not(.status-bar-default, .status-bar-cupertino) .status-bar::before {
   pointer-events: none;
   background: radial-gradient(farthest-side at right bottom, var(--background-primary), rgba(var(--mono-rgb-0), 0));
 }
-body:not(.status-bar-default, .status-bar-cupertino) .status-bar:not(:hover) {
+body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover) {
   transform: scale(0.8);
   opacity: 0.5;
 }
-body:not(.status-bar-default, .status-bar-cupertino) .status-bar:not(:hover)::before {
+body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover)::before {
   opacity: 0;
 }
-body:is(body, .status-bar-default):not(.status-bar-cupertino) {
+body:is(body, .status-bar-default):not(.status-bar-full, .status-bar-cupertino) {
   .mod-sidedock.mod-right-split .workspace-tabs:last-of-type .node-insert-event {
     padding-bottom: 36px;
+  }
+}
+
+// Status bar: Full width
+body.status-bar-full {
+  --status-bar-background: transparent;
+  --status-bar-border-width: 0;
+  --status-bar-position: relative;
+  --status-bar-radius: 0;
+
+  .status-bar {
+    width: 100%;
   }
 }
 

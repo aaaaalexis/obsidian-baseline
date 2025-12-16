@@ -18,6 +18,11 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
       border-color: var(--divider-color);
     }
   }
+
+  // Status bar
+  &.status-bar-full {
+    --status-bar-border-width: 1px 0 0 0;
+  }
 }
 
 body.layout-minimal {

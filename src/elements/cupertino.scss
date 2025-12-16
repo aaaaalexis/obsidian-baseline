@@ -37,8 +37,9 @@ body.input-cupertino {
   --input-height: 24px;
 
   --slider-thumb-border-width: 0;
-  --slider-thumb-height: 18px;
-  --slider-thumb-width: 28px;
+  --slider-thumb-y: -5px;
+  --slider-thumb-height: 16px;
+  --slider-thumb-width: 20px;
   --slider-thumb-radius: var(--toggle-thumb-radius);
   --slider-track-height: 6px;
   --slider-track-background: var(--background-modifier-border-hover);
@@ -78,13 +79,13 @@ body.input-cupertino {
     --radius-l: calc(32px * var(--radius-modifier));
     --radius-xl: calc(40px * var(--radius-modifier));
 
-    --slider-thumb-height: 25px;
-    --slider-thumb-y: -10px;
-    --slider-thumb-width: 38px;
+    --slider-thumb-y: -9px;
+    --slider-thumb-height: 24px;
+    --slider-thumb-width: 37px;
 
     --toggle-border-width: 2px;
-    --toggle-thumb-height: 25px;
-    --toggle-thumb-width: 38px;
+    --toggle-thumb-height: 24px;
+    --toggle-thumb-width: 37px;
     --toggle-width: 68px;
 
     --input-padding: 0 var(--side-padding);

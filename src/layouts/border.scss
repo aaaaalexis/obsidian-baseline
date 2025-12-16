@@ -1,25 +1,27 @@
 body.layout-border:not(.is-mobile) {
   --tab-radius: var(--radius-m);
 
-  .workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-  .workspace-split.mod-right-split > .workspace-leaf-resize-handle {
+  &:not(.status-bar-full) .mod-sidedock > .workspace-leaf-resize-handle {
+    margin-bottom: 8px;
     height: -webkit-fill-available;
-    top: var(--header-height);
-    bottom: 8px;
   }
-  .mod-sidedock .workspace-tabs > .workspace-leaf-resize-handle {
-    width: -webkit-fill-available;
-
-    &:is(.mod-sidedock.mod-left-split .workspace-leaf-resize-handle) {
-      left: 8px;
-    }
-    &:is(.mod-sidedock.mod-right-split .workspace-leaf-resize-handle) {
-      right: 8px;
-    }
+  .mod-sidedock > .workspace-leaf-resize-handle {
+    top: var(--header-height);
   }
 
   // Side panels
   .mod-sidedock {
+    .workspace-tabs > .workspace-leaf-resize-handle {
+      width: -webkit-fill-available;
+
+      &:is(.mod-sidedock.mod-left-split .workspace-leaf-resize-handle) {
+        left: 8px;
+      }
+      &:is(.mod-sidedock.mod-right-split .workspace-leaf-resize-handle) {
+        right: 8px;
+      }
+    }
+
     .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
       background-color: var(--background-primary);
     }

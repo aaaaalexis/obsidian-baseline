@@ -31,7 +31,7 @@ body.layout-frame:not(.is-mobile) {
   }
 
   // Status bar
-  &:not(.status-bar-cupertino) .status-bar {
+  &:not(.status-bar-full, .status-bar-cupertino) .status-bar {
     right: 8px;
     bottom: 8px;
   }
@@ -59,6 +59,16 @@ body.layout-frame:not(.is-mobile) {
   &.hover-ribbon.show-ribbon .workspace-ribbon.mod-left:not(.is-collapsed) {
     --ribbon-width: 56px;
     border: none;
+  }
+
+  // Style Settings: Status bar fix
+  &.status-bar-full .workspace {
+    padding-bottom: 0;
+
+    .workspace-ribbon,
+    .workspace-split {
+      margin-bottom: 0;
+    }
   }
 }
 

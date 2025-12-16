@@ -44,6 +44,7 @@ body.layout-macos:not(.is-mobile) {
     .mod-root .workspace-tab-header-container {
       opacity: 0.5;
     }
+    .modal.mod-settings .vertical-tab-header,
     .mod-sidedock {
       background-color: var(--color-base-05) !important;
       box-shadow: none !important;

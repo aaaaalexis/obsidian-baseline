@@ -68,7 +68,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Status bar
-  &:not(.status-bar-cupertino) {
+  &:not(.status-bar-cupertino, .status-bar-full) {
     .workspace-split {
       padding-bottom: 8px;
     }

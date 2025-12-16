@@ -9,6 +9,14 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     background-color: var(--background-primary);
   }
 
+  // Status bar
+  &.status-bar-full {
+    .horizontal-main-container,
+    .workspace {
+      overflow: visible;
+    }
+  }
+
   // Hover sidedock
   &.hover-sidedock {
     .mod-sidedock.is-sidedock-collapsed[style*="display"] {
@@ -75,7 +83,8 @@ body.layout-cupertino:not(.is-mobile) {
       outline-color: transparent;
     }
   }
-  .mod-root {
+
+  &:not(.status-bar-full) .mod-root {
     padding-bottom: 8px;
   }
 

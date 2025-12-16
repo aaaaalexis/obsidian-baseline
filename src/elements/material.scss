@@ -12,6 +12,7 @@ body.input-material {
   --toggle-s-thumb-height: var(--toggle-thumb-height);
   --toggle-s-thumb-width: var(--toggle-thumb-width);
   --toggle-s-width: var(--toggle-width);
+  --slider-thumb-border-width: 0;
   --slider-thumb-height: 44px;
   --slider-thumb-width: 4px;
   --slider-thumb-y: -19px;
@@ -73,7 +74,6 @@ body.input-material {
   input[type="range"]::-webkit-slider-thumb {
     outline: 6px solid var(--background-primary);
     background-color: var(--interactive-accent);
-    border: none;
   }
   input[type="range"]:active {
     --slider-thumb-y: -23px;
