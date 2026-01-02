@@ -86,11 +86,11 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 body:is(.layout-cards, .layout-border).is-tablet {
   .workspace-drawer.is-pinned {
     margin: 0 8px;
-    padding-top: 16px;
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height));
     margin-bottom: 8px;
     border-radius: var(--radius-s);
     background-color: var(--background-primary);
+    height: auto;
   }
 
   &.contrast-light-tonal.theme-light,

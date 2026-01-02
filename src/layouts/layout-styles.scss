@@ -18,7 +18,7 @@ body:is(.layout-cupertino, .layout-viewfinder):not(.is-phone) {
   background-color: transparent;
 }
 
-// Mobile editor panels
+// Tablet panels
 body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   padding-bottom: 8px;
   height: auto;
@@ -35,6 +35,10 @@ body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tabl
     border-bottom-right-radius: var(--safe-area-inset-top);
     background-color: var(--background-primary);
   }
+}
+body.layout-macos.is-tablet .workspace-drawer.mod-left.is-pinned,
+body:is(.layout-cards, .layout-border, .layout-frame).is-tablet .workspace-drawer.is-pinned {
+  padding-top: 16px;
 }
 
 // Ribbon

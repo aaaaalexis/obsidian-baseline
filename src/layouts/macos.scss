@@ -138,9 +138,6 @@ body.layout-macos.is-tablet {
   .workspace-drawer.is-pinned.mod-left {
     box-shadow: var(--shadow-sidedock);
   }
-  .workspace-drawer.is-pinned.mod-left .workspace-drawer-header {
-    padding-bottom: 20px;
-  }
 
   .workspace-drawer:not(.is-pinned) {
     box-shadow: var(--shadow-s);
@@ -150,9 +147,7 @@ body.layout-macos.is-tablet {
     border-radius: var(--radius-l);
     height: auto;
   }
-  .workspace-drawer.is-pinned.mod-left .workspace-drawer-inner {
-    padding-top: 0px;
-  }
+
   .modal.mod-settings .vertical-tab-header {
     margin: 8px 0 8px 8px;
     border-radius: var(--radius-m);
