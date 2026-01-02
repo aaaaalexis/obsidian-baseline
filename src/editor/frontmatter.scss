@@ -165,5 +165,12 @@
         height: 0;
       }
     }
+
+    &.is-phone {
+      .metadata-container .metadata-show-source-button,
+      .metadata-container .metadata-add-button {
+        padding: 8px 8px 8px 12px;
+      }
+    }
   }
 }

@@ -34,64 +34,68 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     }
   }
 
-  .mod-root .view-content:not(.pixel-banner) {
+  .mod-root .view-content:not(.pixel-banner) div:is(.markdown-preview-view, .markdown-source-view.is-live-preview) {
     // Spacing
-    .markdown-preview-view,
-    .markdown-source-view.is-live-preview {
-      .markdown-preview-sizer,
-      .cm-editor > .cm-scroller > .cm-sizer {
-        margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height) + var(--banner-mobile-offset));
-      }
+    .markdown-preview-sizer,
+    .cm-editor > .cm-scroller > .cm-sizer {
+      margin-top: calc(var(--banner-image-height) + var(--banner-icon-size) - var(--banner-fade-height) + var(--banner-mobile-offset));
+    }
 
-      &:not(.banner) {
-        --banner-image-height: 0px;
-      }
-      &:not(.banner.banner-fade) {
-        --banner-fade-height: 0px;
-      }
-      &:not(.banner-icon) {
-        --banner-icon-size: 0px;
-      }
+    &:not(.banner) {
+      --banner-image-height: 0px;
+    }
+    &:not(.banner.banner-fade) {
+      --banner-fade-height: 0px;
+    }
+    &:not(.banner-icon) {
+      --banner-icon-size: 0px;
+    }
 
-      &.banner-icon:not(.banner) {
-        --banner-image-height: var(--banner-icon-size);
-      }
-      &.banner-icon:not(.banner.banner-fade) {
-        --banner-fade-height: var(--banner-icon-size);
-      }
-      &.banner.banner-icon.banner-title:not(.banner-fade) {
-        --banner-fade-height: 0px;
-      }
+    &.banner-icon:not(.banner) {
+      --banner-image-height: var(--banner-icon-size);
+    }
+    &.banner-icon:not(.banner.banner-fade) {
+      --banner-fade-height: var(--banner-icon-size);
+    }
+    &.banner.banner-icon.banner-title:not(.banner-fade) {
+      --banner-fade-height: 0px;
     }
 
     // Banner image
-    .banner .image-embed[alt="banner"] {
+    &.banner :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:nth-child(2) + div::before {
+      display: block;
+      content: "Banner image must be at the end of the file.";
+      color: var(--color-red);
+      font-size: var(--font-smaller);
+      text-align: center;
+    }
+    &.banner :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:not(:active) {
       position: absolute;
       inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
+      border-radius: var(--banner-image-radius, var(--media-radius));
+      width: stretch;
       height: var(--banner-image-height);
       overflow: hidden;
+      object-fit: var(--banner-image-object-fit);
       line-height: 0;
 
-      &:not(:active) img {
+      img {
         width: 100%;
         height: 100%;
         object-fit: var(--banner-image-object-fit);
-        border-radius: var(--banner-image-radius, var(--media-radius));
       }
     }
-    .banner .mod-header,
-    .banner .inline-title,
-    .banner .metadata-container {
+    &.banner div:is(.mod-header, .inline-title, .metadata-container) {
       z-index: 1;
     }
 
     // Banner image fade
-    .banner.banner-fade .image-embed[alt="banner"]:not(:active) {
+    &.banner.banner-fade :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:not(:active) {
       mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
     }
 
     // Banner icon
-    .banner-icon {
+    &.banner-icon {
       .cm-callout:has(.callout[data-callout="banner-icon"]) {
         display: contents !important;
       }
@@ -107,6 +111,9 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
         width: var(--banner-icon-size);
         height: var(--banner-icon-size);
         font-size: var(--banner-icon-size);
+        display: flex;
+        justify-content: center;
+        overflow: visible;
 
         .callout-title-inner {
           line-height: 1;
@@ -141,13 +148,16 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
       }
     }
 
-    .banner-icon.banner-title .inline-title {
+    &.banner-icon.banner-title .inline-title ~ .metadata-container {
+      margin-top: var(--inline-title-margin-bottom);
+    }
+    &.banner-icon.banner-title .inline-title {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline), margin-left 0s;
     }
-    .banner-icon.banner-title .inline-title:focus-within {
+    &.banner-icon.banner-title .inline-title:focus-within {
       animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
     }
-    .banner-icon.banner-title .inline-title:not(:focus-within) {
+    &.banner-icon.banner-title .inline-title:not(:focus-within) {
       position: absolute;
       top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
       align-items: center;

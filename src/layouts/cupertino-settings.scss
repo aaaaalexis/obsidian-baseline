@@ -7,7 +7,7 @@ body.input-cupertino.theme-dark .modal.mod-sidebar-layout {
 }
 
 body.input-cupertino:not(.is-phone) .modal.mod-sidebar-layout:not(.mod-community-modal),
-body.input-cupertino:not(.mobile-stable).is-phone .modal.mod-sidebar-layout {
+body.input-cupertino.is-phone .modal.mod-sidebar-layout {
   .setting-item:not(.setting-item-heading) {
     border: none;
     background-color: var(--background-modifier-hover);
@@ -71,8 +71,8 @@ body.input-cupertino:not(.is-mobile) .modal.mod-sidebar-layout:not(.mod-communit
   }
 }
 
-body.input-cupertino:not(.mobile-stable).is-phone .modal.mod-sidebar-layout,
-body.input-cupertino:not(.mobile-stable).is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body.input-cupertino.is-phone .modal.mod-sidebar-layout,
+body.input-cupertino.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .vertical-tab-header-group-items {
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
@@ -121,7 +121,7 @@ body.input-cupertino:not(.mobile-stable).is-tablet .modal.mod-sidebar-layout:not
     }
   }
 }
-body.input-cupertino:not(.mobile-stable).is-phone {
+body.input-cupertino.is-phone {
   &.theme-light .modal.mod-sidebar-layout {
     .vertical-tab-header-group-items,
     .setting-item:not(.setting-item-heading) {
@@ -275,7 +275,7 @@ body.input-cupertino:not(.mobile-stable).is-phone {
     }
   }
 }
-body.input-cupertino:not(.mobile-stable).is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
+body.input-cupertino.is-tablet .modal.mod-sidebar-layout:not(.mod-community-modal) {
   .setting-item:not(.setting-item-heading) {
     background-color: var(--background-primary);
   }

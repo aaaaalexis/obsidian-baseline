@@ -16,6 +16,9 @@ body {
 }
 
 body:not(.is-phone) .menu {
+  &.bases-toolbar-menu {
+    align-items: unset;
+  }
   &.bases-toolbar-menu .bases-toolbar-menu-form {
     padding: var(--menu-padding);
     overflow: visible;

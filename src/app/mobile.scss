@@ -13,6 +13,10 @@ body.is-mobile {
   --mobile-toolbar-height: var(--touch-size-m);
   --keyboard-spacing: 8px;
 
+  --touch-size-xxs: 24px;
+  --touch-size-xs: 30px;
+  --touch-size-s: 40px;
+  --touch-size-m: 44px;
   --touch-size-l: 48px;
   --touch-size-xl: 52px;
 
@@ -71,8 +75,7 @@ body.is-mobile {
   }
 
   // Icon color
-  &.is-phone .mod-root .view-header > div > .view-action,
-  &.is-tablet .mod-root .view-header .view-action,
+  .mod-root .view-header .view-action,
   .mobile-navbar .mobile-navbar-actions,
   .mobile-navbar .navbar-action-flair,
   .mobile-toolbar-options-list,
@@ -370,6 +373,7 @@ body.is-phone {
   // Tab switcher
   .mobile-tab-switcher-menubar {
     border-top: none;
+    z-index: 2;
   }
   .mobile-tab-wrapper {
     pointer-events: all;
@@ -398,7 +402,6 @@ body.is-tablet {
     padding-bottom: 0 !important;
   }
 
-  .workspace-tab-header,
   .workspace-tab-header-new-tab,
   .workspace-tab-header-tab-list,
   .sidebar-toggle-button,
@@ -408,7 +411,7 @@ body.is-tablet {
   }
 
   .workspace {
-    background-color: var(--mobile-sidebar-background);
+    background-color: var(--background-secondary);
   }
 
   .workspace-drawer.is-pinned,

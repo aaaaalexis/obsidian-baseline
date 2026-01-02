@@ -96,7 +96,7 @@ body.input-cupertino {
   }
 
   &.theme-light {
-    --liquid-glass-background: rgba(255, 255, 255, 0.35);
+    --blur-background: rgba(255, 255, 255, 0.35);
     --background-modifier-border: rgba(0, 0, 0, 0.075);
 
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
@@ -108,7 +108,7 @@ body.input-cupertino {
   }
 
   &.theme-dark {
-    --liquid-glass-background: rgba(255, 255, 255, 0.05);
+    --blur-background: rgba(255, 255, 255, 0.05);
     --background-modifier-border: rgba(255, 255, 255, 0.075);
 
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
@@ -139,7 +139,7 @@ body.input-cupertino {
     .clickable-icon.has-active-menu,
     .modal-close-button:hover {
       box-shadow: var(--shadow-xs);
-      background-color: var(--liquid-glass-background);
+      background-color: var(--blur-background);
     }
   }
 

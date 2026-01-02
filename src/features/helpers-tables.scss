@@ -92,7 +92,7 @@
   }
 }
 
-.table-lines div:not(.el-table):not(.table-wrapper) > table {
+.table-lines .workspace-leaf-content[data-type="markdown"] div:not(.el-table):not(.table-wrapper) > table {
   > tbody > tr > td {
     border: var(--table-border-width) solid var(--table-border-color);
   }

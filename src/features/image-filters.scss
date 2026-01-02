@@ -41,6 +41,26 @@
   }
 }
 
+/* Alignment */
+img[alt="left"]:not(.emoji),
+span[alt="left"] img:not(.emoji),
+span[alt="left"] img:not(.emoji) {
+  display: block;
+  justify-self: left;
+}
+img[alt="center"]:not(.emoji),
+span[alt="center"] img:not(.emoji),
+span[alt="center"] img:not(.emoji) {
+  display: block;
+  justify-self: center;
+}
+img[alt="right"]:not(.emoji),
+span[alt="right"] img:not(.emoji),
+span[alt="right"] img:not(.emoji) {
+  display: block;
+  justify-self: right;
+}
+
 /* Circle */
 img[src$="#circle"]:not(.emoji),
 span[src$="#circle"] img:not(.emoji),

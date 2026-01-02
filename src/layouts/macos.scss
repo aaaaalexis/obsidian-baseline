@@ -65,7 +65,8 @@ body.layout-macos:not(.is-mobile) {
     background-color: var(--sidedock-background);
   }
   &.show-ribbon {
-    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
+    &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
       margin-top: 8px;
     }
     &:not(.mod-macos).stacked-nav-off .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
@@ -157,7 +158,7 @@ body.layout-macos.is-tablet {
     border-radius: var(--radius-m);
     border: none;
     z-index: 1;
-    background-color: var(--liquid-glass-background);
+    background-color: var(--blur-background);
     box-shadow: var(--shadow-sidedock);
   }
 }

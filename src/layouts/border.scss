@@ -5,7 +5,8 @@ body.layout-border:not(.is-mobile) {
     margin-bottom: 8px;
     height: -webkit-fill-available;
   }
-  .mod-sidedock > .workspace-leaf-resize-handle {
+  .mod-sidedock > .workspace-leaf-resize-handle,
+  .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
     top: var(--header-height);
   }
 
@@ -91,7 +92,7 @@ body.layout-border:not(.is-mobile) {
     border-bottom-right-radius: 0;
   }
   &.hide-vault-switcher-off .mod-sidedock {
-    &.mod-left-split .workspace-tabs:last-child .workspace-tab-container {
+    &.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
       border-bottom-left-radius: 0;
     }
     .workspace-sidedock-vault-profile {
@@ -103,13 +104,16 @@ body.layout-border:not(.is-mobile) {
   }
 
   // Editor panel
-  .workspace.is-left-sidedock-open .mod-root .workspace-tab-container {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+  .workspace-split.mod-root .workspace-tab-container {
+    border-radius: 0;
   }
-  .workspace.is-right-sidedock-open .mod-root .workspace-tab-container {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+  .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
+    border-top-left-radius: var(--tab-radius);
+    border-bottom-left-radius: var(--tab-radius);
+  }
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs:last-of-type .workspace-tab-container {
+    border-top-right-radius: var(--tab-radius);
+    border-bottom-right-radius: var(--tab-radius);
   }
 
   // Contrast
@@ -137,7 +141,7 @@ body.layout-border:not(.is-mobile) {
         .workspace-tabs.mod-top .workspace-tab-container {
           border-width: var(--divider-width) 0 0 var(--divider-width);
         }
-        .workspace-tabs:last-child .workspace-tab-container {
+        .workspace-tabs:last-of-type .workspace-tab-container {
           border-width: 0 0 var(--divider-width) var(--divider-width);
         }
       }
@@ -145,7 +149,7 @@ body.layout-border:not(.is-mobile) {
         .workspace-tabs.mod-top .workspace-tab-container {
           border-width: var(--divider-width) var(--divider-width) 0 0;
         }
-        .workspace-tabs:last-child .workspace-tab-container {
+        .workspace-tabs:last-of-type .workspace-tab-container {
           border-width: 0 var(--divider-width) var(--divider-width) 0;
         }
       }

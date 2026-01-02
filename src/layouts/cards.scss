@@ -1,9 +1,9 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
   // Editor panel
-  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
     margin-left: 8px;
   }
-  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+  .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs:last-of-type .workspace-tab-container {
     margin-right: 8px;
   }
 
@@ -69,7 +69,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
 
   // Status bar
   &:not(.status-bar-cupertino, .status-bar-full) {
-    .workspace-split {
+    .workspace > .workspace-split {
       padding-bottom: 8px;
     }
     .status-bar {
@@ -121,6 +121,27 @@ body:is(.layout-cards, .layout-border).is-tablet {
 
 // Cards specific
 body.layout-cards:not(.is-mobile) {
+  // Editor panel
+  .workspace-split.mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .workspace-split.mod-vertical {
+    gap: 8px;
+  }
+
+  .workspace-split > * > .workspace-leaf-resize-handle:not(:hover) {
+    border-color: transparent;
+  }
+  .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
+    border-inline-end-width: 8px;
+    transform: translateX(8px);
+  }
+  .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+    border-bottom-width: 8px;
+    transform: translateY(8px);
+  }
+
+  // Side panels
   .mod-sidedock .workspace-leaf-resize-handle:not(:hover) {
     border-color: transparent;
   }

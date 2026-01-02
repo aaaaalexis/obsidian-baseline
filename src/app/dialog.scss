@@ -64,11 +64,8 @@ body:not(.is-mobile) {
     font-family: var(--h1-font);
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
     max-width: 0;
-    min-width: fit-content;
     overflow: visible;
     text-align: left;
-    display: flex;
-    align-items: center;
   }
 }
 .modal-close-button {

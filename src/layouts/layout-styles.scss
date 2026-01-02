@@ -24,12 +24,12 @@ body:is(.layout-cupertino, .layout-cards, .layout-border).is-tablet .mod-root {
   height: auto;
 }
 body:is(.layout-cupertino, .layout-cards, .layout-border, .layout-frame).is-tablet {
-  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tab-container {
+  .workspace-drawer.mod-left:not(.is-pinned) + .mod-root .workspace-tabs:first-of-type .workspace-tab-container {
     margin-left: 8px;
     border-top-left-radius: var(--safe-area-inset-top);
     border-bottom-left-radius: var(--safe-area-inset-top);
   }
-  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tab-container {
+  .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
     margin-right: 8px;
     border-top-right-radius: var(--safe-area-inset-top);
     border-bottom-right-radius: var(--safe-area-inset-top);

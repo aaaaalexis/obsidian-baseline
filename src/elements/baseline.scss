@@ -44,7 +44,7 @@ select,
   transition: var(--anim-duration-moderate) var(--anim-motion-baseline), background-color var(--anim-duration-fast);
 }
 
-button:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button) {
+button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
   padding: 16px;
   display: inline-flex;
 }
