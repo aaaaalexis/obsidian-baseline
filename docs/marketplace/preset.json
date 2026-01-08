@@ -69,5 +69,11 @@
     "author": "Jaren Lo",
     "url": "https://qnury.es",
     "description": "A joyful, elegant preset focused on readability and ease of use."
+  },
+    "stone-gnome": {
+    "name": "Stone Gnome",
+    "author": "Bean",
+    "url": "https://github.com/broad-bean1",
+    "description": "An Adwaita inspired theme for a native feel on Gnome"
   }
 }
