@@ -149,6 +149,16 @@ body:not(.is-mobile) .view-content.notebook-navigator {
     min-width: unset;
     height: auto;
   }
+
+  .nn-navigation-pane-scroller,
+  .nn-list-pane-scroller {
+    margin-top: var(--nn-list-pane-overlay-height, 48px);
+  }
+  .nn-navigation-pane-scroller > .nn-navigation-pane-overlay,
+  .nn-list-pane-scroller > .nn-list-pane-overlay {
+    position: fixed;
+    width: 100%;
+  }
 }
 body.is-mobile .view-content.notebook-navigator-mobile {
   .nn-pane-header,

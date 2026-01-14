@@ -62,35 +62,28 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
     }
 
     // Banner image
-    &.banner :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:nth-child(2) + div::before {
-      display: block;
-      content: "Banner image must be at the end of the file.";
-      color: var(--color-red);
-      font-size: var(--font-smaller);
-      text-align: center;
-    }
-    &.banner :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:not(:active) {
-      position: absolute;
-      inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
-      border-radius: var(--banner-image-radius, var(--media-radius));
-      width: stretch;
-      height: var(--banner-image-height);
-      overflow: hidden;
-      object-fit: var(--banner-image-object-fit);
-      line-height: 0;
-
-      img {
-        width: 100%;
-        height: 100%;
+    &.banner {
+      img[alt="banner"]:not(:active) {
+        position: absolute;
+        inset: var(--view-top-spacing-markdown) var(--banner-image-inset) auto;
+        border-radius: var(--banner-image-radius, var(--media-radius));
+        width: stretch;
+        height: var(--banner-image-height);
+        overflow: hidden;
         object-fit: var(--banner-image-object-fit);
+        line-height: 0;
       }
-    }
-    &.banner div:is(.mod-header, .inline-title, .metadata-container) {
-      z-index: 1;
+
+      .image-embed[alt="banner"] {
+        display: contents;
+      }
+      div:is(.mod-header, .inline-title, .metadata-container) {
+        z-index: 1;
+      }
     }
 
     // Banner image fade
-    &.banner.banner-fade :is(.image-embed, img[referrerpolicy="no-referrer"], img[contenteditable="false"])[alt="banner"]:not(:active) {
+    &.banner.banner-fade img[alt="banner"]:not(:active) {
       mask: linear-gradient(to bottom, hsl(0, 0%, 0%) 0%, hsla(0, 0%, 0%, 0.987) 14%, hsla(0, 0%, 0%, 0.951) 26.2%, hsla(0, 0%, 0%, 0.896) 36.8%, hsla(0, 0%, 0%, 0.825) 45.9%, hsla(0, 0%, 0%, 0.741) 53.7%, hsla(0, 0%, 0%, 0.648) 60.4%, hsla(0, 0%, 0%, 0.55) 66.2%, hsla(0, 0%, 0%, 0.45) 71.2%, hsla(0, 0%, 0%, 0.352) 75.6%, hsla(0, 0%, 0%, 0.259) 79.6%, hsla(0, 0%, 0%, 0.175) 83.4%, hsla(0, 0%, 0%, 0.104) 87.2%, hsla(0, 0%, 0%, 0.049) 91.1%, hsla(0, 0%, 0%, 0.013) 95.3%, hsla(0, 0%, 0%, 0) 100%);
     }
 
@@ -148,31 +141,32 @@ body:where(html:not([style*="--banner-internal-embed-height"]) body):not(.banner
       }
     }
 
-    &.banner-icon.banner-title .inline-title ~ .metadata-container {
-      margin-top: var(--inline-title-margin-bottom);
-    }
     &.banner-icon.banner-title .inline-title {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline), margin-left 0s;
-    }
-    &.banner-icon.banner-title .inline-title:focus-within {
-      animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-    }
-    &.banner-icon.banner-title .inline-title:not(:focus-within) {
-      position: absolute;
-      top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
-      align-items: center;
-      animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-      margin-bottom: 0;
-      margin-left: calc(var(--banner-icon-size) + 1rem);
-      width: calc(var(--file-line-width) - var(--banner-icon-size) - 1rem);
-      max-width: calc(100% - var(--file-margins-x) * 2 - var(--banner-icon-size) - 1rem);
-      height: var(--banner-icon-size);
-      overflow: hidden;
-      line-height: var(--banner-icon-size);
-      text-overflow: ellipsis;
-      white-space: nowrap;
 
-      &::before {
+      ~ .metadata-container {
+        margin-top: var(--inline-title-margin-bottom);
+      }
+
+      &:focus-within {
+        animation: bannerTitleEditIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+      }
+      &:not(:focus-within) {
+        position: absolute;
+        top: calc(var(--view-top-spacing-markdown) + var(--banner-image-height) - var(--banner-fade-height) + 1rem);
+        align-items: center;
+        animation: bannerTitleEditOut var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+        margin-bottom: 0;
+        margin-left: calc(var(--banner-icon-size) + 1rem);
+        width: calc(var(--file-line-width) - var(--banner-icon-size) - 1rem);
+        max-width: calc(100% - var(--file-margins-x) * 2 - var(--banner-icon-size) - 1rem);
+        height: var(--banner-icon-size);
+        overflow: hidden;
+        line-height: var(--banner-icon-size);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &:not(:focus-within)::before {
         content: none;
       }
     }

@@ -22,7 +22,7 @@ body:is(.layout-cupertino, .layout-macos):not(.is-mobile) {
     .mod-sidedock.is-sidedock-collapsed[style*="display"] {
       box-shadow: var(--shadow-s);
       border-radius: var(--radius-window, var(--radius-m));
-      background-color: var(--modal-background);
+      background-color: var(--modal-background) !important;
       backdrop-filter: var(--blur-m);
       height: -webkit-fill-available;
 

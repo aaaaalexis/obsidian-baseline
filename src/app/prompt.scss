@@ -6,10 +6,6 @@ body.is-mobile {
   --prompt-input-height: 64px;
 }
 
-body.mod-macos.is-translucent .prompt {
-  animation: modalInTranslucent var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-}
-
 .prompt {
   -electron-corner-smoothing: var(--corner-smoothing);
   background-color: var(--background-secondary);

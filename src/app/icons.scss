@@ -24,7 +24,6 @@
 }
 
 // Animations
-
 body:not(.reduce-motion) .workspace {
   svg.svg-icon {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline);

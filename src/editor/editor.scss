@@ -6,7 +6,6 @@
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
     --heading-spacing: 2em;
     --p-spacing: 1.75rem;
-    --list-spacing: 0.2em;
     --line-height-normal: 1.6;
 
     --file-margins-block: 32px;
@@ -424,7 +423,7 @@
     border-radius: var(--media-radius);
   }
 
-  .image-embed:not(.canvas-node-content, [alt="banner"]) {
+  .image-embed:not([width], .canvas-node-content, [alt="banner"]) {
     width: fit-content;
   }
 

@@ -95,7 +95,7 @@ body.status-bar-cupertino .status-bar {
   }
 }
 
-body.status-bar-cupertino .app-container.no-transition .status-bar {
+body:not(.is-grabbing).status-bar-cupertino .app-container.no-transition .status-bar {
   bottom: 4px;
   border-color: transparent;
   background-color: var(--color-accent);

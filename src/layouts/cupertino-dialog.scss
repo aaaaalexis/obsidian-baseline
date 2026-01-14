@@ -238,6 +238,16 @@ body.input-cupertino {
     color: var(--text-muted);
     overflow: hidden;
   }
+  .notice:last-child {
+    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
+  }
+  &.is-phone .notice:last-child {
+    @starting-style {
+      transform: translateY(-50%) scaleX(0.5) !important;
+      filter: blur(4px);
+      opacity: 0;
+    }
+  }
 
   .tooltip {
     --background-modifier-message: var(--background-primary);

@@ -67,7 +67,6 @@ body.bold-folders .nav-folder-title {
 
 // Ribbon
 .workspace-ribbon.mod-left {
-  overflow: visible;
   border-right: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) !important;
@@ -98,6 +97,11 @@ body.bold-folders .nav-folder-title {
 .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
 .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
   width: var(--tab-action-width);
+
+  &:hover {
+    color: var(--text-normal);
+    background-color: transparent;
+  }
 }
 
 body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,

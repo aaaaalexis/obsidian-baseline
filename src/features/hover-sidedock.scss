@@ -5,10 +5,11 @@ body:not(.is-mobile) {
 }
 
 // Window drag fix
-body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed[style*="display"].mod-left-split:hover + .mod-root,
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-left-split:hover + .mod-root,
+body:not(.is-mobile).hover-sidedock .mod-root:has(+ .mod-sidedock.is-sidedock-collapsed.mod-right-split:hover),
+body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed,
 body:not(.is-mobile).hover-ribbon .workspace-ribbon.mod-left:hover ~ .mod-root {
-  .workspace-tab-header-container,
-  .workspace-tab-header-container-inner {
+  div:is(.workspace-tab-header-container, .workspace-tab-header-container-inner) {
     -webkit-app-region: no-drag;
   }
 }
@@ -21,6 +22,10 @@ body:not(.is-mobile).hover-sidedock {
     z-index: 11;
     background-color: transparent;
     width: var(--hover-sidedock-width) !important;
+
+    .workspace-tabs {
+      visibility: visible;
+    }
 
     // Position
     &.mod-left-split {

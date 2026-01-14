@@ -373,13 +373,13 @@ body.is-phone {
   // Tab switcher
   .mobile-tab-switcher-menubar {
     border-top: none;
-    z-index: 2;
   }
   .mobile-tab-wrapper {
     pointer-events: all;
   }
   .mobile-tab-switcher-scroll {
     pointer-events: none;
+    background-color: transparent;
   }
   .mobile-tab-switcher-scroll,
   .mobile-tab-switcher-menu-button,

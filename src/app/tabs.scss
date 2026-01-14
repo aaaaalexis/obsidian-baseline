@@ -4,6 +4,8 @@ body {
   --tab-radius: var(--radius-s);
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
   --tab-curve: calc(var(--tab-radius) + 4px);
+
+  --tab-text-align: left;
 }
 body:not(.is-mobile) {
   --tab-action-width: 32px;
@@ -68,6 +70,7 @@ body:not(.is-phone) .workspace .mod-root {
   }
   .workspace-tab-header-inner-title {
     line-height: normal;
+    text-align: var(--tab-text-align);
   }
 
   .workspace-tab-header-new-tab,

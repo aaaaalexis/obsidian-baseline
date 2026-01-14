@@ -778,6 +778,18 @@ settings:
 				label: Underline (Accented)
 				value: tabs-underline-accented
 	-
+		id: tab-text-align
+		title: Tab label alignment
+		type: variable-select
+		default: left
+		options:
+			-
+				label: Left
+				value: left
+			-
+				label: Center
+				value: center
+	-
 		id: labeled-tabs
 		title: Tab labels
 		type: class-select
@@ -1431,46 +1443,6 @@ settings:
 			-
 				label: 100% pane width
 				value: img-100
-	-
-		id: map-width
-		title: Map width
-		description: Default width for map blocks
-		type: class-select
-		allowEmpty: false
-		default: map-normal
-		options:
-			-
-				label: Default
-				value: map-normal
-			-
-				label: Wide line width
-				value: map-wide
-			-
-				label: Maximum line width
-				value: map-max
-			-
-				label: 100% pane width
-				value: map-100
-	-
-		id: chart-width
-		title: Chart width
-		description: Default width for chart blocks
-		type: class-select
-		allowEmpty: false
-		default: chart-normal
-		options:
-			-
-				label: Default
-				value: chart-normal
-			-
-				label: Wide line width
-				value: chart-wide
-			-
-				label: Maximum line width
-				value: chart-max
-			-
-				label: 100% pane width
-				value: chart-100
 	-
 		id: indentation-guide
 		title: Indentation guides

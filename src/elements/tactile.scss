@@ -46,10 +46,12 @@ body.input-tactile {
     box-shadow: var(--input-shadow-inset);
   }
 
-  // Slider
+  // Toggle
   .checkbox-container:after {
     box-shadow: var(--input-shadow-base);
   }
+
+  // Slider
   input[type="range"]::-webkit-slider-thumb {
     box-shadow: var(--input-shadow);
     border: none;
@@ -91,6 +93,8 @@ body.input-tactile:not(.is-mobile) {
 
   // Settings
   .modal.mod-sidebar-layout {
+    background-color: var(--background-primary);
+
     .vertical-tab-content {
       transition: var(--anim-duration-slow) var(--anim-motion-baseline);
 
@@ -114,5 +118,14 @@ body.input-tactile:not(.is-mobile) {
       background-blend-mode: soft-light;
       box-shadow: var(--input-shadow);
     }
+  }
+}
+
+body.input-tactile.is-phone {
+  .mobile-navbar,
+  .mobile-toolbar-options-list-container,
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    box-shadow: var(--input-shadow);
+    border: none !important;
   }
 }

@@ -3,10 +3,12 @@ body.input-fluent {
   --radius-m: calc(5px * var(--radius-modifier));
   --radius-l: calc(10px * var(--radius-modifier));
   --radius-xl: calc(10px * var(--radius-modifier));
-  --tab-radius: var(--radius-m);
-  --clickable-icon-radius: var(--radius-m);
+  --input-radius: var(--radius-m);
   --button-radius: var(--input-radius);
-  --input-radius: 4px;
+  --clickable-icon-radius: var(--radius-m);
+  --checkbox-radius: var(--radius-m);
+  --tab-radius: var(--radius-m);
+
   --toggle-thumb-height: 12px;
   --toggle-thumb-width: 12px;
   --toggle-width: 40px;
@@ -115,7 +117,7 @@ body.input-fluent {
   }
 
   // Settings
-  .modal.mod-sidebar-layout.mod-settings {
+  .modal.mod-settings {
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 16px;
@@ -316,6 +318,15 @@ body.input-fluent:not(.is-mobile) {
 }
 
 body.input-fluent.is-phone {
+  .mobile-navbar,
+  .mobile-toolbar-options-list-container,
+  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+    backdrop-filter: var(--blur-l);
+    box-shadow: var(--shadow-s);
+    border-radius: var(--radius-l);
+    background-color: var(--modal-background) !important;
+  }
+
   .modal.mod-settings {
     .vertical-tab-header-group-items {
       background-color: transparent;
