@@ -1,6 +1,7 @@
 @media screen, print {
   body {
     --inline-title-color: inherit;
+    --inline-title-font: var(--font-text-override);
 
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
     --heading-spacing: 2em;
