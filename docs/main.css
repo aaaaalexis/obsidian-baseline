@@ -217,28 +217,20 @@ button svg {
   height: 1em;
 }
 
-.copy-btn {
-  flex: 1;
+button.mod-cta {
   background-color: var(--mono-rgb-100);
   color: var(--color-base-00);
-  border: none;
+  border-color: transparent;
 }
-.copy-btn:hover {
+button.mod-cta:hover {
   background-color: var(--mono-rgb-100);
   opacity: 0.8;
 }
-.copy-btn span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
 
-  @starting-style {
-    transform: scale(0.75);
-    opacity: 0;
-    filter: blur(4px);
-  }
+.copy-btn {
+  flex: 1;
 }
+
 .download-btn,
 .submit-btn {
   text-decoration: none;

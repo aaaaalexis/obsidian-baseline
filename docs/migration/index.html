@@ -97,9 +97,7 @@ Last updated: 2025-09-09'
         <div class="output-panel">
           <textarea class="prefs-output" disabled readonly></textarea>
           <div class="panel-actions">
-            <button class="copy-btn">
-              <span><i data-lucide="copy"></i>Copy</span>
-            </button>
+            <button class="copy-btn"><i data-lucide="copy"></i>Copy</button>
             <a class="download-btn" href="#" download="baseline-style-settings.json"><button>Download</button></a>
           </div>
           <div class="conflict-container"></div>
@@ -291,8 +289,8 @@ Last updated: 2025-09-09'
 
         copyBtn.onclick = () =>
           navigator.clipboard.writeText(prefsOutput.value).then(() => {
-            copyBtn.innerHTML = "<span>Copied!</span>";
-            setTimeout(() => (copyBtn.innerHTML = "<span>Copy</span>"), 1000);
+            copyBtn.innerHTML = "Copied!";
+            setTimeout(() => (copyBtn.innerHTML = "Copy"), 1000);
             if (typeof gtag === "function") gtag("event", "migration_copy");
           });
         downloadBtn.onclick = () => {

@@ -87,22 +87,21 @@
     <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
     <script src="../mode.js"></script>
     <script>
-      (() => {
-        const fetchJSON = async (path) => {
-          const r = await fetch(path);
-          return r.ok ? r.json() : null;
-        };
-        const mdLinks = (t) => t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+      document.addEventListener("DOMContentLoaded", async () => {
+        const fetchJSON = async (path) =>
+          fetch(path)
+            .then((r) => (r.ok ? r.json() : null))
+            .catch(() => null);
+        const mdLinks = (t) => (t ? t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>') : "No description available.");
 
-        // color mode helpers (compact): prefer saved `colorMode`, else system
-        const isDarkMode = () => {
+        const isDark = () => {
           const s = localStorage.getItem("colorMode");
-          if (!s) return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          return s === "dark" ? true : s === "light" ? false : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          return s ? s === "dark" : window.matchMedia?.("(prefers-color-scheme: dark)").matches;
         };
+
         const pickSrc = (img) => {
           const { light, dark, base } = img.dataset;
-          return isDarkMode() ? dark || light || base : light || dark || base;
+          return isDark() ? dark || light || base : light || dark || base;
         };
 
         const loadAndReveal = (picture) => {
@@ -110,222 +109,174 @@
           if (!img) return;
           const src = pickSrc(img);
           if (!src) return picture.classList.remove("loading");
+
           const loader = new Image();
           loader.onload = () => {
-            if (img.src && img.src !== src) {
-              img.src = src;
-              requestAnimationFrame(() => {
-                img.style.opacity = "1";
-                picture.classList.remove("loading");
-              });
-            } else {
-              img.src = src;
-              requestAnimationFrame(() => picture.classList.remove("loading"));
-            }
+            img.src = src;
+            requestAnimationFrame(() => {
+              img.style.opacity = "1";
+              picture.classList.remove("loading");
+            });
           };
           loader.onerror = () => picture.classList.remove("loading");
           loader.src = src;
         };
 
-        const loadPresets = async () => {
-          const presets = await fetchJSON("preset.json");
-          if (!presets) return;
-          const presetDetails = {};
-
-          const items = await Promise.all(
-            Object.entries(presets).map(async ([id, meta]) => {
-              const presetFile = `${id}.json`;
-              const img = { light: `img/${id}@light.png`, dark: `img/${id}@dark.png`, base: `img/${id}.png` };
-              presetDetails[id] = (await fetchJSON(`preset/${presetFile}`)) || {};
-              const desc = meta.description ? mdLinks(meta.description) : "No description available.";
-              const imageHTML = `<picture class="loading"><div class="preset-img-loader"></div><source data-srcset="${img.dark}" media="(prefers-color-scheme: dark)"><source data-srcset="${img.light}" media="(prefers-color-scheme: light)"><img loading="lazy" decoding="async" data-base="${img.base}" data-light="${img.light}" data-dark="${img.dark}"></picture>`;
-              const authorHTML = meta.url ? `<a href="${meta.url}">${meta.author}</a>` : meta.author;
-              const html = `<div class="preset-panel" data-preset="${id}"><div class="preset-info"><h2>${meta.name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${desc}</p><div class="panel-actions"><button class="copy-btn"><span><i data-lucide="copy"></i>Copy</span></button><a class="download-btn" href="preset/${presetFile}" download="baseline-${presetFile}"><button><i data-lucide="download"></i></button></a></div></div>`;
-              return { name: meta.name, id, meta, html, searchable: `${meta.name} ${meta.author || ""} ${meta.description || ""}`.toLowerCase() };
-            }),
-          );
-
-          const container = document.querySelector(".panel-container");
-          const searchInput = document.querySelector(".preset-search");
-          const filterBtn = document.querySelector(".preset-filter");
-
-          const modes = ["new", "old", "a-z", "z-a"];
-          const labels = { new: "New to old", old: "Old to new", "a-z": "A to Z", "z-a": "Z to A" };
-          let modeIndex = 0;
-
-          const updateFilterLabel = () => {
-            filterBtn.innerHTML = `<i data-lucide="filter"></i>${labels[modes[modeIndex]]}`;
-            lucide.createIcons();
-          };
-
-          const render = () => {
-            const q = searchInput.value.trim().toLowerCase();
-            let list = items.slice();
-            const mode = modes[modeIndex];
-            if (mode === "new") list.reverse();
-            else if (mode === "a-z") list.sort((a, b) => a.name.localeCompare(b.name));
-            else if (mode === "z-a") list.sort((a, b) => b.name.localeCompare(a.name));
-
-            if (q) list = list.filter((i) => i.searchable.includes(q));
-            container.innerHTML = list.map((i) => i.html).join("");
-            lucide.createIcons();
-            container.querySelectorAll(".preset-panel picture").forEach(loadAndReveal);
-
-            container.querySelectorAll(".copy-btn").forEach((btn, idx) => {
-              const orig = btn.innerHTML;
-              btn.onclick = () => {
-                const presetId = container.querySelectorAll(".preset-panel")[idx].dataset.preset;
-                const details = presetDetails[presetId];
-                if (!details) return;
-                navigator.clipboard.writeText(JSON.stringify(details, null, 2)).then(() => {
-                  btn.innerHTML = "<span>Copied!</span>";
-                  setTimeout(() => {
-                    btn.innerHTML = orig;
-                    lucide.createIcons();
-                  }, 1000);
-                  if (window.gtag) gtag("event", "preset_copy", { preset: presetId });
-                });
-              };
-            });
-
-            container.querySelectorAll(".download-btn").forEach((dl, idx) => {
-              dl.addEventListener("click", () => {
-                const presetId = container.querySelectorAll(".preset-panel")[idx].dataset.preset;
-                if (window.gtag) gtag("event", "preset_download", { preset: presetId });
-              });
-            });
-          };
-
-          const params = new URLSearchParams(window.location.search);
-          const q = params.get("q");
-          if (q) searchInput.value = q;
-          updateFilterLabel();
-          const reloadPictures = () =>
-            container.querySelectorAll(".preset-panel picture").forEach((p) => {
-              p.classList.add("loading");
-              loadAndReveal(p);
-            });
-          document.addEventListener("colorModeChange", reloadPictures);
-          if (window.matchMedia) {
-            const mq = window.matchMedia("(prefers-color-scheme: dark)");
-            const mqHandler = () => {
-              const s = localStorage.getItem("colorMode");
-              if (!s || (s.includes("light") && s.includes("dark"))) reloadPictures();
-            };
-            if (mq.addEventListener) mq.addEventListener("change", mqHandler);
-            else mq.addListener(mqHandler);
-          }
-          let debounce;
-          searchInput.addEventListener("input", () => {
-            clearTimeout(debounce);
-            debounce = setTimeout(() => {
-              const val = searchInput.value.trim();
-              const url = new URL(window.location);
-              val ? url.searchParams.set("q", val) : url.searchParams.delete("q");
-              window.history.replaceState({}, "", url);
-              render();
-            }, 150);
-          });
-          filterBtn.addEventListener("click", () => {
-            modeIndex = (modeIndex + 1) % modes.length;
-            updateFilterLabel();
-            render();
-          });
-          render();
-        };
-        loadPresets();
-      })();
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
+        // UI Elements
+        const container = document.querySelector(".panel-container");
+        const searchInput = document.querySelector(".preset-search");
+        const filterBtn = document.querySelector(".preset-filter");
         const overlay = document.querySelector(".lightbox-overlay");
-        if (!overlay) return;
-        const lightboxImg = overlay.querySelector(".lightbox-img");
-        const lightboxThemeName = overlay.querySelector(".lightbox-title");
-        let hiddenHandler;
+        const lightboxImg = overlay?.querySelector(".lightbox-img");
+        const lightboxThemeName = overlay?.querySelector(".lightbox-title");
 
+        // State
+        let items = [];
+        const presetDetails = {};
+        const modes = ["new", "old", "a-z", "z-a"];
+        const labels = { new: "New to old", old: "Old to new", "a-z": "A to Z", "z-a": "Z to A" };
+        let modeIndex = 0;
         let openedPicture = null;
-        const _isDark = () => {
-          const s = localStorage.getItem("colorMode");
-          if (!s) return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          return s === "dark" ? true : s === "light" ? false : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        const updateFilterLabel = () => {
+          filterBtn.innerHTML = `<i data-lucide="filter"></i>${labels[modes[modeIndex]]}`;
+          lucide.createIcons();
         };
 
-        function openLightbox(src, picture) {
+        const render = () => {
+          const q = searchInput.value.trim().toLowerCase();
+          let list = [...items];
+          const mode = modes[modeIndex];
+
+          if (mode === "new") list.reverse();
+          else if (mode === "a-z") list.sort((a, b) => a.name.localeCompare(b.name));
+          else if (mode === "z-a") list.sort((a, b) => b.name.localeCompare(a.name));
+
+          if (q) list = list.filter((i) => i.searchable.includes(q));
+
+          container.innerHTML = list.map((i) => i.html).join("");
+          lucide.createIcons();
+          container.querySelectorAll(".preset-panel picture").forEach(loadAndReveal);
+        };
+
+        // Event Delegation for container (Copy, Download, Lightbox)
+        container.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          const panel = e.target.closest(".preset-panel");
+          const picture = e.target.closest(".preset-panel picture");
+
+          if (panel && btn?.closest(".copy-btn")) {
+            const presetId = panel.dataset.preset;
+            const details = presetDetails[presetId];
+            if (!details) return;
+            navigator.clipboard.writeText(JSON.stringify(details, null, 2)).then(() => {
+              const orig = btn.innerHTML;
+              btn.innerHTML = "Copied!";
+              setTimeout(() => {
+                btn.innerHTML = orig;
+                lucide.createIcons();
+              }, 1000);
+              window.gtag?.("event", "preset_copy", { preset: presetId });
+            });
+          } else if (panel && btn?.closest(".download-btn")) {
+            window.gtag?.("event", "preset_download", { preset: panel.dataset.preset });
+          } else if (picture && overlay) {
+            const img = picture.querySelector("img");
+            if (img) openLightbox(pickSrc(img), picture, panel.querySelector("h2")?.textContent);
+          }
+        });
+
+        // Search & Filter
+        let debounce;
+        searchInput.addEventListener("input", () => {
+          clearTimeout(debounce);
+          debounce = setTimeout(() => {
+            const val = searchInput.value.trim();
+            const url = new URL(window.location);
+            val ? url.searchParams.set("q", val) : url.searchParams.delete("q");
+            window.history.replaceState({}, "", url);
+            render();
+          }, 150);
+        });
+
+        filterBtn.addEventListener("click", () => {
+          modeIndex = (modeIndex + 1) % modes.length;
+          updateFilterLabel();
+          render();
+        });
+
+        // Lightbox functionality
+        const openLightbox = (src, picture, title) => {
           overlay.classList.remove("hidden");
-          if (hiddenHandler) lightboxImg.removeEventListener("transitionend", hiddenHandler);
-          hiddenHandler = null;
           lightboxImg.src = src;
           overlay.classList.add("active");
-          if (picture) {
-            const panel = picture.closest(".preset-panel");
-            if (panel) {
-              const themeName = panel.querySelector("h2");
-              lightboxThemeName.textContent = themeName ? themeName.textContent : "";
-            } else {
-              lightboxThemeName.textContent = "";
-            }
-            picture.classList.add("opened");
-            openedPicture = picture;
-          } else {
-            lightboxThemeName.textContent = "";
-            openedPicture = null;
-          }
-        }
+          lightboxThemeName.textContent = title || "";
+          picture.classList.add("opened");
+          openedPicture = picture;
+        };
 
-        function closeLightbox() {
+        const closeLightbox = () => {
           if (!overlay.classList.contains("active")) return;
-          overlay.classList.add("hidden");
           overlay.classList.remove("active");
+
           if (openedPicture) {
             openedPicture.classList.remove("opened");
             openedPicture = null;
           }
-          if (hiddenHandler) lightboxImg.removeEventListener("transitionend", hiddenHandler);
-          hiddenHandler = function handler() {
-            overlay.classList.remove("hidden");
+
+          const handler = () => {
+            overlay.classList.add("hidden");
             lightboxImg.src = "";
             lightboxThemeName.textContent = "";
             lightboxImg.removeEventListener("transitionend", handler);
-            hiddenHandler = null;
           };
-          lightboxImg.addEventListener("transitionend", hiddenHandler);
+          lightboxImg.addEventListener("transitionend", handler);
+        };
+
+        overlay?.addEventListener("click", (e) => {
+          if (e.target === overlay || e.target === lightboxImg) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeLightbox();
+        });
+
+        // Color Mode changes
+        const handleThemeChange = () => {
+          container.querySelectorAll(".preset-panel picture").forEach((p) => {
+            p.classList.add("loading");
+            loadAndReveal(p);
+          });
+          if (overlay.classList.contains("active") && openedPicture) {
+            const img = openedPicture.querySelector("img");
+            if (img) lightboxImg.src = pickSrc(img);
+          }
+        };
+
+        document.addEventListener("colorModeChange", handleThemeChange);
+        window.matchMedia?.("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+          if (!localStorage.getItem("colorMode")) handleThemeChange();
+        });
+
+        // Init
+        const presets = await fetchJSON("preset.json");
+        if (presets) {
+          items = await Promise.all(
+            Object.entries(presets).map(async ([id, meta]) => {
+              presetDetails[id] = (await fetchJSON(`preset/${id}.json`)) || {};
+              const img = { light: `img/${id}@light.png`, dark: `img/${id}@dark.png`, base: `img/${id}.png` };
+              const imageHTML = `<picture class="loading"><div class="preset-img-loader"></div><source data-srcset="${img.dark}" media="(prefers-color-scheme: dark)"><source data-srcset="${img.light}" media="(prefers-color-scheme: light)"><img loading="lazy" decoding="async" data-base="${img.base}" data-light="${img.light}" data-dark="${img.dark}"></picture>`;
+              const authorHTML = meta.url ? `<a href="${meta.url}">${meta.author}</a>` : meta.author;
+              const html = `<div class="preset-panel" data-preset="${id}"><div class="preset-info"><h2>${meta.name}</h2><p>By ${authorHTML}</p></div>${imageHTML}<p>${mdLinks(meta.description)}</p><div class="panel-actions"><button class="copy-btn"><i data-lucide="copy"></i>Copy</button><a class="download-btn" href="preset/${id}.json" download="baseline-${id}.json"><button><i data-lucide="download"></i></button></a></div></div>`;
+              return { name: meta.name, id, meta, html, searchable: `${id} ${meta.name} ${meta.author || ""} ${meta.description || ""}`.toLowerCase() };
+            }),
+          );
+
+          const q = new URLSearchParams(window.location.search).get("q");
+          if (q) searchInput.value = q;
+          updateFilterLabel();
+          render();
         }
-
-        document.addEventListener("click", function (e) {
-          const picture = e.target.closest(".preset-panel picture");
-          if (picture) {
-            const img = picture.querySelector("img");
-            if (img) {
-              const lightSrc = img.getAttribute("data-light");
-              const darkSrc = img.getAttribute("data-dark");
-              let src = img.src;
-              if (lightSrc || darkSrc) {
-                const dark = _isDark();
-                src = dark ? darkSrc || lightSrc : lightSrc || darkSrc;
-              }
-              return openLightbox(src, picture);
-            }
-          }
-          if (e.target === overlay || e.target === lightboxImg) return closeLightbox();
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && overlay.classList.contains("active")) closeLightbox();
-        });
-
-        // update open lightbox image when color mode changes
-        document.addEventListener("colorModeChange", () => {
-          if (!overlay.classList.contains("active") || !openedPicture) return;
-          const img = openedPicture.querySelector("img");
-          if (!img) return;
-          const lightSrc = img.getAttribute("data-light");
-          const darkSrc = img.getAttribute("data-dark");
-          if (lightSrc || darkSrc) {
-            const src = _isDark() ? darkSrc || lightSrc : lightSrc || darkSrc;
-            // update without triggering transitionend hidden handler
-            lightboxImg.src = src;
-          }
-        });
       });
     </script>
   </body>
