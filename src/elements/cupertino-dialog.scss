@@ -222,7 +222,7 @@ body.input-cupertino {
     box-shadow: var(--shadow-l);
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
-    color: var(--text-muted);
+    color: var(--text-normal);
   }
 
   .tooltip {

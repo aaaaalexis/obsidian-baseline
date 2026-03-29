@@ -393,7 +393,7 @@ body.is-phone {
     .mobile-navbar,
     &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-header .view-actions button:nth-last-child(2) {
       transform: none;
-      margin-bottom: calc(-1 * var(--navbar-bottom-offset));
+      margin-bottom: 0;
     }
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
     .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
