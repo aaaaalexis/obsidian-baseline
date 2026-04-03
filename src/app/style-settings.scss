@@ -42,16 +42,11 @@ settings:
 		title: Do not show again
 		type: class-toggle
 	-
-		id: colors
-		title: Colors
+		id: color-scheme
+		title: Color schemes
 		type: heading
 		level: 1
 		collapsed: true
-	-
-		id: accented-interface
-		title: Interface accent
-		description: Apply accent color throughout the app.
-		type: class-toggle
 	-
 		id: color-scheme-accent
 		title: Color scheme accent
@@ -130,22 +125,6 @@ settings:
 			-
 				label: Tiniri
 				value: tiniri-light
-	-
-		id: background-contrast-light
-		title: Light contrast
-		type: class-select
-		allowEmpty: false
-		default: contrast-light
-		options:
-			-
-				label: Normal
-				value: contrast-light
-			-
-				label: Low contrast
-				value: contrast-light-tonal
-			-
-				label: High contrast
-				value: contrast-light-vivid
 	-
 		id: color-scheme-dark
 		title: Dark color scheme
@@ -229,6 +208,33 @@ settings:
 				label: Tiniri
 				value: tiniri-dark
 	-
+		id: colors
+		title: Colors
+		type: heading
+		level: 1
+		collapsed: true
+	-
+		id: accented-interface
+		title: Interface accent
+		description: Apply accent color throughout the app.
+		type: class-toggle
+	-
+		id: background-contrast-light
+		title: Light contrast
+		type: class-select
+		allowEmpty: false
+		default: contrast-light
+		options:
+			-
+				label: Normal
+				value: contrast-light
+			-
+				label: Low contrast
+				value: contrast-light-tonal
+			-
+				label: High contrast
+				value: contrast-light-vivid
+	-
 		id: background-contrast-dark
 		title: Dark contrast
 		type: class-select
@@ -248,14 +254,8 @@ settings:
 				label: Black (Mobile)
 				value: contrast-dark-black-mobile
 	-
-		id: interface-palette
-		title: Interface colors
-		type: heading
-		level: 2
-		collapsed: true
-	-
 		id: background-primary
-		title: Primary background
+		title: Primary color
 		description: Used in main editor area.
 		type: variable-themed-color
 		format: hex
@@ -263,7 +263,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-primary-alt
-		title: On primary background
+		title: On primary color
 		description: Used in blockquotes and tables.
 		type: variable-themed-color
 		format: hex
@@ -271,7 +271,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-secondary
-		title: Secondary background
+		title: Secondary color
 		description: Used in sidebars and menus.
 		type: variable-themed-color
 		format: hex
@@ -279,7 +279,7 @@ settings:
 		default-dark: '#'
 	-
 		id: background-secondary-alt
-		title: On secondary background
+		title: On secondary color
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -295,90 +295,16 @@ settings:
 		default-dark: '#'
 	-
 		id: background-modifier-hover
-		title: Hover background
+		title: Indicator color
+		description: Used in active items, hover items and indicators.
 		type: variable-themed-color
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
-    - 
-        id: border-palette
-        title: Borders
-        type: heading
-        level: 3
-		collapsed: true
 	-
-		id: background-modifier-border
-		title: Border color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-border-hover
-		title: Border color (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-border-focus
-		title: Border color (Active)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-    - 
-        id: input-palette
-        title: Elements
-        type: heading
-        level: 3
-		collapsed: true
-	-
-		id: interactive-normal
-		title: Interaction background
-		description: Used in buttons, dropdowns, and text inputs.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: interactive-hover
-		title: Interaction background (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-    - 
-        id: dialog-palette
-        title: Dialog
-        type: heading
-        level: 3
-		collapsed: true
-	-
-		id: prompt-background
-		title: Command palette background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: menu-background
-		title: Menu background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: modal-background
-		title: Modal background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: extended-palette
-		title: Extended colors
+		id: color-palette
+		title: Color palette
 		type: heading
 		level: 2
 		collapsed: true
@@ -439,42 +365,8 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: icon-palette
-		title: Icon colors
-		type: heading
-		level: 2
-		collapsed: true
-	-
-		id: icon-color
-		title: Icon color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-hover
-		title: Icon color (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-active
-		title: Icon color (Active)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-focused
-		title: Icon color (Focused)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
 		id: text-palette
-		title: Text colors
+		title: Text
 		type: heading
 		level: 2
 		collapsed: true
@@ -544,11 +436,209 @@ settings:
 		format: hex
 		default-light: '#'
 		default-dark: '#'
+    - 
+        id: input-palette
+        title: Element
+        type: heading
+        level: 2
+		collapsed: true
+	-
+		id: background-modifier-border
+		title: Border color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-border-hover
+		title: Border color (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-border-focus
+		title: Border color (Active)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: interactive-normal
+		title: Interaction background
+		description: Used in buttons, dropdowns, and text inputs.
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: interactive-hover
+		title: Interaction background (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: prompt-background
+		title: Command palette background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: menu-background
+		title: Menu background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: modal-background
+		title: Modal background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: colors-advanced
+		title: Advanced
+		type: heading
+		level: 2
+		collapsed: true
+    - 
+        id: colors-advanced-info
+        title: Before you start
+		description: If you're not sure what these options do, it's recommended to leave them unchanged.
+        type: info-text
+	-
+		id: base-palette
+		title: Base colors
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: color-base-00
+		title: 0%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-05
+		title: 5%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-10
+		title: 10%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-20
+		title: 20%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-25
+		title: 25%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-30
+		title: 30%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-35
+		title: 35%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-40
+		title: 40%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-50
+		title: 50%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-60
+		title: 60%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-70
+		title: 70%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: color-base-100
+		title: 100%
+		type: variable-themed-color
+		format: rgb-values
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-palette
+		title: Icon colors
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: icon-color
+		title: Icon color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-hover
+		title: Icon color (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-active
+		title: Icon color (Active)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-focused
+		title: Icon color (Focused)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
 	-
 		id: code-palette
 		title: Code colors
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: code-normal
@@ -631,7 +721,7 @@ settings:
 		id: graph-palette
 		title: Graph colors
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
     - 
         id: graph-info
