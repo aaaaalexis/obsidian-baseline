@@ -11,6 +11,7 @@ body {
 
   --tab-text-align: left;
 
+  --tab-text-color-focused: var(--text-faint);
   --tab-text-color-focused-active: var(--text-normal);
   --tab-text-color-focused-active-current: unset;
 }
@@ -413,9 +414,6 @@ body.is-tablet .workspace .mod-root {
   }
   .workspace-tab-header.is-active:hover {
     background-color: inherit;
-  }
-  .workspace-tab-header:not(.is-active):not(:hover) {
-    opacity: 0.5;
   }
   .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
     background-color: inherit;
