@@ -35,7 +35,7 @@
   .metadata-input-longtext:not(:focus) {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: pre;
   }
   .metadata-link {
     width: 100%;
@@ -106,10 +106,10 @@
     --metadata-input-longtext-lines: unset;
 
     .metadata-input-longtext:not(:focus) {
-      white-space: normal;
+      white-space: pre-wrap;
     }
     .metadata-link-inner {
-      white-space: normal;
+      white-space: pre-wrap;
     }
   }
 
