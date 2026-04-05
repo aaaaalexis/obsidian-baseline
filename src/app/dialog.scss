@@ -1,9 +1,18 @@
+body:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
+  --menu-border-width: var(--border-width);
+}
+
 // Menu & suggestion
 @keyframes menuIn {
   from {
     opacity: 0;
     transform: translateY(-8px);
   }
+}
+
+body {
+  --menu-background: var(--modal-background);
+  --menu-border-width: 0px;
 }
 
 .menu,
@@ -122,8 +131,7 @@ body.is-tablet {
 
 // Modal
 body {
-  --modal-background: var(--background-secondary);
-  --modal-border-color: var(--background-modifier-border);
+  --modal-border-width: 0px;
 
   .modal-title {
     font-family: var(--h1-font);
@@ -163,9 +171,6 @@ body:not(.is-mobile) {
     }
   }
 
-  .modal-bg {
-    opacity: 0.2 !important;
-  }
   .modal {
     animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
   }
@@ -217,4 +222,10 @@ body.is-tablet {
   margin-bottom: 0;
   border: none !important;
   overflow: hidden;
+}
+
+// Popover
+.popover,
+.cm-tooltip {
+  border: none;
 }

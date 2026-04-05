@@ -1,13 +1,23 @@
-body:not(.is-phone) {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    .setting-group .setting-items {
-      padding-inline: 0;
-      padding-top: 0;
-      background-color: transparent;
+body:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
+  .modal.mod-sidebar-layout {
+    .vertical-tab-nav-item-title,
+    .vertical-tab-nav-item-chevron {
+      border-bottom: none;
     }
-    .setting-item-heading {
-      padding: 0;
+    .setting-item {
+      border-top: none;
     }
+    .setting-item-description {
+      color: var(--text-faint);
+    }
+    .setting-group .setting-group-search + .setting-items {
+      padding-top: calc(16px * var(--density-modifier));
+      border-top-left-radius: var(--setting-items-radius);
+      border-top-right-radius: var(--setting-items-radius);
+    }
+  }
+  &:not(.is-phone) .modal.mod-sidebar-layout {
+    --setting-items-background: var(--background-primary);
 
     .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
       padding-top: 12px;
@@ -15,24 +25,14 @@ body:not(.is-phone) {
     .setting-group .setting-item:not(.setting-item-heading):not(:last-child) {
       padding-bottom: 12px;
     }
-
-    .setting-item {
-      border-top: none;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 12px 0;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-
-    .setting-item-description {
-      color: var(--text-faint);
+    .installed-plugins-container .setting-items {
+      padding-top: 0;
     }
   }
-  &:is(.input-baseline, :not(.css-settings-manager)):not(.plugins-grid-off) .installed-plugins-container .setting-item:not(.setting-item-heading) {
-    border: var(--border-width) solid var(--background-modifier-border);
-  }
+}
 
+body:not(.is-phone) {
+  --settings-background: var(--background-secondary);
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
   --setting-group-heading-color: var(--text-faint);
@@ -67,12 +67,7 @@ body:not(.is-phone) {
     }
   }
 
-  .installed-plugins-container .setting-item .setting-item-description div:last-child {
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-
-  &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
+  .installed-plugins-container .setting-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: 1fr;
@@ -95,6 +90,8 @@ body:not(.is-phone) {
       width: 100%;
     }
     .setting-item-description > div:last-child {
+      color: var(--text-muted);
+      margin-top: 4px;
       display: -webkit-box;
       overflow: hidden;
       -webkit-line-clamp: 5;
@@ -117,6 +114,8 @@ body:not(.is-phone) {
   }
 
   .modal.mod-community-modal {
+    background-color: var(--settings-background, var(--modal-background));
+
     .modal-sidebar {
       padding: 0;
     }
@@ -152,6 +151,9 @@ body:not(.is-phone) {
       gap: 8px;
       padding: 8px;
     }
+    .community-item {
+      border: none;
+    }
     .community-item:not(.is-selected) {
       background-color: var(--setting-items-background);
     }
@@ -159,48 +161,6 @@ body:not(.is-phone) {
 }
 
 body.is-phone {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    --setting-items-background: transparent;
-    --setting-items-padding: 0 8px;
-
-    .vertical-tab-header {
-      padding-inline: 16px;
-    }
-    .vertical-tab-header-group {
-      padding-inline: 0;
-    }
-    .vertical-tab-header-group-items {
-      background-color: transparent;
-    }
-    .vertical-tab-nav-item {
-      border-radius: var(--radius-s);
-      padding-inline: 8px;
-    }
-    .vertical-tab-nav-item-title,
-    .vertical-tab-nav-item-chevron {
-      border-bottom: none;
-    }
-
-    .setting-item-heading {
-      padding-inline: 8px;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 16px 8px;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-    .setting-item-description {
-      color: var(--text-faint);
-    }
-
-    .setting-group-search {
-      padding-inline: 0;
-    }
-    .setting-group-search + .setting-items {
-      padding-top: 16px;
-    }
-  }
-
   .modal.mod-sidebar-layout {
     box-shadow: none;
 
@@ -229,6 +189,11 @@ body.is-phone {
 
     .vertical-tab-header-group-title {
       display: none;
+    }
+
+    .setting-group-search {
+      padding: 0 0 8px;
+      background-color: transparent;
     }
   }
 

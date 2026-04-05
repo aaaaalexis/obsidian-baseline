@@ -101,20 +101,11 @@ body.input-adwaita {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m4 8 8 8 8-8'/%3e%3c/svg%3e");
   }
 
-  // Dialog
-  .menu,
-  .suggestion-container,
-  .popover,
-  .prompt,
-  .modal,
-  .cm-tooltip {
-    border: none;
-  }
-
   // Modal
   --modal-background: var(--background-primary);
 
   // Settings
+  --settings-background: var(--modal-background);
   --setting-group-heading-color: var(--text-normal);
   --setting-group-heading-size: var(--font-ui-medium);
   --setting-group-heading-weight: calc(var(--font-weight) + var(--bold-modifier));
@@ -155,8 +146,7 @@ body.input-adwaita {
     }
 
     .setting-group .setting-items,
-    div:not(.setting-items, .hotkey-list-container, .style-settings-container) > .setting-item:not(.setting-item-heading),
-    &:not(.plugins-grid-off) .installed-plugins-container .setting-item:not(.setting-item-heading) {
+    div:not(.setting-items, .hotkey-list-container, .style-settings-container) > .setting-item:not(.setting-item-heading) {
       box-shadow: var(--setting-items-shadow);
     }
     .setting-item-heading {
@@ -177,10 +167,6 @@ body.input-adwaita {
     .setting-items .mobile-option-setting-item {
       padding-inline: 16px;
     }
-  }
-  &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
-    box-shadow: none !important;
-    background-color: transparent;
   }
 
   .modal.mod-community-modal {
@@ -285,23 +271,32 @@ body.input-adwaita:not(.is-mobile) {
       }
     }
   }
+
+  // Settings
+  .modal.mod-settings {
+    .installed-plugins-container .setting-items {
+      box-shadow: none !important;
+      background-color: transparent;
+    }
+    .installed-plugins-container .setting-item:not(.setting-item-heading) {
+      box-shadow: var(--setting-items-shadow);
+    }
+  }
 }
 
-body.input-adwaita:not(.is-phone) {
+body.input-adwaita:not(.is-phone) .prompt {
   // Prompt
-  .prompt {
-    .prompt-input {
-      box-shadow: none;
-      border: none;
-      font-size: var(--font-ui-large);
-      font-weight: calc(var(--font-weight) + var(--bold-modifier));
-    }
-    .prompt-results {
-      padding: 8px;
-      margin-inline: 8px;
-      border-radius: var(--radius-l);
-      background: var(--background-secondary-alt);
-    }
+  .prompt-input {
+    box-shadow: none;
+    border: none;
+    font-size: var(--font-ui-large);
+    font-weight: calc(var(--font-weight) + var(--bold-modifier));
+  }
+  .prompt-results {
+    padding: 8px;
+    margin-inline: 8px;
+    border-radius: var(--radius-l);
+    background: var(--background-secondary-alt);
   }
 }
 
@@ -346,8 +341,6 @@ body.input-adwaita.is-phone {
   --prompt-background: var(--modal-background);
 
   // Settings
-  --settings-background: var(--modal-background);
-
   .modal.mod-settings {
     .vertical-tab-header {
       background-color: var(--settings-background);

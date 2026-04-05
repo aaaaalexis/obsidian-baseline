@@ -10,19 +10,16 @@ body.input-cupertino {
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-l);
-    border: none;
     background-color: var(--modal-background);
   }
   .suggestion-container,
   .popover {
     backdrop-filter: var(--blur-m);
-    border: none;
     background-color: var(--modal-background);
   }
   .cm-tooltip,
   .notice {
     backdrop-filter: var(--raised-blur);
-    border: none;
     background-color: var(--modal-background);
   }
 }

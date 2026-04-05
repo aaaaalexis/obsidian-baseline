@@ -1,9 +1,9 @@
 body {
   --prompt-input-height: 64px;
-  --prompt-border-color: var(--background-modifier-border);
+  --prompt-background: var(--modal-background);
+  --prompt-border-width: 0px;
 
   .prompt {
-    background-color: var(--background-secondary);
     animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
 
     .prompt-input,

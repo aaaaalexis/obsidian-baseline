@@ -47,16 +47,6 @@ body.input-tactile {
     box-shadow: var(--input-shadow);
     border: none;
   }
-
-  // Dialog
-  .menu,
-  .suggestion-container,
-  .popover,
-  .prompt,
-  .modal,
-  .cm-tooltip {
-    border: none;
-  }
 }
 
 body.input-tactile:not(.is-mobile) {
@@ -81,8 +71,6 @@ body.input-tactile:not(.is-mobile) {
   }
 
   // Settings
-  --setting-items-background: var(--background-primary);
-
   .modal.mod-sidebar-layout {
     .vertical-tab-content {
       transition: var(--anim-duration-slow) var(--anim-motion-baseline);

@@ -38,6 +38,10 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
     --input-shadow: inset 0 0 0 var(--input-border-width) var(--interactive-accent);
     --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--interactive-accent-hover);
   }
+  button.mod-warning {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--color-red);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--color-red);
+  }
 }
 
 // Button

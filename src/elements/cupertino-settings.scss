@@ -36,13 +36,9 @@ body.input-cupertino {
 }
 
 body.input-cupertino:not(.is-mobile) {
+  --settings-background: var(--background-primary);
   --setting-items-padding: calc(12px * var(--density-modifier)) var(--side-padding);
   --setting-group-heading-color: var(--text-normal);
-
-  .modal.mod-sidebar-layout {
-    background-color: var(--background-primary);
-    border: none;
-  }
 
   .modal.mod-settings {
     .vertical-tab-nav-item.is-active {
@@ -60,6 +56,9 @@ body.input-cupertino:not(.is-mobile) {
 
     .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
+    }
+    .setting-group:not(.installed-plugins-container) .setting-group-search + .setting-items {
+      padding-top: calc(12px * var(--density-modifier));
     }
 
     .setting-items .setting-item {

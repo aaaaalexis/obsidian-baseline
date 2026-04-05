@@ -42,15 +42,15 @@ settings:
 		title: Do not show again
 		type: class-toggle
 	-
-		id: color-scheme
-		title: Color schemes
+		id: colors
+		title: Colors
 		type: heading
 		level: 1
 		collapsed: true
 	-
-		id: color-scheme-accent
-		title: Color scheme accent
-		description: Use color scheme preset accent color.
+		id: accented-interface
+		title: Interface accent
+		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
 		id: color-scheme-light
@@ -125,6 +125,22 @@ settings:
 			-
 				label: Tiniri
 				value: tiniri-light
+	-
+		id: background-contrast-light
+		title: Light contrast
+		type: class-select
+		allowEmpty: false
+		default: contrast-light
+		options:
+			-
+				label: Normal
+				value: contrast-light
+			-
+				label: Low contrast
+				value: contrast-light-tonal
+			-
+				label: High contrast
+				value: contrast-light-vivid
 	-
 		id: color-scheme-dark
 		title: Dark color scheme
@@ -208,33 +224,6 @@ settings:
 				label: Tiniri
 				value: tiniri-dark
 	-
-		id: colors
-		title: Colors
-		type: heading
-		level: 1
-		collapsed: true
-	-
-		id: accented-interface
-		title: Interface accent
-		description: Apply accent color throughout the app.
-		type: class-toggle
-	-
-		id: background-contrast-light
-		title: Light contrast
-		type: class-select
-		allowEmpty: false
-		default: contrast-light
-		options:
-			-
-				label: Normal
-				value: contrast-light
-			-
-				label: Low contrast
-				value: contrast-light-tonal
-			-
-				label: High contrast
-				value: contrast-light-vivid
-	-
 		id: background-contrast-dark
 		title: Dark contrast
 		type: class-select
@@ -253,6 +242,17 @@ settings:
 			-
 				label: Black (Mobile)
 				value: contrast-dark-black-mobile
+	-
+		id: color-scheme-accent
+		title: Color scheme accent
+		description: Use color scheme preset accent color.
+		type: class-toggle
+	-
+		id: interface-colors
+		title: Interface colors
+		type: heading
+		level: 2
+		collapsed: true
 	-
 		id: background-primary
 		title: Primary color
@@ -303,8 +303,8 @@ settings:
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-palette
-		title: Color palette
+		id: chromatic-colors
+		title: Chromatic colors
 		type: heading
 		level: 2
 		collapsed: true
@@ -364,9 +364,72 @@ settings:
 		format: rgb-values
 		default-light: '#'
 		default-dark: '#'
+    - 
+        id: input-palette
+        title: Element colors
+        type: heading
+        level: 2
+		collapsed: true
+	-
+		id: background-modifier-border
+		title: Border color
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-border-hover
+		title: Border color (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-border-focus
+		title: Border color (Active)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: interactive-normal
+		title: Interaction background
+		description: Used in buttons, dropdowns, and text inputs.
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: interactive-hover
+		title: Interaction background (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: prompt-background
+		title: Command palette background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: menu-background
+		title: Menu background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: modal-background
+		title: Modal background
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
 	-
 		id: text-palette
-		title: Text
+		title: Text colors
 		type: heading
 		level: 2
 		collapsed: true
@@ -433,69 +496,6 @@ settings:
 		title: Selected text background
 		type: variable-themed-color
 		opacity: true
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-    - 
-        id: input-palette
-        title: Element
-        type: heading
-        level: 2
-		collapsed: true
-	-
-		id: background-modifier-border
-		title: Border color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-border-hover
-		title: Border color (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-border-focus
-		title: Border color (Active)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: interactive-normal
-		title: Interaction background
-		description: Used in buttons, dropdowns, and text inputs.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: interactive-hover
-		title: Interaction background (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: prompt-background
-		title: Command palette background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: menu-background
-		title: Menu background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: modal-background
-		title: Modal background
-		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -1413,11 +1413,6 @@ settings:
 		type: heading
 		level: 2
 		collapsed: true
-	-
-		id: plugins-grid-off
-		title: Plugins list view
-		description: Disable plugins grid layout.
-		type: class-toggle
 	-
 		id: titlebar
 		title: Frame title
@@ -3029,6 +3024,19 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: img-grid-gap
+		title: Image grids spacing
+		type: variable-number-slider
+		default: 4
+		min: 0
+		max: 16
+		step: 1
+		format: px
+	-
+		id: img-grid
+		title: Always show image grids
+		type: class-toggle
+	-
 		id: media-muted
 		title: Dim media in dark mode
 		type: class-toggle
@@ -3044,15 +3052,6 @@ settings:
 		id: img-radius-off
 		title: Disable rounded media
 		type: class-toggle
-	-
-		id: img-grid-gap
-		title: Image grids spacing
-		type: variable-number-slider
-		default: 4
-		min: 0
-		max: 16
-		step: 1
-		format: px
 	-
 		id: pdf
 		title: PDF
