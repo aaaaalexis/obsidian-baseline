@@ -23,30 +23,34 @@
 }
 
 .theme-light.notion-light {
-  --background-primary-alt: #f9f8f7;
-  --background-secondary: #f9f8f7;
-
-  --background-modifier-hover: rgba(0, 0, 0, 0.03);
-  --background-modifier-border: #e9e8e5;
-  --background-modifier-border-hover: #e6e6e4;
-
-  --text-normal: #2c2c2b;
-  --text-muted: #5f5e5b;
-  --text-faint: #a8a49c;
+  --color-base-00: #ffffff;
+  --color-base-05: #fdfdfc;
+  --color-base-10: #fcfbfa;
+  --color-base-20: #f9f8f7;
+  --color-base-25: #e5e2df;
+  --color-base-30: #e2dfdb;
+  --color-base-35: #d5d2cd;
+  --color-base-40: #bcb8b1;
+  --color-base-50: #a8a49c;
+  --color-base-60: #72706b;
+  --color-base-70: #5f5e5b;
+  --color-base-100: #2c2c2b;
 
   --text-selection: rgba(131, 201, 229, 0.3);
 }
-.theme-light.notion-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.notion-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.notion-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.notion-dark {
-  --background-primary: #191919;
-  --background-primary-alt: #202020;
-  --background-secondary: #202020;
-
-  --background-modifier-hover: rgba(255, 255, 255, 0.055);
-  --background-modifier-border: #313131;
-  --background-modifier-border-hover: #30302e;
+  --color-base-00: #191919;
+  --color-base-05: #1c1c1c;
+  --color-base-10: #1e1e1e;
+  --color-base-20: #202020;
+  --color-base-25: #252424;
+  --color-base-30: #323232;
+  --color-base-35: #3c3c3c;
+  --color-base-40: #565555;
+  --color-base-50: #696968;
+  --color-base-60: #a4a4a2;
+  --color-base-70: #c3c2c0;
+  --color-base-100: #f0efed;
 
   --text-normal: #f0efed;
   --text-muted: #9b9b9b;

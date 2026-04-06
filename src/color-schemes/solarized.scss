@@ -25,43 +25,42 @@ https://ethanschoonover.com/solarized/
 }
 
 .theme-light.solarized-light {
-  --background-primary: #fdf6e3;
-  --background-primary-alt: #eee8d5;
-  --background-secondary: #eee8d5;
+  --color-base-00: #fdf6e3;
+  --color-base-05: #f8f1de;
+  --color-base-10: #f5eedb;
+  --color-base-20: #eee8d5;
+  --color-base-25: #dbd9c2;
+  --color-base-30: #d8d7c0;
+  --color-base-35: #cccdb5;
+  --color-base-40: #b3bca3;
+  --color-base-50: #9fad96;
+  --color-base-60: #5c7e70;
+  --color-base-70: #466c65;
+  --color-base-100: #073642;
+
   --interactive-normal: rgba(0, 0, 0, 0.062);
   --interactive-hover: rgba(0, 0, 0, 0.15);
-
-  --background-modifier-border: #e9e1c8;
-  --background-modifier-border-hover: #d0cab8;
-  --background-modifier-border-focus: #d0cab8;
-
-  --text-normal: #073642;
-  --text-muted: #586e75;
-  --text-faint: #abb2ac;
-  --tx4: #586e75;
 
   --text-selection: rgba(202, 197, 182, 0.3);
   --text-highlight-bg: rgba(203, 75, 22, 0.3);
 }
 
-.theme-light.solarized-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.solarized-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.solarized-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.solarized-dark {
-  --background-primary: #002b36;
-  --background-primary-alt: #073642;
-  --background-secondary: #073642;
+  --color-base-00: #002b36;
+  --color-base-05: #022f3b;
+  --color-base-10: #05333f;
+  --color-base-20: #073642;
+  --color-base-25: #0c3a46;
+  --color-base-30: #1a4551;
+  --color-base-35: #244e59;
+  --color-base-40: #39626c;
+  --color-base-50: #4a717a;
+  --color-base-60: #7c98a1;
+  --color-base-70: #97abb2;
+  --color-base-100: #bccaca;
+
   --interactive-normal: rgba(255, 255, 255, 0.062);
   --interactive-hover: rgba(255, 255, 255, 0.15);
-
-  --background-modifier-border: #19414b;
-  --background-modifier-border-hover: #274850;
-  --background-modifier-border-focus: #31535b;
-
-  --text-normal: #bccaca;
-  --text-muted: #97abb2;
-  --text-faint: #4a717a;
-  --tx4: #657b83;
 
   --text-selection: rgba(15, 81, 98, 0.3);
   --text-highlight-bg: rgba(203, 75, 22, 0.35);

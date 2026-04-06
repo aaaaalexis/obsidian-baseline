@@ -1,17 +1,11 @@
 /* Things */
 
-.theme-light.things-light.color-scheme-accent {
-  --accent-h: 215;
-  --accent-s: 76%;
-  --accent-l: 43%;
-}
 .theme-dark.things-dark.color-scheme-accent {
   --accent-h: 215;
   --accent-s: 91%;
   --accent-l: 64%;
 }
-.theme-dark.things-dark,
-.theme-light.things-light {
+.theme-dark.things-dark {
   --color-red-rgb: 255, 48, 108;
   --color-orange-rgb: 255, 149, 2;
   --color-yellow-rgb: 255, 213, 0;
@@ -20,46 +14,25 @@
   --color-purple-rgb: 176, 81, 222;
   --color-pink-rgb: 255, 46, 85;
 }
-.theme-light.things-light {
-  --color-blue-rgb: 27, 97, 194;
-}
+
 .theme-dark.things-dark {
   --color-blue-rgb: 77, 149, 247;
-}
 
-.theme-light.things-light {
-  --background-primary: white;
-  --background-primary-alt: #f5f6f8;
-  --background-secondary: #f5f6f8;
-  --interactive-normal: rgba(162, 177, 187, 0.25);
-  --interactive-hover: rgba(162, 177, 187, 0.5);
+  --color-base-00: #202225;
+  --color-base-05: #212427;
+  --color-base-10: #232529;
+  --color-base-20: #24262a;
+  --color-base-25: #282a2e;
+  --color-base-30: #34363a;
+  --color-base-35: #3d3f43;
+  --color-base-40: #535559;
+  --color-base-50: #64666a;
+  --color-base-60: #97999c;
+  --color-base-70: #b1b3b5;
+  --color-base-100: #d9dadb;
 
-  --background-modifier-border: #eef0f4;
-  --background-modifier-border-hover: #d8dadd;
-  --background-modifier-border-focus: #c1c3c6;
-
-  --text-normal: #26272b;
-  --text-muted: #7d7f84;
-  --text-faint: #a9abb0;
-
-  --text-selection: #cae2ff;
-}
-
-.theme-light.things-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.things-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.things-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
-.theme-dark.things-dark {
-  --background-primary: #24262a;
-  --background-primary-alt: #202225;
-  --background-secondary: #202225;
   --interactive-normal: #3d3f41;
   --interactive-hover: #202225;
-
-  --divider-color: #17191c;
-
-  --background-modifier-border: #3a3b3f;
-  --background-modifier-border-hover: #45464a;
-  --background-modifier-border-focus: #6c6e70;
 
   --text-normal: #fbfbfb;
   --text-muted: #cbcccd;

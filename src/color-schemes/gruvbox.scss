@@ -23,15 +23,21 @@ https://github.com/morhetz/gruvbox
 }
 
 .theme-light.gruvbox-light {
-  --background-primary: #fcf2c7;
-  --background-primary-alt: #f2e6bd;
-  --background-secondary: #f2e6bd;
+  --color-base-00: #fcf2c7;
+  --color-base-05: #f9eec4;
+  --color-base-10: #f7ebc1;
+  --color-base-20: #f2e6bd;
+  --color-base-25: #e1d5ae;
+  --color-base-30: #ded2ac;
+  --color-base-35: #d3c8a2;
+  --color-base-40: #bdb392;
+  --color-base-50: #aca385;
+  --color-base-60: #746f5c;
+  --color-base-70: #615d4f;
+  --color-base-100: #282828;
+
   --interactive-normal: #ebd9b3;
   --interactive-hover: #f2e6bd;
-
-  --background-modifier-border: #ebdbb2;
-  --background-modifier-border-hover: #d5c4a1;
-  --background-modifier-border-focus: #bdae93;
 
   --text-normal: #282828;
   --text-muted: #7c7065;
@@ -40,19 +46,22 @@ https://github.com/morhetz/gruvbox
   --text-selection: rgba(192, 165, 125, 0.3);
   --text-highlight-bg: rgba(215, 153, 33, 0.4);
 }
-.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.gruvbox-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.gruvbox-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.gruvbox-dark {
-  --background-primary: #282828;
-  --background-primary-alt: #1e2021;
-  --background-secondary: #1e2021;
+  --color-base-00: #1e2021;
+  --color-base-05: #202425;
+  --color-base-10: #232729;
+  --color-base-20: #242a2b;
+  --color-base-25: #282f2f;
+  --color-base-30: #343d3a;
+  --color-base-35: #404841;
+  --color-base-40: #615f52;
+  --color-base-50: #7c6f64;
+  --color-base-60: #a99882;
+  --color-base-70: #bdae93;
+  --color-base-100: #fbf1c7;
+
   --interactive-normal: #3d3836;
   --interactive-hover: rgba(62, 57, 55, 0.5);
-
-  --background-modifier-border: #3c3836;
-  --background-modifier-border-hover: #504945;
-  --background-modifier-border-focus: #665c54;
 
   --text-normal: #fbf1c7;
   --text-muted: #bdae93;

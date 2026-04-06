@@ -10,11 +10,10 @@ https://github.com/catppuccin/catppuccin
   --accent-s: 58%;
   --accent-l: 90%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
 .theme-dark.macchiato-dark {
-  --color-pink-rgb: 245, 189, 230;
   --color-red-rgb: 237, 135, 150;
   --color-orange-rgb: 245, 169, 127;
   --color-yellow-rgb: 238, 212, 159;
@@ -22,24 +21,28 @@ https://github.com/catppuccin/catppuccin
   --color-cyan-rgb: 145, 215, 227;
   --color-blue-rgb: 138, 173, 244;
   --color-purple-rgb: 183, 189, 248;
+  --color-pink-rgb: 245, 189, 230;
 
-  --color-base-100: #c5cff5;
-  --color-base-70: #a1aacb;
-  --color-base-60: #8f97b7;
-  --color-base-50: #7d84a2;
-  --color-base-40: #6c728d;
-  --color-base-35: #5a5f78;
-  --color-base-30: #484c64;
-  --color-base-25: #363a4f;
-  --color-base-20: #24273a;
-  --color-base-10: #1e2030;
   --color-base-00: #181926;
-  --text-normal: var(--color-base-100);
-  --text-muted: var(--color-base-60);
-  --text-faint: var(--color-base-40);
+  --color-base-10: #1e2030;
+  --color-base-20: #24273a;
+  --color-base-25: #363a4f;
+  --color-base-30: #484c64;
+  --color-base-35: #5a5f78;
+  --color-base-40: #6c728d;
+  --color-base-50: #7d84a2;
+  --color-base-60: #8f97b7;
+  --color-base-70: #a1aacb;
+  --color-base-100: #c5cff5;
+
   --background-secondary: var(--color-base-10);
   --background-secondary-alt: var(--color-base-20);
+
   --background-modifier-border: var(--color-base-25);
   --background-modifier-border-hover: var(--color-base-30);
   --background-modifier-border-focus: var(--color-base-35);
+
+  --text-normal: var(--color-base-100);
+  --text-muted: var(--color-base-60);
+  --text-faint: var(--color-base-40);
 }

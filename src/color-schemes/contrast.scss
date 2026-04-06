@@ -4,6 +4,15 @@ body.contrast-dark-tonal.theme-dark {
   --background-primary: var(--background-secondary);
 }
 
+body.contrast-light-inverse.theme-light {
+  --background-primary: var(--color-base-20);
+  --background-secondary: var(--color-base-00);
+}
+body.contrast-dark-inverse.theme-dark {
+  --background-primary: var(--color-base-20);
+  --background-secondary: var(--color-base-00);
+}
+
 body:not(.is-mobile).contrast-dark-black.theme-dark {
   --background-primary: black;
   --background-primary-alt: var(--color-base-00);

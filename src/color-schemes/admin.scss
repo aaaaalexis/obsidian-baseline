@@ -4,34 +4,25 @@ Bradley Wyatt (bwya77)
 https://github.com/bwya77/obsidian-baseline-customization/
 */
 
-.theme-light.admin-light.color-scheme-accent,
 .theme-dark.admin-dark.color-scheme-accent {
   --accent-h: 206;
   --accent-s: 82%;
   --accent-l: 63%;
 }
 
-.theme-light.admin-light {
-  --background-secondary: #f3f5f7;
-
-  --text-normal: #2e2e2e;
-}
-
-.theme-light.admin-light.contrast-light-vivid:not(.layout-minimal) .app-container,
-.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) {
-  --background-secondary: #171b21;
-}
-.theme-light.admin-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.admin-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.admin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.admin-dark {
-  --background-primary: #23282e;
-  --background-primary-alt: #1c2128;
-  --background-secondary: #171b21;
-  --background-modifier-hover: #cde1ff0d;
-
-  --interactive-normal: #2d343e;
-  --interactive-hover: #23282e;
+  --color-base-00: #171b21;
+  --color-base-05: #1b2026;
+  --color-base-10: #20252b;
+  --color-base-20: #23282e;
+  --color-base-25: #272c32;
+  --color-base-30: #33383e;
+  --color-base-35: #3c4147;
+  --color-base-40: #52575d;
+  --color-base-50: #63676d;
+  --color-base-60: #979a9e;
+  --color-base-70: #b1b3b7;
+  --color-base-100: #d9dadc;
 
   --text-normal: #ffffff;
   --text-muted: #b3b3b3;

@@ -11,7 +11,6 @@ https://github.com/catppuccin/catppuccin
   --accent-l: 69%;
 }
 .theme-light.latte-light {
-  --color-pink-rgb: 236, 131, 208;
   --color-red-rgb: 210, 15, 57;
   --color-orange-rgb: 254, 100, 11;
   --color-yellow-rgb: 228, 147, 32;
@@ -19,19 +18,18 @@ https://github.com/catppuccin/catppuccin
   --color-cyan-rgb: 4, 165, 229;
   --color-blue-rgb: 42, 110, 245;
   --color-purple-rgb: 114, 135, 253;
+  --color-pink-rgb: 236, 131, 208;
 
+  --color-base-00: #eff1f5;
+  --color-base-05: #e8ebf1;
+  --color-base-10: #e4e8ee;
+  --color-base-20: #dce0e8;
+  --color-base-25: #ced4df;
+  --color-base-30: #ccd2de;
+  --color-base-35: #c4cad7;
+  --color-base-40: #b5bbcb;
+  --color-base-50: #a9afc0;
+  --color-base-60: #81879d;
+  --color-base-70: #747990;
   --color-base-100: #4c4f69;
-  --color-base-70: #6c6f85;
-  --color-base-60: #7c7f93;
-  --color-base-50: #8c8fa1;
-  --color-base-40: #9ca0b0;
-  --color-base-35: #acb0be;
-  --color-base-30: #bcc0cc;
-  --color-base-25: #ccd0da;
-  --color-base-20: #eff1f5;
-  --color-base-10: #e6e9ef;
-  --color-base-00: #dce0e8;
-  --text-normal: var(--color-base-100);
-  --background-secondary: var(--color-base-10);
-  --background-secondary-alt: var(--color-base-20);
 }

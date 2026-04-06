@@ -11,26 +11,31 @@ https://github.com/savq/melange-nvim
   --accent-l: 37%;
 }
 .theme-light.melange-light {
-  --interactive-normal: #f0ecea;
-  --interactive-hover: #e9e1db;
-  --background-primary: #f0ecea;
-  --background-primary-alt: #e9e1db;
-  --background-secondary: #e9e1db;
-  --background-modifier-border: #d6c0b3;
-  --background-modifier-border-hover: #cdb8ad;
-  --background-modifier-border-focus: #b09b8f;
-  --text-faint: #a98a78;
-  --text-muted: #7d6658;
-  --text-normal: #54433a;
-
-  --color-blue-rgb: 120, 146, 189;
-  --color-cyan-rgb: 115, 151, 151;
-  --color-green-rgb: 110, 155, 114;
-  --color-purple-rgb: 173, 107, 192;
-  --color-pink-rgb: 214, 92, 188;
   --color-red-rgb: 199, 123, 139;
   --color-orange-rgb: 188, 92, 0;
   --color-yellow-rgb: 189, 162, 64;
+  --color-green-rgb: 110, 155, 114;
+  --color-cyan-rgb: 115, 151, 151;
+  --color-blue-rgb: 120, 146, 189;
+  --color-purple-rgb: 173, 107, 192;
+  --color-pink-rgb: 214, 92, 188;
+
+  --color-base-00: #f0ecea;
+  --color-base-05: #eee8e5;
+  --color-base-10: #ede6e1;
+  --color-base-20: #e9e1db;
+  --color-base-25: #d8d0ca;
+  --color-base-30: #d5cdc7;
+  --color-base-35: #cac2bd;
+  --color-base-40: #b4aea9;
+  --color-base-50: #a49e99;
+  --color-base-60: #6c6965;
+  --color-base-70: #5a5754;
+  --color-base-100: #232221;
+
+  --text-faint: #a98a78;
+  --text-muted: #7d6658;
+  --text-normal: #54433a;
 }
 
 .theme-dark.melange-dark.color-scheme-accent {
@@ -38,31 +43,33 @@ https://github.com/savq/melange-nvim
   --accent-s: 71%;
   --accent-l: 63%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
-.theme-light.melange-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.melange-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.melange-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.melange-dark {
-  --interactive-normal: #292522;
-  --interactive-hover: #34302c;
-  --background-primary: #292522;
-  --background-primary-alt: #34302c;
-  --background-secondary: #34302c;
-  --background-modifier-border: #403a36;
-  --background-modifier-border-hover: #635851;
-  --background-modifier-border-focus: #7e7469;
+  --color-base-00: #292522;
+  --color-base-05: #2d2926;
+  --color-base-10: #312d29;
+  --color-base-20: #34302c;
+  --color-base-25: #383430;
+  --color-base-30: #433f3b;
+  --color-base-35: #4c4844;
+  --color-base-40: #615d59;
+  --color-base-50: #716d69;
+  --color-base-60: #a09d9a;
+  --color-base-70: #b8b5b3;
+  --color-base-100: #dbdad9;
+
   --text-faint: #867462;
   --text-muted: #c1a78e;
   --text-normal: #ece1d7;
 
-  --color-blue-rgb: 127, 145, 178;
-  --color-cyan-rgb: 123, 150, 149;
-  --color-green-rgb: 120, 153, 122;
-  --color-purple-rgb: 179, 128, 176;
-  --color-pink-rgb: 192, 112, 174;
   --color-red-rgb: 189, 129, 131;
   --color-orange-rgb: 228, 155, 93;
   --color-yellow-rgb: 210, 190, 115;
+  --color-green-rgb: 120, 153, 122;
+  --color-cyan-rgb: 123, 150, 149;
+  --color-blue-rgb: 127, 145, 178;
+  --color-purple-rgb: 179, 128, 176;
+  --color-pink-rgb: 192, 112, 174;
 }

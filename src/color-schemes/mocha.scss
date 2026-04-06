@@ -10,8 +10,8 @@ https://github.com/catppuccin/catppuccin
   --accent-s: 56%;
   --accent-l: 91%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
 .theme-dark.mocha-dark {
   --color-pink-rgb: 245, 194, 231;
@@ -23,23 +23,26 @@ https://github.com/catppuccin/catppuccin
   --color-blue-rgb: 135, 176, 249;
   --color-purple-rgb: 180, 190, 254;
 
-  --color-base-100: #c6d0f5;
-  --color-base-70: #a1a8c9;
-  --color-base-60: #8e95b3;
-  --color-base-50: #7b819d;
-  --color-base-40: #696d86;
-  --color-base-35: #565970;
-  --color-base-30: #43465a;
-  --color-base-25: #313244;
-  --color-base-20: #1e1e2e;
-  --color-base-10: #181825;
   --color-base-00: #11111b;
-  --text-normal: var(--color-base-100);
-  --text-muted: var(--color-base-60);
-  --text-faint: var(--color-base-40);
+  --color-base-10: #181825;
+  --color-base-20: #1e1e2e;
+  --color-base-25: #313244;
+  --color-base-30: #43465a;
+  --color-base-35: #565970;
+  --color-base-40: #696d86;
+  --color-base-50: #7b819d;
+  --color-base-60: #8e95b3;
+  --color-base-70: #a1a8c9;
+  --color-base-100: #c6d0f5;
+
   --background-secondary: var(--color-base-10);
   --background-secondary-alt: var(--color-base-20);
+
   --background-modifier-border: var(--color-base-25);
   --background-modifier-border-hover: var(--color-base-30);
   --background-modifier-border-focus: var(--color-base-35);
+
+  --text-normal: var(--color-base-100);
+  --text-muted: var(--color-base-60);
+  --text-faint: var(--color-base-40);
 }

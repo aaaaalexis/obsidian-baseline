@@ -10,8 +10,8 @@ https://github.com/dracula/dracula-theme
   --accent-s: 89%;
   --accent-l: 78%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
 .theme-dark.dracula-dark {
   --color-red-rgb: 255, 85, 85;
@@ -23,15 +23,18 @@ https://github.com/dracula/dracula-theme
   --color-purple-rgb: 189, 147, 249;
   --color-pink-rgb: 255, 121, 198;
 
-  --background-primary: #282a37;
-  --background-primary-alt: #21222c;
-  --background-secondary: #21222c;
-
-  --background-modifier-border-hover: #44475a;
-  --background-modifier-border-focus: #6272a4;
-
-  --interactive-normal: #282a37;
-  --interactive-hover: #21222c;
+  --color-base-00: #21222c;
+  --color-base-05: #242530;
+  --color-base-10: #262834;
+  --color-base-20: #282a37;
+  --color-base-25: #2c2e3b;
+  --color-base-30: #383a47;
+  --color-base-35: #404350;
+  --color-base-40: #565865;
+  --color-base-50: #676975;
+  --color-base-60: #999ba4;
+  --color-base-70: #b2b4bb;
+  --color-base-100: #d9dade;
 
   --text-normal: #f8f8f2;
   --text-muted: #949fbe;

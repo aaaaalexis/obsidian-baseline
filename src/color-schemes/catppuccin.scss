@@ -20,19 +20,25 @@ https://github.com/catppuccin/catppuccin
   --color-purple-rgb: 137, 56, 239;
   --color-pink-rgb: 234, 119, 203;
 
-  --background-primary: #f0f1f5;
-  --background-primary-alt: #dce0e8;
-  --background-secondary: #dce0e8;
-  --interactive-normal: hsla(228, 11%, 65%, 0.25);
-  --interactive-hover: hsla(228, 11%, 65%, 0.5);
-
-  --background-modifier-border: #ccd0da;
-  --background-modifier-border-hover: #bcc0cc;
-  --background-modifier-border-focus: #acb0be;
+  --color-base-00: #f0f1f5;
+  --color-base-05: #e9ebf1;
+  --color-base-10: #e5e7ee;
+  --color-base-20: #dce0e8;
+  --color-base-25: #cfd4dd;
+  --color-base-30: #cdd2dc;
+  --color-base-35: #c5cad5;
+  --color-base-40: #b6bbc8;
+  --color-base-50: #aaafbe;
+  --color-base-60: #82879b;
+  --color-base-70: #75798f;
+  --color-base-100: #4d4f69;
 
   --text-normal: #4d4f69;
   --text-muted: #5d5f77;
   --text-faint: #8d8fa2;
+
+  --interactive-normal: hsla(228, 11%, 65%, 0.25);
+  --interactive-hover: hsla(228, 11%, 65%, 0.5);
 
   --text-selection: rgba(172, 176, 190, 0.3);
   --text-highlight-bg: rgba(223, 142, 29, 0.3);
@@ -43,12 +49,9 @@ https://github.com/catppuccin/catppuccin
   --accent-s: 57%;
   --accent-l: 88%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
-.theme-light.catppuccin-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.catppuccin-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.catppuccin-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.catppuccin-dark {
   --color-red-rgb: 235, 153, 156;
   --color-orange-rgb: 239, 160, 118;
@@ -59,19 +62,25 @@ https://github.com/catppuccin/catppuccin
   --color-purple-rgb: 202, 158, 230;
   --color-pink-rgb: 244, 185, 229;
 
-  --background-primary: #303446;
-  --background-primary-alt: #242634;
-  --background-secondary: #242634;
-  --interactive-normal: hsla(229, 13%, 52%, 0.25);
-  --interactive-hover: hsla(229, 13%, 52%, 0.5);
-
-  --background-modifier-border: #41455a;
-  --background-modifier-border-hover: #51576d;
-  --background-modifier-border-focus: #626880;
+  --color-base-00: #242634;
+  --color-base-05: #292b3b;
+  --color-base-10: #2d3041;
+  --color-base-20: #303446;
+  --color-base-25: #33384a;
+  --color-base-30: #3e4256;
+  --color-base-35: #454a5f;
+  --color-base-40: #585e75;
+  --color-base-50: #666c86;
+  --color-base-60: #9198b7;
+  --color-base-70: #a6afd0;
+  --color-base-100: #c6d0f5;
 
   --text-normal: #c6d0f5;
   --text-muted: #a6adce;
   --text-faint: #848ba7;
+
+  --interactive-normal: hsla(229, 13%, 52%, 0.25);
+  --interactive-hover: hsla(229, 13%, 52%, 0.5);
 
   --text-selection: rgba(98, 104, 128, 0.5);
   --text-highlight-bg: rgba(223, 142, 29, 0.4);

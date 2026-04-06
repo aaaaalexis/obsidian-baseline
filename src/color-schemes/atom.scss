@@ -15,14 +15,21 @@
   --color-purple-rgb: 166, 38, 164;
   --color-pink-rgb: 228, 87, 73;
 
-  --background-primary: #fafafa;
-  --background-primary-alt: #eaeaeb;
-  --background-secondary: #eaeaeb;
+  --color-base-00: #fafafa;
+  --color-base-05: #f5f5f5;
+  --color-base-10: #f1f1f2;
+  --color-base-20: #eaeaeb;
+  --color-base-25: #d8d8d9;
+  --color-base-30: #d5d5d6;
+  --color-base-35: #cacacb;
+  --color-base-40: #b5b5b6;
+  --color-base-50: #a4a4a5;
+  --color-base-60: #6c6c6e;
+  --color-base-70: #5a5a5b;
+  --color-base-100: #232324;
+
   --interactive-normal: rgba(0, 0, 0, 0.1);
   --interactive-hover: rgba(0, 0, 0, 0.15);
-
-  --background-modifier-border: #dbdbdc;
-  --background-modifier-border-hover: #d8d8d9;
 
   --text-normal: #232324;
   --text-muted: #8e8e90;
@@ -37,9 +44,6 @@
   --accent-s: 86%;
   --accent-l: 65%;
 }
-.theme-light.atom-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.atom-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.atom-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.atom-dark {
   --color-red-rgb: 225, 109, 118;
   --color-orange-rgb: 209, 154, 102;
@@ -50,13 +54,21 @@
   --color-purple-rgb: 198, 120, 222;
   --color-pink-rgb: 225, 109, 118;
 
-  --background-primary: #282c34;
-  --background-primary-alt: #21252c;
-  --background-secondary: #21252c;
+  --color-base-00: #21252c;
+  --color-base-05: #24282f;
+  --color-base-10: #262a32;
+  --color-base-20: #282c34;
+  --color-base-25: #2c3038;
+  --color-base-30: #383c44;
+  --color-base-35: #41444d;
+  --color-base-40: #565a62;
+  --color-base-50: #676a72;
+  --color-base-60: #999ba3;
+  --color-base-70: #b2b5bc;
+  --color-base-100: #d8dae1;
+
   --interactive-normal: #3a3f4b;
   --interactive-hover: #282c34;
-
-  --divider-color: #181a1f;
 
   --text-normal: #d8dae1;
   --text-muted: #898f9d;

@@ -63,17 +63,11 @@ settings:
 				label: Obsidian
 				value: default-light
 			-
-				label: Admin
-				value: admin-light
-			-
 				label: Adwaita
 				value: adwaita-light
 			-
 				label: Atom
 				value: atom-light
-			-
-				label: Ayu
-				value: ayu-light
 			-
 				label: Catppuccin
 				value: catppuccin-light
@@ -99,9 +93,6 @@ settings:
 				label: Melange
 				value: melange-light
 			-
-				label: Minimal
-				value: minimal-light
-			-
 				label: Nord
 				value: nord-light
 			-
@@ -114,14 +105,8 @@ settings:
 				label: Sanctum
 				value: sanctum-light
 			-
-				label: Sky
-				value: sky-light
-			-
 				label: Solarized
 				value: solarized-light
-			-
-				label: Things
-				value: things-light
 			-
 				label: Tiniri
 				value: tiniri-light
@@ -132,6 +117,9 @@ settings:
 		allowEmpty: false
 		default: contrast-light
 		options:
+			-
+				label: Inverse
+				value: contrast-light-inverse
 			-
 				label: Normal
 				value: contrast-light
@@ -194,9 +182,6 @@ settings:
 				label: Melange
 				value: melange-dark
 			-
-				label: Minimal
-				value: minimal-dark
-			-
 				label: Mocha
 				value: mocha-dark
 			-
@@ -211,9 +196,6 @@ settings:
 			-
 				label: Sanctum
 				value: sanctum-dark
-			-
-				label: Sky
-				value: sky-dark
 			-
 				label: Solarized
 				value: solarized-dark
@@ -230,6 +212,9 @@ settings:
 		allowEmpty: false
 		default: contrast-dark
 		options:
+			-
+				label: Inverse
+				value: contrast-dark-inverse
 			-
 				label: Normal
 				value: contrast-dark
@@ -3405,11 +3390,9 @@ body .style-settings-container .setting-item[data-id] .setting-item-control::bef
   font-size: var(--font-ui-smaller);
 }
 
-body.ayu-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
 body.ayu-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
   content: "Author: Konstantin Pschera (k15a)";
 }
-body.admin-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
 body.admin-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
 body.metadata-block .style-settings-container .setting-item[data-id="metadata-style"] .setting-item-control::before {
   content: "Author: Bradley Wyatt (bwya77)";
@@ -3427,11 +3410,7 @@ body.everforest-dark .style-settings-container .setting-item[data-id="color-sche
   content: "Author: Sainnhe Park (sainnhe)";
 }
 body.flexoki-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.flexoki-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.sky-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.sky-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.minimal-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.minimal-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
+body.flexoki-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
   content: "Author: Steph Ango (kepano)";
 }
 body.gruvbox-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,

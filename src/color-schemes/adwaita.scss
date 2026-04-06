@@ -65,9 +65,6 @@ https://gitlab.gnome.org/GNOME/libadwaita/
   }
 }
 
-.theme-light.adwaita-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.adwaita-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.adwaita-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.adwaita-dark {
   --color-red-rgb: 224, 27, 36;
   --color-orange-rgb: 230, 97, 0;

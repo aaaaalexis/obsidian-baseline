@@ -5,47 +5,14 @@ Copyright (c) Konstantin Pschera <me@kons.ch> (kons.ch)
 https://github.com/ayu-theme/ayu-colors
 */
 
-.theme-light.ayu-light.color-scheme-accent {
-  --accent-h: 36;
-  --accent-s: 100%;
-  --accent-l: 50%;
-}
-.theme-light.ayu-light {
-  --color-red-rgb: 230, 80, 80;
-  --color-orange-rgb: 250, 141, 62;
-  --color-yellow-rgb: 242, 174, 73;
-  --color-green-rgb: 108, 191, 67;
-  --color-cyan-rgb: 76, 191, 153;
-  --color-blue-rgb: 57, 158, 230;
-  --color-purple-rgb: 163, 122, 204;
-  --color-pink-rgb: 255, 115, 131;
-
-  --background-primary: #fff;
-  --background-primary-alt: #f8f9fa;
-  --background-secondary: #f8f9fa;
-  --interactive-normal: rgba(209, 218, 224, 0.5);
-  --interactive-hover: rgba(209, 218, 224, 1);
-
-  --background-modifier-border: #e6eaed;
-
-  --text-normal: #5c6165;
-  --text-muted: #8a9199;
-  --text-faint: #aaaeb0;
-
-  --text-selection: rgba(3, 91, 214, 0.15);
-}
-
 .theme-dark.ayu-dark.color-scheme-accent {
   --accent-h: 35;
   --accent-s: 100%;
   --accent-l: 60%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
-.theme-light.ayu-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.ayu-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.ayu-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.ayu-dark {
   --color-red-rgb: 255, 102, 102;
   --color-orange-rgb: 250, 173, 102;
@@ -56,15 +23,21 @@ https://github.com/ayu-theme/ayu-colors
   --color-purple-rgb: 223, 191, 255;
   --color-pink-rgb: 242, 121, 131;
 
-  --background-primary: #232937;
-  --background-primary-alt: #1e2431;
-  --background-secondary: #1e2431;
-  --interactive-normal: rgba(51, 61, 80, 0.5);
-  --interactive-hover: rgba(51, 61, 80, 1);
+  --color-base-00: #1e2431;
+  --color-base-05: #202633;
+  --color-base-10: #222836;
+  --color-base-20: #232937;
+  --color-base-25: #272d3b;
+  --color-base-30: #333947;
+  --color-base-35: #3c4250;
+  --color-base-40: #515865;
+  --color-base-50: #626875;
+  --color-base-60: #969aa4;
+  --color-base-70: #b0b4bb;
+  --color-base-100: #d8dade;
 
-  --background-modifier-border: #333c4a;
-  --background-modifier-border-hover: #333c4a;
-  --background-modifier-border-focus: #333c4a;
+  --interactive-normal: rgba(51, 61, 80, 0.5);
+  --interactive-hover: rgb(51, 61, 80);
 
   --text-normal: #cccac2;
   --text-muted: #a0a9b9;

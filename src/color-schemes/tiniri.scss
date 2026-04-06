@@ -26,10 +26,18 @@ https://tiniri.vlad.studio/
   --text-highlight-bg: #fab48588;
 }
 .theme-light.tiniri-light {
-  --background-primary: #fdfcfc;
-  --background-primary-alt: #fdfcfc;
-  --background-secondary: #f7f3f0;
-  --background-secondary-alt: #f7f3f0;
+  --color-base-00: #fdfcfc;
+  --color-base-05: #fcf9f8;
+  --color-base-10: #faf7f5;
+  --color-base-20: #f7f3f0;
+  --color-base-25: #e6e2df;
+  --color-base-30: #e3dfdc;
+  --color-base-35: #d8d4d2;
+  --color-base-40: #c3c0bd;
+  --color-base-50: #b3b0ad;
+  --color-base-60: #7c7a78;
+  --color-base-70: #6a6866;
+  --color-base-100: #333231;
 
   --text-normal: #333231;
   --text-muted: #807974;
@@ -65,14 +73,19 @@ https://tiniri.vlad.studio/
   --text-selection: #353a42;
   --text-highlight-bg: #ad514c44;
 }
-.theme-light.tiniri-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.tiniri-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.tiniri-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.tiniri-dark {
-  --background-primary: #1f2122;
-  --background-primary-alt: #1f2122;
-  --background-secondary: #1b1d1e;
-  --background-secondary-alt: #1b1d1e;
+  --color-base-00: #1b1d1e;
+  --color-base-05: #1d1f20;
+  --color-base-10: #1e2021;
+  --color-base-20: #1f2122;
+  --color-base-25: #222526;
+  --color-base-30: #2d3132;
+  --color-base-35: #363b3b;
+  --color-base-40: #4b5150;
+  --color-base-50: #5b625f;
+  --color-base-60: #92958c;
+  --color-base-70: #afaea4;
+  --color-base-100: #dbd3ca;
 
   --text-normal: #dbd3ca;
   --text-muted: #938a80;

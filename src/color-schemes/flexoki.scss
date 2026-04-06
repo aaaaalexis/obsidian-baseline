@@ -20,15 +20,21 @@ https://stephango.com/flexoki
   --color-purple-rgb: 94, 64, 157;
   --color-pink-rgb: 160, 47, 111;
 
-  --background-primary: #fffcf0;
-  --background-primary-alt: #f2f0e5;
-  --background-secondary: #f2f0e5;
+  --color-base-00: #fffcf0;
+  --color-base-05: #fbf8ec;
+  --color-base-10: #f8f5ea;
+  --color-base-20: #f2f0e5;
+  --color-base-25: #dfded3;
+  --color-base-30: #dcdbd0;
+  --color-base-35: #d1cfc5;
+  --color-base-40: #bab9af;
+  --color-base-50: #a8a79f;
+  --color-base-60: #6e6e68;
+  --color-base-70: #5b5b55;
+  --color-base-100: #222220;
+
   --interactive-normal: rgba(16, 15, 15, 0.05);
   --interactive-hover: rgba(16, 15, 15, 0.15);
-
-  --background-modifier-border: #e6e4d9;
-  --background-modifier-border-hover: #dad8ce;
-  --background-modifier-border-focus: #cecdc3;
 
   --text-normal: #100f0f;
   --text-muted: #6f6e69;
@@ -43,9 +49,6 @@ https://stephango.com/flexoki
   --accent-s: 49%;
   --accent-l: 45%;
 }
-.theme-light.flexoki-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.flexoki-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.flexoki-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.flexoki-dark {
   --color-red-rgb: 209, 77, 65;
   --color-orange-rgb: 218, 112, 44;
@@ -56,15 +59,21 @@ https://stephango.com/flexoki
   --color-purple-rgb: 139, 126, 200;
   --color-pink-rgb: 206, 93, 151;
 
-  --background-primary: #100f0f;
-  --background-primary-alt: #100f0f;
-  --background-secondary: #1c1b1a;
+  --color-base-00: #100f0f;
+  --color-base-05: #151313;
+  --color-base-10: #191817;
+  --color-base-20: #1c1b1a;
+  --color-base-25: #201f1e;
+  --color-base-30: #2d2c2a;
+  --color-base-35: #363534;
+  --color-base-40: #4d4c4b;
+  --color-base-50: #5f5e5d;
+  --color-base-60: #959494;
+  --color-base-70: #b0b0b0;
+  --color-base-100: #dadada;
+
   --interactive-normal: rgba(254, 252, 240, 0.05);
   --interactive-normal: rgba(254, 252, 240, 0.15);
-
-  --background-modifier-border: #282726;
-  --background-modifier-border-hover: #343331;
-  --background-modifier-border-focus: #403e3c;
 
   --text-normal: #cecdc3;
   --text-muted: #878580;

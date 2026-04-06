@@ -20,15 +20,21 @@ https://github.com/sainnhe/everforest
   --color-purple-rgb: 223, 105, 186;
   --color-pink-rgb: 223, 105, 186;
 
-  --background-primary: #fdf6e3;
-  --background-primary-alt: #efebd4;
-  --background-secondary: #efebd4;
+  --color-base-00: #fdf6e3;
+  --color-base-05: #f9f2dd;
+  --color-base-10: #f5f0da;
+  --color-base-20: #efebd4;
+  --color-base-25: #ddd9c3;
+  --color-base-30: #dad6c0;
+  --color-base-35: #cfcbb6;
+  --color-base-40: #b9b5a2;
+  --color-base-50: #a8a492;
+  --color-base-60: #6f6c60;
+  --color-base-70: #5c594f;
+  --color-base-100: #23221f;
+
   --interactive-normal: rgba(226, 222, 198, 0.5);
   --interactive-hover: rgba(226, 222, 198, 1);
-
-  --background-modifier-border: #e0dcc7;
-  --background-modifier-border-hover: #bec5b2;
-  --background-modifier-border-focus: #bec5b2;
 
   --text-normal: #5c6a72;
   --text-muted: #829181;
@@ -43,12 +49,9 @@ https://github.com/sainnhe/everforest
   --accent-s: 34%;
   --accent-l: 63%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
-.theme-light.everforest-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.everforest-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.everforest-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.everforest-dark {
   --color-red-rgb: 230, 126, 128;
   --color-orange-rgb: 230, 152, 117;
@@ -59,15 +62,21 @@ https://github.com/sainnhe/everforest
   --color-purple-rgb: 223, 105, 186;
   --color-pink-rgb: 223, 105, 186;
 
-  --background-primary: #2d353b;
-  --background-primary-alt: #232a2e;
-  --background-secondary: #232a2e;
+  --color-base-00: #232a2e;
+  --color-base-05: #272e33;
+  --color-base-10: #2a3238;
+  --color-base-20: #2d353b;
+  --color-base-25: #31393f;
+  --color-base-30: #3c444a;
+  --color-base-35: #454d53;
+  --color-base-40: #5a6167;
+  --color-base-50: #6a7176;
+  --color-base-60: #9a9fa4;
+  --color-base-70: #b3b7ba;
+  --color-base-100: #d8dadc;
+
   --interactive-normal: rgba(71, 82, 88, 0.5);
   --interactive-hover: rgba(71, 82, 88, 1);
-
-  --background-modifier-border: #475258;
-  --background-modifier-border-hover: #4f585e;
-  --background-modifier-border-focus: #525c62;
 
   --text-normal: #d3c6aa;
   --text-muted: #9da9a0;

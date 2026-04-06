@@ -20,15 +20,21 @@ https://github.com/rose-pine/rose-pine-theme
   --color-purple-rgb: 144, 122, 169;
   --color-pink-rgb: 144, 122, 169;
 
-  --background-primary: #fffaf3;
-  --background-primary-alt: #faf4ed;
-  --background-secondary: #faf4ed;
+  --color-base-00: #fffaf3;
+  --color-base-05: #fdf8f1;
+  --color-base-10: #fcf7f0;
+  --color-base-20: #faf4ed;
+  --color-base-25: #e7e1da;
+  --color-base-30: #e4ded7;
+  --color-base-35: #d8d2cc;
+  --color-base-40: #c1bbb5;
+  --color-base-50: #aea9a4;
+  --color-base-60: #726f6b;
+  --color-base-70: #5e5b58;
+  --color-base-100: #222221;
+
   --interactive-normal: rgba(233, 223, 218, 0.5);
   --interactive-hover: rgba(233, 223, 218, 1);
-
-  --background-modifier-border: #eae3e1;
-  --background-modifier-border-hover: #dfdad9;
-  --background-modifier-border-focus: #cecacd;
 
   --text-normal: #575279;
   --text-muted: #797593;
@@ -42,12 +48,9 @@ https://github.com/rose-pine/rose-pine-theme
   --accent-s: 55%;
   --accent-l: 83%;
 
-  --text-on-accent: var(--background-primary);
-  --text-on-accent-inverted: var(--background-primary);
+  --text-on-accent: var(--color-base-00);
+  --text-on-accent-inverted: var(--color-base-00);
 }
-.theme-light.rose-pine-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.rose-pine-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.rose-pine-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.rose-pine-dark {
   --color-red-rgb: 234, 111, 146;
   --color-orange-rgb: 233, 155, 151;
@@ -58,15 +61,21 @@ https://github.com/rose-pine/rose-pine-theme
   --color-purple-rgb: 196, 167, 231;
   --color-pink-rgb: 196, 167, 231;
 
-  --background-primary: #1f1d2e;
-  --background-primary-alt: #191724;
-  --background-secondary: #191724;
+  --color-base-00: #191724;
+  --color-base-05: #1b1928;
+  --color-base-10: #1e1b2c;
+  --color-base-20: #1f1d2e;
+  --color-base-25: #232132;
+  --color-base-30: #302e40;
+  --color-base-35: #39374a;
+  --color-base-40: #514f62;
+  --color-base-50: #636175;
+  --color-base-60: #9a98ad;
+  --color-base-70: #b6b4c9;
+  --color-base-100: #e0def4;
+
   --interactive-normal: rgba(68, 66, 86, 0.5);
   --interactive-hover: rgba(68, 66, 86, 1);
-
-  --background-modifier-border: #312f41;
-  --background-modifier-border-hover: #403d52;
-  --background-modifier-border-focus: #524f67;
 
   --text-normal: #e0def4;
   --text-muted: #908caa;

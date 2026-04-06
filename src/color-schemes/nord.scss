@@ -24,15 +24,21 @@ https://github.com/nordtheme/nord
 }
 
 .theme-light.nord-light {
-  --background-primary: #fff;
-  --background-primary-alt: #eceff4;
-  --background-secondary: #eceff4;
+  --color-base-00: #ffffff;
+  --color-base-05: #f8fafc;
+  --color-base-10: #f4f6f9;
+  --color-base-20: #eceff4;
+  --color-base-25: #dbdfe5;
+  --color-base-30: #d8dce3;
+  --color-base-35: #cdd2d9;
+  --color-base-40: #b9bec6;
+  --color-base-50: #a9aeb7;
+  --color-base-60: #747a85;
+  --color-base-70: #636974;
+  --color-base-100: #2e3440;
+
   --interactive-normal: rgba(157, 174, 206, 0.25);
   --interactive-hover: rgba(157, 174, 206, 0.5);
-
-  --background-modifier-border: #d8dee9;
-  --background-modifier-border-hover: #bbcadc;
-  --background-modifier-border-focus: #81a1c1;
 
   --text-normal: #2e3440;
   --text-muted: #7d8697;
@@ -40,19 +46,22 @@ https://github.com/nordtheme/nord
 
   --text-highlight-bg: rgba(208, 135, 112, 0.35);
 }
-.theme-light.nord-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.nord-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
-.theme-light.nord-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.nord-dark {
-  --background-primary: #2e3440;
-  --background-primary-alt: #3b4252;
-  --background-secondary: #3b4252;
+  --color-base-00: #2e3440;
+  --color-base-05: #333947;
+  --color-base-10: #383e4e;
+  --color-base-20: #3b4252;
+  --color-base-25: #3f4656;
+  --color-base-30: #495060;
+  --color-base-35: #515868;
+  --color-base-40: #656b7a;
+  --color-base-50: #737a88;
+  --color-base-60: #a0a4af;
+  --color-base-70: #b6bac3;
+  --color-base-100: #d8dadf;
+
   --interactive-normal: rgba(135, 152, 190, 0.15);
   --interactive-hover: rgba(135, 152, 190, 0.35);
-
-  --background-modifier-border: #434c5e;
-  --background-modifier-border-hover: #58647b;
-  --background-modifier-border-focus: #58647b;
 
   --text-normal: #d8dee9;
   --text-muted: #9eafcc;

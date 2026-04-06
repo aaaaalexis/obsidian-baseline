@@ -58,6 +58,9 @@ body:not(.is-phone) {
       align-items: center;
       font-size: var(--font-ui-small);
     }
+    .vertical-tab-nav-item-icon {
+      color: inherit;
+    }
 
     .vertical-tab-content {
       background-color: var(--modal-sidebar-background);
@@ -169,6 +172,10 @@ body:not(.is-phone) {
 body.is-phone {
   .modal.mod-sidebar-layout {
     box-shadow: none;
+
+    .vertical-tab-nav-item-icon {
+      color: inherit;
+    }
 
     .modal-header {
       padding: 0;
