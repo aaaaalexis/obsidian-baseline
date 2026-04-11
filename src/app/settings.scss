@@ -1,40 +1,49 @@
-body.theme-light {
-  --settings-background: var(--background-secondary);
-  --setting-items-background: var(--background-primary);
-}
-body.theme-dark {
-  --settings-background: var(--background-primary);
-  --setting-items-background: var(--background-secondary);
-}
-
-body:not(.is-phone) {
-  --setting-items-radius: var(--radius-m);
-  --setting-items-padding-y: calc(16px * var(--density-modifier));
+body {
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
+  --setting-items-radius: var(--radius-m);
+  --setting-items-padding-y: calc(16px * var(--density-modifier));
+
+  &:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
+    --setting-items-border-width: var(--border-width);
+  }
+
+  &.theme-light {
+    --settings-background: var(--background-secondary);
+    --setting-items-background: var(--background-primary);
+  }
+  &.theme-dark {
+    --settings-background: var(--background-primary);
+    --setting-items-background: var(--background-secondary);
+  }
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
-      border-inline-end: none;
+      border-right: none;
       background-color: transparent;
     }
+    .vertical-tab-nav-item-icon {
+      color: inherit;
+    }
+
+    .setting-item-heading {
+      border: none;
+    }
+  }
+}
+
+body:not(.is-phone) {
+  .modal.mod-sidebar-layout {
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
       font-size: var(--font-ui-small);
     }
-    .vertical-tab-nav-item-icon {
-      color: inherit;
-    }
 
     .vertical-tab-content {
       background-color: transparent;
-    }
-
-    .setting-group-search {
-      padding: 0 0 8px;
-      background-color: transparent;
+      animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
     }
 
     .setting-item-name {
@@ -42,49 +51,56 @@ body:not(.is-phone) {
     }
   }
 
-  .installed-plugins-container .setting-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 8px;
-    padding: 0;
-    background-color: transparent;
-
-    .setting-item {
-      display: flex;
-      flex-direction: column;
-      margin: 0px !important;
+  .installed-plugins-container {
+    .setting-group-search {
+      padding: 0 0 8px;
+      background-color: transparent;
       border: none;
-      border-radius: var(--setting-items-radius) !important;
-      background-color: var(--setting-items-background);
-      padding: calc(16px * var(--density-modifier)) !important;
-      overflow: hidden;
     }
-    .setting-item-info {
-      margin-inline-end: 0;
-      width: 100%;
-    }
-    .setting-item-description > div:last-child {
-      color: var(--text-muted);
-      margin-top: 4px;
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-    }
-    .setting-item-control {
-      flex: none;
-      flex-wrap: wrap;
-      align-self: flex-end;
-      width: 100%;
-    }
-    .setting-item-control button.mod-cta {
-      flex-grow: 1;
-      flex-basis: 100%;
-    }
+    .setting-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-auto-rows: 1fr;
+      gap: 8px;
+      padding: 0;
+      background-color: transparent;
+      border: none;
 
-    .setting-item:has(button) {
-      order: -1;
+      .setting-item {
+        display: flex;
+        flex-direction: column;
+        margin: 0px !important;
+        border: var(--setting-items-border-width) solid var(--setting-items-border-color);
+        border-radius: var(--setting-items-radius) !important;
+        background-color: var(--setting-items-background);
+        padding: calc(16px * var(--density-modifier)) !important;
+        overflow: hidden;
+      }
+      .setting-item:has(button) {
+        order: -1;
+      }
+      .setting-item-info {
+        margin-inline-end: 0;
+        width: 100%;
+      }
+      .setting-item-description > div:last-child {
+        color: var(--text-muted);
+        margin-top: 4px;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+      }
+      .setting-item-control {
+        flex: none;
+        flex-wrap: wrap;
+        align-self: flex-end;
+        width: 100%;
+      }
+      .setting-item-control button.mod-cta {
+        flex-grow: 1;
+        flex-basis: 100%;
+      }
     }
   }
 
@@ -139,10 +155,6 @@ body.is-phone {
   .modal.mod-sidebar-layout {
     box-shadow: none;
 
-    .vertical-tab-nav-item-icon {
-      color: inherit;
-    }
-
     .modal-header {
       padding: 0;
       align-items: center;
@@ -168,11 +180,6 @@ body.is-phone {
 
     .vertical-tab-header-group-title {
       display: none;
-    }
-
-    .setting-group-search {
-      padding: 0 0 8px;
-      background-color: transparent;
     }
   }
 

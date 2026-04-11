@@ -19,8 +19,7 @@ body.is-mobile {
 
 @keyframes workspaceLeafIn {
   from {
-    opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.995);
   }
 }
 
@@ -134,7 +133,7 @@ body:not(.is-mobile) {
     background-color: transparent;
   }
   .mod-sidedock .workspace-leaf:not([style*="display: none"]) {
-    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
   }
 
   // Sidedock padding
@@ -234,7 +233,7 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
         opacity: 0;
         filter: blur(4px);
         pointer-events: none;
-        transform: scale(0.95);
+        transform: scale(0.995);
       }
     }
   }

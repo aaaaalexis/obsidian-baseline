@@ -63,23 +63,8 @@ body.input-tactile:not(.is-mobile) {
     }
   }
 
-  // Menu
-  .menu-item,
-  .suggestion-item {
-    padding: calc(8px * var(--density-modifier)) 12px;
-    gap: 12px;
-  }
-
   // Settings
   .modal.mod-sidebar-layout {
-    .vertical-tab-content {
-      transition: var(--anim-duration-slow) var(--anim-motion-baseline);
-
-      @starting-style {
-        scale: 0.995;
-      }
-    }
-
     .vertical-tab-nav-item {
       transition: box-shadow var(--anim-duration-fast);
     }

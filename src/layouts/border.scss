@@ -1,7 +1,7 @@
 body.layout-border:not(.is-mobile) {
   &:not(.status-bar-full) .mod-sidedock > .workspace-leaf-resize-handle {
     margin-bottom: 8px;
-    height: -webkit-fill-available;
+    height: stretch;
   }
   .mod-sidedock > .workspace-leaf-resize-handle,
   .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
@@ -11,7 +11,7 @@ body.layout-border:not(.is-mobile) {
   // Side panels
   .mod-sidedock {
     .workspace-tabs > .workspace-leaf-resize-handle {
-      width: -webkit-fill-available;
+      width: stretch;
 
       &:is(.mod-sidedock.mod-left-split .workspace-leaf-resize-handle) {
         left: 8px;

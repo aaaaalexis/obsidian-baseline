@@ -473,9 +473,9 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
   }
   .workspace-tab-header-container-inner {
     flex-direction: column;
-    width: -webkit-fill-available;
+    width: stretch;
     gap: 0;
-    animation: workspaceLeafIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
     padding: 0 8px;
   }
   .workspace-tab-header {

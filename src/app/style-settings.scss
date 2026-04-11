@@ -3255,7 +3255,8 @@ settings:
 
 .style-settings-container .setting-item {
   margin-bottom: 0;
-  border-radius: 0;
+  background-color: transparent;
+  border: none;
   gap: 4px !important;
 }
 .style-settings-container .setting-item-description > div:last-child {
@@ -3263,14 +3264,6 @@ settings:
 }
 .style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-control {
   min-height: var(--input-height);
-}
-.style-settings-container .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-top-right-radius: var(--setting-items-radius);
-  border-top-left-radius: var(--setting-items-radius);
-}
-.style-settings-container .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)) {
-  border-bottom-right-radius: var(--setting-items-radius);
-  border-bottom-left-radius: var(--setting-items-radius);
 }
 .style-settings-container .themed-color-wrapper {
   display: flex;

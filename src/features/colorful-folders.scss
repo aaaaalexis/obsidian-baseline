@@ -9,7 +9,7 @@ body.colorful-folders-side {
     left: 8px;
     border-radius: var(--radius-s);
     width: 4px;
-    height: -webkit-fill-available;
+    height: stretch;
     content: "";
   }
 }

@@ -75,7 +75,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface), var(--shadow-sidedock-spread);
     border-radius: var(--radius-window, var(--radius-m));
-    height: -webkit-fill-available;
+    height: stretch;
     overflow: hidden;
   }
 
