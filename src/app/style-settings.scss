@@ -57,8 +57,11 @@ settings:
 		title: Light color scheme
 		type: class-select
 		allowEmpty: false
-		default: default-light
+		default: baseline-light
 		options:
+			-
+				label: Baseline
+				value: baseline-light
 			-
 				label: Obsidian
 				value: default-light
@@ -134,8 +137,11 @@ settings:
 		title: Dark color scheme
 		type: class-select
 		allowEmpty: false
-		default: default-dark
+		default: baseline-dark
 		options:
+			-
+				label: Baseline
+				value: baseline-dark
 			-
 				label: Obsidian
 				value: default-dark

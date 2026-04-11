@@ -104,6 +104,35 @@ body,
   --code-value: #c678de;
 }
 
+body:not(.default-light).theme-ight {
+  --color-base-00: #ffffff;
+  --color-base-05: #fdfdfd;
+  --color-base-10: #fbfbfb;
+  --color-base-20: #f8f8f8;
+  --color-base-25: #efefef;
+  --color-base-30: #e2e2e2;
+  --color-base-35: #d5d5d5;
+  --color-base-40: #c6c6c6;
+  --color-base-50: #b2b2b2;
+  --color-base-60: #7d7d7d;
+  --color-base-70: #696969;
+  --color-base-100: #323232;
+}
+body:not(.default-dark).theme-dark {
+  --color-base-00: #181818;
+  --color-base-05: #1a1a1a;
+  --color-base-10: #1c1c1c;
+  --color-base-20: #1e1e1e;
+  --color-base-25: #222222;
+  --color-base-30: #303030;
+  --color-base-35: #3c3c3c;
+  --color-base-40: #4c4c4c;
+  --color-base-50: #616161;
+  --color-base-60: #909090;
+  --color-base-70: #a5a5a5;
+  --color-base-100: #dbdbdb;
+}
+
 body:not(.is-mobile) {
   --icon-xs: calc(14px + var(--icon-size-modifier));
   --icon-s: calc(16px + var(--icon-size-modifier));
