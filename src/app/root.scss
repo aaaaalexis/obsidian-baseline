@@ -22,9 +22,10 @@ body,
 
   --corner-shape: superellipse(1.1);
 
-  --shadow-s: rgba(0, 0, 0, 0.08) 0px 12px 24px -4px, rgba(0, 0, 0, 0.04) 0px 8px 16px -4px;
-  --shadow-l: 0 14px 62px #00000040;
-  --shadow-tactile: rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
+  --shadow-s: 0px 0px 0px var(--border-width) var(--background-modifier-hover), 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-l: 0 10px 15px -3px hsl(0 0 0 / 0.1), 0 4px 6px -4px hsl(0 0 0 / 0.1);
+
+  --shadow-tactile: 0 10px 15px -3px hsl(0 0 0 / 0.1), 0 4px 6px -4px hsl(0 0 0 / 0.1);
 
   --anim-speed-modifier: 1;
   --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
@@ -151,7 +152,6 @@ body:not(.is-mobile) {
 // Popout window
 .is-popout-window {
   --workspace-background-translucent: var(--background-secondary);
-  background-color: rgb(var(--mono-rgb-100));
 }
 
 // Title bar

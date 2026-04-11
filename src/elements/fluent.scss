@@ -126,7 +126,8 @@ body.input-fluent {
 
   // Settings
   --settings-background: var(--modal-background);
-  --setting-items-padding: 0px;
+  --setting-items-padding-x: calc(16px * var(--density-modifier));
+  --setting-items-padding-y: calc(16px * var(--density-modifier));
 
   .modal.mod-settings {
     .vertical-tab-header-group-title,
@@ -161,7 +162,6 @@ body.input-fluent {
     .setting-item:not(.setting-item-heading) {
       border: var(--border-width) solid rgba(0, 0, 0, 0.1);
       border-radius: var(--radius-m);
-      padding: calc(16px * var(--density-modifier));
       background-color: var(--setting-items-background);
 
       &:not(:first-child) {

@@ -157,18 +157,10 @@ body.input-material {
       border-top: none;
       border-radius: var(--radius-xs);
       background-color: var(--setting-items-background);
-      padding: var(--setting-items-padding);
       margin-bottom: 2px;
     }
-    .setting-item:nth-child(1 of .setting-item:not(.setting-item-heading)),
-    .setting-item-heading + .setting-item {
-      border-top-left-radius: var(--setting-items-radius);
-      border-top-right-radius: var(--setting-items-radius);
-    }
-    .setting-item:nth-last-child(1 of .setting-item:not(.setting-item-heading)),
-    .setting-item:has(+ .setting-item-heading) {
-      border-bottom-left-radius: var(--setting-items-radius);
-      border-bottom-right-radius: var(--setting-items-radius);
+    .setting-item:not(.setting-item-heading)::before {
+      content: none;
     }
     .setting-item-name {
       font-weight: var(--font-medium);

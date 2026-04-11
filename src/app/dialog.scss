@@ -1,7 +1,3 @@
-body:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
-  --menu-border-width: var(--border-width);
-}
-
 // Menu & suggestion
 @keyframes menuIn {
   from {
@@ -132,6 +128,7 @@ body.is-tablet {
 // Modal
 body {
   --modal-border-width: 0px;
+  --modal-sidebar-background: var(--settings-background) !important;
 
   .modal-title {
     font-family: var(--h1-font);

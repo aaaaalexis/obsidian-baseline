@@ -7,50 +7,16 @@ body.theme-dark {
   --setting-items-background: var(--background-secondary);
 }
 
-body:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
-  .modal.mod-sidebar-layout {
-    .vertical-tab-nav-item-title,
-    .vertical-tab-nav-item-chevron {
-      border-bottom: none;
-    }
-    .setting-item {
-      border-top: none;
-    }
-    .setting-item-description {
-      color: var(--text-faint);
-    }
-    .setting-group .setting-group-search + .setting-items {
-      padding-top: calc(16px * var(--density-modifier));
-      border-top-left-radius: var(--setting-items-radius);
-      border-top-right-radius: var(--setting-items-radius);
-    }
-  }
-  &:not(.is-phone) .modal.mod-sidebar-layout {
-    .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
-      padding-top: 12px;
-    }
-    .setting-group .setting-item:not(.setting-item-heading):not(:last-child) {
-      padding-bottom: 12px;
-    }
-    .installed-plugins-container .setting-items {
-      padding-top: 0;
-    }
-  }
-}
-
 body:not(.is-phone) {
   --setting-items-radius: var(--radius-m);
-  --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
+  --setting-items-padding-y: calc(16px * var(--density-modifier));
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
-
-  .modal-sidebar {
-    --background-modifier-form-field: var(--interactive-normal);
-  }
 
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
       border-inline-end: none;
+      background-color: transparent;
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
@@ -63,7 +29,7 @@ body:not(.is-phone) {
     }
 
     .vertical-tab-content {
-      background-color: var(--modal-sidebar-background);
+      background-color: transparent;
     }
 
     .setting-group-search {
