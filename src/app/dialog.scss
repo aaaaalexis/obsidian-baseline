@@ -106,7 +106,6 @@ body.is-phone {
 body.is-tablet {
   .menu,
   .suggestion-container {
-    border: 1px solid var(--background-modifier-border-hover);
     border-radius: var(--menu-radius);
     overflow: auto;
     max-height: 80vh;
