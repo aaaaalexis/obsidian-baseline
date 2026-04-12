@@ -50,27 +50,19 @@ body.nav-item-strong {
     --nav-item-color-hover: var(--text-normal);
     --nav-item-color-active: var(--text-accent);
   }
+}
 
-  &.input-tactile .nav-files-container > div {
-    .tree-item,
-    .tree-item-self,
-    .tree-item-inner {
-      corner-shape: var(--corner-shape);
-      transition: box-shadow var(--anim-duration-fast);
-    }
-    > .tree-item.nav-folder:not(.is-collapsed) {
-      background-color: var(--background-modifier-hover);
-      border-radius: var(--nav-item-radius);
-      box-shadow: var(--input-shadow-inset);
-    }
-    .tree-item-self.is-active {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
-      background-blend-mode: soft-light;
-      box-shadow: var(--input-shadow);
-    }
-    > .tree-item.nav-file > .tree-item-self:hover:not(.is-active),
-    > .tree-item.nav-folder.is-collapsed > .tree-item-self:hover:not(.is-active) {
-      box-shadow: var(--input-shadow-inset);
-    }
+body.nav-item-tactile .nav-files-container > div {
+  --nav-item-background-active: var(--interactive-accent);
+  --nav-item-color-active: var(--text-on-accent);
+
+  > .tree-item.nav-folder:not(.is-collapsed) {
+    background-color: var(--background-modifier-hover);
+    border-radius: var(--nav-item-radius);
+    box-shadow: var(--input-shadow-inset);
+  }
+  > .tree-item.nav-file > .tree-item-self:hover:not(.is-active),
+  > .tree-item.nav-folder.is-collapsed > .tree-item-self:hover:not(.is-active) {
+    box-shadow: var(--input-shadow-inset);
   }
 }

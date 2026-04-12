@@ -59,7 +59,7 @@
   // Callout: Tactile
   body.callouts-tactile .callout:not([data-callout="note-toolbar"]) {
     box-shadow: var(--shadow-tactile);
-    background: linear-gradient(rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.15));
+    background: linear-gradient(rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.175));
   }
 
   // Callout: Padded

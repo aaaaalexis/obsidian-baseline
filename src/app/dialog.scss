@@ -2,7 +2,7 @@
 @keyframes menuIn {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-2px);
   }
 }
 
@@ -26,7 +26,6 @@ body {
 
   .menu-item-icon {
     order: unset !important;
-    color: var(--text-normal);
   }
 
   .menu-item-icon .svg-icon {
@@ -35,7 +34,8 @@ body {
   }
 
   .menu-separator {
-    margin: 4px 0;
+    margin: 4px 8px;
+    border-color: var(--background-modifier-hover);
   }
 }
 
@@ -163,13 +163,12 @@ body {
 body:not(.is-mobile) {
   @keyframes modalIn {
     from {
-      opacity: 0;
-      transform: scale(0.975);
+      transform: scale(0.995);
     }
   }
 
   .modal {
-    animation: modalIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
+    animation: modalIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
   }
   .modal-title {
     margin-left: 0;

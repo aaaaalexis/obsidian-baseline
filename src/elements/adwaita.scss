@@ -312,10 +312,6 @@ body.input-adwaita.is-phone {
   --mobile-sidebar-background: var(--modal-background);
 
   // Editor
-  .mobile-navbar,
-  &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    border: none !important;
-  }
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,
   .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::after {
     content: none;

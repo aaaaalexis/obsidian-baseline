@@ -22,10 +22,7 @@ body,
 
   --corner-shape: superellipse(1.1);
 
-  --shadow-s: 0px 0px 0px var(--border-width) var(--background-modifier-hover), 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-l: 0 10px 15px -3px hsl(0 0 0 / 0.1), 0 4px 6px -4px hsl(0 0 0 / 0.1);
-
-  --shadow-tactile: 0px 2px 8px -2px rgba(0, 0, 0, 0.05), 0px 2px 4px -2px rgba(var(--mono-rgb-100), 0.05);
+  --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px rgba(var(--mono-rgb-100), 0.05);
 
   --anim-speed-modifier: 1;
   --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
@@ -79,6 +76,9 @@ body,
   --code-string: #0d97b3;
   --code-tag: #e45749;
   --code-value: #a626a4;
+
+  --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 .theme-dark {
   --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
@@ -102,6 +102,9 @@ body,
   --code-string: #58b6c2;
   --code-tag: #e16d76;
   --code-value: #c678de;
+
+  --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 body:not(.default-light).theme-ight {

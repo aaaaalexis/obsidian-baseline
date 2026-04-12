@@ -32,7 +32,7 @@ body.input-material {
   --nav-item-weight: var(--font-medium);
   --nav-item-weight-hover: var(--font-medium);
   --nav-item-weight-active: var(--font-medium);
-  --nav-item-radius: 100vh;
+  --nav-item-radius: var(--radius-l);
 
   --background-modifier-border: var(--color-base-30);
   --background-modifier-form-field: var(--background-modifier-hover);
@@ -236,7 +236,6 @@ body.input-material.is-phone {
   // Editor
   .mobile-navbar,
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-    border: none !important;
     box-shadow: var(--shadow-s);
   }
   &.is-floating-nav .mod-root .workspace-leaf-content[data-type="markdown"] > .view-content::before,

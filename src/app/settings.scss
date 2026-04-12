@@ -6,6 +6,7 @@ body {
 
   &:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
     --setting-items-border-width: var(--border-width);
+    --setting-items-border-color: var(--background-modifier-hover);
   }
 
   &.theme-light {
@@ -44,6 +45,10 @@ body:not(.is-phone) {
     .vertical-tab-content {
       background-color: transparent;
       animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
+    }
+
+    .setting-page {
+      background-color: var(--settings-background);
     }
 
     .setting-item-name {

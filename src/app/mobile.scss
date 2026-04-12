@@ -95,7 +95,6 @@ body.is-mobile {
     }
     .mobile-navbar {
       background-color: var(--background-secondary) !important;
-      border: var(--border-width) solid var(--background-modifier-border) !important;
     }
     .mobile-tab-preview:before {
       content: none;
@@ -454,7 +453,6 @@ body.is-phone {
     width: var(--touch-size-l);
     height: var(--touch-size-l);
     background-color: var(--background-secondary);
-    border: var(--border-width) solid var(--background-modifier-border);
   }
   &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     width: var(--touch-size-m);

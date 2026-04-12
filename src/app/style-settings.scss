@@ -855,9 +855,6 @@ settings:
 			-
 				label: Material
 				value: input-material
-			-
-				label: Tactile
-				value: input-tactile
 	-
 		id: status-bar-style
 		title: Status bar
@@ -1288,6 +1285,9 @@ settings:
 			-
 				label: Strong
 				value: nav-item-strong
+			-
+				label: Tactlie
+				value: nav-item-tactile
 	-
 		id: colorful-folders
 		title: Colorful folders
@@ -1501,7 +1501,7 @@ settings:
 		id: p-spacing
 		title: Paragraph spacing
 		type: variable-text
-		default: 1.75rem
+		default: 1.25rem
 	-
 		id: focus-view
 		title: Focus view

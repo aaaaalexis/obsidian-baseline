@@ -8,39 +8,48 @@ body {
   --radius-l: calc(20px * var(--radius-modifier));
   --radius-xl: calc(28px * var(--radius-modifier));
 
-  --background-modifier-form-field: var(--interactive-normal);
-
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
-
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
-}
 
-.theme-light {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-}
-.theme-dark {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  --input-shadow-base: 0px 8px 4px -2px rgba(0, 0, 0, 0.01), 0px 2px 4px -1px rgba(0, 0, 0, 0.025), 0px 2px 2px -1px rgba(0, 0, 0, 0.025);
 
-  --background-modifier-form-field: var(--interactive-normal);
+  &.theme-light {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px rgba(0, 0, 0, 0.025), 0px 0.4px rgba(0, 0, 0, 0.025), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px rgba(0, 0, 0, 0.025);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px rgb(255, 255, 255, 0.75), inset 0 4px 4px -2px rgba(0, 0, 0, 0.05);
+  }
+  &.theme-dark {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px rgba(255, 255, 255, 0.1), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px rgba(0, 0, 0, 0.15), inset 0 -1px rgba(255, 255, 255, 0.05);
+  }
 }
 
 body:is(.input-baseline, :not(.css-settings-manager)) {
+  --input-border-width: var(--border-width) !important;
   --input-font-weight: var(--font-medium);
 
-  &.is-mobile {
-    --input-border-width: var(--border-width);
+  textarea,
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]) {
+    border: none;
+    box-shadow: var(--input-shadow-inset);
   }
 
+  // Button
   button.mod-cta {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--interactive-accent);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--interactive-accent-hover);
+    --input-shadow: none;
+    --input-shadow-hover: none;
   }
   button.mod-warning {
     --input-shadow: inset 0 0 0 var(--input-border-width) var(--color-red);
     --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--color-red);
+  }
+
+  // Slider
+  input[type="range"]::-webkit-slider-thumb {
+    border: none;
+    box-shadow: var(--input-shadow);
   }
 }
 
@@ -79,6 +88,7 @@ body.obsidian-app .checkbox-container {
   }
 
   &::after {
+    box-shadow: var(--input-shadow-base);
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),
       background-color 0s;
