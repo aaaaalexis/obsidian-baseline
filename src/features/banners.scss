@@ -10,7 +10,6 @@ body:not(.banner-off) {
   --banner-icon-size: 3rem;
   --banner-mobile-offset: 0px;
 
-  // Mobile
   &:where(.is-mobile) {
     --banner-image-height: var(--banner-image-height-s);
 
@@ -20,6 +19,9 @@ body:not(.banner-off) {
     }
   }
 
+  &:not(.is-mobile):not(.show-view-header) {
+    --banner-image-inset: 0px;
+  }
   &:not(.is-phone) {
     --view-top-spacing-markdown: 0px;
   }
