@@ -252,22 +252,12 @@ body.reduce-motion {
   --anim-speed-modifier: 0 !important;
 
   &.is-mobile {
-    --mobile-sidebar-width: 90vw;
-
-    .workspace-drawer,
-    .workspace-split,
     .mobile-tab-switcher,
     .menu,
     .suggestion-bg,
     .modal,
-    .modal-bg,
-    .mobile-navbar {
-      transform: none !important;
+    .modal-bg {
       transition: none !important;
-
-      @starting-style {
-        opacity: 0 !important;
-      }
     }
   }
 }
