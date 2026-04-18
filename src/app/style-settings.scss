@@ -300,59 +300,91 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: color-red-rgb
+		id: color-red
 		title: Red
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-red-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-orange-rgb
+		id: color-orange
 		title: Orange
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-orange-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-yellow-rgb
+		id: color-yellow
 		title: Yellow
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-yellow-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-green-rgb
+		id: color-green
 		title: Green
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-green-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-cyan-rgb
+		id: color-cyan
 		title: Cyan
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-cyan-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-blue-rgb
+		id: color-blue
 		title: Blue
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-blue-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-purple-rgb
+		id: color-purple
 		title: Purple
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-purple-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: color-pink-rgb
+		id: color-pink
 		title: Pink
 		type: variable-themed-color
-		format: rgb-values
+		format: hex
+        alt-format:
+            -
+                id: color-pink-rgb
+                format: rgb-values
 		default-light: '#'
 		default-dark: '#'
     - 
