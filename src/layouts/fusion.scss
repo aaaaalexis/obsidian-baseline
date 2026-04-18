@@ -31,7 +31,7 @@ body.layout-fusion:not(.is-phone) {
     --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .mod-root {
+  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .workspace-tabs:not(.mod-stacked) .mod-root {
     .workspace-tab-container {
       background-color: rgba(from var(--background-primary) r g b / 75%);
     }
