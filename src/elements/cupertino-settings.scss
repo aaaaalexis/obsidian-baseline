@@ -58,6 +58,10 @@ body.input-cupertino:not(.is-mobile) {
       padding: 6px 8px;
     }
 
+    .vertical-tab-content {
+      animation: none;
+    }
+
     .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
     }
