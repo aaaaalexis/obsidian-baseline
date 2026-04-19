@@ -428,9 +428,8 @@
     }
   }
 
-  body.theme-dark.media-muted .workspace-leaf-content[data-type="markdown"],
-  body.theme-dark.media-muted .workspace-leaf-content[data-type="bases"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
+  body.theme-dark.media-muted div:is(.markdown-source-view, .markdown-reading-view, .markdown-embed, .bases-view) {
+    img:not(.cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     .bases-cards-cover {
       transition: opacity var(--anim-duration-moderate);
 
