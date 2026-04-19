@@ -14,11 +14,12 @@ body {
 .menu,
 .suggestion-container {
   border-radius: var(--menu-radius);
+  border: none;
   padding: 0;
 
   .menu-item,
   .suggestion-item {
-    padding: calc(8px * var(--density-modifier)) 12px;
+    padding: calc(6px * var(--density-modifier)) 12px;
     border-radius: calc(var(--menu-radius) - var(--menu-padding));
     margin-bottom: 0;
     gap: 12px;
