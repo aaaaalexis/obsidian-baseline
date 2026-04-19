@@ -1,0 +1,417 @@
+/*!
+/* @settings
+
+name: Baseline Colorist
+id: baseline-colorist
+settings:
+	-
+		id: colorist-light-section
+		title: Colorist (Light)
+		type: heading
+		level: 1
+		collapsed: false
+	-
+		id: colorist-light
+		title: Colorist
+		type: class-select
+		allowEmpty: false
+		default: obsidian-light
+		options:
+			-
+				label: None
+				value: obsidian-light
+			-
+				label: Cupertino
+				value: johnny-light
+			-
+				label: Da Vinci
+				value: baseline-light
+			-
+				label: Monet
+				value: monet-light
+			-
+				label: Picasso
+				value: vivid-light
+			-
+				label: Van Gogh
+				value: expressive-light
+	-
+		id: colorist-l-light
+		title: Lightness
+		type: variable-number-slider
+		default: 1
+		min: 0.5
+		max: 1.5
+		step: 0.05
+	-
+		id: colorist-c-light
+		title: Chroma
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 0.5
+		step: 0.05
+	-
+		id: colorist-h-light
+		title: Hue
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 360
+		step: 1
+	-
+		id: colorist-dark-section
+		title: Colorist (Dark)
+		type: heading
+		level: 1
+		collapsed: false
+	-
+		id: colorist-dark
+		title: Colorist
+		type: class-select
+		allowEmpty: false
+		default: obsidian-dark
+		options:
+			-
+				label: None
+				value: obsidian-dark
+			-
+				label: Cupertino
+				value: johnny-dark
+			-
+				label: Da Vinci
+				value: baseline-dark
+			-
+				label: Monet
+				value: monet-dark
+			-
+				label: Picasso
+				value: vivid-dark
+			-
+				label: Van Gogh
+				value: expressive-dark
+	-
+		id: colorist-l-dark
+		title: Lightness
+		type: variable-number-slider
+		default: 1
+		min: 0.5
+		max: 1.5
+		step: 0.05
+	-
+		id: colorist-c-dark
+		title: Chroma
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 0.5
+		step: 0.05
+	-
+		id: colorist-h-dark
+		title: Hue
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 360
+		step: 1
+*/
+
+body.css-settings-manager {
+  --colorist-l-light: 1;
+  --colorist-c-light: 0;
+  --colorist-h-light: 0;
+  --colorist-l-dark: 1;
+  --colorist-c-dark: 0;
+  --colorist-h-dark: 0;
+}
+
+// Da Vinci
+.theme-light:not(.obsidian-light) {
+  --colorist-l-00: 1;
+  --colorist-l-05: 0.99;
+  --colorist-l-10: 0.98;
+  --colorist-l-20: 0.97;
+  --colorist-l-25: 0.95;
+  --colorist-l-30: 0.92;
+  --colorist-l-35: 0.89;
+  --colorist-l-40: 0.84;
+  --colorist-l-50: 0.79;
+  --colorist-l-60: 0.67;
+  --colorist-l-70: 0.52;
+  --colorist-l-100: 0.32;
+
+  --colorist-c-00: 0.07;
+  --colorist-c-05: 0.08;
+  --colorist-c-10: 0.09;
+  --colorist-c-20: 0.11;
+  --colorist-c-25: 0.13;
+  --colorist-c-30: 0.16;
+  --colorist-c-35: 0.19;
+  --colorist-c-40: 0.23;
+  --colorist-c-50: 0.27;
+  --colorist-c-60: 0.32;
+  --colorist-c-70: 0.37;
+  --colorist-c-100: 0.43;
+
+  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-light)) calc(var(--colorist-c-00) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-light)) calc(var(--colorist-c-05) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-light)) calc(var(--colorist-c-10) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-light)) calc(var(--colorist-c-20) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-light)) calc(var(--colorist-c-25) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-light)) calc(var(--colorist-c-30) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-light)) calc(var(--colorist-c-35) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-light)) calc(var(--colorist-c-40) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-light)) calc(var(--colorist-c-50) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-light)) calc(var(--colorist-c-60) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-light)) calc(var(--colorist-c-70) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-light)) calc(var(--colorist-c-100) * var(--colorist-c-light)) var(--colorist-h-light));
+
+  --color-base-00: var(--colorist-00, #ffffff);
+  --color-base-05: var(--colorist-05, #fcfcfc);
+  --color-base-10: var(--colorist-10, #f8f8f8);
+  --color-base-20: var(--colorist-20, #f5f5f5);
+  --color-base-25: var(--colorist-25, #eeeeee);
+  --color-base-30: var(--colorist-30, #e4e4e4);
+  --color-base-35: var(--colorist-35, #dbdbdb);
+  --color-base-40: var(--colorist-40, #cacaca);
+  --color-base-50: var(--colorist-50, #bababa);
+  --color-base-60: var(--colorist-60, #959595);
+  --color-base-70: var(--colorist-70, #696969);
+  --color-base-100: var(--colorist-100, #323232);
+}
+
+.theme-dark:not(.obsidian-dark) {
+  --colorist-l-00: 0.21;
+  --colorist-l-05: 0.22;
+  --colorist-l-10: 0.23;
+  --colorist-l-20: 0.24;
+  --colorist-l-25: 0.26;
+  --colorist-l-30: 0.28;
+  --colorist-l-35: 0.33;
+  --colorist-l-40: 0.39;
+  --colorist-l-50: 0.46;
+  --colorist-l-60: 0.58;
+  --colorist-l-70: 0.74;
+  --colorist-l-100: 0.89;
+
+  --colorist-c-00: 0.05;
+  --colorist-c-05: 0.06;
+  --colorist-c-10: 0.07;
+  --colorist-c-20: 0.08;
+  --colorist-c-25: 0.09;
+  --colorist-c-30: 0.1;
+  --colorist-c-35: 0.12;
+  --colorist-c-40: 0.14;
+  --colorist-c-50: 0.16;
+  --colorist-c-60: 0.18;
+  --colorist-c-70: 0.2;
+  --colorist-c-100: 0.22;
+
+  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-dark)) calc(var(--colorist-c-00) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-dark)) calc(var(--colorist-c-05) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-dark)) calc(var(--colorist-c-10) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-dark)) calc(var(--colorist-c-20) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-dark)) calc(var(--colorist-c-25) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-dark)) calc(var(--colorist-c-30) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-dark)) calc(var(--colorist-c-35) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-dark)) calc(var(--colorist-c-40) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-dark)) calc(var(--colorist-c-50) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-dark)) calc(var(--colorist-c-60) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-dark)) calc(var(--colorist-c-70) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-dark)) calc(var(--colorist-c-100) * var(--colorist-c-dark)) var(--colorist-h-dark));
+
+  --color-base-00: var(--colorist-00, #181818);
+  --color-base-05: var(--colorist-05, #1b1b1b);
+  --color-base-10: var(--colorist-10, #1d1d1d);
+  --color-base-20: var(--colorist-20, #1f1f1f);
+  --color-base-25: var(--colorist-25, #242424);
+  --color-base-30: var(--colorist-30, #292929);
+  --color-base-35: var(--colorist-35, #353535);
+  --color-base-40: var(--colorist-40, #454545);
+  --color-base-50: var(--colorist-50, #585858);
+  --color-base-60: var(--colorist-60, #7a7a7a);
+  --color-base-70: var(--colorist-70, #ababab);
+  --color-base-100: var(--colorist-100, #dbdbdb);
+}
+
+// Monet
+.theme-light.monet-light {
+  --text-faint: oklch(from var(--colorist-50) calc(l - 0.1) c calc(h + 30));
+  --text-muted: oklch(from var(--colorist-70) calc(l - 0.1) calc(c + 0.1) calc(h + 30));
+  --text-normal: oklch(from var(--colorist-100) calc(l - 0.1) calc(c + 0.2) calc(h + 30));
+
+  &:not(.accented-interface) {
+    --interactive-accent: oklch(from var(--colorist-100) l calc(c + 0.1) calc(h + 45));
+    --interactive-accent-hover: oklch(from var(--colorist-70) calc(c + 0.1) calc(h + 45));
+  }
+}
+.theme-dark.monet-dark {
+  --text-faint: oklch(from var(--colorist-50) calc(l + 0.1) c calc(h + 45));
+  --text-muted: oklch(from var(--colorist-70) calc(l + 0.1) c calc(h + 45));
+  --text-normal: oklch(from var(--colorist-100) calc(l + 0.1) c calc(h + 45));
+
+  &:not(.accented-interface) {
+    --interactive-accent: oklch(from var(--colorist-100) calc(l + 0.1) c calc(h + 60));
+    --interactive-accent: oklch(from var(--colorist-100) calc(l + 0.1) c calc(h + 60));
+    --interactive-accent-hover: oklch(from var(--colorist-70) calc(l + 0.1) c calc(h + 60));
+  }
+}
+
+// Cupertino
+.theme-light.johnny-light {
+  --color-red-rgb: 255, 56, 60;
+  --color-orange-rgb: 255, 141, 40;
+  --color-yellow-rgb: 255, 204, 0;
+  --color-green-rgb: 52, 199, 89;
+  --color-cyan-rgb: 0, 192, 232;
+  --color-blue-rgb: 0, 136, 255;
+  --color-purple-rgb: 203, 48, 224;
+  --color-pink-rgb: 255, 45, 85;
+
+  --color-red: #ff383c;
+  --color-orange: #ff8d28;
+  --color-yellow: #ffcc00;
+  --color-green: #34c759;
+  --color-cyan: #00c0e8;
+  --color-blue: #0088ff;
+  --color-purple: #cb30e0;
+  --color-pink: #ff2d55;
+
+  &:not(.is-mobile) {
+    --colorist-l-00: 1;
+    --colorist-l-05: 0.99;
+    --colorist-l-10: 0.975;
+    --colorist-l-20: 0.96;
+    --colorist-l-25: 0.95;
+    --colorist-l-30: 0.94;
+    --colorist-l-35: 0.91;
+    --colorist-l-40: 0.87;
+    --colorist-l-50: 0.8;
+    --colorist-l-60: 0.67;
+    --colorist-l-70: 0.5;
+    --colorist-l-100: 0.27;
+
+    --interactive-normal: hsl(0 0% 0% / 5%);
+    --interactive-hover: hsl(0 0% 0% / 5%);
+  }
+
+  &.is-mobile {
+    --colorist-l-00: 1;
+    --colorist-l-05: 0.99;
+    --colorist-l-10: 0.98;
+    --colorist-l-20: 0.96;
+    --colorist-l-25: 0.94;
+    --colorist-l-30: 0.92;
+    --colorist-l-35: 0.89;
+    --colorist-l-40: 0.86;
+    --colorist-l-50: 0.82;
+    --colorist-l-60: 0.73;
+    --colorist-l-70: 0.64;
+    --colorist-l-100: 0;
+
+    --colorist-c-00: 0;
+    --colorist-c-05: 0;
+    --colorist-c-10: 0;
+    --colorist-c-20: 0.05;
+    --colorist-c-25: 0.05;
+    --colorist-c-30: 0.05;
+    --colorist-c-35: 0.05;
+    --colorist-c-40: 0.05;
+    --colorist-c-50: 0;
+    --colorist-c-60: 0;
+    --colorist-c-70: 0;
+    --colorist-c-100: 0;
+
+    --colorist-c-light: 0.15;
+    --colorist-h-light: 285;
+
+    --background-primary-alt: var(--color-base-20);
+    --background-secondary-alt: var(--color-base-00);
+    --interactive-normal: oklch(from var(--colorist-70) calc(l - 0.08) 0.01 h / 12%);
+    --interactive-hover: oklch(from var(--colorist-70) calc(l - 0.1) c h / 20%);
+  }
+}
+.theme-dark.johnny-dark {
+  --color-red-rgb: 255, 66, 69;
+  --color-orange-rgb: 255, 146, 48;
+  --color-yellow-rgb: 255, 214, 0;
+  --color-green-rgb: 48, 209, 88;
+  --color-cyan-rgb: 60, 211, 254;
+  --color-blue-rgb: 0, 145, 255;
+  --color-purple-rgb: 107, 52, 242;
+  --color-pink-rgb: 255, 55, 95;
+
+  --color-red: #ff4245;
+  --color-orange: #ff9230;
+  --color-yellow: #ffd600;
+  --color-green: #30d158;
+  --color-cyan: #3cd3fe;
+  --color-blue: #0091ff;
+  --color-purple: #6b34f2;
+  --color-pink: #ff375f;
+
+  &:not(.is-mobile) {
+    --colorist-l-00: 0.235;
+    --colorist-l-05: 0.25;
+    --colorist-l-10: 0.265;
+    --colorist-l-20: 0.28;
+    --colorist-l-25: 0.295;
+    --colorist-l-30: 0.31;
+    --colorist-l-35: 0.34;
+    --colorist-l-40: 0.39;
+    --colorist-l-50: 0.45;
+    --colorist-l-60: 0.56;
+    --colorist-l-70: 0.69;
+    --colorist-l-100: 0.9;
+
+    --interactive-normal: hsl(0 0% 100% / 5%);
+    --interactive-hover: hsl(0 0% 100% / 5%);
+  }
+
+  &.is-mobile {
+    --colorist-l-00: 0;
+    --colorist-l-05: 0.1;
+    --colorist-l-10: 0.17;
+    --colorist-l-20: 0.23;
+    --colorist-l-25: 0.26;
+    --colorist-l-30: 0.29;
+    --colorist-l-35: 0.32;
+    --colorist-l-40: 0.35;
+    --colorist-l-50: 0.4;
+    --colorist-l-60: 0.52;
+    --colorist-l-70: 0.64;
+    --colorist-l-100: 1;
+
+    --colorist-c-00: 0;
+    --colorist-c-05: 0;
+    --colorist-c-10: 0;
+    --colorist-c-20: 0.05;
+    --colorist-c-25: 0.05;
+    --colorist-c-30: 0.05;
+    --colorist-c-35: 0.05;
+    --colorist-c-40: 0.05;
+    --colorist-c-50: 0;
+    --colorist-c-60: 0;
+    --colorist-c-70: 0;
+    --colorist-c-100: 0;
+
+    --colorist-c-dark: 0.1;
+    --colorist-h-dark: 285;
+
+    --background-primary-alt: var(--color-base-20);
+    --interactive-normal: oklch(from var(--colorist-70) calc(l - 0.08) 0.01 h / 24%);
+    --interactive-hover: oklch(from var(--colorist-70) calc(l - 0.1) c h / 36%);
+  }
+}
+
+// Disabling input
+.theme-light.johnny-light .style-settings-container .setting-item[data-id="colorist-c-light"],
+.theme-light.johnny-light .style-settings-container .setting-item[data-id="colorist-h-light"],
+.theme-dark.johnny-dark .style-settings-container .setting-item[data-id="colorist-c-dark"],
+.theme-dark.johnny-dark .style-settings-container .setting-item[data-id="colorist-h-dark"] {
+  pointer-events: none;
+
+  > * {
+    opacity: 0.5;
+  }
+}

@@ -56,12 +56,6 @@ body.is-mobile {
   --mobile-left-sidebar-width-pinned: 300px;
   --mobile-right-sidebar-width-pinned: 300px;
 
-  &.theme-dark {
-    --color-base-00: #1e1e1e;
-    --color-base-10: #242424;
-    --color-base-20: #262626;
-  }
-
   // Adaptive font size
   &:not(.mod-macos):not(.dynamic-type-off) {
     --font-ui-smaller: calc(12px + var(--font-ui-modifier));
