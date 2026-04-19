@@ -34,7 +34,6 @@
 
     .callout-title-inner {
       --p-spacing: 0;
-      color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 15%);
     }
 
     .callout-fold {
@@ -59,22 +58,22 @@
   // Callout: Tactile
   body.callouts-tactile .callout:not([data-callout="note-toolbar"]) {
     box-shadow: var(--shadow-tactile);
-    background: linear-gradient(rgba(var(--callout-color), 0.1), rgba(var(--callout-color), 0.175));
+    background: linear-gradient(hsl(from var(--callout-color) h s l / 0.1), hsl(from var(--callout-color) h s l / 0.175));
   }
 
   // Callout: Padded
   body.callouts-padded.theme-light .callout:not([data-callout="note-toolbar"]) {
-    background-color: rgba(var(--callout-color), 0.2);
+    background-color: hsl(from var(--callout-color) h s l / 0.2);
 
     .callout-content {
-      --callout-content-background: color-mix(in srgb, rgb(var(--callout-color)) 10%, var(--background-primary));
+      --callout-content-background: color-mix(in srgb, var(--callout-color) 10%, var(--background-primary));
     }
   }
   body.callouts-padded.theme-dark .callout:not([data-callout="note-toolbar"]) {
-    background-color: rgba(var(--callout-color), 0.3);
+    background-color: hsl(from var(--callout-color) h s l / 0.3);
 
     .callout-content {
-      --callout-content-background: color-mix(in srgb, rgb(var(--callout-color)) 15%, var(--background-primary));
+      --callout-content-background: color-mix(in srgb, var(--callout-color) 15%, var(--background-primary));
     }
   }
   body.callouts-padded .callout:not([data-callout="note-toolbar"]) {
@@ -88,7 +87,6 @@
     .callout-icon {
       width: 56px;
       position: absolute;
-      z-index: -1;
       opacity: 0.2;
       right: 16px;
       top: 8px;
