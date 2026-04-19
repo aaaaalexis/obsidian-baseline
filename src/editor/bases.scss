@@ -39,11 +39,15 @@ body {
   overflow: hidden;
 }
 
-body.bases-row-alt .bases-tbody .bases-tr:nth-child(odd) {
+.bases-row-alt .bases-tbody .bases-tr:nth-child(odd) {
   background-color: var(--background-secondary);
 }
-body.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
+.bases-col-alt .bases-tbody .bases-tr > .bases-td:nth-child(2n + 2) {
   background-color: var(--background-secondary);
+}
+
+.bases-plain .bases-header {
+  display: none;
 }
 
 // Bases: Cards view
