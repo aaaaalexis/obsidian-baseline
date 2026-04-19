@@ -212,14 +212,17 @@ body:is(.input-cupertino, .input-material) {
     &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-blue);
     }
+    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-purple);
+    }
     &[data-setting-id="file"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-orange);
     }
-    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-accent);
+    &[data-setting-id="interface"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-pink);
     }
     &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-pink);
+      --setting-nav-icon-background: var(--color-red);
     }
     &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-green);
@@ -228,7 +231,7 @@ body:is(.input-cupertino, .input-material) {
       --setting-nav-icon-background: var(--color-cyan);
     }
     &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-purple);
+      --setting-nav-icon-background: var(--color-blue);
     }
     &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-purple);

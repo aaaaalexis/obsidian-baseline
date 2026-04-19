@@ -21,6 +21,10 @@ body.input-cupertino {
       --setting-nav-icon-color: var(--color-red);
       --setting-nav-icon-background: var(--color-base-10);
     }
+    &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-color: var(--color-blue);
+      --setting-nav-icon-background: var(--color-base-10);
+    }
     &[data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: #242424;
     }
