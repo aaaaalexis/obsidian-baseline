@@ -50,6 +50,10 @@ body:not(.is-phone) {
     .setting-page {
       background-color: var(--settings-background);
     }
+    .setting-page-titlebar {
+      background-color: transparent;
+      border: none;
+    }
 
     .setting-item-name {
       overflow: visible;
