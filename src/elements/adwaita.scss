@@ -5,6 +5,7 @@ body.input-adwaita {
   --input-border-width: 0;
   --input-shadow: none;
   --input-shadow-hover: none;
+  --input-shadow-inset: none;
   --input-font-weight: calc(var(--font-weight) + var(--bold-modifier));
 
   --radius-s: calc(9px * var(--radius-modifier));

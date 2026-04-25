@@ -34,6 +34,12 @@ body.input-material {
   --nav-item-weight-active: var(--font-medium);
   --nav-item-radius: var(--radius-l);
 
+  --interactive-normal: var(--background-modifier-hover);
+  --interactive-hover: var(--background-modifier-border);
+  --dropdown-background: var(--interactive-normal);
+  --dropdown-background-hover: var(--interactive-hover);
+  --background-modifier-form-field: var(--interactive-normal);
+
   --menu-radius: var(--radius-l);
 
   --input-shadow: none;
@@ -145,6 +151,10 @@ body.input-material {
       margin-bottom: -4px;
     }
 
+    .setting-group-search {
+      padding: 0 0 8px;
+      background-color: transparent;
+    }
     .setting-items {
       padding: 0;
       background-color: transparent;
@@ -152,10 +162,10 @@ body.input-material {
 
     .setting-item:not(.setting-item-heading) {
       border-top: none;
-      border-radius: var(--radius-xs);
       background-color: var(--setting-items-background);
       margin-bottom: 2px;
     }
+
     .setting-item:not(.setting-item-heading)::before {
       content: none;
     }
@@ -215,7 +225,7 @@ body.input-material:not(.is-phone) {
     .prompt-input {
       border: none;
       border-radius: 100vh;
-      background-color: var(--interactive-normal);
+      background-color: var(--background-modifier-form-field);
       font-size: var(--font-ui-large);
     }
 

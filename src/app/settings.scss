@@ -4,7 +4,7 @@ body {
   --setting-items-radius: var(--radius-m);
   --setting-items-padding-y: calc(16px * var(--density-modifier));
 
-  &:is(.input-baseline, .input-tactile, :not(.css-settings-manager)) {
+  &:is(.input-baseline, :not(.css-settings-manager)) {
     --setting-items-border-width: var(--border-width);
     --setting-items-border-color: var(--background-modifier-hover);
   }

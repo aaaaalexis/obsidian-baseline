@@ -40,8 +40,8 @@ settings:
 		title: Lightness
 		type: variable-number-slider
 		default: 1
-		min: 0.5
-		max: 1.5
+		min: 0.75
+		max: 1.25
 		step: 0.05
 	-
 		id: colorist-c-light
@@ -95,8 +95,8 @@ settings:
 		title: Lightness
 		type: variable-number-slider
 		default: 1
-		min: 0.5
-		max: 1.5
+		min: 0.75
+		max: 1.25
 		step: 0.05
 	-
 		id: colorist-c-dark
@@ -240,31 +240,40 @@ body.css-settings-manager {
   --colorist-l-05: 0.99;
   --colorist-l-10: 0.98;
   --colorist-l-20: 0.96;
-  --colorist-l-25: 0.95;
-  --colorist-l-30: 0.94;
-  --colorist-l-35: 0.93;
-  --colorist-l-40: 0.92;
+  --colorist-l-25: 0.94;
+  --colorist-l-30: 0.92;
+  --colorist-l-35: 0.9;
+  --colorist-l-40: 0.88;
   --colorist-l-50: 0.64;
   --colorist-l-60: 0.56;
   --colorist-l-70: 0.48;
   --colorist-l-100: 0.24;
 
-  --colorist-c-00: 0.24;
-  --colorist-c-05: 0.2;
-  --colorist-c-10: 0.16;
-  --colorist-c-20: 0.14;
-  --colorist-c-25: 0.14;
-  --colorist-c-30: 0.14;
-  --colorist-c-35: 0.14;
-  --colorist-c-40: 0.12;
-  --colorist-c-50: 0.12;
-  --colorist-c-60: 0.12;
-  --colorist-c-70: 0.12;
+  --colorist-c-00: 0.1;
+  --colorist-c-05: 0.1;
+  --colorist-c-10: 0.1;
+  --colorist-c-20: 0.1;
+  --colorist-c-25: 0.1;
+  --colorist-c-30: 0.1;
+  --colorist-c-35: 0.1;
+  --colorist-c-40: 0.08;
+  --colorist-c-50: 0.08;
+  --colorist-c-60: 0.08;
+  --colorist-c-70: 0.08;
   --colorist-c-100: 0.1;
 
-  &:not(.accented-interface) {
-    --interactive-accent: oklch(from var(--colorist-100) l calc(c + 0.1) calc(h + 60));
-    --interactive-accent-hover: oklch(from var(--colorist-70) calc(c + 0.1) calc(h + 60));
+  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+
+  &.accented-interface {
+    --interactive-accent: oklch(from var(--color-accent) l c calc(var(--colorist-h-light) + 60));
+    --interactive-accent-hover: oklch(from var(--color-accent) calc(l - 0.1) c calc(var(--colorist-h-light) + 60));
   }
 }
 
@@ -295,9 +304,18 @@ body.css-settings-manager {
   --colorist-c-70: 0.2;
   --colorist-c-100: 0.16;
 
-  &:not(.accented-interface) {
-    --interactive-accent: oklch(from var(--colorist-100) calc(l + 0.1) c calc(h + 60));
-    --interactive-accent-hover: oklch(from var(--colorist-70) calc(l + 0.1) c calc(h + 60));
+  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+
+  &.accented-interface {
+    --interactive-accent: oklch(from var(--color-accent) l c calc(var(--colorist-h-dark) + 60));
+    --interactive-accent-hover: oklch(from var(--color-accent) calc(l - 0.1) c calc(var(--colorist-h-dark) + 60));
   }
 }
 
@@ -458,5 +476,23 @@ body.css-settings-manager {
 
   > * {
     opacity: 0.5;
+  }
+}
+
+// Accented interface
+.accented-interface .setting-item-control input[type="color"] {
+  width: auto;
+  height: auto;
+
+  &::-webkit-color-swatch-wrapper {
+    display: none;
+  }
+  &::after {
+    content: "Style Settings → Baseline → Colors";
+    color: var(--text-muted);
+    line-height: var(--line-height-tight);
+    font-family: var(--font-interface);
+    font-weight: var(--input-font-weight);
+    font-size: var(--font-ui-smaller);
   }
 }
