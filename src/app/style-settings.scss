@@ -53,69 +53,38 @@ settings:
 		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
-		id: color-scheme-light
-		title: Light color scheme
+		id: color-scheme-accent
+		title: Override accent
+		description: Use Colorist tone as accent color.
+		type: class-toggle
+	-
+		id: colorist-light-section
+		title: Colorist (Light)
+		type: heading
+		level: 2
+		collapsed: false
+	-
+		id: colorist-light
+		title: Colorist
 		type: class-select
 		allowEmpty: false
-		default: baseline-light
+		default: static-light
 		options:
 			-
-				label: Baseline
-				value: baseline-light
-			-
-				label: Obsidian
-				value: default-light
-			-
-				label: Adwaita
-				value: adwaita-light
-			-
-				label: Atom
-				value: atom-light
-			-
-				label: Catppuccin
-				value: catppuccin-light
+				label: Static
+				value: static-light
 			-
 				label: Cupertino
-				value: cupertino-light
+				value: cupertino-neu-light
 			-
-				label: Everforest
-				value: everforest-light
-			-
-				label: Flexoki
-				value: flexoki-light
-			-
-				label: Gruvbox
-				value: gruvbox-light
-			-
-				label: Latte
-				value: latte-light
+				label: Dynamic
+				value: dynamic-light
 			-
 				label: Material
-				value: material-light
-			-
-				label: Melange
-				value: melange-light
-			-
-				label: Nord
-				value: nord-light
-			-
-				label: Notion
-				value: notion-light
-			-
-				label: Rosé Pine
-				value: rose-pine-light
-			-
-				label: Sanctum
-				value: sanctum-light
-			-
-				label: Solarized
-				value: solarized-light
-			-
-				label: Tiniri
-				value: tiniri-light
+				value: material-neu-light
 	-
 		id: background-contrast-light
-		title: Light contrast
+		title: Contrast
 		type: class-select
 		allowEmpty: false
 		default: contrast-light
@@ -133,87 +102,57 @@ settings:
 				label: High contrast
 				value: contrast-light-vivid
 	-
-		id: color-scheme-dark
-		title: Dark color scheme
+		id: colorist-l-light
+		title: Radiance
+		type: variable-number-slider
+		default: 1
+		min: 0.9
+		max: 1.1
+		step: 0.01
+	-
+		id: colorist-c-light
+		title: Vibrance
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 0.5
+		step: 0.05
+	-
+		id: colorist-h-light
+		title: Tone
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 360
+		step: 1
+	-
+		id: colorist-dark-section
+		title: Colorist (Dark)
+		type: heading
+		level: 2
+		collapsed: false
+	-
+		id: colorist-dark
+		title: Colorist
 		type: class-select
 		allowEmpty: false
-		default: baseline-dark
+		default: static-dark
 		options:
 			-
-				label: Baseline
-				value: baseline-dark
-			-
-				label: Obsidian
-				value: default-dark
-			-
-				label: Admin
-				value: admin-dark
-			-
-				label: Adwaita
-				value: adwaita-dark
-			-
-				label: Atom
-				value: atom-dark
-			-
-				label: Ayu
-				value: ayu-dark
-			-
-				label: Catppuccin
-				value: catppuccin-dark
+				label: Static
+				value: static-dark
 			-
 				label: Cupertino
-				value: cupertino-dark
+				value: cupertino-neu-dark
 			-
-				label: Dracula
-				value: dracula-dark
-			-
-				label: Everforest
-				value: everforest-dark
-			-
-				label: Flexoki
-				value: flexoki-dark
-			-
-				label: Frappe
-				value: frappe-dark
-			-
-				label: Gruvbox
-				value: gruvbox-dark
-			-
-				label: Macchiato
-				value: macchiato-dark
+				label: Dynamic
+				value: dynamic-dark
 			-
 				label: Material
-				value: material-dark
-			-
-				label: Melange
-				value: melange-dark
-			-
-				label: Mocha
-				value: mocha-dark
-			-
-				label: Nord
-				value: nord-dark
-			-
-				label: Notion
-				value: notion-dark
-			-
-				label: Rosé Pine
-				value: rose-pine-dark
-			-
-				label: Sanctum
-				value: sanctum-dark
-			-
-				label: Solarized
-				value: solarized-dark
-			-
-				label: Things
-				value: things-dark
-			-
-				label: Tiniri
-				value: tiniri-dark
+				value: material-neu-dark
 	-
 		id: background-contrast-dark
-		title: Dark contrast
+		title: Contrast
 		type: class-select
 		allowEmpty: false
 		default: contrast-dark
@@ -234,68 +173,32 @@ settings:
 				label: Black (Mobile)
 				value: contrast-dark-black-mobile
 	-
-		id: color-scheme-accent
-		title: Color scheme accent
-		description: Use color scheme preset accent color.
-		type: class-toggle
+		id: colorist-l-dark
+		title: Radiance
+		type: variable-number-slider
+		default: 1
+		min: 0.75
+		max: 1.25
+		step: 0.05
 	-
-		id: interface-colors
-		title: Interface colors
-		type: heading
-		level: 2
-		collapsed: true
+		id: colorist-c-dark
+		title: Vibrance
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 0.5
+		step: 0.05
 	-
-		id: background-primary
-		title: Primary color
-		description: Used in main editor area.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
+		id: colorist-h-dark
+		title: Tone
+		type: variable-number-slider
+		default: 0
+		min: 0
+		max: 360
+		step: 1
 	-
-		id: background-primary-alt
-		title: On primary color
-		description: Used in blockquotes and tables.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-secondary
-		title: Secondary color
-		description: Used in sidebars and menus.
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-secondary-alt
-		title: On secondary color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: divider-color
-		title: Divider color
-		description: Used in separating tabs and sidebars.
-		type: variable-themed-color
-		opacity: true
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: background-modifier-hover
-		title: Indicator color
-		description: Used in active items, hover items and indicators.
-		type: variable-themed-color
-		opacity: true
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: chromatic-colors
-		title: Chromatic colors
+		id: accent-palette
+		title: Accents
 		type: heading
 		level: 2
 		collapsed: true
@@ -387,36 +290,85 @@ settings:
                 format: rgb-values
 		default-light: '#'
 		default-dark: '#'
-    - 
-        id: input-palette
-        title: Element colors
-        type: heading
-        level: 2
+	-
+		id: surface-palette
+		title: Surfaces
+		type: heading
+		level: 2
 		collapsed: true
 	-
-		id: background-modifier-border
-		title: Border color
+		id: background-primary
+		title: Primary
+		description: Main workspace and editor background.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: background-modifier-border-hover
-		title: Border color (Hover)
+		id: background-primary-alt
+		title: Primary Elevated
+		description: Used for blockquotes and tables.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: background-modifier-border-focus
-		title: Border color (Active)
+		id: background-secondary
+		title: Secondary
+		description: Used in sidebars and settings.
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
+	-
+		id: background-secondary-alt
+		title: Secondary Elevated
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-hover
+		title: Hover fill
+		description: Used in active items, hover items and indicators.
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+    - 
+        id: divider
+        type: info-text
+	-
+		id: prompt-background
+		title: Command palette
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: menu-background
+		title: Menu
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: modal-background
+		title: Modal
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: element-palette
+		title: Elements
+		type: heading
+		level: 2
+		collapsed: true
 	-
 		id: interactive-normal
-		title: Interaction background
+		title: Interactive elements
 		description: Used in buttons, dropdowns, and text inputs.
 		type: variable-themed-color
 		format: hex
@@ -424,83 +376,98 @@ settings:
 		default-dark: '#'
 	-
 		id: interactive-hover
-		title: Interaction background (Hover)
+		title: Interactive elements (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+    - 
+        id: divider
+        type: info-text
+	-
+		id: divider-color
+		title: Dividers
+		description: Separators between sidebars, tabs, and panes.
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-border
+		title: Borders
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: prompt-background
-		title: Command palette background
+		id: background-modifier-border-hover
+		title: Borders (Hover)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: menu-background
-		title: Menu background
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: modal-background
-		title: Modal background
+		id: background-modifier-border-focus
+		title: Borders (Focus)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: text-palette
-		title: Text colors
+		title: Text
 		type: heading
 		level: 2
 		collapsed: true
 	-
 		id: text-normal
-		title: Primary text color
+		title: Primary text
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: text-normal-editor
-		title: Editor text color
+		title: Primary text (Editor)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: text-muted
-		title: Secondary text color
+		title: Secondary text
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: text-faint
-		title: Tertiary text color
+		title: Subtle text
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: italic-color
-		title: Italic text color
+		title: Italic text
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: bold-color
-		title: Bold text color
+		title: Bold text
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
+    - 
+        id: divider
+        type: info-text
 	-
 		id: text-highlight
-		title: Highlighted text color
+		title: Highlight text
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -508,7 +475,7 @@ settings:
 		default-dark: '#'
 	-
 		id: text-highlight-bg
-		title: Highlighted text background
+		title: Highlight background
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -516,235 +483,100 @@ settings:
 		default-dark: '#'
 	-
 		id: text-selection
-		title: Selected text background
+		title: Selection background
 		type: variable-themed-color
 		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
-		id: colors-advanced
-		title: Advanced
+		id: code-palette
+		title: Syntax
 		type: heading
 		level: 2
 		collapsed: true
-    - 
-        id: colors-advanced-info
-        title: Before you start
-		description: If you're not sure what these options do, it's recommended to leave them unchanged.
-        type: info-text
-	-
-		id: base-palette
-		title: Base colors
-		type: heading
-		level: 3
-		collapsed: true
-	-
-		id: color-base-00
-		title: 0%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-05
-		title: 5%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-10
-		title: 10%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-20
-		title: 20%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-25
-		title: 25%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-30
-		title: 30%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-35
-		title: 35%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-40
-		title: 40%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-50
-		title: 50%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-60
-		title: 60%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-70
-		title: 70%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: color-base-100
-		title: 100%
-		type: variable-themed-color
-		format: rgb-values
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-palette
-		title: Icon colors
-		type: heading
-		level: 3
-		collapsed: true
-	-
-		id: icon-color
-		title: Icon color
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-hover
-		title: Icon color (Hover)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-active
-		title: Icon color (Active)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: icon-color-focused
-		title: Icon color (Focused)
-		type: variable-themed-color
-		format: hex
-		default-light: '#'
-		default-dark: '#'
-	-
-		id: code-palette
-		title: Code colors
-		type: heading
-		level: 3
-		collapsed: true
 	-
 		id: code-normal
-		title: Code default
+		title: Default
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-comment
-		title: Code comments
+		title: Comments
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-function
-		title: Code functions
+		title: Functions
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-keyword
-		title: Code keywords
+		title: Keywords
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-important
-		title: Code important
+		title: Important
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-operator
-		title: Code operators
+		title: Operators
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-property
-		title: Code properties
+		title: Properties
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-punctuation
-		title: Code punctuation
+		title: Punctuation
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-string
-		title: Code strings
+		title: Strings
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-tag
-		title: Code tags
+		title: Tags
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: code-value
-		title: Code values
+		title: Values
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: graph-palette
-		title: Graph colors
+		title: Graph
 		type: heading
-		level: 3
+		level: 2
 		collapsed: true
     - 
         id: graph-info
@@ -752,42 +584,42 @@ settings:
         type: info-text
 	-
 		id: graph-line
-		title: Line color
+		title: Lines
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: graph-node
-		title: Node color
+		title: Nodes
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-
 		id: graph-node-focused
-		title: Active node color
+		title: Active nodes
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-  
 		id: graph-node-tag
-		title: Tag node color
+		title: Tag nodes
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-  
 		id: graph-node-attachment
-		title: Attachment node color
+		title: Attachment nodes
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
 		default-dark: '#'
 	-  
 		id: graph-node-unresolved
-		title: Unresolved node color
+		title: Unresolved nodes
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -1430,12 +1262,6 @@ settings:
 		title: Tablet pinned sidebar width (Right)
 		type: variable-text
 		default: '300px'
-	-
-		id: settings
-		title: Settings
-		type: heading
-		level: 2
-		collapsed: true
 	-
 		id: titlebar
 		title: Frame title
@@ -3257,236 +3083,182 @@ settings:
 		default-dark: '#'
 */
 
-.view-content .style-settings-container .style-settings-container .setting-item {
-  align-items: center;
-  padding: 16px;
-
-  &:not(.setting-item-heading) {
-    flex-direction: row;
-  }
-
-  .setting-item-control {
-    padding-top: 0;
-  }
-}
-.style-settings-heading:not(.is-collapsed) {
-  border-bottom: none;
-}
-.style-settings-heading,
-.style-settings-container {
-  margin-block: 0 !important;
-  padding-left: 32px;
-}
 .style-settings-heading {
-  border-radius: 0;
+  margin-block: 0 !important;
   padding: 16px !important;
-}
-.style-settings-heading .setting-item-name {
-  color: var(--text-normal) !important;
+
+  &:not(.is-collapsed) {
+    border-bottom: none;
+  }
+
+  .setting-item-name {
+    color: var(--text-normal);
+  }
 }
 
-.style-settings-container .setting-item {
-  margin-bottom: 0;
-  background-color: transparent;
-  border: none;
-  gap: 4px !important;
-}
-.style-settings-container .setting-item-description > div:last-child {
-  display: none;
-}
-.style-settings-container .setting-item:not(.style-settings-heading) > .setting-item-control {
-  min-height: var(--input-height);
-}
-.style-settings-container .themed-color-wrapper {
-  display: flex;
+.style-settings-container {
+  padding-left: 32px;
 
-  > div {
-    gap: 8px;
-    margin-top: 0 !important;
+  .setting-item {
+    margin-bottom: 0;
     background-color: transparent;
-    color: var(--color-base-100);
-    padding: 0 8px;
+    border: none;
+    gap: 4px !important;
+  }
+  .setting-item[data-id="divider"] .setting-item-info {
+    height: var(--border-width);
+    background-color: var(--background-modifier-border);
+  }
 
-    .pickr .pcr-button {
-      box-shadow: none;
-      border-radius: 100vh;
-      border: var(--input-border-width) solid var(--background-modifier-border);
-    }
-    .pickr .pcr-button::before {
-      border-radius: var(--button-radius);
-      background: var(--color-base-50);
-    }
-    .pickr .pcr-button::after {
-      border-radius: var(--button-radius);
-    }
+  .setting-item:not(.setting-item-heading) .setting-item-name {
+    padding-bottom: 4px;
+  }
+  .setting-item:not(.setting-item-heading) .setting-item-description {
+    padding-top: 0px;
+  }
 
-    .pickr-reset > button {
-      margin: 0;
-      background-color: var(--color-base-10);
+  .setting-item-description > div:last-child {
+    display: none;
+  }
+
+  .setting-item:not(.setting-item-heading) > .setting-item-control {
+    min-height: var(--input-height);
+  }
+
+  // Themed color controls
+  .themed-color-wrapper {
+    display: flex;
+
+    > div {
+      gap: 8px;
+      margin-top: 0 !important;
+      background-color: transparent;
       color: var(--color-base-100);
       padding: 0 8px;
+
+      .pickr .pcr-button {
+        box-shadow: none;
+        border-radius: 100vh;
+        border: var(--input-border-width) solid var(--background-modifier-border);
+      }
+      .pickr .pcr-button::before {
+        border-radius: var(--button-radius);
+        background: var(--color-base-50);
+      }
+      .pickr .pcr-button::after {
+        border-radius: var(--button-radius);
+      }
+
+      .pickr-reset > button {
+        margin: 0;
+        background-color: var(--color-base-10);
+        color: var(--color-base-100);
+        padding: 0 8px;
+      }
     }
   }
-}
-.style-settings-container .pcr-app.visible {
-  box-shadow: var(--shadow-l);
-  border-radius: var(--modal-radius);
-  background-color: var(--modal-background);
-  padding: 8px;
 
-  .pcr-selection .pcr-palette,
-  .pcr-selection .pcr-palette::before {
-    border-radius: calc(var(--modal-radius) - 8px);
-  }
-  .pcr-selection .pcr-color-preview {
-    margin: 0;
-  }
-  .pcr-selection .pcr-color-preview .pcr-current-color {
-    border: var(--input-border-width) solid var(--background-modifier-border);
-  }
+  // Color picker
+  .pcr-app.visible {
+    box-shadow: var(--shadow-l);
+    border-radius: var(--modal-radius);
+    background-color: var(--modal-background);
+    padding: 8px;
 
-  .pcr-swatches {
-    margin: 8px 0;
-    padding: 0;
-
-    > button {
+    .pcr-selection .pcr-palette,
+    .pcr-selection .pcr-palette::before {
+      border-radius: calc(var(--modal-radius) - 8px);
+    }
+    .pcr-selection .pcr-color-preview {
       margin: 0;
-      box-shadow: none;
-      border-radius: 100vh;
     }
-    > button.pcr-active {
-      box-shadow: 0 0 0 1px white;
-      border-radius: 100vh;
+    .pcr-selection .pcr-color-preview .pcr-current-color {
+      border: var(--input-border-width) solid var(--background-modifier-border);
+    }
+
+    .pcr-swatches {
+      margin: 8px 0;
+      padding: 0;
+
+      > button {
+        margin: 0;
+        box-shadow: none;
+        border-radius: 100vh;
+      }
+      > button.pcr-active {
+        box-shadow: 0 0 0 1px white;
+        border-radius: 100vh;
+      }
+    }
+
+    .pcr-interaction {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+
+      input.pcr-type[value="HEX"],
+      input.pcr-type[value="RGB"],
+      input.pcr-type[value="HSL"],
+      input.pcr-type[value="HEXA"],
+      input.pcr-type[value="RGBA"],
+      input.pcr-type[value="HSLA"] {
+        grid-column: span 2;
+      }
+      input.pcr-save,
+      input.pcr-cancel {
+        grid-column: span 3;
+      }
+
+      input:focus {
+        box-shadow: none;
+      }
+      input.pcr-result {
+        grid-column: span 6;
+        margin: 0;
+        border-radius: var(--input-radius);
+        background: var(--background-modifier-form-field);
+        padding: var(--input-padding);
+        min-width: unset;
+        color: var(--text-normal);
+        caret-color: var(--text-normal);
+        font-size: var(--font-ui-small);
+      }
+      input[type="button"] {
+        margin: 0;
+        box-shadow: var(--input-shadow);
+        border-radius: var(--button-radius);
+        background-color: var(--interactive-normal);
+        padding: 8px 12px;
+        color: var(--text-normal);
+        font-weight: var(--input-font-weight);
+        font-size: var(--font-ui-small);
+        font-family: var(--font-interface);
+        letter-spacing: normal;
+      }
+      input.pcr-save {
+        background-color: var(--interactive-accent);
+        color: var(--text-on-accent);
+      }
     }
   }
+}
 
-  .pcr-interaction {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-
-    input.pcr-type[value="HEX"],
-    input.pcr-type[value="RGB"],
-    input.pcr-type[value="HSL"],
-    input.pcr-type[value="HEXA"],
-    input.pcr-type[value="RGBA"],
-    input.pcr-type[value="HSLA"] {
-      grid-column: span 2;
-    }
-    input.pcr-save,
-    input.pcr-cancel {
-      grid-column: span 3;
-    }
-
-    input:focus {
-      box-shadow: none;
-    }
-    input.pcr-result {
-      grid-column: span 6;
-      margin: 0;
-      border-radius: var(--input-radius);
-      background: var(--background-modifier-form-field);
-      padding: var(--input-padding);
-      min-width: unset;
-      color: var(--text-normal);
-      caret-color: var(--text-normal);
-      font-size: var(--font-ui-small);
-    }
-    input[type="button"] {
-      margin: 0;
-      box-shadow: var(--input-shadow);
-      border-radius: var(--button-radius);
-      background-color: var(--interactive-normal);
-      padding: 8px 12px;
-      color: var(--text-normal);
-      font-weight: var(--input-font-weight);
-      font-size: var(--font-ui-small);
-      font-family: var(--font-interface);
-      letter-spacing: normal;
-    }
-    input.pcr-save {
-      background-color: var(--interactive-accent);
-      color: var(--text-on-accent);
-    }
+.workspace-leaf-content[data-type="style-settings"] {
+  .setting-item {
+    flex-direction: row !important;
+    align-items: center !important;
   }
-}
-
-// Credits
-body .style-settings-container .setting-item[data-id] .setting-item-control::before {
-  margin-inline-end: 4px;
-  max-width: 12em;
-  color: var(--text-faint);
-  font-size: var(--font-ui-smaller);
-}
-
-body.ayu-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Konstantin Pschera (k15a)";
-}
-body.admin-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.metadata-block .style-settings-container .setting-item[data-id="metadata-style"] .setting-item-control::before {
-  content: "Author: Bradley Wyatt (bwya77)";
-}
-body.catppuccin-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.catppuccin-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Catppuccin";
-}
-body.dracula-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.dracula-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Dracula";
-}
-body.everforest-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.everforest-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Sainnhe Park (sainnhe)";
-}
-body.flexoki-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.flexoki-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Steph Ango (kepano)";
-}
-body.gruvbox-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.gruvbox-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Pavel Pertsev (morhetz)";
-}
-body.frappe-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.latte-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.macchiato-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before,
-body.mocha-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: AnubisNekhet";
-}
-body.melange-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.melange-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Sergio A. Vargas (savq)";
-}
-body.nord-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.nord-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Sven Greb (svengreb)";
-}
-body.rose-pine-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.rose-pine-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Rose Pine";
-}
-body.sanctum-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.sanctum-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: José Daniel Mourão (jdanielmourao)";
-}
-body.solarized-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.solarized-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Ethan Schoonover (altercation)";
-}
-body.tiniri-light .style-settings-container .setting-item[data-id="color-scheme-light"] .setting-item-control::before,
-body.tiniri-dark .style-settings-container .setting-item[data-id="color-scheme-dark"] .setting-item-control::before {
-  content: "Author: Vlad Gerasimov (vladstudio)";
-}
-body.layout-border .style-settings-container .setting-item[data-id="layout-style"] .setting-item-control::before {
-  content: "Author: Border by Akifyss";
-}
-body.layout-frame .style-settings-container .setting-item[data-id="layout-style"] .setting-item-control::before {
-  content: "Author: Iridium by kyffa";
+  .setting-item-heading {
+    border: none !important;
+  }
+  .setting-item-control {
+    padding-top: 0 !important;
+  }
 }
 
 // Disabling input
-body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
 body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],

@@ -1,109 +1,3 @@
-/*!
-/* @settings
-
-name: Baseline Colorist
-id: baseline-colorist
-settings:
-	-
-		id: colorist-light-section
-		title: Colorist (Light)
-		type: heading
-		level: 1
-		collapsed: false
-	-
-		id: colorist-light
-		title: Colorist
-		type: class-select
-		allowEmpty: false
-		default: static-light
-		options:
-			-
-				label: Static
-				value: static-light
-			-
-				label: Dynamic
-				value: dynamic-light
-			-
-				label: Cupertino
-				value: cupertino-neu-light
-			-
-				label: Material
-				value: material-neu-light
-	-
-		id: colorist-l-light
-		title: Radiance
-		type: variable-number-slider
-		default: 1
-		min: 0.9
-		max: 1.1
-		step: 0.01
-	-
-		id: colorist-c-light
-		title: Vibrance
-		type: variable-number-slider
-		default: 0
-		min: 0
-		max: 0.5
-		step: 0.05
-	-
-		id: colorist-h-light
-		title: Tone
-		type: variable-number-slider
-		default: 0
-		min: 0
-		max: 360
-		step: 1
-	-
-		id: colorist-dark-section
-		title: Colorist (Dark)
-		type: heading
-		level: 1
-		collapsed: false
-	-
-		id: colorist-dark
-		title: Colorist
-		type: class-select
-		allowEmpty: false
-		default: static-dark
-		options:
-			-
-				label: Static
-				value: static-dark
-			-
-				label: Dynamic
-				value: dynamic-dark
-			-
-				label: Cupertino
-				value: cupertino-neu-dark
-			-
-				label: Material
-				value: material-neu-dark
-	-
-		id: colorist-l-dark
-		title: Radiance
-		type: variable-number-slider
-		default: 1
-		min: 0.75
-		max: 1.25
-		step: 0.05
-	-
-		id: colorist-c-dark
-		title: Vibrance
-		type: variable-number-slider
-		default: 0
-		min: 0
-		max: 0.5
-		step: 0.05
-	-
-		id: colorist-h-dark
-		title: Tone
-		type: variable-number-slider
-		default: 0
-		min: 0
-		max: 360
-		step: 1
-*/
-
 .css-settings-manager {
   --colorist-l-light: 1;
   --colorist-c-light: 0;
@@ -166,6 +60,12 @@ settings:
   --color-base-60: var(--colorist-60, #959595);
   --color-base-70: var(--colorist-70, #696969);
   --color-base-100: var(--colorist-100, #323232);
+
+  &.color-scheme-accent {
+    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
+    --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
+    --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
+  }
 }
 .theme-dark:not(.static-dark) {
   --colorist-l-00: 0.21;
@@ -219,6 +119,12 @@ settings:
   --color-base-60: var(--colorist-60, #7a7a7a);
   --color-base-70: var(--colorist-70, #ababab);
   --color-base-100: var(--colorist-100, #dbdbdb);
+
+  &.color-scheme-accent {
+    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
+    --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
+    --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
+  }
 }
 
 // Material
@@ -258,9 +164,8 @@ settings:
   --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
   --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
 
-  &.accented-interface {
-    --interactive-accent: oklch(from var(--color-accent) l c calc(var(--colorist-h-light) + 60));
-    --interactive-accent-hover: oklch(from var(--color-accent) calc(l - 0.1) c calc(var(--colorist-h-light) + 60));
+  &.color-scheme-accent {
+    --accent-h: calc(var(--colorist-h-light) + 60);
   }
 }
 
@@ -300,9 +205,8 @@ settings:
   --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
   --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
 
-  &.accented-interface {
-    --interactive-accent: oklch(from var(--color-accent) l c calc(var(--colorist-h-dark) + 60));
-    --interactive-accent-hover: oklch(from var(--color-accent) calc(l - 0.1) c calc(var(--colorist-h-dark) + 60));
+  &.color-scheme-accent {
+    --accent-h: calc(var(--colorist-h-dark) + 60);
   }
 }
 
@@ -461,7 +365,7 @@ settings:
 }
 
 // Style Settings
-.accented-interface .setting-item-control input[type="color"] {
+.color-scheme-accent .setting-item-control input[type="color"] {
   width: auto;
   height: auto;
 
@@ -481,7 +385,7 @@ settings:
 .setting-item:where([data-id="colorist-l-light"], [data-id="colorist-c-light"], [data-id="colorist-h-light"], [data-id="colorist-l-dark"], [data-id="colorist-c-dark"], [data-id="colorist-h-dark"]) input[type="range"] {
   --slider-track-height: 8px;
   width: 100%;
-  max-width: 240px;
+  max-width: 160px;
 }
 
 @each $mode in light, dark {
@@ -510,8 +414,8 @@ settings:
     );
   }
 
-  .static-#{$mode} .style-settings-container .setting-item[data-id="colorist-#{$mode}"] ~ .setting-item,
-  .cupertino-neu-#{$mode} .style-settings-container .setting-item[data-id="colorist-#{$mode}"] ~ .setting-item {
+  .static-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item,
+  .cupertino-neu-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item {
     pointer-events: none;
 
     > * {
