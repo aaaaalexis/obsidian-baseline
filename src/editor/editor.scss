@@ -421,10 +421,18 @@
   }
 
   body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
-    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
+    .image-embed:not([width]),
+    .image-embed:not([width]) > .image-wrapper,
     iframe,
     video {
       width: 100%;
+    }
+
+    img:not([width], .cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]) {
+      background: var(--background-primary-alt);
+      width: 100%;
+      max-height: 50vh;
+      object-fit: contain;
     }
   }
 
