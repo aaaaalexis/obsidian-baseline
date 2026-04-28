@@ -15,20 +15,19 @@ body {
   --input-shadow-base: 0px 4px 4px -2px hsl(0 0 0 / 0.025), 0px 2px 4px -1px hsl(0 0 0 / 0.025);
 }
 
-.theme-light {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), var(--input-shadow-base);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
-  --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.75), inset 0 4px 4px -2px hsl(0 0 0 / 0.05);
-}
-.theme-dark {
-  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), var(--input-shadow-base);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-  --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
-}
-
-body:is(.input-baseline, :not(.css-settings-manager)) {
-  --input-border-width: var(--border-width) !important;
+body:where(.input-baseline, :not(.css-settings-manager)) {
   --input-font-weight: var(--font-medium);
+
+  &.theme-light {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.75), inset 0 4px 4px -2px hsl(0 0 0 / 0.05);
+  }
+  &.theme-dark {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
+  }
 
   textarea,
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
@@ -50,6 +49,24 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   input[type="range"]::-webkit-slider-thumb {
     border: none;
     box-shadow: var(--input-shadow);
+  }
+}
+
+body:where(.input-subtle) {
+  --input-font-weight: var(--font-medium);
+
+  &.theme-light {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  }
+  &.theme-dark {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+  }
+
+  button.mod-cta {
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--interactive-accent);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--interactive-accent-hover);
   }
 }
 

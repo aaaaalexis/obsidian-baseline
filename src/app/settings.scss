@@ -35,6 +35,9 @@ body {
 
 body:not(.is-phone) {
   .modal.mod-sidebar-layout {
+    .modal-header-button {
+      z-index: 1;
+    }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 12px;
