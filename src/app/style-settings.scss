@@ -3298,7 +3298,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       flex: 1;
       align-items: flex-start;
       transition: var(--anim-duration-fast);
-      border: var(--border-width) solid var(--background-modifier-border);
+      border: var(--setting-items-border-width) solid var(--setting-items-border-color);
       border-radius: var(--setting-items-radius) !important;
       background-color: var(--setting-items-background) !important;
       padding: calc(16px * var(--density-modifier)) !important;

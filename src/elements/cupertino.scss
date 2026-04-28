@@ -202,10 +202,14 @@ body.input-cupertino {
     --dropdown-padding-start: var(--side-padding);
   }
 
-  select:focus,
-  .combobox-button:focus,
-  .dropdown:focus {
-    box-shadow: none;
+  select,
+  .combobox-button,
+  .dropdown {
+    field-sizing: content;
+
+    &::focus {
+      box-shadow: none;
+    }
   }
 
   // Search bar

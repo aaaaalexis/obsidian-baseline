@@ -65,9 +65,6 @@ body.input-cupertino:not(.is-mobile) {
     .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
     }
-    .setting-group:not(.installed-plugins-container) .setting-group-search + .setting-items {
-      padding-top: calc(12px * var(--density-modifier));
-    }
 
     .setting-item:not(.setting-item-heading, .setting-items .setting-item) {
       padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
