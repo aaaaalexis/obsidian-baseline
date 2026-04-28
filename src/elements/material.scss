@@ -143,8 +143,8 @@ body.input-material {
       --setting-nav-icon-background: var(--color-base-50);
       padding: 10px;
       border-radius: var(--clickable-icon-radius);
-      color: hsl(from var(--setting-nav-icon-background) h calc(s * 1.05) calc(l * 0.35));
-      background-color: hsl(from var(--setting-nav-icon-background) h calc(s * 0.9) calc(l * 1.15));
+      color: oklch(from var(--setting-nav-icon-background) calc(l * 0.5) c h);
+      background-color: var(--setting-nav-icon-background);
       margin-top: -4px;
       margin-left: -8px;
       margin-bottom: -4px;

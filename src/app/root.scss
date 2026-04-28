@@ -56,7 +56,7 @@ body,
 }
 
 .theme-light {
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity));
+  --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-light-opacity));
 
   --color-red-rgb: 254, 112, 112;
   --color-orange-rgb: 242, 154, 100;
@@ -93,7 +93,7 @@ body,
 .theme-dark {
   -webkit-font-smoothing: antialiased;
 
-  --workspace-background-translucent: rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity));
+  --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-dark-opacity));
 
   --color-red-rgb: 217, 90, 95;
   --color-orange-rgb: 219, 134, 80;
@@ -234,7 +234,7 @@ body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
 // Style Settings
 body:not(.accented-interface) {
   --interactive-accent: var(--color-base-100);
-  --interactive-accent-hover: rgb(from var(--color-base-100) r g b / 80%);
+  --interactive-accent-hover: hsl(from var(--color-base-100) h s l/ 80%);
   --text-on-accent: var(--color-base-00);
   --text-on-accent-inverted: var(--color-base-00);
 }

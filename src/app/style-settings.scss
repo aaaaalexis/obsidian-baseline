@@ -53,11 +53,6 @@ settings:
 		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
-		id: color-scheme-accent
-		title: Override accent
-		description: Use Colorist tone as accent color.
-		type: class-toggle
-	-
 		id: colorist-light-section
 		title: Colorist (Light)
 		type: heading
@@ -125,6 +120,10 @@ settings:
 		min: 0
 		max: 360
 		step: 1
+	-
+		id: colorist-accent-light
+		title: Tone as accent
+		type: class-toggle
 	-
 		id: colorist-dark-section
 		title: Colorist (Dark)
@@ -196,6 +195,10 @@ settings:
 		min: 0
 		max: 360
 		step: 1
+	-
+		id: colorist-accent-dark
+		title: Tone as accent
+		type: class-toggle
 	-
 		id: accent-palette
 		title: Accents

@@ -45,9 +45,9 @@ body.input-adwaita {
   --slider-thumb-width: var(--toggle-thumb-width);
   --slider-thumb-radius: var(--toggle-thumb-radius);
   --slider-track-height: 4px;
-  --slider-track-background: rgb(from var(--text-normal) r g b / 15%);
-  --slider-track-background-hover: rgb(from var(--text-normal) r g b / 20%);
-  --slider-track-background-active: rgb(from var(--text-normal) r g b / 25%);
+  --slider-track-background: hsl(from var(--text-normal) h s l / 15%);
+  --slider-track-background-hover: hsl(from var(--text-normal) h s l / 20%);
+  --slider-track-background-active: hsl(from var(--text-normal) h s l / 25%);
 
   .checkbox-container::after {
     box-shadow: 0 2px 4px rgba(0, 0, 6, 20%);
@@ -132,7 +132,7 @@ body.input-adwaita {
       padding-top: 0px;
     }
     .vertical-tab-header-group:not(:last-child) {
-      border-bottom: var(--border-width) solid rgb(from var(--text-normal) r g b / 15%);
+      border-bottom: var(--border-width) solid hsl(from var(--text-normal) h s l / 15%);
     }
     .vertical-tab-header-group-title {
       display: none;
@@ -197,7 +197,7 @@ body.input-adwaita:not(.is-mobile) {
     .titlebar-button-container.mod-right .titlebar-button {
       width: fit-content;
       height: fit-content;
-      background-color: rgb(from var(--text-normal) r g b / 10%);
+      background-color: hsl(from var(--text-normal) h s l / 10%);
       border-radius: 100vh !important;
       padding: 4px;
       flex: 0;
@@ -207,7 +207,7 @@ body.input-adwaita:not(.is-mobile) {
       }
 
       &:hover {
-        background-color: rgb(from var(--text-normal) r g b / 15%);
+        background-color: hsl(from var(--text-normal) h s l / 15%);
       }
     }
 
@@ -238,7 +238,7 @@ body.input-adwaita:not(.is-mobile) {
     }
 
     .menu-separator {
-      border-bottom-color: rgb(from var(--text-normal) r g b / 15%);
+      border-bottom-color: hsl(from var(--text-normal) h s l / 15%);
     }
   }
 
@@ -255,7 +255,7 @@ body.input-adwaita:not(.is-mobile) {
       width: 24px;
       height: 24px;
       padding: 4px;
-      background-color: rgb(from var(--text-normal) r g b / 10%);
+      background-color: hsl(from var(--text-normal) h s l / 10%);
 
       path,
       rect,
@@ -271,7 +271,7 @@ body.input-adwaita:not(.is-mobile) {
       }
 
       &:hover {
-        background-color: rgb(from var(--text-normal) r g b / 15%);
+        background-color: hsl(from var(--text-normal) h s l / 15%);
       }
     }
   }

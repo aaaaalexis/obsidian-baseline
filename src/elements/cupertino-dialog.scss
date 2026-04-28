@@ -1,6 +1,6 @@
 body.input-cupertino {
   --background-modifier-message: var(--modal-background);
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+  --modal-background: hsl(from var(--background-secondary) h s l / 75%) !important;
 
   &.is-translucent {
     --modal-background: var(--background-primary) !important;

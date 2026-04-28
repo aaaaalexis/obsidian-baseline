@@ -57,11 +57,11 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   }
 
   &:not(.is-translucent).theme-dark .mod-sidedock {
-    background-color: hsl(from var(--background-primary) h s calc(l - 2));
+    background-color: oklch(from var(--background-primary) calc(l * 0.9) c h);
   }
   &.is-translucent.layout-macos .mod-sidedock,
   &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
-    background-color: rgba(from var(--background-primary) r g b / 50%) !important;
+    background-color: hsl(from var(--background-primary) h s l / 50%) !important;
   }
   .mod-sidedock {
     transition:
@@ -101,7 +101,7 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
-    background-color: rgba(from var(--background-primary) r g b / 75%);
+    background-color: hsl(from var(--background-primary) h s l / 75%);
   }
 }
 

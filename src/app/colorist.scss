@@ -232,7 +232,7 @@
   --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-light)) calc(var(--colorist-c-70) * var(--colorist-c-light)) var(--colorist-h-light));
   --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-light)) calc(var(--colorist-c-100) * var(--colorist-c-light)) var(--colorist-h-light));
 
-  &.color-scheme-accent {
+  &.colorist-accent-light {
     --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
     --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
     --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
@@ -278,7 +278,7 @@
   --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-dark)) calc(var(--colorist-c-70) * var(--colorist-c-dark)) var(--colorist-h-dark));
   --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-dark)) calc(var(--colorist-c-100) * var(--colorist-c-dark)) var(--colorist-h-dark));
 
-  &.color-scheme-accent {
+  &.colorist-accent-dark {
     --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
     --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
     --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
@@ -313,16 +313,17 @@
   --colorist-c-70: 0.08;
   --colorist-c-100: 0.1;
 
-  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
-  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.32) min(c, 0.16) h);
+  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
+  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
 
-  &.color-scheme-accent {
+  &.colorist-accent-light {
+    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 45));
     --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 60));
     --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 60));
   }
@@ -354,23 +355,24 @@
   --colorist-c-70: 0.2;
   --colorist-c-100: 0.16;
 
-  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
-  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.16) h);
+  --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-yellow: oklch(from color-mix(in srgb, rgb(var(--color-yellow-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-green: oklch(from color-mix(in srgb, rgb(var(--color-green-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-cyan: oklch(from color-mix(in srgb, rgb(var(--color-cyan-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-blue: oklch(from color-mix(in srgb, rgb(var(--color-blue-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-purple: oklch(from color-mix(in srgb, rgb(var(--color-purple-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
+  --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
 
-  &.color-scheme-accent {
+  &.colorist-accent-dark {
+    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 45));
     --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 60));
     --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 60));
   }
 }
 
 // Style Settings
-.color-scheme-accent .setting-item-control input[type="color"] {
+body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control input[type="color"] {
   width: auto;
   height: auto;
 

@@ -18,7 +18,7 @@ body.input-cupertino {
   --interactive-hover: var(--interactive-normal);
   --background-modifier-border: rgba(var(--mono-rgb-100), 0.075);
   --background-modifier-border-hover: var(--background-modifier-border);
-  --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
+  --background-modifier-border-focus: hsl(from var(--interactive-accent) h s l / 0.5);
 
   &.is-mobile {
     --titlebar-background: transparent;
@@ -350,7 +350,7 @@ body.input-cupertino {
   }
 
   &:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"][data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-    background-color: rgb(from var(--interactive-accent) r g b / 95%);
+    background-color: hsl(from var(--interactive-accent) h s l / 95%);
     color: oklch(from var(--interactive-accent) 0.95 c h);
     box-shadow: var(--shadow-xs);
   }

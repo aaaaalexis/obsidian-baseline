@@ -169,27 +169,27 @@
 
     .markdown-rendered h1::after,
     .HyperMD-header-1::after {
-      background-color: rgb(from var(--h1-color, var(--color-red)) r g b / 10%);
+      background-color: hsl(from var(--h1-color, var(--color-red)) h s l / 10%);
     }
     .markdown-rendered h2::after,
     .HyperMD-header-2::after {
-      background-color: rgb(from var(--h2-color, var(--color-orange)) r g b / 10%);
+      background-color: hsl(from var(--h2-color, var(--color-orange)) h s l / 10%);
     }
     .markdown-rendered h3::after,
     .HyperMD-header-3::after {
-      background-color: rgb(from var(--h3-color, var(--color-yellow)) r g b / 10%);
+      background-color: hsl(from var(--h3-color, var(--color-yellow)) h s l / 10%);
     }
     .markdown-rendered h4::after,
     .HyperMD-header-4::after {
-      background-color: rgb(from var(--h4-color, var(--color-green)) r g b / 10%);
+      background-color: hsl(from var(--h4-color, var(--color-green)) h s l / 10%);
     }
     .markdown-rendered h5::after,
     .HyperMD-header-5::after {
-      background-color: rgb(from var(--h5-color, var(--color-blue)) r g b / 10%);
+      background-color: hsl(from var(--h5-color, var(--color-blue)) h s l / 10%);
     }
     .markdown-rendered h6::after,
     .HyperMD-header-6::after {
-      background-color: rgb(from var(--h6-color, var(--color-purple)) r g b / 10%);
+      background-color: hsl(from var(--h6-color, var(--color-purple)) h s l / 10%);
     }
   }
   body.colorful-headings-background:not(.colorful-headings-full-width) {

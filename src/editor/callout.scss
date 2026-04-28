@@ -47,8 +47,8 @@
 
   .callout:not([data-callout]) {
     --callout-color: var(--color-accent);
-    background-color: hsla(var(--color-accent-hsl), 0.15);
-    border-color: hsla(var(--color-accent-hsl), var(--callout-border-opacity));
+    background-color: hsl(from var(--color-accent) h s l / 0.15);
+    border-color: hsl(from var(--color-accent) h s l / var(--callout-border-opacity));
 
     .callout-title {
       color: var(--callout-color);
