@@ -3218,7 +3218,7 @@ settings:
       }
 
       input:focus {
-        box-shadow: none;
+        box-shadow: var(--input-shadow-inset);
       }
       input.pcr-result {
         grid-column: span 6;
