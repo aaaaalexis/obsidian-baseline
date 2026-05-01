@@ -47,12 +47,13 @@ body:not(.is-phone) {
 
     .vertical-tab-content {
       background-color: transparent;
+      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
     }
-
-    .setting-page {
-      background-color: var(--settings-background);
+    .vertical-tab-content[style*="transform: translateX(-20%)"] {
+      opacity: 0;
     }
+
     .setting-page-titlebar {
       background-color: transparent;
       border: none;
