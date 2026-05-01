@@ -63,17 +63,17 @@ settings:
 		title: Colorist
 		type: class-select
 		allowEmpty: false
-		default: static-light
+		default: baseline-light
 		options:
 			-
-				label: Static
-				value: static-light
+				label: Baseline
+				value: baseline-light
 			-
 				label: Cupertino
 				value: cupertino-light
 			-
-				label: Dynamic
-				value: dynamic-light
+				label: Diffuse
+				value: diffuse-light
 			-
 				label: Material
 				value: material-light
@@ -108,7 +108,7 @@ settings:
 		id: colorist-c-light
 		title: Vibrance
 		type: variable-number-slider
-		default: 1
+		default: 0
 		min: 0
 		max: 2
 		step: 0.1
@@ -135,17 +135,17 @@ settings:
 		title: Colorist
 		type: class-select
 		allowEmpty: false
-		default: static-dark
+		default: baseline-dark
 		options:
 			-
-				label: Static
-				value: static-dark
+				label: Baseline
+				value: baseline-dark
 			-
 				label: Cupertino
 				value: cupertino-dark
 			-
-				label: Dynamic
-				value: dynamic-dark
+				label: Diffuse
+				value: diffuse-dark
 			-
 				label: Material
 				value: material-dark
@@ -183,7 +183,7 @@ settings:
 		id: colorist-c-dark
 		title: Vibrance
 		type: variable-number-slider
-		default: 1
+		default: 0
 		min: 0
 		max: 2
 		step: 0.1
