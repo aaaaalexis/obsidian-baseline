@@ -53,13 +53,13 @@ settings:
 		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
-		id: colorist-light-section
+		id: colorist-light
 		title: Colorist (Light)
 		type: heading
 		level: 2
 		collapsed: false
 	-
-		id: colorist-light
+		id: color-scheme-light
 		title: Colorist
 		type: class-select
 		allowEmpty: false
@@ -70,13 +70,13 @@ settings:
 				value: static-light
 			-
 				label: Cupertino
-				value: cupertino-neu-light
+				value: cupertino-light
 			-
 				label: Dynamic
 				value: dynamic-light
 			-
 				label: Material
-				value: material-neu-light
+				value: material-light
 	-
 		id: background-contrast-light
 		title: Contrast
@@ -108,10 +108,10 @@ settings:
 		id: colorist-c-light
 		title: Vibrance
 		type: variable-number-slider
-		default: 0
+		default: 1
 		min: 0
-		max: 0.5
-		step: 0.05
+		max: 2
+		step: 0.1
 	-
 		id: colorist-h-light
 		title: Tone
@@ -125,13 +125,13 @@ settings:
 		title: Tone as accent
 		type: class-toggle
 	-
-		id: colorist-dark-section
+		id: colorist-dark
 		title: Colorist (Dark)
 		type: heading
 		level: 2
 		collapsed: false
 	-
-		id: colorist-dark
+		id: color-scheme-dark
 		title: Colorist
 		type: class-select
 		allowEmpty: false
@@ -142,13 +142,13 @@ settings:
 				value: static-dark
 			-
 				label: Cupertino
-				value: cupertino-neu-dark
+				value: cupertino-dark
 			-
 				label: Dynamic
 				value: dynamic-dark
 			-
 				label: Material
-				value: material-neu-dark
+				value: material-dark
 	-
 		id: background-contrast-dark
 		title: Contrast
@@ -183,10 +183,10 @@ settings:
 		id: colorist-c-dark
 		title: Vibrance
 		type: variable-number-slider
-		default: 0
+		default: 1
 		min: 0
-		max: 0.5
-		step: 0.05
+		max: 2
+		step: 0.1
 	-
 		id: colorist-h-dark
 		title: Tone

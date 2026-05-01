@@ -1,14 +1,14 @@
 .css-settings-manager {
   --colorist-l-light: 1;
-  --colorist-c-light: 0;
+  --colorist-c-light: 1;
   --colorist-h-light: calc(var(--accent-h) + 25);
   --colorist-l-dark: 1;
-  --colorist-c-dark: 0;
+  --colorist-c-dark: 1;
   --colorist-h-dark: calc(var(--accent-h) + 25);
 }
 
 // Static
-.theme-light {
+.theme-light.obsidian-app {
   --color-base-00: var(--colorist-00, #ffffff);
   --color-base-05: var(--colorist-05, #fcfcfc);
   --color-base-10: var(--colorist-10, #f8f8f8);
@@ -22,7 +22,7 @@
   --color-base-70: var(--colorist-70, #696969);
   --color-base-100: var(--colorist-100, #323232);
 }
-.theme-dark {
+.theme-dark.obsidian-app {
   --color-base-00: var(--colorist-00, #181818);
   --color-base-05: var(--colorist-05, #1b1b1b);
   --color-base-10: var(--colorist-10, #1d1d1d);
@@ -38,7 +38,7 @@
 }
 
 // Cupertino
-.theme-light.cupertino-neu-light {
+.theme-light.cupertino-light {
   --colorist-l-light: 1;
   --colorist-c-light: 0;
 
@@ -96,17 +96,17 @@
     --colorist-c-00: 0;
     --colorist-c-05: 0;
     --colorist-c-10: 0;
-    --colorist-c-20: 0.05;
-    --colorist-c-25: 0.05;
-    --colorist-c-30: 0.05;
-    --colorist-c-35: 0.05;
-    --colorist-c-40: 0.05;
+    --colorist-c-20: 0.0075;
+    --colorist-c-25: 0.0075;
+    --colorist-c-30: 0.0075;
+    --colorist-c-35: 0.0075;
+    --colorist-c-40: 0.0075;
     --colorist-c-50: 0;
     --colorist-c-60: 0;
     --colorist-c-70: 0;
     --colorist-c-100: 0;
 
-    --colorist-c-light: 0.15;
+    --colorist-c-light: 1;
     --colorist-h-light: 285;
 
     --background-primary-alt: var(--color-base-20);
@@ -115,7 +115,7 @@
     --interactive-hover: oklch(from var(--colorist-70) calc(l - 0.1) c h / 20%);
   }
 }
-.theme-dark.cupertino-neu-dark {
+.theme-dark.cupertino-dark {
   --colorist-l-dark: 1;
   --colorist-c-dark: 0;
 
@@ -172,17 +172,17 @@
     --colorist-c-00: 0;
     --colorist-c-05: 0;
     --colorist-c-10: 0;
-    --colorist-c-20: 0.05;
-    --colorist-c-25: 0.05;
-    --colorist-c-30: 0.05;
-    --colorist-c-35: 0.05;
-    --colorist-c-40: 0.05;
+    --colorist-c-20: 0.005;
+    --colorist-c-25: 0.005;
+    --colorist-c-30: 0.005;
+    --colorist-c-35: 0.005;
+    --colorist-c-40: 0.005;
     --colorist-c-50: 0;
     --colorist-c-60: 0;
     --colorist-c-70: 0;
     --colorist-c-100: 0;
 
-    --colorist-c-dark: 0.1;
+    --colorist-c-dark: 1;
     --colorist-h-dark: 285;
 
     --background-primary-alt: var(--color-base-20);
@@ -206,36 +206,36 @@
   --colorist-l-70: 0.52;
   --colorist-l-100: 0.36;
 
-  --colorist-c-00: 0.1;
-  --colorist-c-05: 0.1;
-  --colorist-c-10: 0.1;
-  --colorist-c-20: 0.12;
-  --colorist-c-25: 0.12;
-  --colorist-c-30: 0.16;
-  --colorist-c-35: 0.16;
-  --colorist-c-40: 0.16;
-  --colorist-c-50: 0.12;
-  --colorist-c-60: 0.1;
-  --colorist-c-70: 0.1;
-  --colorist-c-100: 0.1;
+  --colorist-c-00: 0.05;
+  --colorist-c-05: 0.05;
+  --colorist-c-10: 0.05;
+  --colorist-c-20: 0.06;
+  --colorist-c-25: 0.06;
+  --colorist-c-30: 0.08;
+  --colorist-c-35: 0.08;
+  --colorist-c-40: 0.08;
+  --colorist-c-50: 0.06;
+  --colorist-c-60: 0.05;
+  --colorist-c-70: 0.05;
+  --colorist-c-100: 0.05;
 
-  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-light)) calc(var(--colorist-c-00) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-light)) calc(var(--colorist-c-05) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-light)) calc(var(--colorist-c-10) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-light)) calc(var(--colorist-c-20) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-light)) calc(var(--colorist-c-25) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-light)) calc(var(--colorist-c-30) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-light)) calc(var(--colorist-c-35) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-light)) calc(var(--colorist-c-40) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-light)) calc(var(--colorist-c-50) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-light)) calc(var(--colorist-c-60) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-light)) calc(var(--colorist-c-70) * var(--colorist-c-light)) var(--colorist-h-light));
-  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-light)) calc(var(--colorist-c-100) * var(--colorist-c-light)) var(--colorist-h-light));
+  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-00) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-05) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-10) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-20) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-25) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-30) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-35) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-40) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-light))) var(--colorist-h-light));
+  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-light))) var(--colorist-h-light));
 
   &.colorist-accent-light {
-    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
-    --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
-    --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.3) var(--colorist-h-light));
+    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.15) var(--colorist-h-light));
+    --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.15) var(--colorist-h-light));
+    --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.15) var(--colorist-h-light));
   }
 }
 .theme-dark:not(.static-dark) {
@@ -252,41 +252,41 @@
   --colorist-l-70: 0.74;
   --colorist-l-100: 0.89;
 
-  --colorist-c-00: 0.05;
-  --colorist-c-05: 0.06;
-  --colorist-c-10: 0.07;
-  --colorist-c-20: 0.08;
-  --colorist-c-25: 0.09;
-  --colorist-c-30: 0.1;
-  --colorist-c-35: 0.12;
-  --colorist-c-40: 0.14;
-  --colorist-c-50: 0.16;
-  --colorist-c-60: 0.18;
-  --colorist-c-70: 0.2;
-  --colorist-c-100: 0.22;
+  --colorist-c-00: 0.025;
+  --colorist-c-05: 0.03;
+  --colorist-c-10: 0.035;
+  --colorist-c-20: 0.04;
+  --colorist-c-25: 0.045;
+  --colorist-c-30: 0.05;
+  --colorist-c-35: 0.06;
+  --colorist-c-40: 0.07;
+  --colorist-c-50: 0.08;
+  --colorist-c-60: 0.09;
+  --colorist-c-70: 0.1;
+  --colorist-c-100: 0.11;
 
-  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-dark)) calc(var(--colorist-c-00) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-dark)) calc(var(--colorist-c-05) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-dark)) calc(var(--colorist-c-10) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-dark)) calc(var(--colorist-c-20) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-dark)) calc(var(--colorist-c-25) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-dark)) calc(var(--colorist-c-30) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-dark)) calc(var(--colorist-c-35) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-dark)) calc(var(--colorist-c-40) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-dark)) calc(var(--colorist-c-50) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-dark)) calc(var(--colorist-c-60) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-dark)) calc(var(--colorist-c-70) * var(--colorist-c-dark)) var(--colorist-h-dark));
-  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-dark)) calc(var(--colorist-c-100) * var(--colorist-c-dark)) var(--colorist-h-dark));
+  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-00) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-05) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-10) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-20) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-25) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-30) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-35) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-40) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) var(--colorist-h-dark));
 
   &.colorist-accent-dark {
-    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
-    --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
-    --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.7) var(--colorist-h-dark));
+    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.1) var(--colorist-h-dark));
+    --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.1) var(--colorist-h-dark));
+    --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.1) var(--colorist-h-dark));
   }
 }
 
 // Material
-.theme-light.material-neu-light {
+.theme-light.material-light {
   --colorist-l-00: 1;
   --colorist-l-05: 0.99;
   --colorist-l-10: 0.98;
@@ -300,18 +300,18 @@
   --colorist-l-70: 0.48;
   --colorist-l-100: 0.24;
 
-  --colorist-c-00: 0.1;
-  --colorist-c-05: 0.1;
-  --colorist-c-10: 0.1;
-  --colorist-c-20: 0.1;
-  --colorist-c-25: 0.1;
-  --colorist-c-30: 0.1;
-  --colorist-c-35: 0.1;
-  --colorist-c-40: 0.08;
-  --colorist-c-50: 0.08;
-  --colorist-c-60: 0.08;
-  --colorist-c-70: 0.08;
-  --colorist-c-100: 0.1;
+  --colorist-c-00: 0.06;
+  --colorist-c-05: 0.06;
+  --colorist-c-10: 0.06;
+  --colorist-c-20: 0.05;
+  --colorist-c-25: 0.05;
+  --colorist-c-30: 0.05;
+  --colorist-c-35: 0.05;
+  --colorist-c-40: 0.04;
+  --colorist-c-50: 0.04;
+  --colorist-c-60: 0.04;
+  --colorist-c-70: 0.04;
+  --colorist-c-100: 0.05;
 
   --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
   --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
@@ -323,17 +323,17 @@
   --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-light) var(--colorist-c-light) var(--colorist-h-light)) 10%) max(l, 0.8) min(c, 0.1) h);
 
   &.colorist-accent-light {
-    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 45));
-    --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 60));
-    --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.3) calc(var(--colorist-h-light) + 60));
+    --color-accent: oklch(0.65 calc(var(--colorist-c-light) * 0.15) calc(var(--colorist-h-light) + 45));
+    --color-accent-1: oklch(0.7 calc(var(--colorist-c-light) * 0.15) calc(var(--colorist-h-light) + 60));
+    --color-accent-2: oklch(0.75 calc(var(--colorist-c-light) * 0.15) calc(var(--colorist-h-light) + 60));
   }
 }
-.theme-dark.material-neu-dark {
-  --colorist-l-00: 0.16;
-  --colorist-l-05: 0.18;
-  --colorist-l-10: 0.2;
-  --colorist-l-20: 0.22;
-  --colorist-l-25: 0.24;
+.theme-dark.material-dark {
+  --colorist-l-00: 0.18;
+  --colorist-l-05: 0.2;
+  --colorist-l-10: 0.22;
+  --colorist-l-20: 0.24;
+  --colorist-l-25: 0.26;
   --colorist-l-30: 0.28;
   --colorist-l-35: 0.32;
   --colorist-l-40: 0.36;
@@ -342,18 +342,18 @@
   --colorist-l-70: 0.72;
   --colorist-l-100: 0.88;
 
-  --colorist-c-00: 0.1;
-  --colorist-c-05: 0.1;
-  --colorist-c-10: 0.1;
-  --colorist-c-20: 0.12;
-  --colorist-c-25: 0.14;
-  --colorist-c-30: 0.16;
-  --colorist-c-35: 0.18;
-  --colorist-c-40: 0.2;
-  --colorist-c-50: 0.2;
-  --colorist-c-60: 0.2;
-  --colorist-c-70: 0.2;
-  --colorist-c-100: 0.16;
+  --colorist-c-00: 0.025;
+  --colorist-c-05: 0.025;
+  --colorist-c-10: 0.025;
+  --colorist-c-20: 0.03;
+  --colorist-c-25: 0.035;
+  --colorist-c-30: 0.04;
+  --colorist-c-35: 0.045;
+  --colorist-c-40: 0.05;
+  --colorist-c-50: 0.05;
+  --colorist-c-60: 0.05;
+  --colorist-c-70: 0.05;
+  --colorist-c-100: 0.04;
 
   --color-red: oklch(from color-mix(in srgb, rgb(var(--color-red-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
   --color-orange: oklch(from color-mix(in srgb, rgb(var(--color-orange-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
@@ -365,9 +365,9 @@
   --color-pink: oklch(from color-mix(in srgb, rgb(var(--color-pink-rgb)), oklch(var(--colorist-l-dark) var(--colorist-c-dark) var(--colorist-h-dark)) 10%) min(l, 0.56) min(c, 0.1) h);
 
   &.colorist-accent-dark {
-    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 45));
-    --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 60));
-    --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.7) calc(var(--colorist-h-dark) + 60));
+    --color-accent: oklch(0.65 calc(var(--colorist-c-dark) * 0.1) calc(var(--colorist-h-dark) + 45));
+    --color-accent-1: oklch(0.8 calc(var(--colorist-c-dark) * 0.1) calc(var(--colorist-h-dark) + 60));
+    --color-accent-2: oklch(0.95 calc(var(--colorist-c-dark) * 0.1) calc(var(--colorist-h-dark) + 60));
   }
 }
 
@@ -422,7 +422,7 @@ body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control inp
   }
 
   .static-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item,
-  .cupertino-neu-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item {
+  .cupertino-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item {
     pointer-events: none;
 
     > * {
