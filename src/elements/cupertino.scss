@@ -340,10 +340,7 @@ body.input-cupertino {
   .markdown-preview-view {
     transition: transform var(--anim-duration-slow) var(--anim-motion-baseline);
   }
-  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view {
-    transform: scale(0.995);
-    opacity: 0;
-  }
+  .workspace-leaf-content[data-mode="source"] > .view-content > .markdown-reading-view > .markdown-preview-view,
   .workspace-leaf-content[data-mode="preview"] > .view-content > .markdown-source-view {
     transform: scale(0.995);
     opacity: 0;

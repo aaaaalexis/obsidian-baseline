@@ -70,7 +70,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
 
   // Workspace: Use sidedock for tint
   &:is(.layout-macos, .layout-fusion).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, #fff, var(--colorful-frame-background, var(--color-accent)) 2%);
+    background-color: color-mix(in srgb, #ffffff, var(--colorful-frame-background, var(--color-accent)) 2%);
   }
   &:is(.layout-macos, .layout-fusion).theme-dark .mod-sidedock {
     background-color: color-mix(in srgb, var(--background-modifier-cover), var(--colorful-frame-background, var(--color-accent)) 2%);

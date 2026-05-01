@@ -48,7 +48,7 @@
 
   .HyperMD-quote {
     border: solid var(--blockquote-background-color);
-    border-width: 0 16px 0 16px;
+    border-width: 0 16px;
     background-color: var(--blockquote-background-color);
     &::before {
       width: 0 !important;

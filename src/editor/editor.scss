@@ -405,6 +405,23 @@
     text-wrap: pretty;
   }
 
+  // Underline headings
+  .h1-l .markdown-reading-view h1,
+  .h1-l .markdown-source-view .HyperMD-header-1,
+  .h2-l .markdown-reading-view h2,
+  .h2-l .markdown-source-view .HyperMD-header-2,
+  .h3-l .markdown-reading-view h3,
+  .h3-l .markdown-source-view .HyperMD-header-3,
+  .h4-l .markdown-reading-view h4,
+  .h4-l .markdown-source-view .HyperMD-header-4,
+  .h5-l .markdown-reading-view h5,
+  .h5-l .markdown-source-view .HyperMD-header-5,
+  .h6-l .markdown-reading-view h6,
+  .h6-l .markdown-source-view .HyperMD-header-6 {
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
+    padding-bottom: var(--p-spacing);
+  }
+
   // Horizontal rule (Editor divider)
   .markdown-rendered hr,
   .markdown-source-view.mod-cm6 .hr {
