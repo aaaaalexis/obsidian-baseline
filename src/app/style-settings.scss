@@ -75,6 +75,9 @@ settings:
 				label: Diffuse
 				value: diffuse-light
 			-
+				label: Latent
+				value: latent-light
+			-
 				label: Material
 				value: material-light
 	-
@@ -146,6 +149,9 @@ settings:
 			-
 				label: Diffuse
 				value: diffuse-dark
+			-
+				label: Latent
+				value: latent-dark
 			-
 				label: Material
 				value: material-dark
@@ -3106,13 +3112,6 @@ settings:
   .setting-item[data-id="divider"] .setting-item-info {
     height: var(--border-width);
     background-color: var(--background-modifier-border);
-  }
-
-  .setting-item:not(.setting-item-heading) .setting-item-name {
-    padding-bottom: 4px;
-  }
-  .setting-item:not(.setting-item-heading) .setting-item-description {
-    padding-top: 0px;
   }
 
   .setting-item-description > div:last-child {
