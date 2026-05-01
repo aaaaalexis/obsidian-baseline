@@ -977,6 +977,10 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: hide-tab-list-off
+		title: Show tab list
+		type: class-toggle
+	-
 		id: tab-top-left-style
 		title: Tab style (Left top)
 		type: class-select
@@ -989,9 +993,6 @@ settings:
 			-
 				label: Labeled
 				value: tab-top-left-labeled
-			-
-				label: Dropdown
-				value: tab-top-left-dropdown
 			-
 				label: Glyph
 				value: tab-top-left-icon
@@ -1008,9 +1009,6 @@ settings:
 			-
 				label: Labeled
 				value: tab-left-labeled
-			-
-				label: Dropdown
-				value: tab-left-dropdown
 			-
 				label: Glyph
 				value: tab-left-icon
@@ -1031,9 +1029,6 @@ settings:
 				label: Labeled
 				value: tab-top-right-labeled
 			-
-				label: Dropdown
-				value: tab-top-right-dropdown
-			-
 				label: Glyph
 				value: tab-top-right-icon
 			-
@@ -1049,9 +1044,6 @@ settings:
 			-
 				label: Labeled
 				value: tab-right-labeled
-			-
-				label: Dropdown
-				value: tab-right-dropdown
 			-
 				label: Glyph
 				value: tab-right-icon

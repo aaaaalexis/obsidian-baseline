@@ -29,9 +29,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.tab-top-left-stacked:not(.theme-light.contrast-light-vivid) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     --colorful-frame-icon-color: initial;
   }
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-default .mod-root .workspace-tabs.mod-top .workspace-tab-header.is-active,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-top-left-dropdown .mod-left-split .workspace-tabs.mod-top .workspace-tab-header-container-inner:hover .workspace-tab-header,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-top-right-dropdown .mod-right-split .workspace-tabs.mod-top .workspace-tab-header-container-inner:hover .workspace-tab-header {
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-default .mod-root .workspace-tabs.mod-top .workspace-tab-header.is-active {
     --tab-text-color: initial;
     --tab-text-color-active: initial;
     --tab-text-color-focused: initial;
