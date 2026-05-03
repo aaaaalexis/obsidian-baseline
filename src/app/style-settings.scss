@@ -2877,6 +2877,21 @@ settings:
 		level: 2
 		collapsed: true
 	-
+		id: media-width
+		title: Media width
+		type: class-select
+		default: media-width-full
+		options:
+			-
+				label: Full width
+				value: media-width-full
+			-
+				label: Auto
+				value: media-width-fit
+			-
+				label: Auto (Center)
+				value: media-width-fit-center
+	-
 		id: img-grid-gap
 		title: Image grids spacing
 		type: variable-number-slider
@@ -2892,10 +2907,6 @@ settings:
 	-
 		id: media-muted
 		title: Dim media in dark mode
-		type: class-toggle
-	-
-		id: full-width-media-off
-		title: Disable maximized media
 		type: class-toggle
 	-
 		id: zoom-off
@@ -2957,10 +2968,10 @@ settings:
 				label: Full width
 				value: table-width-full
 			-
-				label: Start
+				label: Auto
 				value: table-width-fit
 			-
-				label: Center
+				label: Auto (Center)
 				value: table-width-fit-center
 	-
 		id: table-text-align-header

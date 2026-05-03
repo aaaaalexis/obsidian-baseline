@@ -478,7 +478,7 @@
     --media-radius: 0px;
   }
 
-  body:not(.full-width-media-off) .workspace-leaf-content[data-type="markdown"] {
+  body:not(.media-width-fit, .media-width-fit-center) .workspace-leaf-content[data-type="markdown"] {
     .image-embed:not([width]),
     .image-embed:not([width]) > .image-wrapper,
     iframe,
@@ -491,6 +491,16 @@
       width: 100%;
       max-height: 50vh;
       object-fit: contain;
+    }
+  }
+  body.media-width-fit-center {
+    .image-embed,
+    .image-embed > .image-wrapper,
+    iframe,
+    video,
+    img:not(.cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]) {
+      display: flex;
+      justify-self: center;
     }
   }
 
