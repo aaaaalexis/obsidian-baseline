@@ -3,7 +3,7 @@ body:is(.layout-frame, .layout-viewfinder) {
 
   // Tab styles
   &:is(.tab-floating, .tab-floating-center):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    --tab-outline-width: 1px;
+    --tab-outline-width: var(--border-width);
     margin-inline: var(--tab-outline-width) !important;
     background-color: var(--tab-background-active);
   }
@@ -27,7 +27,7 @@ body:is(.layout-frame, .layout-viewfinder) {
 }
 
 body.layout-frame:not(.is-mobile) {
-  --tab-outline-width: 1px;
+  --tab-outline-width: var(--border-width);
 
   .workspace {
     padding: 4px;

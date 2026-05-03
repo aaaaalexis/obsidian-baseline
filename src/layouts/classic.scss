@@ -9,7 +9,7 @@ body:is(.layout-classic, .layout-minimal) {
 
 body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   --titlebar-border-width: 1px;
-  --tab-outline-width: 1px;
+  --tab-outline-width: var(--border-width);
 
   &.mod-macos.is-frameless:not(.is-hidden-frameless) {
     --titlebar-height: 38px;
@@ -82,7 +82,7 @@ body:is(.layout-classic, .layout-minimal).is-tablet {
 // Classic specific
 body.layout-classic:not(.is-phone):not(.colorful-frame) {
   &:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    --tab-outline-width: 1px;
+    --tab-outline-width: var(--border-width);
     margin-inline: var(--tab-outline-width) !important;
     background-color: var(--tab-background-active);
   }

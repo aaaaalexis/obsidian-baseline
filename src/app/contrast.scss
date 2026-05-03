@@ -269,7 +269,7 @@ body:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .con
       overflow: visible;
     }
     .workspace-tab-container {
-      --tab-outline-width: 1px;
+      --tab-outline-width: var(--border-width);
       --tab-outline-color: var(--divider-color);
 
       outline: var(--tab-outline-width) solid var(--tab-outline-color);
@@ -277,11 +277,11 @@ body:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .con
   }
 
   &.tab-default .mod-root {
-    --tab-outline-width: 1px;
+    --tab-outline-width: var(--border-width);
     --tab-outline-color: var(--divider-color);
 
     .workspace-tab-header {
-      --tab-outline-width: 1px;
+      --tab-outline-width: var(--border-width);
     }
   }
 }

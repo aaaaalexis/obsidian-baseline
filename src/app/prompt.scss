@@ -12,6 +12,10 @@ body {
     .prompt-input:focus-visible {
       background-color: transparent;
     }
+    .prompt-input,
+    .prompt-instructions {
+      border-color: var(--background-modifier-border);
+    }
 
     .prompt-results {
       flex: 1;

@@ -1,7 +1,7 @@
 body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
-  --tab-outline-width: 1px;
+  --tab-outline-width: var(--border-width);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
     --workspace-background-translucent: var(--background-secondary);

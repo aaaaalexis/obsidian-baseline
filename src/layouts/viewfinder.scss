@@ -1,6 +1,6 @@
 body.layout-viewfinder:not(.is-mobile) {
   --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
-  --tab-outline-width: 1px;
+  --tab-outline-width: var(--border-width);
 
   .workspace {
     padding: 4px;

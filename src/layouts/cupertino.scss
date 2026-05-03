@@ -62,7 +62,7 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
 
 // Cupertino specific
 body.layout-cupertino:not(.is-phone) {
-  --tab-outline-width: 1px;
+  --tab-outline-width: var(--border-width);
 
   // Editor panel
   &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {

@@ -18,6 +18,10 @@ body,
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
 
+  --border-width: 0.5px;
+  --divider-width: var(--border-width);
+  --tab-outline-width: var(--border-width);
+
   --divider-color-hover: var(--color-base-50);
 
   --corner-shape: superellipse(1.1);
