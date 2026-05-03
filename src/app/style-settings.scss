@@ -60,7 +60,7 @@ settings:
 		collapsed: false
 	-
 		id: color-scheme-light
-		title: Colorist
+		title: Signature
 		type: class-select
 		allowEmpty: false
 		default: baseline-light
@@ -82,7 +82,7 @@ settings:
 				value: material-light
 	-
 		id: background-contrast-light
-		title: Contrast
+		title: Personality
 		type: class-select
 		allowEmpty: false
 		default: contrast-light
@@ -91,25 +91,25 @@ settings:
 				label: Inverse
 				value: contrast-light-inverse
 			-
-				label: Normal
+				label: Standard
 				value: contrast-light
 			-
-				label: Low contrast
+				label: Flat
 				value: contrast-light-tonal
 			-
-				label: High contrast
+				label: Duotone
 				value: contrast-light-vivid
 	-
 		id: colorist-l-light
-		title: Radiance
+		title: Clarity
 		type: variable-number-slider
 		default: 1
-		min: 0.75
-		max: 1.25
+		min: 0.5
+		max: 1.5
 		step: 0.05
 	-
 		id: colorist-c-light
-		title: Vibrance
+		title: Vibrancy
 		type: variable-number-slider
 		default: 0
 		min: 0
@@ -117,7 +117,7 @@ settings:
 		step: 0.1
 	-
 		id: colorist-h-light
-		title: Tone
+		title: Spectrum
 		type: variable-number-slider
 		default: 0
 		min: 0
@@ -125,7 +125,7 @@ settings:
 		step: 1
 	-
 		id: colorist-accent-light
-		title: Tone as accent
+		title: Use as accent
 		type: class-toggle
 	-
 		id: colorist-dark
@@ -135,7 +135,7 @@ settings:
 		collapsed: false
 	-
 		id: color-scheme-dark
-		title: Colorist
+		title: Signature
 		type: class-select
 		allowEmpty: false
 		default: baseline-dark
@@ -157,7 +157,7 @@ settings:
 				value: material-dark
 	-
 		id: background-contrast-dark
-		title: Contrast
+		title: Personality
 		type: class-select
 		allowEmpty: false
 		default: contrast-dark
@@ -166,10 +166,10 @@ settings:
 				label: Inverse
 				value: contrast-dark-inverse
 			-
-				label: Normal
+				label: Standard
 				value: contrast-dark
 			-
-				label: Low contrast
+				label: Flat
 				value: contrast-dark-tonal
 			-
 				label: Black
@@ -179,15 +179,15 @@ settings:
 				value: contrast-dark-black-mobile
 	-
 		id: colorist-l-dark
-		title: Radiance
+		title: Clarity
 		type: variable-number-slider
 		default: 1
-		min: 0.75
-		max: 1.25
+		min: 0.5
+		max: 1.5
 		step: 0.05
 	-
 		id: colorist-c-dark
-		title: Vibrance
+		title: Vibrancy
 		type: variable-number-slider
 		default: 0
 		min: 0
@@ -195,7 +195,7 @@ settings:
 		step: 0.1
 	-
 		id: colorist-h-dark
-		title: Tone
+		title: Spectrum
 		type: variable-number-slider
 		default: 0
 		min: 0
@@ -203,7 +203,7 @@ settings:
 		step: 1
 	-
 		id: colorist-accent-dark
-		title: Tone as accent
+		title: Use as accent
 		type: class-toggle
 	-
 		id: accent-palette
@@ -920,10 +920,10 @@ settings:
 		default: row
 		options:
 			-
-				label: Default
+				label: Normal
 				value: row
 			-
-				label: Reversed
+				label: Reverse
 				value: row-reverse
 	-
 		id: tab-title-bar
@@ -1444,7 +1444,7 @@ settings:
 		default: table-normal
 		options:
 			-
-				label: Default
+				label: Standard
 				value: table-normal
 			-
 				label: Wide line width
@@ -1463,7 +1463,7 @@ settings:
 		default: bases-normal
 		options:
 			-
-				label: Default
+				label: Standard
 				value: bases-normal
 			-
 				label: Wide line width
@@ -1482,7 +1482,7 @@ settings:
 		default: img-normal
 		options:
 			-
-				label: Default
+				label: Standard
 				value: img-normal
 			-
 				label: Wide line width
@@ -1556,7 +1556,7 @@ settings:
 		default: metadata-default
 		options:
 			-
-				label: Default
+				label: Baseline
 				value: metadata-default
 			-
 				label: Block
