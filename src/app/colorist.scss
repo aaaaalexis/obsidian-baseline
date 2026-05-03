@@ -106,18 +106,18 @@
   --colorist-c-70: 0.05;
   --colorist-c-100: 0.055;
 
-  --colorist-00: oklch(calc(var(--colorist-l-00) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-00) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-05: oklch(calc(var(--colorist-l-05) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-05) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-10: oklch(calc(var(--colorist-l-10) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-10) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-20: oklch(calc(var(--colorist-l-20) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-20) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-25: oklch(calc(var(--colorist-l-25) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-25) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-30: oklch(calc(var(--colorist-l-30) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-30) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-35: oklch(calc(var(--colorist-l-35) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-35) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-40: oklch(calc(var(--colorist-l-40) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-40) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-50: oklch(calc(var(--colorist-l-50) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-60: oklch(calc(var(--colorist-l-60) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-70: oklch(calc(var(--colorist-l-70) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-dark))) var(--colorist-h-dark));
-  --colorist-100: oklch(calc(var(--colorist-l-100) * var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-00: oklch(pow(var(--colorist-l-00), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-00) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-05: oklch(pow(var(--colorist-l-05), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-05) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-10: oklch(pow(var(--colorist-l-10), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-10) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-20: oklch(pow(var(--colorist-l-20), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-20) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-25: oklch(pow(var(--colorist-l-25), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-25) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-30: oklch(pow(var(--colorist-l-30), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-30) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-35: oklch(pow(var(--colorist-l-35), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-35) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-40: oklch(pow(var(--colorist-l-40), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-40) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-50: oklch(pow(var(--colorist-l-50), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-60: oklch(pow(var(--colorist-l-60), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-70: oklch(pow(var(--colorist-l-70), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-dark))) var(--colorist-h-dark));
+  --colorist-100: oklch(pow(var(--colorist-l-100), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) var(--colorist-h-dark));
 
   &.colorist-accent-dark:not(.cupertino-dark) {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
@@ -424,6 +424,72 @@
   --colorist-c-100: 0.04;
 }
 
+// Lumen
+.theme-light.lumen-light {
+  --colorist-l-00: 0.975;
+  --colorist-l-05: 0.965;
+  --colorist-l-10: 0.955;
+  --colorist-l-20: 0.94;
+  --colorist-l-25: 0.915;
+  --colorist-l-30: 0.89;
+  --colorist-l-35: 0.815;
+  --colorist-l-40: 0.79;
+  --colorist-l-50: 0.745;
+  --colorist-l-60: 0.69;
+  --colorist-l-70: 0.64;
+  --colorist-l-100: 0.515;
+
+  --colorist-c-00: 0.025;
+  --colorist-c-05: 0.025;
+  --colorist-c-10: 0.025;
+  --colorist-c-20: 0.03;
+  --colorist-c-25: 0.03;
+  --colorist-c-30: 0.03;
+  --colorist-c-35: 0.03;
+  --colorist-c-40: 0.03;
+  --colorist-c-50: 0.03;
+  --colorist-c-60: 0.03;
+  --colorist-c-70: 0.03;
+  --colorist-c-100: 0.02;
+
+  --colorist-50: oklch(pow(var(--colorist-l-50), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 30));
+  --colorist-60: oklch(pow(var(--colorist-l-60), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 60));
+  --colorist-70: oklch(pow(var(--colorist-l-70), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 90));
+  --colorist-100: oklch(pow(var(--colorist-l-100), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 90));
+}
+.theme-dark.lumen-dark {
+  --colorist-l-00: 0.28;
+  --colorist-l-05: 0.29;
+  --colorist-l-10: 0.3;
+  --colorist-l-20: 0.32;
+  --colorist-l-25: 0.35;
+  --colorist-l-30: 0.39;
+  --colorist-l-35: 0.43;
+  --colorist-l-40: 0.47;
+  --colorist-l-50: 0.6;
+  --colorist-l-60: 0.66;
+  --colorist-l-70: 0.72;
+  --colorist-l-100: 0.83;
+
+  --colorist-c-00: 0.01;
+  --colorist-c-05: 0.01;
+  --colorist-c-10: 0.01;
+  --colorist-c-20: 0.015;
+  --colorist-c-25: 0.015;
+  --colorist-c-30: 0.015;
+  --colorist-c-35: 0.015;
+  --colorist-c-40: 0.015;
+  --colorist-c-50: 0.02;
+  --colorist-c-60: 0.02;
+  --colorist-c-70: 0.02;
+  --colorist-c-100: 0.04;
+
+  --colorist-50: oklch(pow(var(--colorist-l-50), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 15));
+  --colorist-60: oklch(pow(var(--colorist-l-60), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 30));
+  --colorist-70: oklch(pow(var(--colorist-l-70), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 60));
+  --colorist-100: oklch(pow(var(--colorist-l-100), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 60));
+}
+
 // Style Settings
 body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control input[type="color"] {
   width: auto;
@@ -443,15 +509,11 @@ body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control inp
 }
 
 .setting-item:where([data-id="colorist-l-light"], [data-id="colorist-c-light"], [data-id="colorist-h-light"], [data-id="colorist-l-dark"], [data-id="colorist-c-dark"], [data-id="colorist-h-dark"]) input[type="range"] {
-  --slider-track-height: 8px;
   width: 100%;
   max-width: 160px;
 }
 
 @each $mode in light, dark {
-  .setting-item[data-id="colorist-l-#{$mode}"] input[type="range"] {
-    background: linear-gradient(to right, oklch(0.2 0 var(--colorist-h-#{$mode})), oklch(0.8 0 var(--colorist-h-#{$mode})));
-  }
   .setting-item[data-id="colorist-c-#{$mode}"] input[type="range"] {
     background: linear-gradient(to right, oklch(0.8 0 var(--colorist-h-#{$mode})), oklch(0.8 0.3 var(--colorist-h-#{$mode})));
   }
@@ -466,4 +528,13 @@ body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control inp
       opacity: 0.5;
     }
   }
+}
+
+.vertical-tab-content-container::after {
+  content: "";
+  position: fixed;
+  inset: auto 0 0;
+  height: 40px;
+  z-index: 100;
+  background: linear-gradient(to right, var(--color-base-00) 0%, var(--color-base-00) 8.333%, var(--color-base-05) 8.333%, var(--color-base-05) 16.667%, var(--color-base-10) 16.667%, var(--color-base-10) 25%, var(--color-base-20) 25%, var(--color-base-20) 33.333%, var(--color-base-25) 33.333%, var(--color-base-25) 41.667%, var(--color-base-30) 41.667%, var(--color-base-30) 50%, var(--color-base-35) 50%, var(--color-base-35) 58.333%, var(--color-base-40) 58.333%, var(--color-base-40) 66.667%, var(--color-base-50) 66.667%, var(--color-base-50) 75%, var(--color-base-60) 75%, var(--color-base-60) 83.333%, var(--color-base-70) 83.333%, var(--color-base-70) 91.667%, var(--color-base-100) 91.667%, var(--color-base-100) 100%);
 }

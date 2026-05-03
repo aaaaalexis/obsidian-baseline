@@ -23,7 +23,6 @@ body.input-cupertino {
   &.is-mobile {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
-    --background-modifier-form-field: var(--interactive-normal);
 
     --radius-s: calc(16px * var(--radius-modifier));
     --radius-m: calc(24px * var(--radius-modifier));
@@ -39,7 +38,6 @@ body.input-cupertino {
   }
 
   &.is-mobile.theme-light {
-    --background-modifier-form-field: var(--interactive-normal);
     --interactive-normal: var(--background-secondary);
   }
   &.is-mobile.theme-dark {
