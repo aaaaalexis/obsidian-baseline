@@ -19,11 +19,6 @@ body:is(.layout-frame, .layout-viewfinder) {
       border-radius: 0;
     }
   }
-
-  // Contrast
-  .contrast-light-vivid.theme-light .mod-root {
-    border: none;
-  }
 }
 
 body.layout-frame:not(.is-mobile) {

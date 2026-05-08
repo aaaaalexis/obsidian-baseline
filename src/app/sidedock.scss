@@ -73,6 +73,9 @@ body.bold-folders .nav-folder-title {
 body.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
   padding-top: 0;
 }
+body.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+  background-color: transparent;
+}
 .workspace-ribbon.mod-left {
   border-right: none;
   z-index: 11;
