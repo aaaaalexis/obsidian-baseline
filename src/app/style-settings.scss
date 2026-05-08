@@ -54,10 +54,10 @@ settings:
 		type: class-toggle
 	-
 		id: colorist-light
-		title: Colorist (Light)
+		title: Light
 		type: heading
 		level: 2
-		collapsed: false
+		collapsed: true
 	-
 		id: color-scheme-light
 		title: Signature
@@ -129,10 +129,10 @@ settings:
 		type: class-toggle
 	-
 		id: colorist-dark
-		title: Colorist (Dark)
+		title: Dark
 		type: heading
 		level: 2
-		collapsed: false
+		collapsed: true
 	-
 		id: color-scheme-dark
 		title: Signature
@@ -206,10 +206,16 @@ settings:
 		title: Use as accent
 		type: class-toggle
 	-
+		id: colors-advanced
+		title: Advanced
+		type: heading
+		level: 2
+		collapsed: true
+	-
 		id: accent-palette
 		title: Accents
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: color-red
@@ -303,7 +309,7 @@ settings:
 		id: surface-palette
 		title: Surfaces
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: background-primary
@@ -373,7 +379,7 @@ settings:
 		id: element-palette
 		title: Elements
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: interactive-normal
@@ -427,7 +433,7 @@ settings:
 		id: text-palette
 		title: Text
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: text-normal
@@ -502,7 +508,7 @@ settings:
 		id: code-palette
 		title: Syntax
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
 	-
 		id: code-normal
@@ -585,7 +591,7 @@ settings:
 		id: graph-palette
 		title: Graph
 		type: heading
-		level: 2
+		level: 3
 		collapsed: true
     - 
         id: graph-info
