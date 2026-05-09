@@ -72,14 +72,14 @@ settings:
 				label: Cupertino
 				value: cupertino-light
 			-
-				label: Diffuse
-				value: diffuse-light
-			-
-				label: Lumen
-				value: lumen-light
-			-
 				label: Material
 				value: material-light
+			-
+				label: Radiance
+				value: radiance-light
+			-
+				label: Softlight
+				value: softlight-light
 	-
 		id: background-contrast-light
 		title: Personality
@@ -147,14 +147,14 @@ settings:
 				label: Cupertino
 				value: cupertino-dark
 			-
-				label: Diffuse
-				value: diffuse-dark
-			-
-				label: Lumen
-				value: lumen-dark
-			-
 				label: Material
 				value: material-dark
+			-
+				label: Radiance
+				value: radiance-dark
+			-
+				label: Softlight
+				value: softlight-dark
 	-
 		id: background-contrast-dark
 		title: Personality

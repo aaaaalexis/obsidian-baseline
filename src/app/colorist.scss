@@ -93,7 +93,7 @@
   --colorist-l-70: 0.74;
   --colorist-l-100: 0.89;
 
-  --colorist-c-00: 0.0125;
+  --colorist-c-00: 0.015;
   --colorist-c-05: 0.015;
   --colorist-c-10: 0.0175;
   --colorist-c-20: 0.02;
@@ -101,10 +101,10 @@
   --colorist-c-30: 0.025;
   --colorist-c-35: 0.03;
   --colorist-c-40: 0.035;
-  --colorist-c-50: 0.04;
-  --colorist-c-60: 0.045;
-  --colorist-c-70: 0.05;
-  --colorist-c-100: 0.055;
+  --colorist-c-50: 0.03;
+  --colorist-c-60: 0.025;
+  --colorist-c-70: 0.0225;
+  --colorist-c-100: 0.02;
 
   --colorist-00: oklch(pow(var(--colorist-l-00), calc(1 / var(--colorist-l-dark))) min(0.1, calc(var(--colorist-c-00) * var(--colorist-c-dark))) var(--colorist-h-dark));
   --colorist-05: oklch(pow(var(--colorist-l-05), calc(1 / var(--colorist-l-dark))) min(0.1, calc(var(--colorist-c-05) * var(--colorist-c-dark))) var(--colorist-h-dark));
@@ -368,8 +368,8 @@
   }
 }
 
-// Diffuse
-.theme-light.diffuse-light {
+// Radiance
+.theme-light.radiance-light {
   --colorist-l-00: 0.95;
   --colorist-l-05: 0.94;
   --colorist-l-10: 0.92;
@@ -396,7 +396,7 @@
   --colorist-c-70: 0.08;
   --colorist-c-100: 0.06;
 }
-.theme-dark.diffuse-dark {
+.theme-dark.radiance-dark {
   --colorist-l-00: 0.27;
   --colorist-l-05: 0.28;
   --colorist-l-10: 0.3;
@@ -424,8 +424,8 @@
   --colorist-c-100: 0.04;
 }
 
-// Lumen
-.theme-light.lumen-light {
+// Softlight
+.theme-light.softlight-light {
   --colorist-l-00: 0.975;
   --colorist-l-05: 0.965;
   --colorist-l-10: 0.955;
@@ -451,13 +451,8 @@
   --colorist-c-60: 0.03;
   --colorist-c-70: 0.03;
   --colorist-c-100: 0.02;
-
-  --colorist-50: oklch(pow(var(--colorist-l-50), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 30));
-  --colorist-60: oklch(pow(var(--colorist-l-60), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 60));
-  --colorist-70: oklch(pow(var(--colorist-l-70), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 90));
-  --colorist-100: oklch(pow(var(--colorist-l-100), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-light))) calc(var(--colorist-h-light) + 90));
 }
-.theme-dark.lumen-dark {
+.theme-dark.softlight-dark {
   --colorist-l-00: 0.28;
   --colorist-l-05: 0.29;
   --colorist-l-10: 0.3;
@@ -474,7 +469,7 @@
   --colorist-c-00: 0.01;
   --colorist-c-05: 0.01;
   --colorist-c-10: 0.01;
-  --colorist-c-20: 0.015;
+  --colorist-c-20: 0.01;
   --colorist-c-25: 0.015;
   --colorist-c-30: 0.015;
   --colorist-c-35: 0.015;
@@ -483,11 +478,6 @@
   --colorist-c-60: 0.02;
   --colorist-c-70: 0.02;
   --colorist-c-100: 0.04;
-
-  --colorist-50: oklch(pow(var(--colorist-l-50), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-50) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 15));
-  --colorist-60: oklch(pow(var(--colorist-l-60), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-60) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 30));
-  --colorist-70: oklch(pow(var(--colorist-l-70), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-70) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 60));
-  --colorist-100: oklch(pow(var(--colorist-l-100), var(--colorist-l-dark)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) calc(var(--colorist-h-dark) - 60));
 }
 
 // Style Settings
