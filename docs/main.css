@@ -2,12 +2,10 @@
   navigation: auto;
 }
 @keyframes pulse {
-  from {
-    background-color: transparent;
-  }
   to {
-    background-color: var(--mono-100);
-    color: var(--color-base-00);
+    background-color: var(--background-modifier-hover);
+    color: var(--text-normal);
+    box-shadow: var(--input-shadow);
   }
 }
 @keyframes workspaceLeafIn {
@@ -37,10 +35,6 @@
 }
 ::view-transition-new(content) {
   animation: workspaceLeafIn 320ms cubic-bezier(0.1, 0, 0.1, 1.25) both;
-}
-
-html {
-  scrollbar-gutter: stable;
 }
 
 :root {
@@ -88,6 +82,9 @@ html {
     --color-base-70: #696969;
     --color-base-100: #323232;
 
+    --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+
     --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
     --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
     --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
@@ -128,6 +125,9 @@ html {
     --color-base-70: #ababab;
     --color-base-100: #dbdbdb;
 
+    --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+
     --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
     --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover);
     --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
@@ -136,6 +136,10 @@ html {
 
 *:not(svg) {
   box-sizing: border-box;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -150,7 +154,7 @@ body {
   max-width: 1024px;
   min-height: 100vh;
   color: var(--text-normal);
-  line-height: 1.5;
+  line-height: 1.625;
   font-family: "Inter", system-ui, sans-serif;
 }
 
@@ -182,6 +186,7 @@ p a {
   font-weight: 500;
 }
 a {
+  color: inherit;
   transition: 160ms;
   text-decoration: none;
 }
@@ -191,25 +196,14 @@ a:not(:hover) {
 
 .header {
   position: sticky;
+  top: 32px;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   padding: 0 4px;
-  z-index: 100;
-  top: 24px;
-}
-.content::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  height: 128px;
-  z-index: 99;
-  background: linear-gradient(var(--background-secondary) 75%, transparent);
-  animation: fadeIn linear both;
-  animation-timeline: scroll();
-  animation-range: 0px 240px;
-  opacity: 0;
+  view-transition-name: header;
 }
 .header-title {
   display: inline-flex;
@@ -243,9 +237,13 @@ a:not(:hover) {
   align-items: center;
   gap: 16px;
 }
-.header-actions > a {
+.header-actions > a:not(.link-btn) {
   color: var(--text-muted);
   font-size: 0.85rem;
+  line-height: 0;
+}
+.header-actions > a:not(.link-btn):hover {
+  color: inherit;
 }
 .content {
   view-transition-name: content;
@@ -265,12 +263,12 @@ a:not(:hover) {
   gap: 0.5rem;
 }
 
-button {
+button,
+.link-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  transition: 160ms;
   cursor: pointer;
   border: none;
   box-shadow: var(--input-shadow);
@@ -280,29 +278,105 @@ button {
   height: 32px;
   color: var(--text-normal);
   font-size: 0.85rem;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: inherit;
+  corner-shape: superellipse(1.1);
+  font-weight: 500;
+  user-select: none;
+  transition: 160ms;
 }
-button:hover {
+button:hover,
+.link-btn:hover {
   background-color: var(--interactive-hover);
   box-shadow: var(--input-shadow-hover);
 }
-button svg {
+svg.lucide {
   width: 1em;
   height: 1em;
 }
 
-button.mod-cta {
-  background-color: var(--mono-100);
-  color: var(--color-base-00);
-  border-color: transparent;
-}
-button.mod-cta:hover {
-  background-color: var(--mono-100);
-  opacity: 0.8;
-}
-
 .copy-btn {
   flex: 1;
+}
+
+/* Filter */
+[popover] {
+  position-area: bottom span-left;
+  position-try: flip-block;
+  opacity: 0;
+  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
+  transition-behavior: allow-discrete;
+  margin-block: 6px;
+  box-shadow: var(--shadow-s);
+  border: none;
+  border-radius: 12px;
+  background-color: var(--background-primary);
+  padding: 4px;
+  min-width: 160px;
+  max-width: 240px;
+  color: var(--text-normal);
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+[popover]:popover-open {
+  opacity: 1;
+  margin-block: 8px;
+
+  @starting-style {
+    opacity: 0;
+    margin-block: 6px;
+  }
+}
+
+hr {
+  margin: 4px;
+  border-width: var(--border-width);
+  border-color: var(--background-modifier-hover);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  corner-shape: superellipse(1.1);
+  cursor: pointer;
+  line-height: normal;
+  user-select: none;
+  transition: 160ms;
+  color: var(--text-muted);
+  border: var(--border-width) solid transparent;
+}
+ul li:hover {
+  border: var(--border-width) solid var(--background-modifier-border-hover);
+}
+ul li.is-active {
+  background-color: var(--background-modifier-hover);
+  color: inherit;
+}
+ul li svg.lucide-check {
+  margin-left: auto;
+}
+
+ul li.is-info {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: transparent;
+  cursor: default;
+}
+ul li.is-info .info-title {
+  font-weight: 500;
+}
+ul li.is-info .info-description {
+  font-size: 0.7rem;
+  color: var(--text-muted);
 }
 
 /* Settings Replica */
@@ -316,6 +390,7 @@ button.mod-cta:hover {
   cursor: not-allowed;
   border: var(--border-width) solid var(--background-modifier-border);
   border-radius: 24px;
+  corner-shape: superellipse(1.1);
   background-color: var(--background-primary);
   padding: 32px 32px 0;
   overflow: hidden;
@@ -329,6 +404,7 @@ button.mod-cta:hover {
   display: flex;
   border-radius: 8px 8px 0 0;
   overflow: hidden;
+  corner-shape: superellipse(1.1);
 }
 
 .setting-sidebar {
@@ -356,6 +432,7 @@ button.mod-cta:hover {
   padding: 4px 8px;
   color: var(--text-normal);
   font-size: 0.85rem;
+  corner-shape: superellipse(1.1);
 }
 
 .setting-content {
@@ -385,6 +462,7 @@ button.mod-cta:hover {
   color: var(--text-faint);
   font-size: 0.85rem;
   white-space: nowrap;
+  corner-shape: superellipse(1.1);
 }
 .setting-search svg {
   width: 18px;

@@ -23,6 +23,7 @@ textarea {
   font-family: monospace;
   white-space: pre;
   outline: none;
+  corner-shape: superellipse(1.1);
 
   &::placeholder {
     color: var(--text-faint);
@@ -47,6 +48,7 @@ textarea {
   border-radius: 24px;
   background-color: var(--background-primary);
   padding: 24px;
+  corner-shape: superellipse(1.1);
 }
 .unsupported-theme {
   display: flex;
@@ -91,13 +93,14 @@ textarea {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border: var(--border-width) solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-hover);
   border-radius: 100px;
   background-color: transparent;
   padding: 8px;
   min-height: 32px;
   color: var(--text-faint);
   text-align: center;
+  corner-shape: superellipse(1.1);
 }
 .conflict-label.selected {
   border-color: transparent;
@@ -106,6 +109,7 @@ textarea {
 }
 .color-preview {
   border-radius: 100px;
+  corner-shape: superellipse(1.1);
   width: 16px;
   height: 16px;
 }

@@ -1,115 +1,141 @@
 {
   "admin": {
+    "type": "preset",
     "name": "Lazy Administrator",
     "author": "Bradley Wyatt",
     "url": "https://github.com/bwya77",
     "description": "High contrast, sleek and professional."
   },
   "tahoe": {
+    "type": "preset",
     "name": "macOS Tahoe",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Beautiful, delightful, and familiar look of macOS Tahoe."
   },
   "cupertino": {
+    "type": "preset",
     "name": "Cupertino",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Inspired by Apple's timeless design philosophy."
   },
   "sanctum": {
+    "type": "preset",
     "name": "Sanctum",
     "author": "José Daniel Mourão",
     "url": "https://github.com/jdanielmourao/obsidian-sanctum",
     "description": "A serene space of retreat, for thought and uninterrupted work."
   },
   "flexoki": {
+    "type": "preset",
     "name": "Flexoki",
     "author": "kepano",
     "url": "https://github.com/kepano/flexoki",
     "description": "Inspired by analog printing inks and warm shades of paper."
   },
   "tiniri": {
+    "type": "preset",
     "name": "Tiniri",
     "author": "Vlad Gerasimov",
     "url": "https://tiniri.vlad.studio",
     "description": "Optimized for calmness and coziness."
   },
   "softener": {
+    "type": "preset",
     "name": "Softener",
     "author": "chuuuby",
     "description": "Pastel colors and spacious workspace for your eye comfort."
   },
   "ocean": {
+    "type": "preset",
     "name": "Ocean",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Inspired by [Notion](https://www.notion.com/). Effortlessly minimal, designed for clarity."
   },
   "minimal": {
+    "type": "preset",
     "name": "Minimal",
     "author": "kepano",
     "url": "https://github.com/kepano/obsidian-minimal",
     "description": "A distraction-free experience for your vault."
   },
   "fluent": {
+    "type": "preset",
     "name": "Fluent",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Modern and clean interface, native Windows look and feel."
   },
   "foundation": {
+    "type": "preset",
     "name": "Foundation",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "A gentle foundation for thought, designed for comfort and calm."
   },
   "verseflow": {
+    "type": "preset",
     "name": "Verse Flow",
     "author": "Jaren Lo",
     "url": "https://qnury.es",
     "description": "A joyful, elegant preset focused on readability and ease of use."
   },
   "stone-gnome": {
+    "type": "preset",
     "name": "Stone Gnome",
     "author": "Bean",
     "url": "https://github.com/broad-bean1",
     "description": "A stylised Adwaita theme for a native Gnome feel and a modern look. [Extra tweaks ↗](https://github.com/broad-bean1/Stone-Gnome)"
   },
   "adwaita": {
+    "type": "preset",
     "name": "Adwaita",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Refined sophistication of GNOME's modern design language."
   },
   "material": {
+    "type": "preset",
     "name": "Material",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Vibrant layers and bold shadows from Google's Material Design."
   },
   "fusion": {
+    "type": "preset",
     "name": "Cupertino Fusion",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Inspired by [Craft Docs](https://www.craft.do/), where elegance meets modern minimalism."
   },
   "bluesahara": {
+    "type": "preset",
     "name": "Blue Sahara",
     "author": "Dencel",
     "url": "https://github.com/dencelkbabu",
     "description": "Based on Admin theme, but darker."
   },
   "midnightblue": {
+    "type": "preset",
     "name": "Midnight Blue",
     "author": "Daniel A",
     "url": "https://danagafonov.info",
     "description": "When everyone is asleep, except you."
   },
   "claude": {
+    "type": "preset",
     "name": "Certainly!",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Absolutely! Here's a preset with minimal, elegant, and calming design."
+  },
+  "my-palette": {
+    "type": "palette",
+    "name": "Test Color Scheme",
+    "author": "Alexis C",
+    "url": "https://github.com/aaaaalexis",
+    "description": "Test Color Scheme"
   }
 }
