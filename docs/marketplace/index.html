@@ -35,7 +35,7 @@
         <h1>Marketplace</h1>
       </div>
       <div class="header-actions">
-        <a class="link-btn" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit my preset</a>
+        <a class="link-btn" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit preset</a>
         <a href="https://buymeacoffee.com/sevenaxis" title="Support development">
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path
@@ -91,7 +91,7 @@
         <input type="search" class="preset-search" placeholder="Search marketplace..." />
         <button class="preset-search-btn" popovertarget="preset-search-menu"><i data-lucide="list-filter"></i></button>
       </div>
-      <div id="preset-search-menu" popover>
+      <div class="menu" id="preset-search-menu" popover>
         <ul class="preset-search-filter">
           <li class="is-active" data-filter="preset"><i data-lucide="paintbrush"></i>Style Preset</li>
           <li class="is-active" data-filter="palette"><i data-lucide="palette"></i>Color Palette</li>
@@ -106,7 +106,7 @@
       </div>
       <div class="panel-container"></div>
     </div>
-    <div class="lightbox" aria-hidden="true">
+    <div id="lightbox" popover>
       <img class="lightbox-img" />
       <p class="lightbox-title"></p>
     </div>
@@ -145,7 +145,7 @@
           <button popovertarget="preset-panel-palette-menu" aria-label="Color palette options"><i data-lucide="chevron-down"></i></button>
         </div>
       </div>
-      <div id="preset-panel-palette-menu" popover>
+      <div class="menu" id="preset-panel-palette-menu" popover>
         <ul>
           <li class="is-info">
             <div class="info-title">Dynamic</div>
@@ -257,12 +257,11 @@
         const searchInput = $(".preset-search");
         const searchBtn = $(".preset-search-btn");
         const searchMenu = $("#preset-search-menu");
-        const overlay = $(".lightbox");
-        const [lightboxImg, lightboxTitle] = [$(".lightbox-img", overlay), $(".lightbox-title", overlay)];
+        const lightbox = $("#lightbox");
+        const [lightboxImg, lightboxTitle] = [$(".lightbox-img", lightbox), $(".lightbox-title", lightbox)];
 
         let items = [],
           itemDetails = {},
-          openedPicture = null,
           debounceTimer;
         const filterModes = ["new", "old", "a-z", "z-a"];
         const filterLabels = { new: "New → Old", old: "Old → New", "a-z": "A → Z", "z-a": "Z → A" };
@@ -369,43 +368,22 @@
               }, 1000);
               window.gtag?.("event", `${type}_copy`, { [type]: id });
             });
-          } else if (picture && overlay) {
+          } else if (picture) {
             const img = picture.querySelector("img");
-            if (img) openLightbox(pickImageSrc(img), picture, panel.querySelector("h2")?.textContent);
+            if (img) {
+              lightboxImg.src = pickImageSrc(img);
+              lightboxTitle.textContent = panel.querySelector("h2")?.textContent || "";
+              lightbox.showPopover();
+            }
           }
         });
 
-        // Lightbox
-        const openLightbox = (src, picture, title) => {
-          overlay.classList.remove("hidden");
-          lightboxImg.src = src;
-          lightboxTitle.textContent = title || "";
-          overlay.classList.add("active");
-          picture.classList.add("opened");
-          openedPicture = picture;
-        };
-
-        const closeLightbox = () => {
-          if (!overlay.classList.contains("active")) return;
-          overlay.classList.remove("active");
-          if (openedPicture) {
-            openedPicture.classList.remove("opened");
-            openedPicture = null;
-          }
-          const cleanup = () => {
-            overlay.classList.add("hidden");
-            lightboxImg.src = "";
-            lightboxTitle.textContent = "";
-            lightboxImg.removeEventListener("transitionend", cleanup);
-          };
-          lightboxImg.addEventListener("transitionend", cleanup);
-        };
-
-        overlay?.addEventListener("click", (e) => {
-          if (e.target === overlay || e.target === lightboxImg) closeLightbox();
+        // Lightbox - handles dismiss with click and Escape via Popover API
+        lightbox?.addEventListener("click", (e) => {
+          if (e.target === lightbox || e.target === lightboxImg) lightbox.hidePopover();
         });
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeLightbox();
+        lightbox?.addEventListener("toggle", (e) => {
+          document.body.classList.toggle("lightbox-active", e.newState === "open");
         });
 
         // Themes
@@ -414,9 +392,9 @@
             p.classList.add("loading");
             initImageLoader(p);
           });
-          if (overlay.classList.contains("active") && openedPicture) {
-            const img = openedPicture.querySelector("img");
-            if (img) lightboxImg.src = pickImageSrc(img);
+          if (lightbox?.matches(":popover-open")) {
+            const img = lightbox.querySelector(".lightbox-img");
+            if (img?.dataset.base) lightboxImg.src = pickImageSrc(img);
           }
         };
         document.addEventListener("colorModeChange", updateImagesTheme);
@@ -430,7 +408,7 @@
           items = await Promise.all(
             Object.entries(manifest).map(async ([id, meta]) => {
               const isPalette = meta.type === "palette";
-              const details = (await fetchJSON(`${isPalette ? "palette" : "preset"}/${id}.json`)) || {};
+              const details = (await fetchJSON(`preset/${id}.json`)) || {};
               itemDetails[id] = details;
 
               return {

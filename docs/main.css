@@ -298,13 +298,12 @@ svg.lucide {
   flex: 1;
 }
 
-/* Filter */
-[popover] {
+/* Menu */
+.menu {
   position-area: bottom span-left;
   position-try: flip-block;
   opacity: 0;
-  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
-  transition-behavior: allow-discrete;
+  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
   margin-block: 6px;
   box-shadow: var(--shadow-s);
   border: none;
@@ -317,7 +316,7 @@ svg.lucide {
   font-size: 0.85rem;
   font-family: inherit;
 }
-[popover]:popover-open {
+.menu:popover-open {
   opacity: 1;
   margin-block: 8px;
 
@@ -349,18 +348,10 @@ ul li {
   line-height: normal;
   user-select: none;
   transition: 160ms;
-  color: var(--text-muted);
   border: var(--border-width) solid transparent;
 }
 ul li:hover {
-  border: var(--border-width) solid var(--background-modifier-border-hover);
-}
-ul li.is-active {
   background-color: var(--background-modifier-hover);
-  color: inherit;
-}
-ul li svg.lucide-check {
-  margin-left: auto;
 }
 
 ul li.is-info {
@@ -369,6 +360,7 @@ ul li.is-info {
   flex-direction: column;
   align-items: flex-start;
   background-color: transparent;
+  border: none;
   cursor: default;
 }
 ul li.is-info .info-title {
