@@ -10,7 +10,8 @@
   color: var(--text-muted);
 }
 textarea {
-  border: 1px solid var(--background-modifier-border);
+  border: none;
+  box-shadow: var(--input-shadow-inset);
   border-radius: 8px;
   background-color: var(--background-primary);
   padding: 8px;
@@ -21,6 +22,7 @@ textarea {
   color: var(--text-normal);
   font-family: monospace;
   white-space: pre;
+  outline: none;
 
   &::placeholder {
     color: var(--text-faint);
@@ -89,7 +91,7 @@ textarea {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   border-radius: 100px;
   background-color: transparent;
   padding: 8px;
@@ -110,10 +112,13 @@ textarea {
 
 /* Settings Replica */
 .setting {
-  box-shadow: 0px 1.8px 7.3px rgba(0, 0, 0, 0.071), 0px 6.3px 24.7px rgba(0, 0, 0, 0.112), 0px 30px 90px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0px 1.8px 7.3px rgba(0, 0, 0, 0.071),
+    0px 6.3px 24.7px rgba(0, 0, 0, 0.112),
+    0px 30px 90px rgba(0, 0, 0, 0.2);
 }
 .setting-search {
-  background: var(--background-primary);
+  background-color: var(--background-primary);
 }
 .setting-actions button:last-child,
 .setting-item-actions svg:last-child {
