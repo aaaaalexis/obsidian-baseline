@@ -1,6 +1,7 @@
 body {
-  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 32px;
+  --nav-indentation-guide-color: var(--background-modifier-border-hover);
   --nav-indentation-guide-width: 0px;
+  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 32px;
   --nav-item-children-margin-start: calc(20px - var(--nav-indentation-guide-width) / 2);
 
   --ribbon-background: transparent;

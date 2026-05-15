@@ -38,6 +38,7 @@
 }
 
 :root {
+  color-scheme: light dark;
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 6.7%);
   --background-modifier-active-hover: hsla(170, 65%, 27%, 0.15);
   --background-modifier-border: var(--color-base-30);
@@ -49,89 +50,88 @@
   --border-width: 0.5px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-primary: var(--color-base-00);
-    --background-primary-alt: var(--color-base-10);
-    --background-secondary: var(--color-base-20);
-    --background-secondary-alt: var(--color-base-05);
-    --background-modifier-form-field: var(--color-base-10);
-    --interactive-normal: var(--color-base-00);
-    --interactive-hover: var(--color-base-10);
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background-primary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-10);
+  --background-secondary: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-05);
+  --background-modifier-form-field: var(--color-base-10);
+  --interactive-normal: var(--color-base-00);
+  --interactive-hover: var(--color-base-10);
 
-    --mono-0: white;
-    --mono-100: black;
-    --color-red: #fe7070;
-    --color-orange: #ec7500;
-    --color-yellow: #e0cd63;
-    --color-green: #4ad55f;
-    --color-cyan: #38dbd6;
-    --color-blue: #6aadfa;
-    --color-purple: #bb9ef5;
-    --color-pink: #f37db7;
-    --color-base-00: #ffffff;
-    --color-base-05: #fcfcfc;
-    --color-base-10: #f8f8f8;
-    --color-base-20: #f5f5f5;
-    --color-base-25: #eeeeee;
-    --color-base-30: #e4e4e4;
-    --color-base-35: #dbdbdb;
-    --color-base-40: #cacaca;
-    --color-base-50: #bababa;
-    --color-base-60: #959595;
-    --color-base-70: #696969;
-    --color-base-100: #323232;
+  --mono-0: white;
+  --mono-100: black;
+  --color-red: #fe7070;
+  --color-orange: #ec7500;
+  --color-yellow: #e0cd63;
+  --color-green: #4ad55f;
+  --color-cyan: #38dbd6;
+  --color-blue: #6aadfa;
+  --color-purple: #bb9ef5;
+  --color-pink: #f37db7;
+  --color-base-00: #ffffff;
+  --color-base-05: #fcfcfc;
+  --color-base-10: #f8f8f8;
+  --color-base-20: #f5f5f5;
+  --color-base-25: #eeeeee;
+  --color-base-30: #e4e4e4;
+  --color-base-35: #dbdbdb;
+  --color-base-40: #cacaca;
+  --color-base-50: #bababa;
+  --color-base-60: #959595;
+  --color-base-70: #696969;
+  --color-base-100: #323232;
 
-    --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
 
-    --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
-    --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
-    --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
-  }
+  --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
+  --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
+  --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-primary: var(--color-base-20);
-    --background-primary-alt: var(--color-base-30);
-    --background-secondary: var(--color-base-00);
-    --background-secondary-alt: var(--color-base-10);
-    --background-modifier-form-field: var(--color-base-25);
-    --interactive-normal: var(--color-base-30);
-    --interactive-hover: var(--color-base-35);
-    --settings-background: var(--background-primary);
-    --setting-items-background: var(--background-secondary);
 
-    --mono-0: black;
-    --mono-100: white;
-    --color-red: #d95a5f;
-    --color-orange: #db8650;
-    --color-yellow: #c4b45e;
-    --color-green: #48c45a;
-    --color-cyan: #3fbab6;
-    --color-blue: #5694da;
-    --color-purple: #8e7dc2;
-    --color-pink: #de6793;
-    --color-base-00: #181818;
-    --color-base-05: #1b1b1b;
-    --color-base-10: #1d1d1d;
-    --color-base-20: #1f1f1f;
-    --color-base-25: #242424;
-    --color-base-30: #292929;
-    --color-base-35: #353535;
-    --color-base-40: #454545;
-    --color-base-50: #585858;
-    --color-base-60: #7a7a7a;
-    --color-base-70: #ababab;
-    --color-base-100: #dbdbdb;
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background-primary: var(--color-base-20);
+  --background-primary-alt: var(--color-base-30);
+  --background-secondary: var(--color-base-00);
+  --background-secondary-alt: var(--color-base-10);
+  --background-modifier-form-field: var(--color-base-25);
+  --interactive-normal: var(--color-base-30);
+  --interactive-hover: var(--color-base-35);
+  --settings-background: var(--background-primary);
+  --setting-items-background: var(--background-secondary);
 
-    --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --mono-0: black;
+  --mono-100: white;
+  --color-red: #d95a5f;
+  --color-orange: #db8650;
+  --color-yellow: #c4b45e;
+  --color-green: #48c45a;
+  --color-cyan: #3fbab6;
+  --color-blue: #5694da;
+  --color-purple: #8e7dc2;
+  --color-pink: #de6793;
+  --color-base-00: #181818;
+  --color-base-05: #1b1b1b;
+  --color-base-10: #1d1d1d;
+  --color-base-20: #1f1f1f;
+  --color-base-25: #242424;
+  --color-base-30: #292929;
+  --color-base-35: #353535;
+  --color-base-40: #454545;
+  --color-base-50: #585858;
+  --color-base-60: #7a7a7a;
+  --color-base-70: #ababab;
+  --color-base-100: #dbdbdb;
 
-    --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
-    --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover);
-    --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
-  }
+  --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+
+  --input-shadow: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
+  --input-shadow-hover: inset 0 0 0 var(--border-width) var(--background-modifier-border-hover);
+  --input-shadow-inset: inset 0 0 0 var(--border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
 }
 
 *:not(svg) {
@@ -143,13 +143,13 @@ html {
 }
 
 body {
-  transition: 320ms;
+  /* transition: 320ms; */
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin: 0 auto;
   background-color: var(--background-secondary);
-  padding: 48px 8px;
+  padding-block: 48px;
   width: 95vw;
   max-width: 1024px;
   min-height: 100vh;
@@ -187,7 +187,7 @@ p a {
 }
 a {
   color: inherit;
-  transition: 160ms;
+  transition: 320ms;
   text-decoration: none;
 }
 a:not(:hover) {
@@ -298,19 +298,24 @@ svg.lucide {
   flex: 1;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-faint);
+}
+
 /* Menu */
 .menu {
   position-area: bottom span-left;
   position-try: flip-block;
   opacity: 0;
   transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
-  margin-block: 6px;
+  margin: 6px -8px;
   box-shadow: var(--shadow-s);
   border: none;
   border-radius: 12px;
   background-color: var(--background-primary);
   padding: 4px;
-  min-width: 160px;
+  min-width: 200px;
   max-width: 240px;
   color: var(--text-normal);
   font-size: 0.85rem;
@@ -318,11 +323,11 @@ svg.lucide {
 }
 .menu:popover-open {
   opacity: 1;
-  margin-block: 8px;
+  margin: 8px -8px;
 
   @starting-style {
     opacity: 0;
-    margin-block: 6px;
+    margin: 6px -8px;
   }
 }
 
@@ -347,11 +352,18 @@ ul li {
   cursor: pointer;
   line-height: normal;
   user-select: none;
-  transition: 160ms;
-  border: var(--border-width) solid transparent;
 }
 ul li:hover {
   background-color: var(--background-modifier-hover);
+}
+ul li.is-active {
+  color: var(--text-normal);
+}
+ul li svg.lucide-check {
+  margin-left: auto;
+}
+ul li:not(.is-active) svg.lucide-check {
+  visibility: hidden;
 }
 
 ul li.is-info {

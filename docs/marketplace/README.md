@@ -21,12 +21,10 @@ Next, we'll get your preset file and a preview image into the project.
 > Your screenshot must be a full window capture with no borders or shadows.
 
 1.  **Fork the Repository:**
-
     - Go to [Baseline's GitHub repository](https://github.com/aaaaalexis/obsidian-baseline).
     - Click the **Fork** button in the top-right corner. This creates a personal copy under your GitHub account where you can make changes.
 
 2.  **Upload Your Preset File:**
-
     - In your newly forked repository, navigate to the `docs/marketplace/preset/` folder.
     - Click the **Add file** dropdown and select **Upload files**.
     - Make sure your preset file is in valid JSON format.
@@ -34,7 +32,6 @@ Next, we'll get your preset file and a preview image into the project.
     - Click **Commit changes**.
 
 3.  **Upload Your Screenshot:**
-
     - (Optional) Compress your image before uploading.
     - Upload your screenshot using the **Add file** dropdown and select **Upload files**.
     - Your screenshot must be a PNG file named after your preset (e.g., `new-preset.png`).

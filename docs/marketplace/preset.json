@@ -27,20 +27,6 @@
     "url": "https://github.com/jdanielmourao/obsidian-sanctum",
     "description": "A serene space of retreat, for thought and uninterrupted work."
   },
-  "flexoki": {
-    "type": "preset",
-    "name": "Flexoki",
-    "author": "kepano",
-    "url": "https://github.com/kepano/flexoki",
-    "description": "Inspired by analog printing inks and warm shades of paper."
-  },
-  "tiniri": {
-    "type": "preset",
-    "name": "Tiniri",
-    "author": "Vlad Gerasimov",
-    "url": "https://tiniri.vlad.studio",
-    "description": "Optimized for calmness and coziness."
-  },
   "softener": {
     "type": "preset",
     "name": "Softener",
@@ -131,11 +117,151 @@
     "url": "https://github.com/aaaaalexis",
     "description": "Absolutely! Here's a preset with minimal, elegant, and calming design."
   },
-  "my-palette": {
+  "adwaita-color": {
     "type": "palette",
-    "name": "Test Color Scheme",
-    "author": "Alexis C",
-    "url": "https://github.com/aaaaalexis",
-    "description": "Test Color Scheme"
+    "name": "Adwaita",
+    "author": "GNOME",
+    "url": "https://www.gnome.org/",
+    "description": ""
+  },
+  "atom": {
+    "type": "palette",
+    "name": "Atom",
+    "author": "GitHub",
+    "url": "https://github.com/atom/atom",
+    "description": ""
+  },
+  "ayu": {
+    "type": "palette",
+    "name": "Ayu",
+    "author": "Ayu",
+    "url": "https://github.com/ayu-theme/ayu-colors",
+    "description": ""
+  },
+  "catppuccin": {
+    "type": "palette",
+    "name": "Catppuccin",
+    "author": "Catppuccin",
+    "url": "https://github.com/catppuccin/catppuccin",
+    "description": ""
+  },
+  "dracula": {
+    "type": "palette",
+    "name": "Dracula",
+    "author": "Dracula",
+    "url": "https://github.com/dracula/dracula-theme",
+    "description": ""
+  },
+  "everforest": {
+    "type": "palette",
+    "name": "Everforest",
+    "author": "Sainnhe Park",
+    "url": "https://github.com/sainnhe/everforest",
+    "description": ""
+  },
+  "flexoki": {
+    "type": "palette",
+    "name": "Flexoki",
+    "author": "kepano",
+    "url": "https://github.com/kepano/flexoki",
+    "description": ""
+  },
+  "frappe": {
+    "type": "palette",
+    "name": "Frappé",
+    "author": "Catppuccin",
+    "url": "https://github.com/catppuccin/catppuccin",
+    "description": ""
+  },
+  "gruvbox": {
+    "type": "palette",
+    "name": "Gruvbox",
+    "author": "Pavel Pertsev",
+    "url": "https://github.com/morhetz/gruvbox",
+    "description": ""
+  },
+  "latte": {
+    "type": "palette",
+    "name": "Latte",
+    "author": "Catppuccin",
+    "url": "https://github.com/catppuccin/catppuccin",
+    "description": ""
+  },
+  "macchiato": {
+    "type": "palette",
+    "name": "Macchiato",
+    "author": "Catppuccin",
+    "url": "https://github.com/catppuccin/catppuccin",
+    "description": ""
+  },
+  "melange": {
+    "type": "palette",
+    "name": "Melange",
+    "author": "Sergio A. Vargas",
+    "url": "https://github.com/savq/melange-nvim",
+    "description": ""
+  },
+  "mocha": {
+    "type": "palette",
+    "name": "Mocha",
+    "author": "Catppuccin",
+    "url": "https://github.com/catppuccin/catppuccin",
+    "description": ""
+  },
+  "nord": {
+    "type": "palette",
+    "name": "Nord",
+    "author": "Sven Greb",
+    "url": "https://github.com/nordtheme/nord",
+    "description": ""
+  },
+  "notion": {
+    "type": "palette",
+    "name": "Notion",
+    "author": "Notion",
+    "url": "https://notion.so",
+    "description": ""
+  },
+  "rose-pine": {
+    "type": "palette",
+    "name": "Rosé Pine",
+    "author": "Rosé Pine",
+    "url": "https://github.com/rose-pine/rose-pine-theme",
+    "description": ""
+  },
+  "sanctum-color": {
+    "type": "palette",
+    "name": "Sanctum",
+    "author": "José Daniel Mourão",
+    "url": "https://github.com/jdanielmourao/obsidian-sanctum",
+    "description": ""
+  },
+  "sky": {
+    "type": "palette",
+    "name": "Sky",
+    "author": "kepano",
+    "url": "https://github.com/kepano/obsidian-minimal",
+    "description": ""
+  },
+  "solarized": {
+    "type": "palette",
+    "name": "Solarized",
+    "author": "Ethan Schoonover",
+    "url": "https://github.com/altercation/solarized",
+    "description": ""
+  },
+  "things": {
+    "type": "palette",
+    "name": "Things",
+    "author": "Cultured Code",
+    "url": "https://culturedcode.com/things/",
+    "description": ""
+  },
+  "tiniri": {
+    "type": "palette",
+    "name": "Tiniri",
+    "author": "Vlad Gerasimov",
+    "url": "https://github.com/jdanielmourao/obsidian-tiniri",
+    "description": ""
   }
 }

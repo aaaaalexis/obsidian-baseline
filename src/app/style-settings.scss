@@ -1221,11 +1221,11 @@ settings:
 		title: Indentation guides color
 		type: variable-select
 		allowEmpty: false
-		default: rgba(var(--mono-rgb-100), 0.12)
+		default: var(--background-modifier-border-hover)
 		options:
 			-
 				label: Subtle
-				value: rgba(var(--mono-rgb-100), 0.12)
+				value: var(--background-modifier-border-hover)
 			-
 				label: Strong
 				value: var(--text-faint)
@@ -2772,11 +2772,11 @@ settings:
 		title: Indentation guides color
 		type: variable-select
 		allowEmpty: false
-		default: rgba(var(--mono-rgb-100), 0.12)
+		default: var(--background-modifier-border-hover)
 		options:
 			-
 				label: Subtle
-				value: rgba(var(--mono-rgb-100), 0.12)
+				value: var(--background-modifier-border-hover)
 			-
 				label: Strong
 				value: var(--text-faint)

@@ -24,10 +24,6 @@ textarea {
   white-space: pre;
   outline: none;
   corner-shape: superellipse(1.1);
-
-  &::placeholder {
-    color: var(--text-faint);
-  }
 }
 
 .clear-btn {

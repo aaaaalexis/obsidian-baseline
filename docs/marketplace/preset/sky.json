@@ -1,0 +1,27 @@
+{
+  "baseline-style@@background-primary@@light": "#fff",
+  "baseline-style@@background-primary-alt@@light": "#f7f6f4",
+  "baseline-style@@background-secondary@@light": "#f7f6f4",
+  "baseline-style@@background-modifier-border@@light": "#ededec",
+  "baseline-style@@background-modifier-border-hover@@light": "#dbdbda",
+  "baseline-style@@background-modifier-border-focus@@light": "#aaa9a5",
+  "baseline-style@@interactive-normal@@light": "#e8e7e4",
+  "baseline-style@@interactive-hover@@light": "#dbdbda",
+  "baseline-style@@text-normal@@light": "#37352f",
+  "baseline-style@@text-muted@@light": "#72706c",
+  "baseline-style@@text-faint@@light": "#aaa9a5",
+  "baseline-style@@text-selection@@light": "hsl(197 65% 71% / 0.3)",
+
+  "baseline-style@@background-primary@@dark": "#2f3437",
+  "baseline-style@@background-primary-alt@@dark": "#373c3f",
+  "baseline-style@@background-secondary@@dark": "#373c3f",
+  "baseline-style@@background-modifier-border@@dark": "#3e4245",
+  "baseline-style@@background-modifier-border-hover@@dark": "#585d5f",
+  "baseline-style@@background-modifier-border-focus@@dark": "#585d5f",
+  "baseline-style@@interactive-normal@@dark": "#4b5053",
+  "baseline-style@@interactive-hover@@dark": "#373c3f",
+  "baseline-style@@text-normal@@dark": "#ebebeb",
+  "baseline-style@@text-muted@@dark": "#a3a5a9",
+  "baseline-style@@text-faint@@dark": "#6d7476",
+  "baseline-style@@text-selection@@dark": "hsl(197 48% 43% / 0.3)"
+}

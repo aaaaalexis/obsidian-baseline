@@ -77,7 +77,7 @@
   "baseline-style@@nav-item-active-style": "nav-item-subtle",
   "baseline-style@@colorful-folders": "colorful-folders-off",
   "baseline-style@@nav-item-size": "14px",
-  "baseline-style@@nav-indentation-guide-color": "rgba(var(--mono-rgb-100), 0.12)",
+  "baseline-style@@nav-indentation-guide-color": "var(--background-modifier-border-hover)",
   "baseline-style@@titlebar-text-off": true,
   "baseline-style@@titlebar-text-weight": 600,
   "baseline-style@@font-text-override": "'Adwaita Sans', 'Adwaita Sans Text'",

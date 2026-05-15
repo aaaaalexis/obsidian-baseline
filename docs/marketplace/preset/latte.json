@@ -1,0 +1,15 @@
+{
+  "baseline-style@@background-primary@@light": "#dce0e8",
+  "baseline-style@@background-primary-alt@@light": "#e6e9ef",
+  "baseline-style@@background-secondary@@light": "#e6e9ef",
+  "baseline-style@@background-secondary-alt@@light": "#eff1f5",
+  "baseline-style@@text-normal@@light": "#4c4f69",
+  "baseline-style@@color-red@@light": "#D20F39",
+  "baseline-style@@color-orange@@light": "#FE640B",
+  "baseline-style@@color-yellow@@light": "#E49320",
+  "baseline-style@@color-green@@light": "#40A02B",
+  "baseline-style@@color-cyan@@light": "#04A5E5",
+  "baseline-style@@color-blue@@light": "#2A6EF5",
+  "baseline-style@@color-purple@@light": "#7287FD",
+  "baseline-style@@color-pink@@light": "#EC83D0"
+}
