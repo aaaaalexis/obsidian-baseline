@@ -35,8 +35,6 @@
     const mode = getMode();
     const icon = mode === "auto" ? "sun-moon" : mode === "light" ? "sun" : "moon";
     btn.dataset.mode = mode;
-    btn.setAttribute("aria-label", `Appearance: ${mode}`);
-    btn.setAttribute("title", `Appearance: ${mode}`);
     btn.innerHTML = `<i data-lucide="${icon}"></i>`;
     window.lucide?.createIcons?.();
   };

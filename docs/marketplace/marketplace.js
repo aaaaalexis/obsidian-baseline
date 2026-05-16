@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  // --- Utilities ---
+
   const $ = (sel, scope = document) => scope.querySelector(sel);
   const $$ = (sel, scope = document) => Array.from(scope.querySelectorAll(sel));
   const fetchJSON = (path) =>
@@ -11,39 +13,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     const { light, dark, base } = img.dataset;
     return isDark() ? dark || light || base : light || dark || base;
   };
+
+  // --- DOM Helpers ---
+
+  const PALETTE_VARS = ["background-primary", "background-primary-alt", "background-secondary", "background-secondary-alt", "text-normal", "text-muted", "text-faint", "interactive-normal", "interactive-hover", "background-modifier-border", "color-red", "color-yellow", "color-green"];
   const pe = window.BaselinePaletteExtractor;
 
-  // Apply/remove palette CSS vars on a panel for the given mode
-  const applyPaletteVars = (panel, p, mode) => {
-    if (!panel || !p) return;
-    const get = (k) => p[`baseline-style@@${k}@@${mode}`];
-
-    // background-primary/secondary are swapped between light and dark
-    const bp = get("background-primary"),
-      bs = get("background-secondary");
-    const [pri, sec] = mode === "dark" ? [bs, bp] : [bp, bs];
-    const setOrRemove = (k, v) => (v ? panel.style.setProperty(k, v) : panel.style.removeProperty(k));
-    setOrRemove("--background-primary", pri);
-    setOrRemove("--background-secondary", sec);
-
-    ["text-normal", "text-muted", "text-faint", "interactive-normal", "interactive-hover", "background-modifier-border"].forEach((k) => setOrRemove(`--${k}`, get(k)));
+  const applyPaletteVars = (el, data, mode) => {
+    if (!el || !data) return;
+    PALETTE_VARS.forEach((k) => {
+      const v = data[`baseline-style@@${k}@@${mode}`];
+      v ? el.style.setProperty(`--${k}`, v) : el.style.removeProperty(`--${k}`);
+    });
   };
 
   const initImageLoader = (picture) => {
     const img = picture.querySelector("img");
     if (!img) return;
     const src = pickImageSrc(img);
-    if (!src) return picture.classList.remove("loading");
-    const loader = new Image();
-    loader.onload = () => {
-      img.src = src;
-      requestAnimationFrame(() => {
-        img.style.opacity = "1";
-        picture.classList.remove("loading");
-      });
-    };
-    loader.onerror = () => picture.classList.remove("loading");
-    loader.src = src;
+    const loader = picture.querySelector(".preset-preview-loader");
+
+    if (!src) {
+      loader?.remove();
+      return;
+    }
+    if (img.dataset.currentSrc === src) return;
+
+    img.onload = () => loader?.remove();
+    img.onerror = () => loader?.remove();
+
+    img.src = src;
+    img.dataset.currentSrc = src;
   };
 
   const setActive = (el, isActive) => {
@@ -51,26 +51,70 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!el.className) el.removeAttribute("class");
   };
 
-  const flashCopy = (el) => {
+  const flashCopy = (el, origHtml) => {
     if (!el) return;
-    const orig = el.innerHTML;
     el.innerHTML = "Copied!";
-    setTimeout(() => {
-      el.innerHTML = orig;
-      lucide.createIcons();
+    if (el._copyTimeout) clearTimeout(el._copyTimeout);
+    el._copyTimeout = setTimeout(() => {
+      el.innerHTML = origHtml;
+      delete el.dataset.copying;
     }, 1000);
   };
 
-  const copyToClipboard = (payload, triggerEl, eventName, eventData) => {
-    if (!payload || !Object.keys(payload).length) return;
-    navigator.clipboard.writeText(JSON.stringify(payload, null, 2)).then(() => {
-      flashCopy(triggerEl);
-      if (eventName) window.gtag?.("event", eventName, eventData);
+  const copyToClipboard = (payload, triggerEl, origHtml, eventName, eventData) => {
+    const restore = () => {
+      if (triggerEl && origHtml) {
+        triggerEl.innerHTML = origHtml;
+        delete triggerEl.dataset.copying;
+      }
+    };
+
+    if (!payload || !Object.keys(payload).length) {
+      restore();
+      return;
+    }
+    navigator.clipboard
+      .writeText(JSON.stringify(payload, null, 2))
+      .then(() => {
+        flashCopy(triggerEl, origHtml);
+        if (eventName) window.gtag?.("event", eventName, eventData);
+      })
+      .catch(restore);
+  };
+
+  // --- Panel Builders ---
+
+  const buildAuthorEl = (item) => {
+    if (item.authorUrl) {
+      return Object.assign(document.createElement("a"), { href: item.authorUrl, textContent: item.author, className: "preset-author" });
+    }
+    return Object.assign(document.createElement("span"), { textContent: item.author || "Unknown", className: "preset-author" });
+  };
+
+  const buildPalettePreview = (svg, item, data) => {
+    item.colors?.forEach((hex) => {
+      svg.appendChild(Object.assign(document.createElement("div"), { className: "palette-color", style: `background-color:${hex}` }));
+    });
+    applyPaletteVars(svg, data, isDark() ? "dark" : "light");
+  };
+
+  const setupPaletteMenu = (menu, item, data) => {
+    const menuId = `palette-menu-${item.id}`;
+    menu.id = menuId;
+    menu.dataset.preset = item.id;
+    menu.previousElementSibling?.querySelector(".palette-menu-btn")?.setAttribute("popovertarget", menuId);
+    [
+      ["dynamic", "light", pe?.hasDynamicMode(data, "light")],
+      ["dynamic", "dark", pe?.hasDynamicMode(data, "dark")],
+      ["static", "light", pe?.hasStaticMode(data, "light")],
+      ["static", "dark", pe?.hasStaticMode(data, "dark")],
+    ].forEach(([kind, mode, visible]) => {
+      const opt = menu.querySelector(`[data-kind="${kind}"][data-mode="${mode}"]`);
+      if (opt) visible ? opt.removeAttribute("hidden") : opt.remove();
     });
   };
 
-  // Create Panel from Template
-  const buildPanel = (item) => {
+  const buildPanel = (item, data) => {
     const isPalette = item.type === "palette";
     const template = $(`.${isPalette ? "palette" : "preset"}-template`);
     if (!template) return null;
@@ -81,43 +125,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     panel.dataset.type = item.type;
     clone.querySelector("h2").textContent = item.name;
     clone.querySelector(".preset-description").innerHTML = mdLinks(item.description);
-
-    const authorEl = clone.querySelector(".preset-author");
-    if (item.authorUrl) {
-      const a = Object.assign(document.createElement("a"), { href: item.authorUrl, textContent: item.author });
-      authorEl.replaceWith(a);
-    } else {
-      authorEl.textContent = item.author || "Unknown";
-    }
+    clone.querySelector(".preset-author").replaceWith(buildAuthorEl(item));
 
     if (isPalette) {
-      item.colors?.forEach((hex) => {
-        const swatch = Object.assign(document.createElement("div"), { className: "palette-color" });
-        swatch.style.backgroundColor = hex;
-        clone.querySelector(".palette-preview").appendChild(swatch);
-      });
-
-      const menu = clone.querySelector(".palette-menu");
-      const menuId = `palette-menu-${item.id}`;
-      if (menu) {
-        menu.id = menuId;
-        menu.dataset.preset = item.id;
-      }
-      clone.querySelector(".palette-menu-btn")?.setAttribute("popovertarget", menuId);
-
-      const paletteData = itemDetails[item.id];
-      if (paletteData) applyPaletteVars(panel, paletteData, isDark() ? "dark" : "light");
-      if (menu && pe && paletteData) {
-        [
-          ["dynamic", "light", pe.hasDynamicMode(paletteData, "light")],
-          ["dynamic", "dark", pe.hasDynamicMode(paletteData, "dark")],
-          ["static", "light", pe.hasStaticMode(paletteData, "light")],
-          ["static", "dark", pe.hasStaticMode(paletteData, "dark")],
-        ].forEach(([kind, mode, visible]) => {
-          const opt = menu.querySelector(`[data-kind="${kind}"][data-mode="${mode}"]`);
-          if (opt) visible ? opt.removeAttribute("hidden") : opt.remove();
-        });
-      }
+      buildPalettePreview(clone.querySelector(".preset-preview svg"), item, data);
+      const menu = clone.querySelector(".menu");
+      if (menu && data) setupPaletteMenu(menu, item, data);
     } else {
       const img = clone.querySelector("img");
       if (item.imageDark) {
@@ -134,7 +147,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     return clone;
   };
 
-  // State
+  // --- State & Config ---
+
   const container = $(".panel-container");
   const searchInput = $(".preset-search");
   const searchBtn = $(".preset-search-btn");
@@ -146,40 +160,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   let items = [],
     itemDetails = {},
     debounceTimer;
-  const filterModes = ["new", "old", "a-z", "z-a"];
-  const filterLabels = { new: "New → Old", old: "Old → New", "a-z": "A → Z", "z-a": "Z → A" };
-  const typeLabels = { preset: "Style Preset Only", palette: "Color Palette Only" };
-  const placeholders = { all: "Search style presets & color palettes...", preset: "Search style presets...", palette: "Search color palettes..." };
   const activeTypes = new Set(["preset", "palette"]);
   let currentFilter = 0;
+
+  const FILTER_MODES = ["new", "old", "a-z", "z-a"];
+  const FILTER_LABELS = { new: "New → Old", old: "Old → New", "a-z": "A → Z", "z-a": "Z → A" };
+  const TYPE_LABELS = { preset: "Style Preset Only", palette: "Color Palette Only" };
+  const PLACEHOLDERS = { all: "Search style presets & color palettes...", preset: "Search style presets...", palette: "Search color palettes..." };
+
+  // --- Rendering ---
 
   const getActiveType = () => (activeTypes.size === 1 ? [...activeTypes][0] : null);
 
   const updateControls = () => {
-    const activeType = getActiveType();
-    searchBtn.innerHTML = `<i data-lucide="list-filter"></i>${activeType ? typeLabels[activeType] : "All"} · ${filterLabels[filterModes[currentFilter]]}`;
-    searchInput.placeholder = placeholders[activeType || "all"];
-    lucide.createIcons();
+    const t = getActiveType();
+    searchBtn.innerHTML = `<i data-lucide="list-filter"></i>${t ? TYPE_LABELS[t] : "All"} · ${FILTER_LABELS[FILTER_MODES[currentFilter]]}`;
+    searchInput.placeholder = PLACEHOLDERS[t || "all"];
   };
 
-  const render = () => {
+  const render = (updateIcons = true) => {
     const query = searchInput.value.trim().toLowerCase();
     let filtered = items.slice();
-    if (filterModes[currentFilter] === "new") filtered.reverse();
-    else if (filterModes[currentFilter] === "a-z") filtered.sort((a, b) => a.name.localeCompare(b.name));
-    else if (filterModes[currentFilter] === "z-a") filtered.sort((a, b) => b.name.localeCompare(a.name));
+    if (FILTER_MODES[currentFilter] === "new") filtered.reverse();
+    else if (FILTER_MODES[currentFilter] === "a-z") filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else if (FILTER_MODES[currentFilter] === "z-a") filtered.sort((a, b) => b.name.localeCompare(a.name));
     filtered = filtered.filter((i) => activeTypes.has(i.type) && (!query || i.searchable.includes(query)));
 
     container.innerHTML = "";
     filtered.forEach((i) => {
-      const el = buildPanel(i);
+      const el = buildPanel(i, itemDetails[i.id]);
       if (el) container.appendChild(el);
     });
-    lucide.createIcons();
     $$(".preset-panel[data-type='preset'] picture", container).forEach(initImageLoader);
+    if (updateIcons) lucide.createIcons();
   };
 
-  // Event handlers
+  // --- Event Handlers ---
+
   searchMenu?.addEventListener("click", (e) => {
     const filterItem = e.target.closest("[data-filter]");
     const sortItem = e.target.closest("[data-sort]");
@@ -187,21 +204,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (filterItem) {
       const type = filterItem.dataset.filter;
       if (!type) return;
-      if (activeTypes.has(type) && activeTypes.size === 1) {
-        activeTypes.clear();
-        activeTypes.add(type === "preset" ? "palette" : "preset");
-      } else activeTypes.has(type) ? activeTypes.delete(type) : activeTypes.add(type);
+      activeTypes.has(type) && activeTypes.size === 1 ? (activeTypes.clear(), activeTypes.add(type === "preset" ? "palette" : "preset")) : activeTypes.has(type) ? activeTypes.delete(type) : activeTypes.add(type);
       $$("[data-filter]", searchMenu).forEach((el) => setActive(el, activeTypes.has(el.dataset.filter)));
-      updateControls();
-      render();
     } else if (sortItem) {
-      const next = filterModes.indexOf(sortItem.dataset.sort);
+      const next = FILTER_MODES.indexOf(sortItem.dataset.sort);
       if (next === -1) return;
       currentFilter = next;
-      $$("[data-sort]", searchMenu).forEach((el) => setActive(el, el.dataset.sort === filterModes[currentFilter]));
-      updateControls();
-      render();
-    }
+      $$("[data-sort]", searchMenu).forEach((el) => setActive(el, el.dataset.sort === FILTER_MODES[currentFilter]));
+    } else return;
+
+    updateControls();
+    render();
+    lucide.createIcons();
   });
 
   searchInput.addEventListener("input", () => {
@@ -215,17 +229,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     }, 150);
   });
 
-  container.addEventListener("click", (e) => {
+  container.addEventListener("click", async (e) => {
     const menuItem = e.target.closest("[data-kind]");
     if (menuItem) {
-      const menu = menuItem.closest(".palette-menu");
-      const { preset: id } = menu?.dataset ?? {};
+      if (menuItem.dataset.copying) return;
+
+      const { preset: id } = menuItem.closest(".menu")?.dataset ?? {};
       const { mode, kind } = menuItem.dataset;
       if (!id || !mode || !kind || !pe) return;
-      const data = itemDetails[id];
-      if (!data) return;
-      const payload = kind === "dynamic" ? pe.extractDynamicPalette(data, mode) : pe.extractStaticPalette(data, mode);
-      copyToClipboard(payload, menuItem, "palette_copy", { palette: id, mode, kind });
+
+      const origHtml = menuItem.dataset.origHtml || menuItem.innerHTML;
+      menuItem.dataset.origHtml = origHtml;
+      menuItem.dataset.copying = "true";
+
+      const payload = kind === "dynamic" ? pe.extractDynamicPalette(itemDetails[id], mode) : pe.extractStaticPalette(itemDetails[id], mode);
+      copyToClipboard(payload, menuItem, origHtml, "palette_copy", { palette: id, mode, kind });
       return;
     }
 
@@ -234,24 +252,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     const picture = e.target.closest("picture");
 
     if (panel && btn?.closest(".copy-btn")) {
+      if (btn.dataset.copying) return;
+
       const { preset: id, type } = panel.dataset;
-      const data = itemDetails[id];
-      if (!data) return;
+      const origHtml = btn.dataset.origHtml || btn.innerHTML;
+      btn.dataset.origHtml = origHtml;
+      btn.dataset.copying = "true";
+
       if (type === "palette") {
-        const output = {};
+        const payload = {};
         ["light", "dark"].forEach((m) => {
-          const p = pe?.extractDynamicPalette(data, m);
-          if (p) Object.assign(output, p);
+          const p = pe?.extractDynamicPalette(itemDetails[id], m);
+          if (p) Object.assign(payload, p);
         });
-        copyToClipboard(Object.keys(output).length ? output : null, btn, "palette_copy", { palette: id, kind: "dynamic", mode: "auto" });
+        copyToClipboard(payload, btn, origHtml, "palette_copy", { palette: id, kind: "dynamic", mode: "auto" });
       } else {
-        copyToClipboard(data, btn, "preset_copy", { preset: id });
+        if (!itemDetails[id]) itemDetails[id] = await fetchJSON(`preset/${id}.json`);
+        copyToClipboard(itemDetails[id], btn, origHtml, "preset_copy", { preset: id });
       }
     } else if (picture) {
       const img = picture.querySelector("img");
       if (img) {
         lightboxImg.src = pickImageSrc(img);
-        lightboxTitle.textContent = panel.querySelector("h2")?.textContent || "";
+        lightboxTitle.textContent = panel?.querySelector("h2")?.textContent || "";
         lightbox.showPopover();
       }
     }
@@ -264,26 +287,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.addEventListener("colorModeChange", () => {
     const mode = isDark() ? "dark" : "light";
-    container.querySelectorAll(".preset-panel[data-type='preset'] picture").forEach((p) => {
-      p.classList.add("loading");
-      initImageLoader(p);
-    });
-    container.querySelectorAll(".preset-panel[data-type='palette']").forEach((panel) => {
-      const data = itemDetails[panel.dataset.preset];
-      if (data) applyPaletteVars(panel, data, mode);
+    $$(".preset-panel[data-type='preset'] picture", container).forEach(initImageLoader);
+    $$(".preset-panel[data-type='palette'] .preset-preview svg", container).forEach((svg) => {
+      applyPaletteVars(svg, itemDetails[svg.closest(".preset-panel").dataset.preset], mode);
     });
     if (lightbox?.matches(":popover-open")) lightboxImg.src = pickImageSrc(lightboxImg);
   });
 
-  // Init
+  // --- Init ---
+
   const manifest = await fetchJSON("preset.json");
   if (!manifest) return;
 
   items = await Promise.all(
     Object.entries(manifest).map(async ([id, meta]) => {
       const isPalette = meta.type === "palette";
-      const details = (await fetchJSON(`preset/${id}.json`)) || {};
-      itemDetails[id] = details;
+      if (isPalette) itemDetails[id] = (await fetchJSON(`preset/${id}.json`)) || {};
       return {
         id,
         type: meta.type || "preset",
@@ -291,7 +310,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         author: meta.author || "Unknown",
         authorUrl: meta.url || null,
         description: meta.description || "No description available.",
-        colors: isPalette ? details.colors || [] : null,
+        colors: isPalette ? itemDetails[id].colors || [] : null,
         imageBase: !isPalette ? `img/${id}.png` : null,
         imageDark: !isPalette ? `img/${id}@dark.png` : null,
         imageLight: !isPalette ? `img/${id}@light.png` : null,
@@ -303,5 +322,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const initialQuery = new URLSearchParams(window.location.search).get("q");
   if (initialQuery) searchInput.value = initialQuery;
   updateControls();
-  render();
+  render(false);
+  lucide.createIcons();
 });

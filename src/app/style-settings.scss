@@ -345,7 +345,16 @@ settings:
 	-
 		id: background-modifier-hover
 		title: Hover fill
-		description: Used in active items, hover items and indicators.
+		description: Used in hover items and indicators.
+		type: variable-themed-color
+		opacity: true
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: background-modifier-active-hover
+		title: Active fill
+		description: Used in active items and indicators.
 		type: variable-themed-color
 		opacity: true
 		format: hex
@@ -583,6 +592,40 @@ settings:
 	-
 		id: code-value
 		title: Values
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-palette
+		title: Icon
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: icon-color
+		title: Icons
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-hover
+		title: Icons (Hover)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-active
+		title: Icons (Active)
+		type: variable-themed-color
+		format: hex
+		default-light: '#'
+		default-dark: '#'
+	-
+		id: icon-color-focused
+		title: Icons (Focus)
 		type: variable-themed-color
 		format: hex
 		default-light: '#'
@@ -1315,7 +1358,7 @@ settings:
 		default-dark: '#'
 	-
 		id: colorful-frame-icon-color
-		title: Tinted frame icon color
+		title: Tinted frame Icons
 		type: variable-themed-color
 		format: hex
 		default-light: '#FFFFFF'

@@ -12,24 +12,15 @@
   from {
     transform: scale(0.95);
     opacity: 0;
-    filter: blur(4px);
   }
 }
 @keyframes workspaceLeafOut {
   to {
     transform: scale(0.95);
     opacity: 0;
-    filter: blur(4px);
   }
 }
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 ::view-transition-old(content) {
   animation: workspaceLeafOut 320ms cubic-bezier(0.1, 0, 0.1, 1.25) both;
 }
@@ -143,7 +134,6 @@ html {
 }
 
 body {
-  /* transition: 320ms; */
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -196,13 +186,13 @@ a:not(:hover) {
 
 .header {
   position: sticky;
-  top: 32px;
+  top: 48px;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  padding: 0 4px;
+  padding-left: 4px;
   view-transition-name: header;
 }
 .header-title {
@@ -308,7 +298,7 @@ textarea::placeholder {
   position-area: bottom span-left;
   position-try: flip-block;
   opacity: 0;
-  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
+  transition: 160ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
   margin: 6px -8px;
   box-shadow: var(--shadow-s);
   border: none;

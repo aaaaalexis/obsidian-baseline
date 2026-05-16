@@ -45,6 +45,8 @@
     </div>
     <script src="../shared/header.js"></script>
     <div class="content">
+      <div class="panel-container-background"></div>
+
       <div class="setting-container" title='Click the "Import" button in Style Settings to import copied style preset or color palette.'>
         <div class="setting">
           <div class="setting-sidebar">
@@ -111,17 +113,17 @@
 
     <template class="preset-template">
       <div class="preset-panel" data-preset="" data-type="preset">
-        <div class="preset-info">
-          <h2></h2>
-          <p>By <span class="preset-author"></span></p>
-        </div>
-        <picture class="loading">
-          <div class="preset-img-loader"></div>
+        <picture class="preset-preview">
+          <div class="preset-preview-loader"></div>
           <source media="(prefers-color-scheme: dark)" />
           <source media="(prefers-color-scheme: light)" />
-          <img loading="lazy" decoding="async" />
+          <img class="preset-preview-content" loading="lazy" decoding="async" />
         </picture>
-        <p class="preset-description"></p>
+        <div class="preset-info">
+          <h2></h2>
+          <a class="preset-author"></a>
+          <p class="preset-description"></p>
+        </div>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy preset" title="Copy preset"><i data-lucide="copy"></i>Copy</button>
         </div>
@@ -130,18 +132,31 @@
 
     <template class="palette-template">
       <div class="preset-panel" data-preset="" data-type="palette">
+        <div class="preset-preview">
+          <svg class="preset-preview-content" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 960 640">
+            <path fill="var(--background-secondary)" d="M0 0h960v640H0z" />
+            <circle cx="44" cy="44" r="12" fill="var(--color-red)" />
+            <circle cx="84" cy="44" r="12" fill="var(--color-yellow)" />
+            <circle cx="124" cy="44" r="12" fill="var(--color-green)" />
+            <path stroke="var(--text-normal)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M58.667 122.667A2.667 2.667 0 0 0 61.333 120v-13.333A2.666 2.666 0 0 0 58.668 104H48.133a2.667 2.667 0 0 1-2.253-1.2l-1.08-1.6a2.669 2.669 0 0 0-2.226-1.2h-5.24a2.667 2.667 0 0 0-2.667 2.667V120a2.668 2.668 0 0 0 2.666 2.667h21.334Z" />
+            <path stroke="var(--text-faint)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="m60 180-5.787-5.787m3.12-7.546c0 5.891-4.775 10.666-10.666 10.666S36 172.558 36 166.667 40.776 156 46.667 156c5.89 0 10.666 4.776 10.666 10.667ZM54.667 212a2.667 2.667 0 0 1 2.666 2.667v20a1.333 1.333 0 0 1-1.994 1.157l-6.016-3.437a2.667 2.667 0 0 0-2.645 0l-6.017 3.437a1.34 1.34 0 0 1-1.33-.004 1.343 1.343 0 0 1-.664-1.153v-20A2.666 2.666 0 0 1 41.333 212h13.334Z" />
+            <rect width="96" height="6" x="88" y="109" fill="var(--text-muted)" rx="3" />
+            <rect width="72" height="6" x="88" y="165" fill="var(--text-faint)" rx="3" />
+            <rect width="128" height="6" x="88" y="221" fill="var(--text-faint)" rx="3" />
+            <path fill="var(--background-primary)" d="M697 24c13.255 0 24 10.745 24 24v32c0 13.255 10.745 24 24 24h215v536H353V128c0-13.048 10.412-23.664 23.381-23.992l1.238-.016C390.588 103.664 401 93.048 401 80V48c0-13.255 10.745-24 24-24h272Z" />
+          </svg>
+        </div>
         <div class="preset-info">
           <h2></h2>
-          <p>By <span class="preset-author"></span></p>
+          <a class="preset-author"></a>
+          <p class="preset-description"></p>
         </div>
-        <div class="palette-preview"></div>
-        <p class="preset-description"></p>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy color palette" title="Copy color palette"><i data-lucide="copy"></i>Copy</button>
           <button class="palette-menu-btn" popovertarget="palette-menu" aria-label="Color palette options" title="Color palette options"><i data-lucide="chevron-down"></i></button>
         </div>
       </div>
-      <div class="menu palette-menu" popover>
+      <div class="menu" popover>
         <ul>
           <li class="is-info">
             <div class="info-title">Dynamic</div>

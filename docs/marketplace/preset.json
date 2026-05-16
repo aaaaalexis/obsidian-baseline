@@ -31,7 +31,7 @@
     "type": "preset",
     "name": "Softener",
     "author": "chuuuby",
-    "description": "Pastel colors and spacious workspace for your eye comfort."
+    "description": "Pastel colors and spacious workspace for your comfort."
   },
   "ocean": {
     "type": "preset",
@@ -73,14 +73,14 @@
     "name": "Stone Gnome",
     "author": "Bean",
     "url": "https://github.com/broad-bean1",
-    "description": "A stylised Adwaita theme for a native Gnome feel and a modern look. [Extra tweaks ↗](https://github.com/broad-bean1/Stone-Gnome)"
+    "description": "Native Gnome feel and a modern look. [Extra tweaks ↗](https://github.com/broad-bean1/Stone-Gnome)"
   },
   "adwaita": {
     "type": "preset",
     "name": "Adwaita",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
-    "description": "Refined sophistication of GNOME's modern design language."
+    "description": "Refined sophistication of GNOME's design language."
   },
   "material": {
     "type": "preset",
@@ -94,7 +94,7 @@
     "name": "Cupertino Fusion",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
-    "description": "Inspired by [Craft Docs](https://www.craft.do/), where elegance meets modern minimalism."
+    "description": "Inspired by [Craft Docs](https://www.craft.do/), where elegance meets minimalism."
   },
   "bluesahara": {
     "type": "preset",
@@ -115,153 +115,167 @@
     "name": "Certainly!",
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
-    "description": "Absolutely! Here's a preset with minimal, elegant, and calming design."
+    "description": "Absolutely! Here's a preset with minimal and calming design."
+  },
+  "admin-color": {
+    "type": "palette",
+    "name": "Admin",
+    "author": "Bradley Wyatt",
+    "url": "https://github.com/bwya77",
+    "description": "Sleek and professional."
   },
   "adwaita-color": {
     "type": "palette",
     "name": "Adwaita",
     "author": "GNOME",
     "url": "https://www.gnome.org/",
-    "description": ""
+    "description": "Refined sophistication."
   },
   "atom": {
     "type": "palette",
     "name": "Atom",
     "author": "GitHub",
     "url": "https://github.com/atom/atom",
-    "description": ""
+    "description": "Based on the classic One Dark and Light syntax colors."
   },
   "ayu": {
     "type": "palette",
     "name": "Ayu",
     "author": "Ayu",
     "url": "https://github.com/ayu-theme/ayu-colors",
-    "description": ""
+    "description": "Simple, bright, and elegant for all-day comfortable work."
   },
   "catppuccin": {
     "type": "palette",
     "name": "Catppuccin",
     "author": "Catppuccin",
     "url": "https://github.com/catppuccin/catppuccin",
-    "description": ""
+    "description": "Soothing, high-contrast pastel colors."
   },
   "dracula": {
     "type": "palette",
     "name": "Dracula",
     "author": "Dracula",
     "url": "https://github.com/dracula/dracula-theme",
-    "description": ""
+    "description": "Dark, vibrant for night owls and programmers."
   },
   "everforest": {
     "type": "palette",
     "name": "Everforest",
     "author": "Sainnhe Park",
     "url": "https://github.com/sainnhe/everforest",
-    "description": ""
+    "description": "A comfortable, nature-inspired palette with soft green tones."
   },
   "flexoki": {
     "type": "palette",
     "name": "Flexoki",
     "author": "kepano",
     "url": "https://github.com/kepano/flexoki",
-    "description": ""
+    "description": "An ink-friendly, balanced palette designed for legibility."
   },
   "frappe": {
     "type": "palette",
     "name": "Frappé",
     "author": "Catppuccin",
     "url": "https://github.com/catppuccin/catppuccin",
-    "description": ""
+    "description": "A moderately dark and creamy pastel palette."
   },
   "gruvbox": {
     "type": "palette",
     "name": "Gruvbox",
     "author": "Pavel Pertsev",
     "url": "https://github.com/morhetz/gruvbox",
-    "description": ""
+    "description": "Retro, groovy, distinguishable and pleasant for the eyes."
   },
   "latte": {
     "type": "palette",
     "name": "Latte",
     "author": "Catppuccin",
     "url": "https://github.com/catppuccin/catppuccin",
-    "description": ""
+    "description": "The light, high-contrast variant of the Catppuccin pastel theme."
   },
   "macchiato": {
     "type": "palette",
     "name": "Macchiato",
     "author": "Catppuccin",
     "url": "https://github.com/catppuccin/catppuccin",
-    "description": ""
+    "description": "A smooth, medium-dark pastel variant of the Catppuccin palette."
   },
   "melange": {
     "type": "palette",
     "name": "Melange",
     "author": "Sergio A. Vargas",
     "url": "https://github.com/savq/melange-nvim",
-    "description": ""
+    "description": "A warm, earthy palette."
+  },
+  "minimal-color": {
+    "type": "palette",
+    "name": "Minimal",
+    "author": "kepano",
+    "url": "https://github.com/kepano/obsidian-minimal",
+    "description": "A distraction-free experience for your vault."
   },
   "mocha": {
     "type": "palette",
     "name": "Mocha",
     "author": "Catppuccin",
     "url": "https://github.com/catppuccin/catppuccin",
-    "description": ""
+    "description": "Dark and vibrant."
   },
   "nord": {
     "type": "palette",
     "name": "Nord",
     "author": "Sven Greb",
     "url": "https://github.com/nordtheme/nord",
-    "description": ""
+    "description": "An arctic, north-bluish color palette for a clean, cold look."
   },
   "notion": {
     "type": "palette",
     "name": "Notion",
     "author": "Notion",
     "url": "https://notion.so",
-    "description": ""
+    "description": "Iconic, minimalist grayscale palette of [Notion](https://www.notion.com/)."
   },
   "rose-pine": {
     "type": "palette",
     "name": "Rosé Pine",
     "author": "Rosé Pine",
     "url": "https://github.com/rose-pine/rose-pine-theme",
-    "description": ""
+    "description": "All natural pine, faux fur and a bit of soho vibes."
   },
   "sanctum-color": {
     "type": "palette",
     "name": "Sanctum",
     "author": "José Daniel Mourão",
     "url": "https://github.com/jdanielmourao/obsidian-sanctum",
-    "description": ""
+    "description": "A serene space of retreat."
   },
   "sky": {
     "type": "palette",
     "name": "Sky",
     "author": "kepano",
     "url": "https://github.com/kepano/obsidian-minimal",
-    "description": ""
+    "description": "A clean, airy blue-toned palette inspired by [Notion](https://www.notion.com/)."
   },
   "solarized": {
     "type": "palette",
     "name": "Solarized",
     "author": "Ethan Schoonover",
     "url": "https://github.com/altercation/solarized",
-    "description": ""
+    "description": "Precision colors designed for legibility and eye comfort."
   },
   "things": {
     "type": "palette",
     "name": "Things",
     "author": "Cultured Code",
     "url": "https://culturedcode.com/things/",
-    "description": ""
+    "description": "A clean, functional palette inspired by [Things](https://culturedcode.com/things/)."
   },
   "tiniri": {
     "type": "palette",
     "name": "Tiniri",
     "author": "Vlad Gerasimov",
-    "url": "https://github.com/jdanielmourao/obsidian-tiniri",
-    "description": ""
+    "url": "https://tiniri.vlad.studio/",
+    "description": "Optimized for calmness and coziness."
   }
 }
