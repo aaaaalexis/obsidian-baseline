@@ -2,11 +2,11 @@ body {
   --input-height: 32px;
 
   --radius-modifier: 1;
-  --input-radius: var(--radius-s);
+  --input-radius: var(--radius-s) !important;
   --radius-s: calc(8px * var(--radius-modifier));
-  --radius-m: calc(12px * var(--radius-modifier));
-  --radius-l: calc(20px * var(--radius-modifier));
-  --radius-xl: calc(28px * var(--radius-modifier));
+  --radius-m: calc(16px * var(--radius-modifier));
+  --radius-l: calc(24px * var(--radius-modifier));
+  --radius-xl: calc(32px * var(--radius-modifier));
 
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);

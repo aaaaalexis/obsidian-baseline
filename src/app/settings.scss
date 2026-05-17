@@ -43,6 +43,7 @@ body:not(.is-phone) {
       padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
       font-size: var(--font-ui-small);
+      border-radius: var(--radius-s);
     }
 
     .vertical-tab-content {
