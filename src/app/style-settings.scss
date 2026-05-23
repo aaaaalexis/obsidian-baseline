@@ -395,6 +395,7 @@ settings:
 		title: Interactive elements
 		description: Used in buttons, dropdowns, and text inputs.
 		type: variable-themed-color
+		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'
@@ -402,6 +403,7 @@ settings:
 		id: interactive-hover
 		title: Interactive elements (Hover)
 		type: variable-themed-color
+		opacity: true
 		format: hex
 		default-light: '#'
 		default-dark: '#'

@@ -55,10 +55,10 @@ body,
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
 
-  --background-modifier-cover: hsl(0 0% 0% / 35%);
+  --background-modifier-cover: hsl(0 0% 0% / 15%);
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 5%) !important;
   --interactive-normal: var(--background-modifier-hover);
-  --interactive-hover: hsl(from var(--mono-100) h s l / 6.7%);
+  --interactive-hover: hsl(from var(--mono-100) h s l / 6.5%);
 }
 
 .theme-light {

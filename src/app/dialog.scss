@@ -156,6 +156,14 @@ body:not(.is-mobile) {
   .modal-title {
     margin-left: 0;
   }
+
+  .mod-dim .modal {
+    box-shadow: var(--shadow-s);
+  }
+
+  .mod-confirmation .modal {
+    padding: 24px;
+  }
 }
 
 body.is-phone {
