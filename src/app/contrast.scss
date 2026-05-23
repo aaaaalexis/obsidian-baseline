@@ -288,10 +288,10 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --table-add-button-background: transparent;
   --tag-color: var(--text-accent);
   --tag-color-hover: var(--text-accent);
-  --tag-background: color-mix(in oklch, var(--interactive-accent) 10%, transparent);
-  --tag-background-hover: color-mix(in oklch, var(--interactive-accent) 20%, transparent);
-  --tag-border-color: color-mix(in oklch, var(--interactive-accent) 15%, transparent);
-  --tag-border-color-hover: color-mix(in oklch, var(--interactive-accent) 15%, transparent);
+  --tag-background: color-mix(in oklch, var(--color-accent) 10%, transparent);
+  --tag-background-hover: color-mix(in oklch, var(--color-accent) 20%, transparent);
+  --tag-border-color: color-mix(in oklch, var(--color-accent) 15%, transparent);
+  --tag-border-color-hover: color-mix(in oklch, var(--color-accent) 15%, transparent);
   --titlebar-background: var(--background-secondary);
   --titlebar-background-focused: var(--background-secondary-alt);
   --titlebar-text-color: var(--text-muted);

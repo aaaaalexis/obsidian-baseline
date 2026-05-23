@@ -1408,7 +1408,7 @@ settings:
 		id: p-spacing
 		title: Paragraph spacing
 		type: variable-text
-		default: 1.25rem
+		default: 1.25em
 	-
 		id: focus-view
 		title: Focus view
@@ -1558,7 +1558,7 @@ settings:
 		id: inline-title-size
 		title: Inline title font size
 		type: variable-text
-		default: 1.618em
+		default: 2em
 	-
 		id: inline-title-align
 		title: Inline title alignment
@@ -1664,21 +1664,7 @@ settings:
 		title: Heading spacing
 		description: Adjust space between headings and paragraphs.
 		type: variable-text
-		default: 2em
-	-
-		id: readable-spacing
-		title: Readable spacing
-		description: Use tighter spacing in editor.
-		type: class-toggle
-	-
-		id: readable-spacing-modifier
-		title: Readable spacing modifier
-		description: Relative to paragraph spacing value.
-		type: variable-number-slider
-		default: 0.25
-		min: 0
-		max: 1
-		step: 0.25
+		default: 2.5em
 	-
 		id: colorful-headings
 		title: Colorful headings
@@ -1735,17 +1721,17 @@ settings:
 		id: h1-font
 		title: H1 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	-
 		id: h1-size
 		title: H1 font size
 		type: variable-text
-		default: 1.618em
+		default: 1.125em
 	-
 		id: h1-weight
 		title: H1 font weight
 		type: variable-number-slider
-		default: 700
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -1831,17 +1817,17 @@ settings:
 		id: h2-font
 		title: H2 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	-
 		id: h2-size
 		title: H2 font size
 		type: variable-text
-		default: 1.462em
+		default: 1.0625em
 	-
 		id: h2-weight
 		title: H2 font weight
 		type: variable-number-slider
-		default: 680
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -1927,17 +1913,17 @@ settings:
 		id: h3-font
 		title: H3 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	-
 		id: h3-size
 		title: H3 font size
 		type: variable-text
-		default: 1.318em
+		default: 1em
 	-
 		id: h3-weight
 		title: H3 font weight
 		type: variable-number-slider
-		default: 660
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -2023,17 +2009,17 @@ settings:
 		id: h4-font
 		title: H4 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	-
 		id: h4-size
 		title: H4 font size
 		type: variable-text
-		default: 1.188em
+		default: 0.9375em
 	-
 		id: h4-weight
 		title: H4 font weight
 		type: variable-number-slider
-		default: 640
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -2120,17 +2106,17 @@ settings:
 		id: h5-font
 		title: H5 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	- 
 		id: h5-size
 		title: H5 font size
 		type: variable-text
-		default: 1.076em
+		default: 0.9375em
 	-
 		id: h5-weight
 		title: H5 font weight
 		type: variable-number-slider
-		default: 620
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -2216,17 +2202,17 @@ settings:
 		id: h6-font
 		title: H6 font
 		type: variable-text
-		default: 'Instrument Serif'
+		default: Inter
 	-
 		id: h6-size
 		title: H6 font size
 		type: variable-text
-		default: 1em
+		default: 0.875em
 	-
 		id: h6-weight
 		title: H6 font weight
 		type: variable-number-slider
-		default: 600
+		default: 500
 		min: 100
 		max: 900
 		step: 50
@@ -2491,7 +2477,7 @@ settings:
 		title: Blockquote border thickness
 		type: variable-number-slider
 		format: px
-		default: 2
+		default: 1
 		min: 0
 		max: 5
 		step: 1
@@ -2723,7 +2709,7 @@ settings:
 		title: Embed border thickness
 		type: variable-number-slider
 		format: px
-		default: 2
+		default: 1
 		min: 0
 		max: 5
 		step: 1
@@ -3315,7 +3301,6 @@ settings:
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
 body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
-body:not(.readable-spacing) .style-settings-container .setting-item[data-id="readable-spacing-modifier"],
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
 body.block-width-off .style-settings-container .setting-item[data-id="line-width"] ~ .setting-item,
 body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,

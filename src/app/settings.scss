@@ -6,7 +6,6 @@ body {
 
   &:is(.input-baseline, :not(.css-settings-manager)) {
     --setting-items-border-width: var(--border-width);
-    --setting-items-border-color: var(--background-modifier-hover);
   }
 
   &.theme-light {
@@ -67,7 +66,7 @@ body:not(.is-phone) {
       background-color: transparent;
       border: none;
     }
-    .setting-group:not(.installed-plugins-container) .setting-group-search + .setting-items {
+    .setting-group.mod-list:not(.installed-plugins-container) .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
       border: var(--setting-items-border-width) solid var(--setting-items-border-color);
     }

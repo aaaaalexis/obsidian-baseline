@@ -117,7 +117,7 @@
   // Callout: Outlined
   body.callouts-outlined {
     .callout:not([data-callout="note-toolbar"]) {
-      --callout-border-width: 2px;
+      --callout-border-width: 1px;
 
       background-color: transparent;
       position: relative;
