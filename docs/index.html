@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseline for Obsidian</title>
-    <link rel="icon" href="shared/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="core/favicon.svg" type="image/svg+xml" />
 
     <script>
       (() => {
@@ -17,7 +17,7 @@
       })();
     </script>
 
-    <link rel="stylesheet" href="shared/shared.css" />
+    <link rel="stylesheet" href="core/global.css" />
     <link rel="stylesheet" href="landing.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    <script src="shared/appearance.js" defer></script>
+    <script src="core/appearance.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-38V3HD97K9"></script>
@@ -40,24 +40,53 @@
     </script>
   </head>
   <body>
-    <div class="header"></div>
-    <script src="shared/header.js"></script>
+    <div class="header">
+      <h1 class="header-title">
+        <a>Baseline for Obsidian</a>
+      </h1>
+      <div class="header-actions">
+        <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
+        <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
+        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+      </div>
+    </div>
+
     <div class="content">
       <div class="panel-container">
         <a href="migration" class="link-panel">
-          <button>
-            <i data-lucide="share"></i>
-            <h2>Migrate from other themes</h2>
-          </button>
+          <i data-lucide="share"></i>
+          <h1>Migrate from other themes</h1>
         </a>
         <a href="marketplace" class="link-panel">
-          <button>
-            <i data-lucide="sparkles"></i>
-            <h2>Browse style presets in Marketplace</h2>
-          </button>
+          <i data-lucide="sparkles"></i>
+          <h1>Browse style presets in Marketplace</h1>
         </a>
       </div>
     </div>
+
+    <style>
+      .link-panel {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        border: var(--border-width) solid var(--background-modifier-border);
+        border-radius: var(--radius-l);
+        background-color: var(--background-primary);
+        padding-inline: 2em;
+        text-decoration: none;
+        corner-shape: superellipse(1.1);
+        transition: 160ms;
+        height: 480px;
+        user-select: none;
+      }
+
+      .link-panel:hover {
+        background-color: var(--background-modifier-hover);
+      }
+    </style>
 
     <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
     <script>
@@ -66,7 +95,7 @@
 
         document.querySelectorAll(".link-panel").forEach((link) => {
           link.addEventListener("click", () => {
-            const label = link.querySelector("h2")?.textContent.trim() || link.href;
+            const label = link.querySelector("h1")?.textContent.trim() || link.href;
             if (typeof gtag === "function") gtag("event", "journey_click", { event_category: "navigation", event_label: label, transport_type: "beacon" });
           });
         });

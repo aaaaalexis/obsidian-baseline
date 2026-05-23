@@ -4,14 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opening in Obsidian...</title>
-    <link rel="icon" href="shared/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="core/favicon.svg" type="image/svg+xml" />
 
-    <link rel="stylesheet" href="shared/shared.css" />
+    <script>
+      (() => {
+        const saved = localStorage.getItem("colorMode");
+        const mode = saved === "light" || saved === "dark" || saved === "auto" ? saved : "auto";
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const resolved = mode === "dark" || (mode === "auto" && prefersDark) ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", resolved);
+        document.documentElement.setAttribute("data-theme-mode", mode);
+      })();
+    </script>
+
+    <link rel="stylesheet" href="core/global.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <script src="../core/appearance.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-38V3HD97K9"></script>
@@ -26,10 +39,10 @@
     </script>
   </head>
   <body style="justify-content: center; align-items: center">
-    <h2>Opening in Obsidian...</h2>
+    <h1>Opening in Obsidian...</h1>
     <button class="install-btn">Launch App</button>
 
-    <script>
+    <!-- <script>
       const params = new URLSearchParams(window.location.search);
       const themeName = params.get("name") || "Baseline";
       const uri = `obsidian://show-theme?name=${encodeURIComponent(themeName)}`;
@@ -44,6 +57,6 @@
 
       // 3. Keep the button as a fallback manual trigger
       document.querySelector(".install-btn").addEventListener("click", triggerRedirect);
-    </script>
+    </script> -->
   </body>
 </html>

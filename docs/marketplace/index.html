@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseline Marketplace</title>
-    <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../core/favicon.svg" type="image/svg+xml" />
 
     <script>
       (() => {
@@ -17,7 +17,8 @@
       })();
     </script>
 
-    <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../core/global.css" />
+    <link rel="stylesheet" href="../core/settings.css" />
     <link rel="stylesheet" href="marketplace.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +26,7 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    <script src="../shared/appearance.js" defer></script>
+    <script src="../core/appearance.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-38V3HD97K9"></script>
@@ -40,13 +41,20 @@
     </script>
   </head>
   <body>
-    <div class="header" data-subtitle="Marketplace">
-      <a class="link-btn" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit preset</a>
+    <div class="header">
+      <h1 class="header-title">
+        <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Marketplace
+      </h1>
+      <div class="header-actions">
+        <a class="link-btn" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit preset</a>
+        <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
+        <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
+        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+      </div>
     </div>
-    <script src="../shared/header.js"></script>
-    <div class="content">
-      <div class="panel-container-background"></div>
 
+    <div class="content">
+      <div class="content-mask"></div>
       <div class="setting-container" title='Click the "Import" button in Style Settings to import copied style preset or color palette.'>
         <div class="setting">
           <div class="setting-sidebar">
@@ -80,7 +88,7 @@
           </div>
         </div>
       </div>
-      <p>Choose and copy your favorite style preset, then import into Style Settings.</p>
+      <div class="setting-description">Choose and copy your favorite style preset, then import into Style Settings.</div>
       <div class="preset-actions">
         <input type="search" class="preset-search" placeholder="Search marketplace..." />
         <button class="preset-search-btn" popovertarget="preset-search-menu"><i data-lucide="list-filter"></i></button>
@@ -108,7 +116,7 @@
     </div>
     <div id="lightbox" popover>
       <img class="lightbox-img" />
-      <p class="lightbox-title"></p>
+      <div class="lightbox-title"></div>
     </div>
 
     <template class="preset-template">
@@ -120,9 +128,9 @@
           <img class="preset-preview-content" loading="lazy" decoding="async" />
         </picture>
         <div class="preset-info">
-          <h2></h2>
+          <h1 class="preset-title"></h1>
           <a class="preset-author"></a>
-          <p class="preset-description"></p>
+          <div class="preset-description"></div>
         </div>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy preset" title="Copy preset"><i data-lucide="copy"></i>Copy</button>
@@ -147,9 +155,9 @@
           </svg>
         </div>
         <div class="preset-info">
-          <h2></h2>
-          <a class="preset-author"></a>
-          <p class="preset-description"></p>
+          <h1 class="preset-title"></h1>
+          <div class="preset-author"></div>
+          <div class="preset-description"></div>
         </div>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy color palette" title="Copy color palette"><i data-lucide="copy"></i>Copy</button>
@@ -159,15 +167,15 @@
       <div class="menu" popover>
         <ul>
           <li class="is-info">
-            <div class="info-title">Dynamic</div>
-            <div class="info-description">Supports easy color scheme adjustments with automatic scheme generation in Style Settings.</div>
+            <div class="info-title">Dynamic<span>RECOMMENDED</span></div>
+            <div class="info-description">Adjustable via sliders. Themes your entire interface automatically.</div>
           </li>
           <li data-kind="dynamic" data-mode="light"><i data-lucide="sun"></i>Copy Light</li>
           <li data-kind="dynamic" data-mode="dark"><i data-lucide="moon"></i>Copy Dark</li>
           <hr />
           <li class="is-info">
             <div class="info-title">Static</div>
-            <div class="info-description">True to original colors, individually set colors. Certain elements may not adapt. Same as legacy color scheme.</div>
+            <div class="info-description">Exact original colors. Some interface elements may appear unstyled.</div>
           </li>
           <li data-kind="static" data-mode="light"><i data-lucide="sun"></i>Copy Light</li>
           <li data-kind="static" data-mode="dark"><i data-lucide="moon"></i>Copy Dark</li>

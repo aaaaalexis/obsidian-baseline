@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const panel = clone.querySelector(".preset-panel");
     panel.dataset.preset = item.id;
     panel.dataset.type = item.type;
-    clone.querySelector("h2").textContent = item.name;
+    clone.querySelector(".preset-title").textContent = item.name;
     clone.querySelector(".preset-description").innerHTML = mdLinks(item.description);
     clone.querySelector(".preset-author").replaceWith(buildAuthorEl(item));
 
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const img = picture.querySelector("img");
       if (img) {
         lightboxImg.src = pickImageSrc(img);
-        lightboxTitle.textContent = panel?.querySelector("h2")?.textContent || "";
+        lightboxTitle.textContent = panel?.querySelector(".preset-title")?.textContent || "";
         lightbox.showPopover();
       }
     }

@@ -91,7 +91,7 @@
   const renderWarnings = async (prefs) => {
     const labels = await getLabels();
     const keys = Object.keys(prefs).filter((k) => typeof prefs[k] === "string" && /\d/.test(prefs[k]) && !isColor(prefs[k]));
-    warningDiv.innerHTML = keys.length ? `<h2 class="warning-title">Note</h2><div class="warning-content"><div class="warning-description">Following settings might not work correctly, please double check after importing.</div><ul class="warning-list">${keys.map((k) => `<li class="warning-item">${labels[stripMode(k.replace(/^baseline-style@@/, ""))] || stripMode(k)}</li>`).join("")}</ul></div>` : "";
+    warningDiv.innerHTML = keys.length ? `<h1>Note</h1><div class="warning-content"><div class="warning-description">Following settings might not work correctly, please double check after importing.</div><ul class="warning-list">${keys.map((k) => `<li class="warning-item">${labels[stripMode(k.replace(/^baseline-style@@/, ""))] || stripMode(k)}</li>`).join("")}</ul></div>` : "";
   };
 
   let conflictListenerSetup = false;
@@ -102,12 +102,12 @@
       return;
     }
     conflictDiv.innerHTML =
-      `<h2>Conflicts</h2>` +
+      `<h1>Conflicts</h1>` +
       Object.entries(conflicts)
         .map(([key, vals]) => {
           const stripped = key.replace(/^baseline-style@@/, "");
           const themeType = stripped.includes("@@light") ? "Light Theme" : stripped.includes("@@dark") ? "Dark Theme" : "";
-          return `<div class="conflict-item"><div class="conflict-key">${labels[stripMode(stripped)] || stripMode(stripped)}</div>` + (themeType ? `<div class="conflict-theme">${themeType}</div>` : "") + `<div class="conflict-actions">${vals.map((val, i) => `<label data-conflict-key="${key}" data-conflict-value="${val}" class="conflict-label${i === 0 ? " selected" : ""}">` + (labels[val] || val) + (isHex6(val) ? `<span class="color-preview" style="background-color:${val}"></span>` : "") + `</label>`).join("")}</div></div>`;
+          return `<div class="conflict-item"><div class="conflict-key">${labels[stripMode(stripped)] || stripMode(stripped)}</div>` + (themeType ? `<div class="conflict-theme">${themeType}</div>` : "") + `<div class="conflict-actions">${vals.map((val, i) => `<button data-conflict-key="${key}" data-conflict-value="${val}" class="conflict-label${i === 0 ? " is-active" : ""}">` + (labels[val] || val) + (isHex6(val) ? `<span class="color-preview" style="background-color:${val}"></span>` : "") + `</button>`).join("")}</div></div>`;
         })
         .join("");
 
@@ -115,16 +115,16 @@
       conflictDiv.addEventListener("click", (e) => {
         const label = e.target.closest(".conflict-label");
         if (!label || !conflictDiv.contains(label)) return;
-        conflictDiv.querySelectorAll(`[data-conflict-key='${label.dataset.conflictKey}']`).forEach((l) => l.classList.remove("selected"));
-        label.classList.add("selected");
-        const selected = { ...prefs };
-        conflictDiv.querySelectorAll(".conflict-label.selected").forEach((sel) => {
+        conflictDiv.querySelectorAll(`[data-conflict-key='${label.dataset.conflictKey}']`).forEach((l) => l.classList.remove("is-active"));
+        label.classList.add("is-active");
+        const active = { ...prefs };
+        conflictDiv.querySelectorAll(".conflict-label.is-active").forEach((sel) => {
           let v = sel.dataset.conflictValue;
           if (v === "true") v = true;
           else if (v === "false") v = false;
-          selected[sel.dataset.conflictKey] = v;
+          active[sel.dataset.conflictKey] = v;
         });
-        updateOutput(selected);
+        updateOutput(active);
       });
       conflictListenerSetup = true;
     }
@@ -136,10 +136,11 @@
       return;
     }
     const byTheme = groupBy(unsupported, (i) => i.theme || "unknown");
+    const themeEntries = Object.entries(byTheme);
     unsupportedDiv.innerHTML =
-      `<h2>Unsupported style settings</h2>` +
-      Object.entries(byTheme)
-        .map(([theme, items]) => {
+      `<h1>Unsupported style settings</h1>` +
+      themeEntries
+        .map(([theme, items], themeIndex) => {
           const byCat = groupBy(items, (i) => i.category || "General");
           return (
             `<div class="unsupported-theme"><div class="unsupported-theme-name">${themeBases?.[theme] || theme}</div>` +
@@ -162,7 +163,7 @@
             `</div>`
           );
         })
-        .join("");
+        .join("<hr>");
   };
 
   const updateOutput = (prefs) => {

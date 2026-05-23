@@ -1,0 +1,32 @@
+.content {
+  padding-inline: 96px;
+}
+
+.stories-header {
+  margin: 128px 64px;
+}
+.stories-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.stories-description {
+  color: var(--text-faint);
+}
+
+.stories-content {
+  gap: 0;
+  border: var(--border-width) solid var(--background-modifier-border);
+  border-radius: var(--radius-l);
+  background-color: var(--background-secondary-alt);
+  padding: 16px 64px;
+}
+
+p {
+  margin-block: 32px;
+  color: var(--text-muted);
+}
+
+hr {
+  margin: 48px auto;
+  width: 50%;
+}

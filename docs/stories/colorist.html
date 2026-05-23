@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handing you the brush</title>
+    <link rel="icon" href="../core/favicon.svg" type="image/svg+xml" />
+
+    <script>
+      (() => {
+        const saved = localStorage.getItem("colorMode");
+        const mode = saved === "light" || saved === "dark" || saved === "auto" ? saved : "auto";
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const resolved = mode === "dark" || (mode === "auto" && prefersDark) ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", resolved);
+        document.documentElement.setAttribute("data-theme-mode", mode);
+      })();
+    </script>
+
+    <link rel="stylesheet" href="../core/global.css" />
+    <link rel="stylesheet" href="../core/global-stories.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <script src="../core/appearance.js" defer></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38V3HD97K9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-38V3HD97K9");
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header-title">
+        <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Stories
+      </h1>
+      <div class="header-actions">
+        <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
+        <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
+        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="content-mask"></div>
+
+      <div class="stories-header">
+        <h1 class="stories-title">Handing you the brush</h1>
+        <div class="stories-description">On color schemes, why they're going away, and what comes next.</div>
+      </div>
+
+      <div class="stories-content">
+        <p>Every color scheme in Baseline was a decision I made for you.</p>
+
+        <p>Nord. Gruvbox. Catppuccin. Rosé Pine. I picked each one, hand-tuned the values, shipped it, and quietly committed to maintaining it forever. The list grew. And with it, a problem I hadn't anticipated: the more schemes I added, the less any of them felt like yours.</p>
+
+        <p>Picking a name from a dropdown isn't customizing your theme. It's adopting someone else's taste and hoping it fits.</p>
+
+        <hr />
+
+        <h2>What's new</h2>
+
+        <p>Instead of a list of schemes, you now get three controls: <strong>Spectrum</strong> picks your color, <strong>Vibrancy</strong> sets how saturated it feels, and <strong>Clarity</strong> shapes the overall contrast.</p>
+
+        <p>From those three values, Baseline builds your entire palette — backgrounds, tints, borders, text — using OKLCH, a color model that matches how humans actually perceive color. The results are cohesive in a way that's genuinely hard to achieve by hand.</p>
+
+        <div class="widget-container colorist-widget">
+          <div class="widget-option">
+            <div class="option-item is-active">Baseline</div>
+            <div class="option-item">Material</div>
+            <div class="option-item">Radiance</div>
+            <div class="option-item">Softlight</div>
+          </div>
+          <div class="widget">
+            <div class="mod-sidedock">
+              <div class="titlebar">
+                <div class="titlebar-button titlebar-close"></div>
+                <div class="titlebar-button titlebar-minimize"></div>
+                <div class="titlebar-button titlebar-fullscreen"></div>
+                <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
+              </div>
+              <div class="workspace-tab-header-container">
+                <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
+                <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
+                <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+              </div>
+            </div>
+            <div class="mod-root">
+              <div class="workspace-tab-header-container">
+                <div class="workspace-tab-header is-active">Brand New Baseline</div>
+                <div class="clickable-icon"><i data-lucide="plus"></i></div>
+              </div>
+              <div class="workspace-tab-container">
+                <div class="inline-title">Brand New Baseline</div>
+                <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
+                <div class="tags">
+                  <span class="tag">#baseline</span>
+                  <span class="tag">#cupertino</span>
+                  <span class="tag">#obsidian</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="widget-control">
+            <div class="control-item">
+              <span class="control-name">Clarity</span>
+              <span class="control-value">1.00×</span>
+              <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
+            </div>
+            <div class="control-item">
+              <span class="control-name">Vibrancy</span>
+              <span class="control-value">0.00×</span>
+              <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
+            </div>
+            <div class="control-item">
+              <span class="control-name">Spectrum</span>
+              <span class="control-value">0.0°</span>
+              <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
+            </div>
+          </div>
+        </div>
+
+        <p>The Signature shapes the underlying palette structure — how contrast is distributed, how much color bleeds into neutral surfaces. Think of it as the character of the theme, and the three sliders as your voice within it.</p>
+
+        <hr />
+
+        <h2>The community part</h2>
+
+        <p>
+          The old schemes haven't disappeared. They've moved to <a href="#"><u>Baseline Marketplace</u></a
+          >, both as converted dynamic versions and as their original static builds.
+        </p>
+
+        <p>But more importantly: so can yours.</p>
+
+        <p>The Marketplace was always meant to be a community space. That part was harder to believe when the color section was a fixed list I personally maintained. Now it isn't. Anyone can submit a palette. If you land on something you love, you can share it — and someone else can load it in one click, then adjust the Spectrum to make it their own.</p>
+
+        <p>The schemes I shipped were a ceiling. This is an open floor.</p>
+
+        <div class="widget-container preset-widget">
+          <div class="widget-option">
+            <div class="option-item is-active">Catppuccin</div>
+            <div class="option-item">Flexoki</div>
+            <div class="option-item">Melange</div>
+            <div class="option-item">Nord</div>
+          </div>
+          <div class="widget">
+            <div class="mod-sidedock">
+              <div class="titlebar">
+                <div class="titlebar-button titlebar-close"></div>
+                <div class="titlebar-button titlebar-minimize"></div>
+                <div class="titlebar-button titlebar-fullscreen"></div>
+                <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
+              </div>
+              <div class="workspace-tab-header-container">
+                <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
+                <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
+                <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+              </div>
+            </div>
+            <div class="mod-root">
+              <div class="workspace-tab-header-container">
+                <div class="workspace-tab-header is-active">Brand New Baseline</div>
+                <div class="clickable-icon"><i data-lucide="plus"></i></div>
+              </div>
+              <div class="workspace-tab-container">
+                <div class="inline-title">Brand New Baseline</div>
+                <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
+                <div class="tags">
+                  <span class="tag">#baseline</span>
+                  <span class="tag">#cupertino</span>
+                  <span class="tag">#obsidian</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="widget-control">
+            <div class="control-item is-label">
+              <span class="control-name">Signature</span>
+              <span class="control-value">Baseline</span>
+            </div>
+            <div class="control-item">
+              <span class="control-name">Clarity</span>
+              <span class="control-value">1.00×</span>
+              <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
+            </div>
+            <div class="control-item">
+              <span class="control-name">Vibrancy</span>
+              <span class="control-value">0.00×</span>
+              <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
+            </div>
+            <div class="control-item">
+              <span class="control-name">Spectrum</span>
+              <span class="control-value">0.0°</span>
+              <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <h2>One honest limitation</h2>
+
+        <p>The dynamic system derives everything from a single hue, which means it produces cohesive, monochromatic-leaning results. If you want a multi-color setup — say, a warm background with a cool accent — that's not something the sliders can do. For that, the static presets on Marketplace are still the right tool.</p>
+
+        <p>Your existing Style Settings config keeps working. The old variables are preserved as a compatibility layer until the next major version.</p>
+
+        <p>Everything else is better. And for the first time, it's actually yours.</p>
+      </div>
+    </div>
+
+    <style>
+      .widget-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        user-select: none;
+      }
+
+      .widget-option {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+      .option-item {
+        transition: 80ms;
+        cursor: pointer;
+        border-radius: 100vh;
+        padding: 8px 16px;
+        color: var(--text-faint);
+        font-weight: 500;
+        font-size: var(--font-ui-small);
+        text-align: center;
+      }
+      .option-item:hover {
+        color: var(--text-normal);
+      }
+      .option-item.is-active {
+        background-color: var(--background-modifier-hover);
+        color: var(--text-normal);
+      }
+
+      .widget-control {
+        display: flex;
+        gap: 16px;
+        padding-inline: 16px;
+      }
+      .control-item {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .control-name {
+        color: var(--text-muted);
+        font-size: var(--font-ui-small);
+      }
+      .is-label .control-value {
+        flex-basis: 100%;
+        line-height: 0;
+        font-size: var(--font-ui-medium);
+        color: var(--text-normal);
+        text-align: start;
+        font-weight: 500;
+      }
+      .control-value {
+        flex-grow: 1;
+        color: var(--text-faint);
+        font-size: var(--font-ui-small);
+        font-variant-numeric: tabular-nums;
+        text-align: end;
+      }
+      input[type="range"] {
+        flex-basis: 100%;
+        appearance: none;
+        outline: none;
+        border-radius: 100vh;
+        background: var(--background-modifier-border);
+        height: 2px;
+        margin: 0;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        border: var(--border-width) solid var(--background-modifier-border);
+        border-radius: 100vh;
+        background: #fff;
+        width: 20px;
+        height: 20px;
+      }
+      input[type="range"]#colorist-l {
+        background: linear-gradient(to right, var(--background-modifier-border-w), var(--text-muted-w));
+      }
+      input[type="range"]#colorist-c {
+        background: linear-gradient(to right, var(--background-modifier-border-w), var(--color-accent-w));
+      }
+      input[type="range"]#colorist-h {
+        background: linear-gradient(to right, oklch(0.8 0.3 0), oklch(0.8 0.3 30), oklch(0.8 0.3 60), oklch(0.8 0.3 90), oklch(0.8 0.3 120), oklch(0.8 0.3 150), oklch(0.8 0.3 180), oklch(0.8 0.3 210), oklch(0.8 0.3 240), oklch(0.8 0.3 270), oklch(0.8 0.3 300), oklch(0.8 0.3 330), oklch(0.8 0.3 360));
+      }
+      .preset-widget input[type="range"] {
+        opacity: 0.5;
+      }
+
+      .widget {
+        display: flex;
+        border-radius: var(--radius-m);
+        background: var(--background-secondary-w);
+        overflow: hidden;
+        color: var(--text-normal-w);
+        font-size: var(--font-ui-small);
+        border: var(--border-width) solid var(--background-modifier-border-w);
+        corner-shape: superellipse(1.1);
+      }
+
+      .titlebar {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0 8px 8px;
+        height: 24px;
+      }
+      .titlebar-button {
+        border-radius: 100vh;
+        width: 12px;
+        height: 12px;
+      }
+      .titlebar-close {
+        background-color: #fe7070;
+      }
+      .titlebar-minimize {
+        background-color: #e0cd63;
+      }
+      .titlebar-fullscreen {
+        background-color: #4ad55f;
+      }
+      .titlebar .clickable-icon {
+        margin-left: auto;
+      }
+
+      .mod-sidedock {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px;
+      }
+      .mod-sidedock .workspace-tab-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 8px;
+        color: var(--text-faint-w);
+        line-height: var(--line-height-tight);
+      }
+      .mod-sidedock .workspace-tab-header.is-active {
+        color: var(--text-normal-w);
+      }
+
+      .mod-root {
+        display: flex;
+        flex: 3;
+        flex-direction: column;
+        padding: 0 8px 8px 0;
+      }
+      .mod-root .workspace-tab-header-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow: hidden;
+      }
+      .mod-root .workspace-tab-header {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-top: 8px;
+        margin-left: calc(var(--radius-s) * 2);
+        box-shadow: 0 0 0 var(--border-width) var(--background-modifier-border-w);
+        border-radius: var(--radius-s) var(--radius-s) 0 0;
+        background-color: var(--background-primary-w);
+        padding: 0 8px 6px;
+        width: 200px;
+        height: 32px;
+        font-size: var(--font-ui-small);
+      }
+      .mod-root .workspace-tab-header::before,
+      .mod-root .workspace-tab-header::after {
+        position: absolute;
+        bottom: 0;
+        box-shadow:
+          inset 0 0 0 var(--border-width) var(--background-modifier-border-w),
+          0 0 0 calc(var(--radius-s) * 4) var(--background-primary-w);
+        border-radius: 100%;
+        width: calc(var(--radius-s) * 2);
+        height: calc(var(--radius-s) * 2);
+        content: "";
+      }
+      .mod-root .workspace-tab-header::before {
+        left: calc(var(--radius-s) * -2);
+        clip-path: inset(50% calc(var(--radius-s) * -1) 0 50%);
+      }
+      .mod-root .workspace-tab-header::after {
+        right: calc(var(--radius-s) * -2);
+        clip-path: inset(50% 50% 0 calc(var(--radius-s) * -1));
+      }
+
+      .mod-root .workspace-tab-container {
+        flex: 1;
+        outline: var(--border-width) solid var(--background-modifier-border-w);
+        border-radius: var(--radius-s);
+        background-color: var(--background-primary-w);
+        padding: 24px;
+      }
+      .mod-root .inline-title {
+        font-size: 1.5em;
+        font-family: "Instrument Serif", system-ui, sans-serif;
+      }
+      .mod-root p {
+        margin-block: 8px;
+        color: inherit;
+      }
+      .mod-root .tags {
+        display: flex;
+        gap: 4px;
+      }
+      .mod-root .tag {
+        display: inline-block;
+        border-radius: 100vh;
+        background-color: hsl(from var(--color-accent-w) h s l / 0.1);
+        padding: 4px 8px;
+        color: var(--color-accent-w);
+        font-size: var(--font-ui-smaller);
+        line-height: var(--line-height-tight);
+      }
+
+      .clickable-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        color: var(--text-muted-w);
+      }
+    </style>
+
+    <script>
+      (function () {
+        const s = {
+          Baseline: {
+            l: [
+              [1, 0.97, 0.92, 0.79, 0.52, 0.36],
+              [0.21, 0.24, 0.29, 0.46, 0.74, 0.89],
+            ],
+            c: [
+              [0.025, 0.03, 0.04, 0.03, 0.025, 0.025],
+              [0.015, 0.02, 0.025, 0.03, 0.0225, 0.02],
+            ],
+            h: 0,
+          },
+          Material: {
+            l: [
+              [0.97, 0.95, 0.92, 0.64, 0.48, 0.24],
+              [0.18, 0.24, 0.28, 0.56, 0.72, 0.88],
+            ],
+            c: [
+              [0.01, 0.02, 0.02, 0.03, 0.03, 0.02],
+              [0.025, 0.03, 0.04, 0.05, 0.05, 0.04],
+            ],
+            h: 45,
+          },
+          Radiance: {
+            l: [
+              [0.95, 0.91, 0.85, 0.66, 0.53, 0.4],
+              [0.27, 0.32, 0.37, 0.57, 0.75, 0.92],
+            ],
+            c: [
+              [0.01, 0.03, 0.04, 0.1, 0.08, 0.06],
+              [0.02, 0.02, 0.02, 0.04, 0.04, 0.04],
+            ],
+            h: 0,
+          },
+          Softlight: {
+            l: [
+              [0.975, 0.94, 0.89, 0.745, 0.64, 0.515],
+              [0.28, 0.32, 0.39, 0.6, 0.72, 0.83],
+            ],
+            c: [
+              [0.025, 0.03, 0.03, 0.03, 0.03, 0.02],
+              [0.01, 0.01, 0.015, 0.02, 0.02, 0.04],
+            ],
+            h: 0,
+          },
+        };
+        const presets = {
+          Catppuccin: [
+            { sig: "Softlight", l: 1.49, c: 0.32, h: 267.8, tn: "#4D4F69", tm: "#5D5F77", tf: "#8D8FA2" },
+            { sig: "Radiance", l: 1.02, c: 1.46, h: 276.3, tn: "#C6D0F5", tm: "#A6ADCE", tf: "#848BA7" },
+          ],
+          Flexoki: [
+            { sig: "Softlight", l: 0.71, c: 0.55, h: 96.7, tn: "#100F0F", tm: "#6F6E69", tf: "#B7B5AC" },
+            { sig: "Material", l: 0.96, c: 0.08, h: 96.7, tn: "#CECDC3", tm: "#878580", tf: "#575653" },
+          ],
+          Melange: [
+            { sig: "Radiance", l: 0.98, c: 0.41, h: 56.3, tn: "#54433A", tm: "#7D6658", tf: "#A98A78" },
+            { sig: "Softlight", l: 0.97, c: 0.86, h: 63.6, tn: "#ECE1D7", tm: "#C1A78E", tf: "#867462" },
+          ],
+          Nord: [
+            { sig: "Baseline", l: 1.49, c: 0.15, h: 260.7, tn: "#2E3440", tm: "#7D8697", tf: "#ADB1B8" },
+            { sig: "Radiance", l: 1.17, c: 1.3, h: 265.5, tn: "#D8DEE9", tm: "#9EAFCC", tf: "#67738D" },
+          ],
+        };
+
+        const uWidget = (container) => {
+          let d = document.documentElement.getAttribute("data-theme") === "dark";
+          let isPreset = container.classList.contains("preset-widget");
+          let activeOption = container.querySelector(".option-item.is-active").textContent;
+
+          let sig,
+            lVal,
+            cVal,
+            hVal,
+            overrides = {};
+          let inputs = container.querySelectorAll("input[type=range]");
+
+          if (isPreset) {
+            let preset = presets[activeOption] ? presets[activeOption][d ? 1 : 0] : null;
+            if (preset) {
+              sig = preset.sig;
+              lVal = preset.l;
+              cVal = preset.c;
+              hVal = preset.h;
+              overrides = { tn: preset.tn, tm: preset.tm, tf: preset.tf };
+            } else {
+              sig = "Baseline";
+              lVal = 1;
+              cVal = 0;
+              hVal = 0;
+            }
+            inputs.forEach((i) => (i.disabled = true));
+            inputs[0].value = lVal;
+            inputs[1].value = cVal;
+            inputs[2].value = hVal;
+            let sigLabel = container.querySelector(".is-label .control-value");
+            if (sigLabel) sigLabel.textContent = sig;
+          } else {
+            sig = activeOption;
+            lVal = parseFloat(inputs[0].value);
+            cVal = parseFloat(inputs[1].value);
+            hVal = parseFloat(inputs[2].value);
+          }
+
+          if (inputs.length >= 3) {
+            inputs[0].previousElementSibling.textContent = lVal.toFixed(2) + "×";
+            inputs[1].previousElementSibling.textContent = cVal.toFixed(2) + "×";
+            inputs[2].previousElementSibling.textContent = hVal.toFixed(1) + "°";
+          }
+
+          let sigd = s[sig];
+          let p = (v) => Math.pow(v, d ? 1 / lVal : lVal);
+          let c = (v) => Math.min(0.1, v * cVal);
+          let w = container.style;
+          let v = (i) => `oklch(${p(sigd.l[d ? 1 : 0][i])} ${c(sigd.c[d ? 1 : 0][i])} ${hVal})`;
+
+          w.setProperty("--background-primary-w", v(0));
+          w.setProperty("--background-secondary-w", v(1));
+          w.setProperty("--background-modifier-border-w", v(2));
+          w.setProperty("--text-faint-w", overrides.tf || v(3));
+          w.setProperty("--text-muted-w", overrides.tm || v(4));
+          w.setProperty("--text-normal-w", overrides.tn || v(5));
+          w.setProperty("--color-accent-w", `oklch(0.65 ${Math.max(0.15, cVal * 0.1)} ${hVal + sigd.h})`);
+        };
+
+        const uAll = () => document.querySelectorAll(".widget-container").forEach(uWidget);
+
+        document.querySelectorAll(".widget-container").forEach((container) => {
+          container.querySelectorAll("input[type=range]").forEach((e) => {
+            if (!container.classList.contains("preset-widget")) e.addEventListener("input", () => uWidget(container));
+          });
+          container.querySelectorAll(".option-item").forEach((e) => {
+            e.addEventListener("click", (ev) => {
+              container.querySelector(".option-item.is-active").classList.remove("is-active");
+              ev.target.classList.add("is-active");
+              uWidget(container);
+            });
+          });
+        });
+        document.addEventListener("colorModeChange", uAll);
+        uAll();
+      })();
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest" onload="lucide.createIcons()"></script>
+    <script src="migration.js"></script>
+  </body>
+</html>

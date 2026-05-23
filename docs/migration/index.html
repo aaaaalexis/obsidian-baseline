@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseline Migration Tool</title>
-    <link rel="icon" href="../shared/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../core/favicon.svg" type="image/svg+xml" />
 
     <script>
       (() => {
@@ -17,7 +17,8 @@
       })();
     </script>
 
-    <link rel="stylesheet" href="../shared/shared.css" />
+    <link rel="stylesheet" href="../core/global.css" />
+    <link rel="stylesheet" href="../core/settings.css" />
     <link rel="stylesheet" href="migration.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +26,7 @@
     <link rel="preconnect" href="https://rsms.me/" />
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
-    <script src="../shared/appearance.js" defer></script>
+    <script src="../core/appearance.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-38V3HD97K9"></script>
@@ -40,9 +41,19 @@
     </script>
   </head>
   <body>
-    <div class="header" data-subtitle="Migration"></div>
-    <script src="../shared/header.js"></script>
+    <div class="header">
+      <h1 class="header-title">
+        <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Migration
+      </h1>
+      <div class="header-actions">
+        <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
+        <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
+        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+      </div>
+    </div>
+
     <div class="content">
+      <div class="content-mask"></div>
       <div class="setting-container" title='Click the "Export" on top or the cloud icon for selected theme to export your settings.'>
         <div class="setting">
           <div class="setting-sidebar">
@@ -76,7 +87,7 @@
           </div>
         </div>
       </div>
-      <p>Export your existing Style Settings, then paste here to migrate to Baseline-compatible settings.</p>
+      <div class="setting-description">Export your existing Style Settings, then paste here to migrate to Baseline-compatible settings.</div>
       <div class="panel-container">
         <div class="input-panel">
           <textarea
