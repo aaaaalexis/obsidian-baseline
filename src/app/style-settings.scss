@@ -12,34 +12,21 @@ settings:
 		collapsed: false
 	-
 		id: migrate
-		title: Migrate configuration
+		title: Migrate settings
 		type: info-text
 		level: 1
 		markdown: true
-		description: Migrate **existing Style Settings** from supported themes. ↗[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
+		description: Migrate settings[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
 	-
 		id: marketplace
-		title: Community presets
+		title: Browse presets
 		type: info-text
 		level: 1
 		markdown: true
-		description: Discover Style Settings presets in **Baseline Marketplace**. ↗[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
-	-
-		id: missing-font
-		title: Extended heading font
-		title.zh-TW: 擴充語言支援
-		title.zh: 扩展语言支持
-		title.jp: 拡張言語サポート
-		type: info-text
-		level: 1
-		markdown: true
-		description: Heading font missing glyphs? Get **extended font CSS snippet**. ↗[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font.css)
-		description.zh-TW: 標題出現缺字？請下載中文字型 CSS 片段。[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font.css)
-		description.zh: 标题出现缺字？请下载中文字型 CSS 代码片段。[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font-cn.css)
-		description.jp: タイトルで文字が表示されない？日本語フォントの CSS スニペットをダウンロード。[](https://github.com/aaaaalexis/obsidian-baseline/blob/main/snippets/baseline-extension-font-jp.css)
+		description: Browse presets[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
 	-
 		id: hide-baseline-info
-		title: Do not show again
+		title: Hide quick links
 		type: class-toggle
 	-
 		id: colors
@@ -3328,9 +3315,12 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
     }
 
     .setting-item:not(:last-child) {
-      position: relative;
       flex: 1;
-      align-items: flex-start;
+      position: relative;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
       transition: var(--anim-duration-fast);
       border: var(--setting-items-border-width) solid var(--setting-items-border-color);
       border-radius: var(--setting-items-radius) !important;
@@ -3338,7 +3328,7 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       padding: calc(16px * var(--density-modifier)) !important;
 
       &:hover {
-        background-color: var(--background-modifier-hover);
+        background-color: var(--background-modifier-hover) !important;
       }
 
       &::after {
@@ -3346,14 +3336,17 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       }
 
       .setting-item-info {
+        flex: none;
         margin-inline-end: 0;
       }
       .setting-item-name {
-        font-size: var(--font-ui-large);
-        font-family: var(--h1-font);
+        display: none;
       }
       .setting-item-description {
-        margin-inline-end: 16px;
+        font-size: var(--font-ui-large);
+        font-family: var(--inline-title-font);
+        padding: 0;
+        color: var(--text-normal);
       }
       .setting-item-control {
         display: none;
@@ -3366,12 +3359,9 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
       }
 
       &::before {
-        position: absolute;
-        right: 8px;
-        bottom: 8px;
-        background-color: var(--background-modifier-hover);
-        width: 32px;
-        height: 32px;
+        background-color: var(--text-normal);
+        width: var(--font-ui-large);
+        height: var(--font-ui-large);
         content: "";
         -webkit-mask-position: 50% 50%;
         -webkit-mask-size: 100% 100%;
