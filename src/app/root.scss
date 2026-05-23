@@ -237,6 +237,18 @@ body:not(.mod-macos):not(.is-mobile) {
   }
 }
 
+// Baseline & Cupertino Workspace
+body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino):not(.is-phone) {
+  --tab-outline-width: var(--border-width);
+
+  .mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .mod-root .workspace-tab-container {
+    outline: var(--tab-outline-width) solid var(--tab-outline-color);
+  }
+}
+
 // Scrollbar
 body.styled-scrollbars div:not(:hover)::-webkit-scrollbar-thumb {
   background-color: transparent;

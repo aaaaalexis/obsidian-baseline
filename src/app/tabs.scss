@@ -80,7 +80,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body.tab-default:is(.layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header,
+body.tab-default:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header,
 body.tab-default.layout-fusion .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header {
   --tab-outline-width: var(--border-width);
 }

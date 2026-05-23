@@ -62,8 +62,6 @@ body:is(.layout-cupertino, .layout-macos, .layout-fusion):not(.is-mobile) {
 
 // Cupertino specific
 body.layout-cupertino:not(.is-phone) {
-  --tab-outline-width: var(--border-width);
-
   // Editor panel
   &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
@@ -74,12 +72,5 @@ body.layout-cupertino:not(.is-phone) {
     box-shadow:
       rgba(0, 0, 0, 0.16) 0px 24px 48px,
       rgba(0, 0, 0, 0.12) 0px 4px 16px;
-  }
-
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    outline: var(--tab-outline-width) solid var(--tab-outline-color);
   }
 }

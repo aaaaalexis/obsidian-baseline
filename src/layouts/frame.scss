@@ -36,6 +36,12 @@ body.layout-frame:not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
+  .workspace > .mod-sidedock.mod-left-split {
+    margin-right: 0px;
+  }
+  .workspace > .mod-sidedock.mod-right-split {
+    margin-left: 0px;
+  }
 
   .workspace-ribbon.mod-left:not(.is-collapsed) {
     padding-left: 4px;
