@@ -249,11 +249,7 @@ body.input-adwaita:not(.is-mobile) {
 
   // Modal
   .modal {
-    .modal-close-button {
-      --icon-stroke: 4px;
-      color: var(--text-normal);
-      width: 24px;
-      height: 24px;
+    .modal-header-button {
       padding: 4px;
       background-color: hsl(from var(--text-normal) h s l / 10%);
 
