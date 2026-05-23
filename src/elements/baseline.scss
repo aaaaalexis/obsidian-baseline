@@ -48,7 +48,12 @@ body:where(.input-baseline, :not(.css-settings-manager)) {
   // Slider
   input[type="range"]::-webkit-slider-thumb {
     border: none;
-    box-shadow: var(--input-shadow);
+    box-shadow: var(--input-shadow) !important;
+    transition: none;
+  }
+  input[type="range"]:focus::-webkit-slider-thumb,
+  input[type="range"]::-webkit-slider-thumb:active {
+    background-color: var(--interactive-hover);
   }
 }
 
