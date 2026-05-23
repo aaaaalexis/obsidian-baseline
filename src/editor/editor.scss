@@ -219,6 +219,7 @@
       background: var(--background-secondary);
       content: "";
       z-index: -2;
+      pointer-events: none;
     }
     .cm-line.cm-active:is(.HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote) {
       background-color: var(--background-modifier-hover) !important;
