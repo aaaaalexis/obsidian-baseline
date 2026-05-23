@@ -418,17 +418,6 @@ body.is-tablet .workspace .mod-root {
   }
 }
 
-// Side panels: Show tab list
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space,
-body:not(.hide-tab-list-off) .mod-sidedock {
-  .workspace-tab-header-container-inner {
-    flex-wrap: nowrap;
-  }
-  .workspace-tab-header-tab-list {
-    display: none;
-  }
-}
-
 // Side panels: Labeled tabs
 body.tab-top-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
 body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
@@ -524,10 +513,7 @@ body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right
   .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
     height: var(--header-height);
   }
-  .workspace-tabs:not(.mod-top) .workspace-tab-header-tab-list {
-    padding: 0;
-    max-height: 0px;
-  }
+
   .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
     height: calc-size(auto, size);
 
@@ -535,7 +521,6 @@ body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right
       background-color: var(--background-modifier-hover);
     }
 
-    .workspace-tab-header-tab-list,
     .workspace-tab-header-inner-icon svg.svg-icon {
       opacity: 0;
       height: 4px;
