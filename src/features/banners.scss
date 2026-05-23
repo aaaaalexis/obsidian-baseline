@@ -101,6 +101,11 @@ body:not(.banner-off) {
         object-fit: var(--banner-image-object-fit);
         line-height: 0;
         max-width: calc(100% - var(--banner-image-inset) * 2);
+        padding: 0;
+      }
+
+      .cm-line:has(.image-embed[alt="banner"]) {
+        position: static;
       }
 
       .image-embed[alt="banner"],
