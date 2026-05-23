@@ -18,6 +18,11 @@ body {
     --setting-items-background: var(--background-secondary);
   }
 
+  .setting-group.mod-list {
+    --setting-items-padding-x: inherit;
+    --setting-items-padding-y: inherit;
+  }
+
   .modal.mod-sidebar-layout {
     .vertical-tab-header {
       border-right: none;
@@ -68,6 +73,31 @@ body:not(.is-phone) {
     .setting-group:not(.installed-plugins-container) .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
       border: var(--setting-items-border-width) solid var(--setting-items-border-color);
+    }
+
+    .search-input-container {
+      margin: 0;
+    }
+    .setting-group-search-control {
+      margin: 0;
+      padding: 0;
+    }
+    .setting-group-filter {
+      height: var(--input-height);
+      align-items: center;
+      display: flex;
+      padding: 16px;
+      font-weight: var(--input-font-weight);
+      color: var(--text-faint);
+      border: none;
+    }
+    .setting-group-filter:hover {
+      color: var(--text-muted);
+    }
+    .setting-group-filter.is-active {
+      background-color: var(--background-modifier-hover);
+      border-color: var(--interactive-accent);
+      color: var(--text-normal);
     }
 
     .setting-item-name {
