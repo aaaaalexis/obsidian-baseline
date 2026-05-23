@@ -9,6 +9,9 @@ body:not(.is-phone) {
       padding: 0;
     }
 
+    .setting-group .setting-item:not(.setting-item-heading)::before {
+      content: none;
+    }
     .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
       padding-top: 12px;
     }
@@ -35,6 +38,8 @@ body:not(.is-phone) {
 
   --setting-items-radius: var(--radius-m);
   --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
+  --setting-items-padding-x: 0px;
+  --setting-items-padding-y: 0px;
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
 
