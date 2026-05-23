@@ -51,18 +51,3 @@ body.nav-item-strong {
     --nav-item-color-active: var(--text-accent);
   }
 }
-
-body.nav-item-tactile .nav-files-container > div {
-  --nav-item-background-active: var(--interactive-accent);
-  --nav-item-color-active: var(--text-on-accent);
-
-  > .tree-item.nav-folder:not(.is-collapsed) {
-    background-color: var(--background-modifier-hover);
-    border-radius: var(--nav-item-radius);
-    box-shadow: var(--input-shadow-inset);
-  }
-  > .tree-item.nav-file > .tree-item-self:hover:not(.is-active),
-  > .tree-item.nav-folder.is-collapsed > .tree-item-self:hover:not(.is-active) {
-    box-shadow: var(--input-shadow-inset);
-  }
-}

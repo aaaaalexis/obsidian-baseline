@@ -1,0 +1,69 @@
+body.input-tactile {
+  --clickable-icon-radius: 100vh;
+
+  --background-modifier-form-field: var(--interactive-normal);
+
+  --input-font-weight: var(--font-medium);
+
+  --input-shadow-base: 0px 4px 4px -2px hsl(0 0 0 / 0.025), 0px 2px 4px -1px hsl(0 0 0 / 0.05);
+
+  &.theme-light {
+    --interactive-normal: var(--color-base-00);
+    --interactive-hover: var(--color-base-10);
+
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
+
+    --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  &.theme-dark {
+    --interactive-normal: var(--color-base-30);
+    --interactive-hover: var(--color-base-35);
+
+    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), var(--input-shadow-base);
+    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
+
+    --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  // Input
+  textarea,
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
+    border: none;
+    box-shadow: var(--input-shadow-inset);
+  }
+
+  // Button
+  .clickable-icon:hover {
+    background-color: var(--interactive-normal);
+    box-shadow: var(--input-shadow);
+  }
+
+  // Slider
+  input[type="range"]::-webkit-slider-thumb {
+    border: none;
+    box-shadow: var(--input-shadow) !important;
+    transition: none;
+  }
+  input[type="range"]:focus::-webkit-slider-thumb,
+  input[type="range"]::-webkit-slider-thumb:active {
+    background-color: var(--interactive-hover);
+  }
+
+  // Panel actions
+  .mod-sidedock .nav-header .nav-buttons-container {
+    border-radius: var(--clickable-icon-radius);
+    background: var(--background-modifier-hover);
+    padding: 4px;
+    box-shadow: var(--input-shadow-inset);
+
+    .nav-action-button.is-active {
+      background-color: var(--interactive-normal);
+      box-shadow: var(--input-shadow);
+    }
+  }
+}

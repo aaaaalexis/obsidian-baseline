@@ -778,8 +778,8 @@ settings:
 				label: Material
 				value: input-material
 			-
-				label: Subtle
-				value: input-subtle
+				label: Tactile
+				value: input-tactile
 	-
 		id: status-bar-style
 		title: Status bar
@@ -1198,9 +1198,6 @@ settings:
 			-
 				label: Strong
 				value: nav-item-strong
-			-
-				label: Tactlie
-				value: nav-item-tactile
 	-
 		id: colorful-folders
 		title: Colorful folders
@@ -3250,9 +3247,6 @@ settings:
         grid-column: span 3;
       }
 
-      input:focus {
-        box-shadow: var(--input-shadow-inset);
-      }
       input.pcr-result {
         grid-column: span 6;
         margin: 0;

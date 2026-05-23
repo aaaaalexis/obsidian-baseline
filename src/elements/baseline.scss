@@ -11,80 +11,29 @@ body {
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
-
-  --input-shadow-base: 0px 4px 4px -2px hsl(0 0 0 / 0.015), 0px 2px 4px -1px hsl(0 0 0 / 0.015);
 }
 
-body:where(.input-baseline, :not(.css-settings-manager)) {
+body:is(.input-baseline, :not(.css-settings-manager)) {
+  --input-shadow: none;
+  --input-shadow-hover: none;
   --input-font-weight: var(--font-medium);
 
-  &.theme-light {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), var(--input-shadow-base);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
-    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
-  }
-  &.theme-dark {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), var(--input-shadow-base);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
-  }
-
-  textarea,
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    border: none;
-    box-shadow: var(--input-shadow-inset);
-  }
-
-  // Button
-  button.mod-cta {
-    --input-shadow: none;
-    --input-shadow-hover: none;
-  }
-  button.mod-warning {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--color-red);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--color-red);
+  button:focus-visible,
+  .clickable-icon:focus-visible,
+  select:focus-visible,
+  .combobox-button:focus-visible,
+  .dropdown:focus-visible {
+    box-shadow: none;
+    background-color: var(--interactive-hover);
   }
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    border: none;
-    box-shadow: var(--input-shadow) !important;
-    transition: none;
-  }
-  input[type="range"]:focus::-webkit-slider-thumb,
-  input[type="range"]::-webkit-slider-thumb:active {
-    background-color: var(--interactive-hover);
-  }
-}
-
-body:where(.input-subtle) {
-  --input-font-weight: var(--font-medium);
-
-  &.theme-light {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-  }
-  &.theme-dark {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-  }
-
-  button.mod-cta {
-    --input-shadow: inset 0 0 0 var(--input-border-width) var(--interactive-accent);
-    --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--interactive-accent-hover);
+    box-shadow: none !important;
   }
 }
 
 // Button
-button,
-.clickable-icon,
-select,
-.dropdown {
-  transition:
-    var(--anim-duration-moderate) var(--anim-motion-baseline),
-    background-color var(--anim-duration-fast);
-}
-
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
   padding: 16px;
   display: inline-flex;
