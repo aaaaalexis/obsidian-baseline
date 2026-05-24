@@ -48,6 +48,11 @@ body:not(.is-phone) {
   }
 
   .modal.mod-sidebar-layout {
+    .vertical-tab-header-group-container:hover,
+    .vertical-tab-content:hover {
+      will-change: transform;
+    }
+
     .vertical-tab-header {
       border-inline-end: none;
     }
