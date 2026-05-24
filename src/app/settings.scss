@@ -23,6 +23,11 @@ body {
   }
 
   .modal.mod-sidebar-layout {
+    .vertical-tab-header-group-container:hover,
+    .vertical-tab-content:hover {
+      will-change: transform;
+    }
+
     .vertical-tab-header {
       border-right: none;
       background-color: transparent;
