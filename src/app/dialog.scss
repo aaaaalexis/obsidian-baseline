@@ -131,7 +131,8 @@ body {
     overflow: visible;
     text-align: left;
   }
-  .modal-close-button {
+  .modal-close-button,
+  .modal-header-button {
     border-radius: 100vh;
     position: absolute;
     top: 8px;

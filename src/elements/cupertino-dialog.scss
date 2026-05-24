@@ -178,7 +178,8 @@ body.input-cupertino:not(.is-mobile) {
 
 body.input-cupertino.is-mobile {
   .modal-setting-back-button,
-  .modal-close-button {
+  .modal-close-button,
+  .modal-header-button {
     --icon-size: var(--icon-xl);
     padding: 6px;
   }
@@ -197,7 +198,8 @@ body.input-cupertino.is-phone {
     width: calc(100vw - 16px) !important;
     left: 0 !important;
 
-    .modal-close-button {
+    .modal-close-button,
+    .modal-header-button {
       top: 16px !important;
       inset-inline-end: 16px !important;
     }

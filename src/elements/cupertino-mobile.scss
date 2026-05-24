@@ -9,6 +9,7 @@ body.input-cupertino.is-mobile {
   .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
   .modal-close-button,
+  .modal-header-button,
   .pull-action {
     backdrop-filter: var(--raised-blur);
     box-shadow: var(--shadow-xs);
@@ -65,6 +66,7 @@ body.input-cupertino.is-mobile {
     .mobile-tab-switcher-menu-spacer .clickable-icon::before,
     .modal-setting-back-button::after,
     .modal-close-button::after,
+    .modal-header-button::after,
     .notice::after {
       position: absolute;
       z-index: 1;

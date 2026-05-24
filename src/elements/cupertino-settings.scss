@@ -101,7 +101,8 @@ body.input-cupertino.is-phone {
     .modal-setting-back-button {
       inset-inline-start: var(--safe-area-inset-side);
     }
-    .modal-close-button {
+    .modal-close-button,
+    .modal-header-button {
       top: var(--safe-area-inset-side);
       inset-inline-end: var(--safe-area-inset-side) !important;
     }
