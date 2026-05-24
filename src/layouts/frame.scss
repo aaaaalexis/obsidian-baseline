@@ -31,18 +31,16 @@ body.layout-frame:not(.is-mobile) {
   .workspace > .workspace-split {
     margin: 4px;
     height: unset;
-    background-color: var(--background-primary);
+    background-color: var(--background-primary) !important;
     border-radius: var(--radius-window);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }
-  .workspace > .mod-sidedock.mod-left-split {
-    margin-right: 0px;
-  }
-  .workspace > .mod-sidedock.mod-right-split {
-    margin-left: 0px;
-  }
 
+  .workspace-ribbon.mod-left.is-collapsed {
+    background-color: transparent !important;
+    border-color: transparent;
+  }
   .workspace-ribbon.mod-left:not(.is-collapsed) {
     padding-left: 4px;
   }
