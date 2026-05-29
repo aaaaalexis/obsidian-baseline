@@ -150,7 +150,8 @@ body:not(.is-mobile) {
     align-items: center;
   }
 
-  &:not(.is-translucent) .workspace {
+  &:not(.is-translucent) .workspace,
+  .workspace-fake-target-overlay {
     background: var(--background-secondary);
   }
   .workspace {
