@@ -42,6 +42,11 @@ body {
   }
 }
 
+body.mod-macos:not(.is-mobile) .mod-settings {
+  --dropdown-background: inherit;
+  --dropdown-icon-background: transparent;
+}
+
 body:not(.is-phone) {
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-title,
