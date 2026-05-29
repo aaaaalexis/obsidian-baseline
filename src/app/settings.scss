@@ -67,6 +67,8 @@ body:not(.is-phone) {
     .setting-page-titlebar {
       background-color: transparent;
       border: none;
+      box-shadow: none;
+      padding: 12px;
     }
 
     .setting-group-search {
@@ -165,7 +167,7 @@ body:not(.is-phone) {
       display: flex;
       height: auto;
       align-items: center;
-      padding: 0 8px;
+      padding: 0 12px;
       width: 100%;
       flex-wrap: wrap;
     }
@@ -175,7 +177,7 @@ body:not(.is-phone) {
     }
     .community-modal-controls .setting-item {
       margin: 0;
-      padding: 8px 0;
+      padding: 12px 0;
       display: flex;
       align-items: center;
     }
@@ -191,7 +193,6 @@ body:not(.is-phone) {
     }
     .community-modal-search-results {
       gap: 8px;
-      padding: 8px;
     }
     .community-item {
       border: none;
