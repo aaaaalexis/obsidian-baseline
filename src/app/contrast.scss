@@ -90,8 +90,8 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --interactive-normal: var(--color-base-30);
   --interactive-hover: var(--color-base-35);
   --text-selection: color-mix(in oklch, var(--interactive-accent) 33%, transparent);
-  --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-s: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-l: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
   --mono-rgb-0: 0, 0, 0;
   --mono-rgb-100: 255, 255, 255;
 
