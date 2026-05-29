@@ -175,6 +175,10 @@ body:not(.is-mobile) {
   }
 }
 
+body:not(.is-phone) {
+  --modal-radius: var(--radius-l);
+}
+
 body.is-phone {
   .modal-container.mod-confirmation .modal:not(.mod-sidebar-layout) {
     --modal-radius: var(--radius-l) var(--radius-l) 0 0;
@@ -200,10 +204,6 @@ body.is-phone {
       margin-bottom: var(--safe-area-inset-bottom) !important;
     }
   }
-}
-
-body.is-tablet {
-  --modal-radius: var(--radius-l);
 }
 
 // Notice

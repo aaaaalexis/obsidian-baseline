@@ -202,9 +202,9 @@ body.input-cupertino {
     --dropdown-padding-start: var(--side-padding);
   }
 
-  select:focus,
-  .combobox-button:focus,
-  .dropdown:focus {
+  select::focus-visible,
+  .combobox-button::focus-visible,
+  .dropdown::focus-visible {
     box-shadow: none;
   }
 

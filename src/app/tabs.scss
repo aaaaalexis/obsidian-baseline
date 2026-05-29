@@ -2,7 +2,7 @@ body {
   --header-height: 48px;
   --tab-max-width: var(--tab-width);
 
-  --tab-radius: var(--radius-s);
+  --tab-radius: var(--radius-s) !important;
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
   --tab-curve: calc(var(--tab-radius) + 4px);
 

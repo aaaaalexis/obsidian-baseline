@@ -1,3 +1,8 @@
+body.mod-macos:not(.is-mobile) .mod-settings {
+  --dropdown-background: inherit;
+  --dropdown-icon-background: transparent;
+}
+
 body:not(.is-phone) {
   &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
     .setting-group .setting-items {
@@ -48,13 +53,15 @@ body:not(.is-phone) {
   }
 
   .modal.mod-sidebar-layout {
+    .vertical-tab-header {
+      border-inline-end: none;
+    }
+    .vertical-tab-nav-item-icon {
+      color: inherit;
+    }
     .vertical-tab-header-group-container:hover,
     .vertical-tab-content:hover {
       will-change: transform;
-    }
-
-    .vertical-tab-header {
-      border-inline-end: none;
     }
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
@@ -66,12 +73,13 @@ body:not(.is-phone) {
     .vertical-tab-content {
       background-color: var(--modal-sidebar-background);
     }
-
     .setting-group-search {
       padding: 0 0 8px;
       background-color: transparent;
     }
-
+    .setting-item-heading {
+      border: none;
+    }
     .setting-item-name {
       overflow: visible;
     }
