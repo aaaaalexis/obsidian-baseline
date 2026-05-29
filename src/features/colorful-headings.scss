@@ -133,10 +133,6 @@
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .cm-line.HyperMD-header {
       padding-inline-start: var(--font-ui-smaller);
-
-      &::after {
-        inset-inline: 8px -4px;
-      }
     }
   }
 
@@ -144,16 +140,15 @@
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .cm-line.HyperMD-header {
       position: relative;
-      padding-inline-start: 8px;
+      padding-inline: 8px;
 
       &::after {
         pointer-events: none;
         display: inline-flex;
         border-radius: var(--radius-s);
-        inset-block: -4px;
+        inset: -4px 0;
         content: "";
         position: absolute;
-        inset-inline: 0 -8px;
         max-width: 100cqw;
         transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       }
@@ -196,8 +191,31 @@
     .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
     .HyperMD-header {
       width: fit-content;
-      justify-self: self-start;
       max-width: 100%;
+    }
+    .markdown-rendered h1,
+    .HyperMD-header-1 {
+      justify-self: var(--h1-align);
+    }
+    .markdown-rendered h2,
+    .HyperMD-header-2 {
+      justify-self: var(--h2-align);
+    }
+    .markdown-rendered h3,
+    .HyperMD-header-3 {
+      justify-self: var(--h3-align);
+    }
+    .markdown-rendered h4,
+    .HyperMD-header-4 {
+      justify-self: var(--h4-align);
+    }
+    .markdown-rendered h5,
+    .HyperMD-header-5 {
+      justify-self: var(--h5-align);
+    }
+    .markdown-rendered h6,
+    .HyperMD-header-6 {
+      justify-self: var(--h6-align);
     }
   }
 }
