@@ -15,26 +15,33 @@ body {
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
   --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
 
+  // Toggle
+  &:not(.accented-interface) .checkbox-container {
+    --interactive-accent: var(--color-green);
+  }
   &.obsidian-app {
-    // Toggle
-    &:not(.accented-interface) .checkbox-container {
-      --interactive-accent: var(--color-green);
-    }
-    --toggle-border-width: 2px;
-    --toggle-thumb-height: 16px;
-    --toggle-thumb-width: 16px;
     --toggle-thumb-color: #fff;
-    --toggle-width: 32px;
+    --toggle-border-width: 2px;
     --toggle-s-border-width: var(--toggle-border-width);
     --toggle-s-thumb-height: var(--toggle-thumb-height);
     --toggle-s-thumb-width: var(--toggle-thumb-width);
     --toggle-s-width: var(--toggle-width);
+  }
+  &:not(.is-mobile) {
+    --toggle-thumb-height: 16px;
+    --toggle-thumb-width: 16px;
+    --toggle-width: 32px;
 
     // Slider
     --slider-thumb-y: -7px;
     --slider-thumb-height: 20px;
     --slider-thumb-width: 20px;
     --slider-track-height: 2px;
+  }
+  &.is-mobile {
+    --toggle-thumb-height: 24px;
+    --toggle-thumb-width: 24px;
+    --toggle-width: 48px;
   }
 }
 
@@ -80,6 +87,7 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
   }
 
   &::after {
+    box-shadow: none;
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),
       background-color 0s;

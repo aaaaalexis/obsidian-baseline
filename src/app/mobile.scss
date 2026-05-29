@@ -17,8 +17,6 @@ body.is-mobile {
   --font-ui-medium: calc(var(--font-text-size) + var(--font-ui-modifier));
   --font-ui-large: calc(var(--font-text-size) * 1.2 + var(--font-ui-modifier));
 
-  --interactive-normal: var(--background-primary);
-
   --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
   --keyboard-spacing: 8px;

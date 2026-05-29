@@ -17,11 +17,6 @@ body {
     --setting-items-background: var(--background-secondary);
   }
 
-  .setting-group.mod-list {
-    --setting-items-padding-x: inherit;
-    --setting-items-padding-y: inherit;
-  }
-
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-container:hover,
     .vertical-tab-content:hover {
@@ -38,6 +33,11 @@ body {
 
     .setting-item-heading {
       border: none;
+    }
+
+    .setting-group.mod-list {
+      --setting-items-padding-x: inherit;
+      --setting-items-padding-y: inherit;
     }
   }
 }
