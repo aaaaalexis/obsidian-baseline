@@ -448,7 +448,7 @@ body.is-phone {
     height: var(--touch-size-l);
     background-color: var(--background-secondary);
   }
-  &.mod-toolbar-open:not(.mode-switcher-off, .AT-row, .AT-multirow, .AT-column) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     width: var(--touch-size-m);
     height: var(--touch-size-m);
     margin-right: var(--keyboard-spacing);
