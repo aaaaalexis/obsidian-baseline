@@ -47,16 +47,20 @@ body {
 
 body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-shadow: none;
-  --input-shadow-hover: none;
+  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover);
   --input-font-weight: var(--font-medium);
 
-  button:focus-visible,
-  .clickable-icon:focus-visible,
-  select:focus-visible,
-  .combobox-button:focus-visible,
-  .dropdown:focus-visible {
-    box-shadow: none;
-    background-color: var(--interactive-hover);
+  button,
+  .clickable-icon,
+  select,
+  .combobox-button,
+  .dropdown {
+    transition: var(--anim-duration-fast);
+
+    &:focus-visible {
+      box-shadow: none;
+      background-color: var(--interactive-hover);
+    }
   }
 
   // Slider
