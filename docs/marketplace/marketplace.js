@@ -51,20 +51,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!el.className) el.removeAttribute("class");
   };
 
-  const flashCopy = (el, origHtml) => {
+  const flashCopy = (el) => {
     if (!el) return;
-    el.innerHTML = "Copied!";
+    const iconEl = el.querySelector("[data-lucide]");
+    if (iconEl) {
+      if (!el._origIcon) el._origIcon = iconEl.getAttribute("data-lucide");
+      iconEl.setAttribute("data-lucide", "circle-check");
+      lucide.createIcons({ root: el });
+    }
     if (el._copyTimeout) clearTimeout(el._copyTimeout);
     el._copyTimeout = setTimeout(() => {
-      el.innerHTML = origHtml;
+      const iconEl = el.querySelector("[data-lucide]");
+      if (iconEl && el._origIcon) {
+        iconEl.setAttribute("data-lucide", el._origIcon);
+        lucide.createIcons({ root: el });
+      }
       delete el.dataset.copying;
     }, 1000);
   };
 
-  const copyToClipboard = (payload, triggerEl, origHtml, eventName, eventData) => {
+  const copyToClipboard = (payload, triggerEl, eventName, eventData) => {
     const restore = () => {
-      if (triggerEl && origHtml) {
-        triggerEl.innerHTML = origHtml;
+      if (triggerEl) {
+        const iconEl = triggerEl.querySelector("[data-lucide]");
+        if (iconEl && triggerEl._origIcon) {
+          iconEl.setAttribute("data-lucide", triggerEl._origIcon);
+          lucide.createIcons({ root: triggerEl });
+        }
         delete triggerEl.dataset.copying;
       }
     };
@@ -76,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     navigator.clipboard
       .writeText(JSON.stringify(payload, null, 2))
       .then(() => {
-        flashCopy(triggerEl, origHtml);
+        flashCopy(triggerEl);
         if (eventName) window.gtag?.("event", eventName, eventData);
       })
       .catch(restore);
@@ -238,12 +251,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       const { mode, kind } = menuItem.dataset;
       if (!id || !mode || !kind || !pe) return;
 
-      const origHtml = menuItem.dataset.origHtml || menuItem.innerHTML;
-      menuItem.dataset.origHtml = origHtml;
       menuItem.dataset.copying = "true";
 
       const payload = kind === "dynamic" ? pe.extractDynamicPalette(itemDetails[id], mode) : pe.extractStaticPalette(itemDetails[id], mode);
-      copyToClipboard(payload, menuItem, origHtml, "palette_copy", { palette: id, mode, kind });
+      copyToClipboard(payload, menuItem, "palette_copy", { palette: id, mode, kind });
       return;
     }
 
@@ -255,8 +266,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (btn.dataset.copying) return;
 
       const { preset: id, type } = panel.dataset;
-      const origHtml = btn.dataset.origHtml || btn.innerHTML;
-      btn.dataset.origHtml = origHtml;
       btn.dataset.copying = "true";
 
       if (type === "palette") {
@@ -265,10 +274,10 @@ document.addEventListener("DOMContentLoaded", async () => {
           const p = pe?.extractDynamicPalette(itemDetails[id], m);
           if (p) Object.assign(payload, p);
         });
-        copyToClipboard(payload, btn, origHtml, "palette_copy", { palette: id, kind: "dynamic", mode: "auto" });
+        copyToClipboard(payload, btn, "palette_copy", { palette: id, kind: "dynamic", mode: "auto" });
       } else {
         if (!itemDetails[id]) itemDetails[id] = await fetchJSON(`preset/${id}.json`);
-        copyToClipboard(itemDetails[id], btn, origHtml, "preset_copy", { preset: id });
+        copyToClipboard(itemDetails[id], btn, "preset_copy", { preset: id });
       }
     } else if (picture) {
       const img = picture.querySelector("img");

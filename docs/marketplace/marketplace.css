@@ -16,11 +16,11 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border: var(--border-width) solid var(--background-modifier-border);
   border-radius: var(--radius-l);
   background-color: var(--background-primary);
   padding: 8px;
   corner-shape: superellipse(1.1);
+  transition: background-color 320ms;
 }
 .preset-info {
   display: flex;
@@ -36,10 +36,7 @@
 }
 .preset-description {
   color: var(--text-muted);
-}
-.preset-description a {
-  color: var(--text-normal);
-  font-weight: 500;
+  margin: 0;
 }
 
 .preset-preview {
@@ -48,31 +45,33 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   corner-shape: superellipse(1.1);
-  border: var(--border-width) solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-hover);
+  transition: background-color 320ms;
 }
 .preset-preview-content {
   display: block;
   transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
   margin-top: 16px;
   margin-left: 16px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 2px 2px rgba(0, 0, 0, 0.1),
+    0 0 4px rgba(0, 0, 0, 0.05);
   border-top-left-radius: 8px;
   user-select: none;
   corner-shape: superellipse(1.1);
   width: 100%;
 }
 
-.preset-preview img {
+img.preset-preview-content {
   cursor: zoom-in;
   width: 250%;
 }
-.preset-preview img:hover {
+img.preset-preview-content:hover {
   transform: translateX(-4px) translateY(-4px);
 }
 .preset-preview-loader {
   z-index: 1;
-  animation: placeholder 1s linear infinite;
-  transition: 320ms;
+  animation: placeholder 2s linear infinite;
   background: linear-gradient(90deg, var(--background-secondary), var(--background-primary), var(--background-secondary));
   background-size: 200% 100%;
   width: 100%;
@@ -113,7 +112,6 @@ body:not(.lightbox-active) #lightbox {
 }
 #lightbox {
   display: flex;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -134,7 +132,6 @@ body:not(.lightbox-active) #lightbox {
 }
 
 .lightbox-img {
-  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-m);
   max-width: 80vw;

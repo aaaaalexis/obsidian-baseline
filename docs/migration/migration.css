@@ -24,7 +24,6 @@ textarea {
   white-space: pre;
   corner-shape: superellipse(1.1);
   scrollbar-color: gray transparent;
-  scrollbar-width: thin;
 }
 
 .clear-btn {

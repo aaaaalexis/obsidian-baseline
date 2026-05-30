@@ -46,10 +46,9 @@
         <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Marketplace
       </h1>
       <div class="header-actions">
-        <a class="link-btn" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit preset</a>
         <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
         <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
-        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+        <button class="mode-switcher mod-invert" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
       </div>
     </div>
 
@@ -88,10 +87,11 @@
           </div>
         </div>
       </div>
-      <div class="setting-description">Choose and copy your favorite style preset, then import into Style Settings.</div>
+      <div class="setting-description">Choose and copy your favorite style preset or color palette, then import into Style Settings.</div>
       <div class="preset-actions">
         <input type="search" class="preset-search" placeholder="Search marketplace..." />
         <button class="preset-search-btn" popovertarget="preset-search-menu"><i data-lucide="list-filter"></i></button>
+        <a class="link-btn mod-cta" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit</a>
       </div>
       <div class="menu" id="preset-search-menu" popover>
         <ul>
@@ -130,7 +130,7 @@
         <div class="preset-info">
           <h1 class="preset-title"></h1>
           <a class="preset-author"></a>
-          <div class="preset-description"></div>
+          <p class="preset-description"></p>
         </div>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy preset" title="Copy preset"><i data-lucide="copy"></i>Copy</button>
@@ -156,8 +156,8 @@
         </div>
         <div class="preset-info">
           <h1 class="preset-title"></h1>
-          <div class="preset-author"></div>
-          <div class="preset-description"></div>
+          <a class="preset-author"></a>
+          <p class="preset-description"></p>
         </div>
         <div class="panel-actions">
           <button class="copy-btn" aria-label="Copy color palette" title="Copy color palette"><i data-lucide="copy"></i>Copy</button>

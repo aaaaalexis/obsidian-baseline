@@ -59,6 +59,8 @@
 
   line-height: 1.625;
   --line-height-tight: 1.3;
+
+  scrollbar-color: gray transparent;
 }
 
 :root[data-theme="light"] {
@@ -92,8 +94,8 @@
   --color-base-70: #696969;
   --color-base-100: #323232;
 
-  --shadow-s: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-l: inset 0 0.5px rgb(255, 255, 255), 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-s: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-l: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 :root[data-theme="dark"] {
@@ -129,8 +131,8 @@
   --color-base-70: #ababab;
   --color-base-100: #dbdbdb;
 
-  --shadow-s: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-l: inset 0 0.5px rgba(255, 255, 255, 0.1), 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-s: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-l: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
 *:not(svg) {
@@ -154,6 +156,7 @@ body {
   color: var(--text-normal);
   font-size: var(--font-ui-medium);
   font-family: "InterVariable", "Inter", system-ui, sans-serif;
+  transition: background-color 320ms;
 }
 
 .header {
@@ -166,11 +169,11 @@ body {
   gap: 8px;
   z-index: 1;
   view-transition-name: header;
+  user-select: none;
 }
 .header-title a {
   display: inline-flex;
   align-items: center;
-  color: var(--text-normal);
 }
 .header-title a[href=".."]:not(:hover) {
   color: var(--text-faint);
@@ -178,7 +181,9 @@ body {
 .header-title a svg.lucide-chevron-left {
   position: absolute;
   opacity: 0;
-  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25);
+  transition:
+    transform 320ms cubic-bezier(0.1, 0, 0.1, 1.25),
+    opacity 320ms;
   color: var(--text-faint);
 }
 .header-title a:hover svg.lucide-chevron-left {
@@ -195,15 +200,6 @@ body {
   gap: 16px;
   color: var(--text-muted);
   font-size: var(--font-ui-small);
-}
-.header button,
-.header .link-btn {
-  border: var(--border-width) solid var(--background-modifier-border);
-  background-color: var(--background-primary);
-}
-.header button:hover,
-.header .link-btn:hover {
-  background-color: var(--background-modifier-hover);
 }
 
 .content {
@@ -222,6 +218,7 @@ body {
   inset: 0;
   background: linear-gradient(var(--background-secondary) 80px, transparent);
   height: 128px;
+  pointer-events: none;
 }
 
 h1 {
@@ -251,10 +248,17 @@ strong {
 
 a {
   color: inherit;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 80ms;
 }
-a:hover {
+a:hover,
+p a {
   color: var(--text-normal);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-faint);
 }
 
 .panel-container {
@@ -286,10 +290,25 @@ button,
   corner-shape: superellipse(1.1);
   font-weight: 500;
   user-select: none;
+  transition: background-color 160ms;
 }
 button:hover,
 .link-btn:hover {
   background-color: var(--interactive-hover);
+}
+.mod-invert {
+  background-color: var(--background-primary);
+}
+.mod-invert:hover {
+  background-color: var(--color-base-05);
+}
+.mod-cta {
+  background-color: var(--color-base-100);
+  color: var(--color-base-00);
+}
+.mod-cta:hover {
+  background-color: hsl(from var(--color-base-100) h s calc(l + 5));
+  color: var(--color-base-25);
 }
 svg.lucide {
   width: 1em;
@@ -310,7 +329,7 @@ textarea::placeholder {
   position-area: bottom span-left;
   position-try: flip-block;
   opacity: 0;
-  transition: 160ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
+  transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
   margin: 6px -8px;
   box-shadow: var(--shadow-s);
   border: none;

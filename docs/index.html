@@ -47,17 +47,18 @@
       <div class="header-actions">
         <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
         <a href="https://github.com/aaaaalexis/obsidian-baseline" aria-label="View on GitHub" title="View on GitHub">GitHub</a>
-        <button class="mode-switcher" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
+        <button class="mode-switcher mod-invert" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
       </div>
     </div>
 
     <div class="content">
+      <div class="content-mask"></div>
       <div class="panel-container">
-        <a href="migration" class="link-panel">
+        <a href="migration" class="link-btn mod-invert">
           <i data-lucide="share"></i>
           <h1>Migrate from other themes</h1>
         </a>
-        <a href="marketplace" class="link-panel">
+        <a href="marketplace" class="link-btn mod-invert">
           <i data-lucide="sparkles"></i>
           <h1>Browse style presets in Marketplace</h1>
         </a>
@@ -65,26 +66,11 @@
     </div>
 
     <style>
-      .link-panel {
-        display: flex;
+      .link-btn {
         flex: 1;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-        border: var(--border-width) solid var(--background-modifier-border);
-        border-radius: var(--radius-l);
-        background-color: var(--background-primary);
         padding-inline: 2em;
-        text-decoration: none;
-        corner-shape: superellipse(1.1);
-        transition: 160ms;
         height: 480px;
-        user-select: none;
-      }
-
-      .link-panel:hover {
-        background-color: var(--background-modifier-hover);
+        font-size: var(--font-ui-medium);
       }
     </style>
 
@@ -93,7 +79,7 @@
       (() => {
         lucide.createIcons();
 
-        document.querySelectorAll(".link-panel").forEach((link) => {
+        document.querySelectorAll(".link-btn").forEach((link) => {
           link.addEventListener("click", () => {
             const label = link.querySelector("h1")?.textContent.trim() || link.href;
             if (typeof gtag === "function") gtag("event", "journey_click", { event_category: "navigation", event_label: label, transport_type: "beacon" });
