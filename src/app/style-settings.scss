@@ -1164,6 +1164,10 @@ settings:
 		type: variable-text
 		default: 160ms
 	-
+		id: hover-sidedock-solid
+		title: Solid background
+		type: class-toggle
+	-
 		id: hover-sidedock-active-off
 		title: Discard interactions
 		description: Always collapse hover sidebars after cursor leaving.
