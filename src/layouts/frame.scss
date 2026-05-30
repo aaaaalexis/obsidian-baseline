@@ -37,7 +37,7 @@ body.layout-frame:not(.is-mobile) {
     overflow: hidden;
   }
 
-  .workspace-ribbon.mod-left.is-collapsed {
+  .workspace-ribbon.mod-left {
     background-color: transparent !important;
     border-color: transparent;
   }
@@ -46,11 +46,16 @@ body.layout-frame:not(.is-mobile) {
   }
 
   // macOS fix
-  &.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
-    padding-top: var(--header-height);
-  }
-  &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.mod-left {
-    --ribbon-width: 74px;
+  &.mod-macos.is-hidden-frameless {
+    &.show-ribbon {
+      --frame-left-space: 0px;
+    }
+    .workspace-ribbon.mod-left {
+      padding-top: var(--header-height);
+    }
+    &:not(.hover-ribbon) .workspace-ribbon.mod-left {
+      --ribbon-width: 80px;
+    }
   }
 
   // Windows & Linux fix
