@@ -49,27 +49,6 @@ body.bold-folders .nav-folder-title {
   align-items: center;
 }
 
-// Panel actions style
-.nav-header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 8px 16px;
-}
-.nav-header .nav-buttons-container {
-  flex-wrap: nowrap;
-}
-.nav-header .search-input-container {
-  margin: 8px 0;
-  width: 100%;
-}
-.nav-action-button,
-.nav-action-button[aria-disabled="true"] {
-  position: relative;
-  height: 100%;
-}
-
 // Ribbon
 body.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
   padding-top: 0;
@@ -143,7 +122,7 @@ body:not(.is-mobile) {
   // Sidedock padding
   .mod-sidedock .workspace-leaf-content > .node-insert-event,
   .mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 2px 8px;
+    padding: 0 8px;
 
     > .node-insert-event {
       padding: 0;
@@ -152,6 +131,29 @@ body:not(.is-mobile) {
 }
 
 // Panel actions
+body:not(.is-mobile) .mod-sidedock .view-content .nav-header {
+  padding-inline: 0px;
+}
+.nav-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+}
+.nav-header .nav-buttons-container {
+  flex-wrap: nowrap;
+}
+.nav-header .search-input-container {
+  margin: 8px 0;
+  width: 100%;
+}
+.nav-action-button,
+.nav-action-button[aria-disabled="true"] {
+  position: relative;
+  height: 100%;
+}
+
 .nav-header,
 .nav-buttons-container,
 .nav-action-button,
@@ -162,7 +164,7 @@ body:not(.is-mobile) {
     background-color var(--anim-duration-fast);
 }
 
-body:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
+body:not(.nav-action-center, .nav-action-left, .nav-action-bottom) .mod-sidedock .nav-header:first-child:not(:hover) .nav-buttons-container {
   gap: 4px !important;
   padding: 0 !important;
   background-color: transparent !important;
@@ -191,16 +193,30 @@ body:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-con
     height: 0px;
   }
 }
-body.nav-action-left .mod-sidedock .workspace-leaf-content .nav-header:first-child {
+body.nav-action-left .mod-sidedock .nav-header:first-child {
   align-items: start;
 }
-body.nav-action-indicator .mod-sidedock .workspace-leaf-content .nav-header:first-child:not(:hover) .nav-buttons-container {
+body.nav-action-indicator .mod-sidedock .nav-header:first-child:not(:hover) .nav-buttons-container {
   background-color: var(--background-modifier-hover) !important;
   border-radius: 100vh;
   width: 48px;
 
   .nav-action-button {
     background-color: transparent;
+  }
+}
+body.nav-action-bottom {
+  &:not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split .workspace-tabs:last-of-type .nav-header {
+    margin-right: var(--tab-action-width);
+  }
+
+  .mod-sidedock .nav-header {
+    order: 99;
+    align-items: stretch;
+    padding: 8px;
+  }
+  .mod-sidedock .nav-header .nav-action-button {
+    flex: 1;
   }
 }
 

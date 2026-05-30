@@ -152,6 +152,7 @@ body.is-mobile {
 
     .nav-header {
       padding: 0;
+      align-items: stretch;
     }
     .search-row,
     .nav-header .search-input-container {
@@ -165,14 +166,18 @@ body.is-mobile {
       content: none !important;
     }
     .nav-action-button {
-      background-color: transparent;
-      min-width: 0;
-    }
-    .nav-action-button svg.svg-icon {
-      flex-shrink: 0;
+      flex: 1;
     }
     .nav-action-button.is-active {
       color: var(--interactive-accent);
+    }
+
+    .search-input-container {
+      --background-modifier-form-field: inherit;
+      --background-modifier-form-field-hover: inherit;
+    }
+    .search-input-container input {
+      border-width: var(--border-width);
     }
   }
 
