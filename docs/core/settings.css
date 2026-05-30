@@ -19,14 +19,6 @@
   cursor: not-allowed;
 }
 
-.setting-description {
-  margin: 0;
-  width: 100%;
-  color: var(--text-muted);
-  font-size: var(--font-ui-small);
-  text-align: center;
-}
-
 .setting {
   display: flex;
   border-radius: var(--radius-l) var(--radius-l) 0 0;

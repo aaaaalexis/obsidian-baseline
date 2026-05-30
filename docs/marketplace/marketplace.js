@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // --- State & Config ---
 
-  const container = $(".panel-container");
+  const container = $(".content");
   const searchInput = $(".preset-search");
   const searchBtn = $(".preset-search-btn");
   const searchMenu = $("#preset-search-menu");

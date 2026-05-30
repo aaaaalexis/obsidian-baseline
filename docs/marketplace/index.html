@@ -51,69 +51,64 @@
         <button class="mode-switcher mod-invert" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
       </div>
     </div>
-
-    <div class="content">
-      <div class="content-mask"></div>
-      <div class="setting-container" title='Click the "Import" button in Style Settings to import copied style preset or color palette.'>
-        <div class="setting">
-          <div class="setting-sidebar">
+    <div class="setting-container" title='Click the "Import" button in Style Settings to import copied style preset or color palette.'>
+      <div class="setting">
+        <div class="setting-sidebar">
+          <div class="setting-search">
+            <i data-lucide="search"></i>
+            Search settings...
+          </div>
+          <div class="sidebar-section">
+            <div class="sidebar-title">Community plugins</div>
+            <div class="sidebar-link is-active">Style Settings</div>
+          </div>
+        </div>
+        <div class="setting-content">
+          <div class="setting-header">
             <div class="setting-search">
               <i data-lucide="search"></i>
-              Search settings...
+              Search Style Settings...
             </div>
-            <div class="sidebar-section">
-              <div class="sidebar-title">Community plugins</div>
-              <div class="sidebar-link is-active">Style Settings</div>
+            <div class="setting-actions">
+              <button>Import</button>
+              <button>Export</button>
             </div>
           </div>
-          <div class="setting-content">
-            <div class="setting-header">
-              <div class="setting-search">
-                <i data-lucide="search"></i>
-                Search Style Settings...
-              </div>
-              <div class="setting-actions">
-                <button>Import</button>
-                <button>Export</button>
-              </div>
-            </div>
-            <div class="setting-list">
-              <div class="setting-item">
-                <i data-lucide="chevron-right"></i>
-                <div class="setting-item-name">Baseline</div>
-                <div class="setting-item-actions"><i data-lucide="rotate-ccw"></i><i data-lucide="cloud-download"></i></div>
-              </div>
+          <div class="setting-list">
+            <div class="setting-item">
+              <i data-lucide="chevron-right"></i>
+              <div class="setting-item-name">Baseline</div>
+              <div class="setting-item-actions"><i data-lucide="rotate-ccw"></i><i data-lucide="cloud-download"></i></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="setting-description">Choose and copy your favorite style preset or color palette, then import into Style Settings.</div>
-      <div class="preset-actions">
-        <input type="search" class="preset-search" placeholder="Search marketplace..." />
-        <button class="preset-search-btn" popovertarget="preset-search-menu"><i data-lucide="list-filter"></i></button>
-        <a class="link-btn mod-cta" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit</a>
-      </div>
-      <div class="menu" id="preset-search-menu" popover>
-        <ul>
-          <li class="is-info">
-            <div class="info-description">Filter</div>
-          </li>
-          <li class="is-active" data-filter="preset"><i data-lucide="paintbrush"></i>Style Preset<i data-lucide="check"></i></li>
-          <li class="is-active" data-filter="palette"><i data-lucide="palette"></i>Color Palette<i data-lucide="check"></i></li>
-        </ul>
-        <hr />
-        <ul>
-          <li class="is-info">
-            <div class="info-description">Sort</div>
-          </li>
-          <li class="is-active" data-sort="new"><i data-lucide="calendar-arrow-down"></i>New → Old<i data-lucide="check"></i></li>
-          <li data-sort="old"><i data-lucide="calendar-arrow-up"></i>Old → new<i data-lucide="check"></i></li>
-          <li data-sort="a-z"><i data-lucide="arrow-down-a-z"></i>A → Z<i data-lucide="check"></i></li>
-          <li data-sort="z-a"><i data-lucide="arrow-up-a-z"></i>Z → A<i data-lucide="check"></i></li>
-        </ul>
-      </div>
-      <div class="panel-container"></div>
     </div>
+    <div class="preset-actions">
+      <input type="search" class="preset-search" placeholder="Search marketplace..." />
+      <button class="preset-search-btn" popovertarget="preset-search-menu"><i data-lucide="list-filter"></i></button>
+      <a class="link-btn mod-cta" href="https://github.com/aaaaalexis/obsidian-baseline/blob/main/docs/marketplace/README.md"><i data-lucide="plus"></i>Submit</a>
+    </div>
+    <div class="menu" id="preset-search-menu" popover>
+      <ul>
+        <li class="is-info">
+          <div class="info-description">Filter</div>
+        </li>
+        <li class="is-active" data-filter="preset"><i data-lucide="paintbrush"></i>Style Preset<i data-lucide="check"></i></li>
+        <li class="is-active" data-filter="palette"><i data-lucide="palette"></i>Color Palette<i data-lucide="check"></i></li>
+      </ul>
+      <hr />
+      <ul>
+        <li class="is-info">
+          <div class="info-description">Sort</div>
+        </li>
+        <li class="is-active" data-sort="new"><i data-lucide="calendar-arrow-down"></i>New → Old<i data-lucide="check"></i></li>
+        <li data-sort="old"><i data-lucide="calendar-arrow-up"></i>Old → new<i data-lucide="check"></i></li>
+        <li data-sort="a-z"><i data-lucide="arrow-down-a-z"></i>A → Z<i data-lucide="check"></i></li>
+        <li data-sort="z-a"><i data-lucide="arrow-up-a-z"></i>Z → A<i data-lucide="check"></i></li>
+      </ul>
+    </div>
+    <div class="content"></div>
     <div id="lightbox" popover>
       <img class="lightbox-img" />
       <div class="lightbox-title"></div>

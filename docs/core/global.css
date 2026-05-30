@@ -7,11 +7,6 @@
     color: var(--text-normal);
   }
 }
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 @keyframes workspaceLeafIn {
   from {
     transform: scale(0.95);
@@ -151,7 +146,7 @@ body {
   background-color: var(--background-secondary);
   padding-block: 32px;
   width: 95vw;
-  max-width: 1024px;
+  max-width: 1200px;
   min-height: 100vh;
   color: var(--text-normal);
   font-size: var(--font-ui-medium);
@@ -167,7 +162,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  z-index: 1;
+  z-index: 2;
   view-transition-name: header;
   user-select: none;
 }
@@ -204,21 +199,9 @@ body {
 
 .content {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
   view-transition-name: content;
-}
-.content-mask {
-  position: fixed;
-  opacity: 0;
-  animation: fadeIn linear forwards;
-  animation-timeline: scroll();
-  animation-range: 0 320px;
-  view-transition-name: disabled;
-  inset: 0;
-  background: linear-gradient(var(--background-secondary) 80px, transparent);
-  height: 128px;
-  pointer-events: none;
 }
 
 h1 {
@@ -261,11 +244,6 @@ textarea::placeholder {
   color: var(--text-faint);
 }
 
-.panel-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
 .panel-actions {
   display: flex;
   align-items: center;

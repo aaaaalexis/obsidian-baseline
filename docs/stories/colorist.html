@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Handing you the brush</title>
+    <title>A Living Palette</title>
     <link rel="icon" href="../core/favicon.svg" type="image/svg+xml" />
 
     <script>
@@ -51,180 +51,209 @@
       </div>
     </div>
 
-    <div class="content">
-      <div class="content-mask"></div>
-
-      <div class="stories-header">
-        <h1 class="stories-title">Handing you the brush</h1>
-        <div class="stories-description">On color schemes, why they're going away, and what comes next.</div>
-      </div>
-
-      <div class="stories-content">
-        <p>Every color scheme in Baseline was a decision I made for you.</p>
-
-        <p>Nord. Gruvbox. Catppuccin. Rosé Pine. I picked each one, hand-tuned the values, shipped it, and quietly committed to maintaining it forever. The list grew. And with it, a problem I hadn't anticipated: the more schemes I added, the less any of them felt like yours.</p>
-
-        <p>Picking a name from a dropdown isn't customizing your theme. It's adopting someone else's taste and hoping it fits.</p>
-
-        <hr />
-
-        <h2>What's new</h2>
-
-        <p>Instead of a list of schemes, you now get three controls: <strong>Spectrum</strong> picks your color, <strong>Vibrancy</strong> sets how saturated it feels, and <strong>Clarity</strong> shapes the overall contrast.</p>
-
-        <p>From those three values, Baseline builds your entire palette — backgrounds, tints, borders, text — using OKLCH, a color model that matches how humans actually perceive color. The results are cohesive in a way that's genuinely hard to achieve by hand.</p>
-
-        <div class="widget-container colorist-widget">
-          <div class="widget-option">
-            <div class="option-item is-active">Baseline</div>
-            <div class="option-item">Material</div>
-            <div class="option-item">Radiance</div>
-            <div class="option-item">Softlight</div>
-          </div>
-          <div class="widget">
-            <div class="mod-sidedock">
-              <div class="titlebar">
-                <div class="titlebar-button titlebar-close"></div>
-                <div class="titlebar-button titlebar-minimize"></div>
-                <div class="titlebar-button titlebar-fullscreen"></div>
-                <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
-              </div>
-              <div class="workspace-tab-header-container">
-                <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
-                <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
-                <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
-              </div>
-            </div>
-            <div class="mod-root">
-              <div class="workspace-tab-header-container">
-                <div class="workspace-tab-header is-active">Brand New Baseline</div>
-                <div class="clickable-icon"><i data-lucide="plus"></i></div>
-              </div>
-              <div class="workspace-tab-container">
-                <div class="inline-title">Brand New Baseline</div>
-                <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
-                <div class="tags">
-                  <span class="tag">#baseline</span>
-                  <span class="tag">#cupertino</span>
-                  <span class="tag">#obsidian</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="widget-control">
-            <div class="control-item">
-              <span class="control-name">Clarity</span>
-              <span class="control-value">1.00×</span>
-              <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
-            </div>
-            <div class="control-item">
-              <span class="control-name">Vibrancy</span>
-              <span class="control-value">0.00×</span>
-              <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
-            </div>
-            <div class="control-item">
-              <span class="control-name">Spectrum</span>
-              <span class="control-value">0.0°</span>
-              <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
-            </div>
-          </div>
-        </div>
-
-        <p>The Signature shapes the underlying palette structure — how contrast is distributed, how much color bleeds into neutral surfaces. Think of it as the character of the theme, and the three sliders as your voice within it.</p>
-
-        <hr />
-
-        <h2>The community part</h2>
-
-        <p>
-          The old schemes haven't disappeared. They've moved to <a href="#"><u>Baseline Marketplace</u></a
-          >, both as converted dynamic versions and as their original static builds.
-        </p>
-
-        <p>But more importantly: so can yours.</p>
-
-        <p>The Marketplace was always meant to be a community space. That part was harder to believe when the color section was a fixed list I personally maintained. Now it isn't. Anyone can submit a palette. If you land on something you love, you can share it — and someone else can load it in one click, then adjust the Spectrum to make it their own.</p>
-
-        <p>The schemes I shipped were a ceiling. This is an open floor.</p>
-
-        <div class="widget-container preset-widget">
-          <div class="widget-option">
-            <div class="option-item is-active">Catppuccin</div>
-            <div class="option-item">Flexoki</div>
-            <div class="option-item">Melange</div>
-            <div class="option-item">Nord</div>
-          </div>
-          <div class="widget">
-            <div class="mod-sidedock">
-              <div class="titlebar">
-                <div class="titlebar-button titlebar-close"></div>
-                <div class="titlebar-button titlebar-minimize"></div>
-                <div class="titlebar-button titlebar-fullscreen"></div>
-                <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
-              </div>
-              <div class="workspace-tab-header-container">
-                <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
-                <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
-                <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
-              </div>
-            </div>
-            <div class="mod-root">
-              <div class="workspace-tab-header-container">
-                <div class="workspace-tab-header is-active">Brand New Baseline</div>
-                <div class="clickable-icon"><i data-lucide="plus"></i></div>
-              </div>
-              <div class="workspace-tab-container">
-                <div class="inline-title">Brand New Baseline</div>
-                <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
-                <div class="tags">
-                  <span class="tag">#baseline</span>
-                  <span class="tag">#cupertino</span>
-                  <span class="tag">#obsidian</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="widget-control">
-            <div class="control-item is-label">
-              <span class="control-name">Signature</span>
-              <span class="control-value">Baseline</span>
-            </div>
-            <div class="control-item">
-              <span class="control-name">Clarity</span>
-              <span class="control-value">1.00×</span>
-              <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
-            </div>
-            <div class="control-item">
-              <span class="control-name">Vibrancy</span>
-              <span class="control-value">0.00×</span>
-              <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
-            </div>
-            <div class="control-item">
-              <span class="control-name">Spectrum</span>
-              <span class="control-value">0.0°</span>
-              <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <h2>One honest limitation</h2>
-
-        <p>The dynamic system derives everything from a single hue, which means it produces cohesive, monochromatic-leaning results. If you want a multi-color setup — say, a warm background with a cool accent — that's not something the sliders can do. For that, the static presets on Marketplace are still the right tool.</p>
-
-        <p>Your existing Style Settings config keeps working. The old variables are preserved as a compatibility layer until the next major version.</p>
-
-        <p>Everything else is better. And for the first time, it's actually yours.</p>
-      </div>
+    <div class="stories-header">
+      <h1 class="stories-title">A Living Palette</h1>
+      <div class="stories-description">TBD.</div>
     </div>
+
+    <div class="content">
+      <p>Color schemes in Baseline were simple and reliable. You picked a preset. The vault changed. Done. But we all knoetheming is a rabbit hole.</p>
+
+      <p><i>“This one's nice. Wait, this is better.”</i> (30 seconds later) <i>“Actually, this one fits better. Let's try that too... Maybe another one?”</i></p>
+
+      <div class="widget-container list-widget">
+        <div class="widget">
+          <ul>
+            <li>Atom</li>
+            <li>Ayu</li>
+            <li>Catppuccin</li>
+            <li>Dracula</li>
+            <li>Everforest</li>
+            <li>Flexoki</li>
+            <li>Gruvbox</li>
+          </ul>
+        </div>
+
+        <div class="widget-description">There are 47 options in total. How did we get here?</div>
+      </div>
+
+      <p>Eventually you land somewhere only because you're exhausted. None of them actually hit. So you're back to square one tomorrow. Did you even complete the task you opened Obsidian for?</p>
+
+      <hr />
+
+      <h2>Meet Dynamic Palette</h2>
+
+      <p>Forget the list. Now color is driven by variables. Together they form a complete palette that breathes with your vault.</p>
+
+      <ul>
+        <li><strong>Signature</strong> sets the harmony of the palette.</li>
+        <li><strong>Clarity</strong> shapes how far light and dark pull apart.</li>
+        <li><strong>Vibrancy</strong> decides whether the palette feels electric or refined.</li>
+        <li><strong>Spectrum</strong> shifts the mood from neon dream to warm dawn.</li>
+      </ul>
+
+      <div class="widget-container colorist-widget">
+        <div class="widget-option">
+          <div class="option-item is-active">Baseline</div>
+          <div class="option-item">Material</div>
+          <div class="option-item">Radiance</div>
+          <div class="option-item">Softlight</div>
+        </div>
+        <div class="widget">
+          <div class="mod-sidedock">
+            <div class="titlebar">
+              <div class="titlebar-button titlebar-close"></div>
+              <div class="titlebar-button titlebar-minimize"></div>
+              <div class="titlebar-button titlebar-fullscreen"></div>
+              <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
+            </div>
+            <div class="workspace-tab-header-container">
+              <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
+              <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
+              <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+            </div>
+          </div>
+          <div class="mod-root">
+            <div class="workspace-tab-header-container">
+              <div class="workspace-tab-header is-active">Brand New Baseline</div>
+              <div class="clickable-icon"><i data-lucide="plus"></i></div>
+            </div>
+            <div class="workspace-tab-container">
+              <div class="inline-title">Brand New Baseline</div>
+              <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
+              <div class="tags">
+                <span class="tag">#baseline</span>
+                <span class="tag">#cupertino</span>
+                <span class="tag">#obsidian</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-control">
+          <div class="control-item">
+            <span class="control-name">Clarity</span>
+            <span class="control-value">1.00×</span>
+            <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
+          </div>
+          <div class="control-item">
+            <span class="control-name">Vibrancy</span>
+            <span class="control-value">0.00×</span>
+            <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
+          </div>
+          <div class="control-item">
+            <span class="control-name">Spectrum</span>
+            <span class="control-value">0.0°</span>
+            <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
+          </div>
+        </div>
+      </div>
+
+      <p>Think of Signature as the character of the theme. Clarity, Vibrancy, and Spectrum are your voice inside it.</p>
+
+      <hr />
+
+      <h2>Presets Aren't Gone</h2>
+
+      <p>The presets you know are still here. They have been translated into the new system. You will find them on <a href="../marketplace">Baseline Marketplace ↗</a> both as converted dynamic recipes and as their original static builds.</p>
+
+      <div class="widget-container colorist-widget preset-widget">
+        <div class="widget-option">
+          <div class="option-item is-active">Catppuccin</div>
+          <div class="option-item">Flexoki</div>
+          <div class="option-item">Melange</div>
+          <div class="option-item">Nord</div>
+        </div>
+        <div class="widget">
+          <div class="mod-sidedock">
+            <div class="titlebar">
+              <div class="titlebar-button titlebar-close"></div>
+              <div class="titlebar-button titlebar-minimize"></div>
+              <div class="titlebar-button titlebar-fullscreen"></div>
+              <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
+            </div>
+            <div class="workspace-tab-header-container">
+              <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
+              <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
+              <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+            </div>
+          </div>
+          <div class="mod-root">
+            <div class="workspace-tab-header-container">
+              <div class="workspace-tab-header is-active">Brand New Baseline</div>
+              <div class="clickable-icon"><i data-lucide="plus"></i></div>
+            </div>
+            <div class="workspace-tab-container">
+              <div class="inline-title">Brand New Baseline</div>
+              <p>Welcome to Baseline, a foundational Obsidian theme as the baseline of your thoughts.</p>
+              <div class="tags">
+                <span class="tag">#baseline</span>
+                <span class="tag">#cupertino</span>
+                <span class="tag">#obsidian</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-control">
+          <div class="control-item is-label">
+            <span class="control-name">Signature</span>
+            <span class="control-value">Baseline</span>
+          </div>
+          <div class="control-item">
+            <span class="control-name">Clarity</span>
+            <span class="control-value">1.00×</span>
+            <input type="range" id="colorist-l" min="0.5" max="1.5" value="1" step="0.05" />
+          </div>
+          <div class="control-item">
+            <span class="control-name">Vibrancy</span>
+            <span class="control-value">0.00×</span>
+            <input type="range" id="colorist-c" min="0" max="2" value="0" step="0.1" />
+          </div>
+          <div class="control-item">
+            <span class="control-name">Spectrum</span>
+            <span class="control-value">0.0°</span>
+            <input type="range" id="colorist-h" min="0" max="360" value="0" step="1" />
+          </div>
+        </div>
+      </div>
+
+      <p>The Marketplace was always meant to be a shared studio. That promise felt distant when the color section was a fixed list, curated in one place.</p>
+
+      <p>Anyone can submit a palette. When you discover something you love, you can share it. Someone else can load it in one click, then tweak it to make it their own.</p>
+
+      <p>Baseline is a foundation you build upon. Now your colors can scale right alongside it.</p>
+    </div>
+    <a href="#" class="top-btn"><i data-lucide="arrow-up"></i>Back to Top</a>
 
     <style>
       .widget-container {
+        --background-primary-w: var(--background-primary);
+        --background-secondary-w: var(--background-secondary);
+        --background-modifier-border-w: var(--background-modifier-border);
+        --text-faint-w: var(--text-faint);
+        --text-muted-w: var(--text-muted);
+        --text-normal-w: var(--text-normal);
+
         display: flex;
         flex-direction: column;
         gap: 16px;
         user-select: none;
+      }
+
+      .widget {
+        display: flex;
+        border-radius: var(--radius-m);
+        background: var(--background-secondary-w);
+        overflow: hidden;
+        color: var(--text-normal-w);
+        font-size: var(--font-ui-small);
+        border: var(--border-width) solid var(--background-modifier-border-w);
+        corner-shape: superellipse(1.1);
+      }
+
+      .widget-description {
+        text-align: center;
+        color: var(--text-faint);
+        font-size: var(--font-ui-small);
       }
 
       .widget-option {
@@ -254,6 +283,7 @@
         display: flex;
         gap: 16px;
         padding-inline: 16px;
+        padding-bottom: 16px;
       }
       .control-item {
         display: flex;
@@ -310,15 +340,24 @@
         opacity: 0.5;
       }
 
-      .widget {
-        display: flex;
-        border-radius: var(--radius-m);
-        background: var(--background-secondary-w);
-        overflow: hidden;
-        color: var(--text-normal-w);
-        font-size: var(--font-ui-small);
-        border: var(--border-width) solid var(--background-modifier-border-w);
-        corner-shape: superellipse(1.1);
+      .list-widget .widget {
+        justify-content: center;
+        padding-top: 48px;
+      }
+      .list-widget ul {
+        box-shadow: var(--shadow-s);
+        border-radius: var(--radius-m) var(--radius-m) 0 0;
+        background-color: var(--background-primary);
+        padding: 4px;
+        width: 240px;
+        color: var(--text-muted);
+        margin: 0;
+        gap: 0;
+        list-style: none;
+      }
+      .list-widget ul li {
+        padding: 6px 12px;
+        line-height: var(--line-height-tight);
       }
 
       .titlebar {
@@ -578,9 +617,9 @@
           w.setProperty("--color-accent-w", `oklch(0.65 ${Math.max(0.15, cVal * 0.1)} ${hVal + sigd.h})`);
         };
 
-        const uAll = () => document.querySelectorAll(".widget-container").forEach(uWidget);
+        const uAll = () => document.querySelectorAll(".colorist-widget").forEach(uWidget);
 
-        document.querySelectorAll(".widget-container").forEach((container) => {
+        document.querySelectorAll(".colorist-widget").forEach((container) => {
           container.querySelectorAll("input[type=range]").forEach((e) => {
             if (!container.classList.contains("preset-widget")) e.addEventListener("input", () => uWidget(container));
           });
