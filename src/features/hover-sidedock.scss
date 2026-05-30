@@ -79,6 +79,10 @@ body:not(.is-mobile).hover-sidedock {
   // macOS fix
   &.tab-top-left-stacked.mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split.is-sidedock-collapsed .mod-top-left-space .workspace-tab-header-container {
     padding-top: var(--header-height);
+    transition-delay: var(--hover-sidedock-delay);
+  }
+  &.tab-top-left-stacked.mod-macos.is-hidden-frameless .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    transition: 0s;
   }
 }
 
