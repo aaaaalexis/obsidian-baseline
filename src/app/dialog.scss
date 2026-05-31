@@ -77,6 +77,7 @@ body.is-phone {
       margin: 8px auto;
       position: absolute;
       inset: 0;
+      z-index: 1;
     }
     .menu-scroll {
       max-height: 80vh;

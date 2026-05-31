@@ -91,7 +91,15 @@ body.is-mobile {
     .mobile-tab-preview:before {
       content: none;
     }
-    &.is-mobile .prompt {
+
+    &.theme-light .menu {
+      --menu-background: var(--background-secondary);
+    }
+    .menu,
+    .suggestion-container {
+      background-color: var(--menu-background);
+    }
+    .prompt {
       background-color: var(--prompt-background);
     }
   }
