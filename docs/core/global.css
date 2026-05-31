@@ -7,6 +7,11 @@
     color: var(--text-normal);
   }
 }
+@keyframes fadeIn {
+  to {
+    margin: var(--spacing-16) 0px;
+  }
+}
 @keyframes workspaceLeafIn {
   from {
     transform: scale(0.95);
@@ -42,6 +47,17 @@
   --text-faint: var(--color-base-50);
 
   --border-width: 0.5px;
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.5rem;
+  --spacing-6: 2rem;
+  --spacing-8: 3rem;
+  --spacing-10: 4rem;
+  --spacing-12: 6rem;
+  --spacing-16: 8rem;
 
   --input-radius: var(--radius-s);
   --radius-s: 8px;
@@ -161,10 +177,15 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  z-index: 2;
+  gap: 16px;
+  z-index: 1;
   view-transition-name: header;
   user-select: none;
+  margin: var(--spacing-16) var(--spacing-16);
+
+  animation: fadeIn 160ms cubic-bezier(0.1, 0, 0.1, 1.25) both;
+  timeline-trigger: --header-trigger scroll() 160px 100%;
+  animation-trigger: --header-trigger play-forwards play-backwards;
 }
 .header-title a {
   display: inline-flex;
@@ -248,6 +269,7 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   gap: 4px;
+  justify-content: space-between;
 }
 
 button,
@@ -296,6 +318,15 @@ svg.lucide {
 .copy-btn {
   flex: 1;
 }
+.top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  height: 128px;
+}
 
 input::placeholder,
 textarea::placeholder {
@@ -305,7 +336,7 @@ textarea::placeholder {
 /* Menu */
 .menu {
   position-area: bottom span-left;
-  position-try: flip-block;
+  position-try: flip-block, flip-inline;
   opacity: 0;
   transition: 320ms cubic-bezier(0.1, 0, 0.1, 1.25) allow-discrete;
   margin: 6px -8px;

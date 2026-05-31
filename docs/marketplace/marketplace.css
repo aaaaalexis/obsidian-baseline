@@ -80,8 +80,7 @@ img.preset-preview-content:hover {
 
 .preset-actions {
   display: inline-flex;
-  position: sticky;
-  top: 72px;
+  flex-basis: 100%;
   gap: 4px;
   border: var(--border-width) solid var(--background-modifier-border);
   border-radius: var(--radius-l);
@@ -179,7 +178,7 @@ body:not(.lightbox-active) #lightbox {
   padding: 0 12px;
 }
 .setting-actions button:first-child {
-  animation: pulse 3s infinite alternate;
+  animation: pulse 1s infinite alternate;
 }
 .setting-item-name {
   font-size: var(--font-ui-small);

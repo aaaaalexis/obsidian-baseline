@@ -118,5 +118,5 @@ textarea {
 }
 .setting-actions button:last-child,
 .setting-item-actions svg:last-child {
-  animation: pulse 3s infinite alternate;
+  animation: pulse 1s infinite alternate;
 }

@@ -34,13 +34,3 @@ hr {
   margin: 48px auto;
   width: 50%;
 }
-
-.top-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-size: var(--font-ui-small);
-  height: 128px;
-}

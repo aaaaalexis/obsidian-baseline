@@ -1,22 +1,7 @@
-/* Settings Replica */
-@media (max-width: 480px) {
-  .setting-container {
-    display: none;
-  }
-}
-
 .setting-container {
-  cursor: not-allowed;
-  border: var(--border-width) solid var(--background-modifier-border);
-  border-radius: var(--radius-l);
-  corner-shape: superellipse(1.1);
-  background-color: var(--background-primary);
   padding: 32px 32px 0;
-  overflow: hidden;
-  user-select: none;
-}
-.setting-container * {
-  cursor: not-allowed;
+  min-width: unset;
+  max-width: unset;
 }
 
 .setting {

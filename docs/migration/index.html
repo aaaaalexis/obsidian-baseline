@@ -43,7 +43,12 @@
   <body>
     <div class="header">
       <h1 class="header-title">
-        <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Migration
+        <a href="..">
+          <i data-lucide="chevron-left"></i>
+          Baseline for Obsidian
+        </a>
+        <span>/</span>
+        Migration
       </h1>
       <div class="header-actions">
         <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
@@ -51,7 +56,50 @@
         <button class="mode-switcher mod-invert" aria-label="Change appearance" title="Change appearance" data-mode="light"></button>
       </div>
     </div>
-    <div class="setting-container" title='Click the "Export" on top or the cloud icon for selected theme to export your settings.'>
+
+    <div class="content">
+      <div class="input-panel">
+        <textarea
+          class="prefs-input"
+          placeholder='{
+  "minimal-style@@bg1@@light": "#FFFFFF",
+  "minimal-style@@tabs-style": "tabs-modern"
+}
+
+
+Supported themes:
+- Minimal
+- AnuPpuccin
+- Border
+- Sanctum
+- Things 2
+
+Last updated: 2025-09-09'
+        ></textarea>
+        <div class="panel-actions">
+          <button class="clear-btn mod-invert">Clear</button>
+          <button class="help-btn mod-invert" popovertarget="help-menu">
+            <i data-lucide="help-circle"></i>
+            Help
+          </button>
+        </div>
+        <div class="warning-container"></div>
+      </div>
+      <div class="output-panel">
+        <textarea class="prefs-output" disabled readonly></textarea>
+        <div class="panel-actions">
+          <button class="copy-btn mod-invert">
+            <i data-lucide="copy"></i>
+            Copy
+          </button>
+          <a class="download-btn link-btn mod-invert" href="#" download="baseline-style-settings.json">Download</a>
+        </div>
+        <div class="conflict-container"></div>
+        <div class="unsupported-container"></div>
+      </div>
+    </div>
+
+    <div class="setting-container menu" title='Click the "Export" on top or the cloud icon for selected theme to export your settings.' id="help-menu" popover>
       <div class="setting">
         <div class="setting-sidebar">
           <div class="setting-search">
@@ -78,45 +126,13 @@
             <div class="setting-item">
               <i data-lucide="chevron-right"></i>
               <div class="setting-item-name">Theme</div>
-              <div class="setting-item-actions"><i data-lucide="rotate-ccw"></i><i data-lucide="cloud-download"></i></div>
+              <div class="setting-item-actions">
+                <i data-lucide="rotate-ccw"></i>
+                <i data-lucide="cloud-download"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="content">
-      <div class="input-panel">
-        <textarea
-          class="prefs-input"
-          placeholder='{
-  "minimal-style@@bg1@@light": "#FFFFFF",
-  "minimal-style@@tabs-style": "tabs-modern"
-}
-
-
-Supported themes:
-- Minimal
-- AnuPpuccin
-- Border
-- Sanctum
-- Things 2
-
-Last updated: 2025-09-09'
-        ></textarea>
-        <div class="panel-actions">
-          <button class="clear-btn mod-invert">Clear</button>
-        </div>
-        <div class="warning-container"></div>
-      </div>
-      <div class="output-panel">
-        <textarea class="prefs-output" disabled readonly></textarea>
-        <div class="panel-actions">
-          <button class="copy-btn mod-invert"><i data-lucide="copy"></i>Copy</button>
-          <a class="download-btn link-btn mod-invert" href="#" download="baseline-style-settings.json">Download</a>
-        </div>
-        <div class="conflict-container"></div>
-        <div class="unsupported-container"></div>
       </div>
     </div>
 
