@@ -13,6 +13,7 @@
 
     --inline-title-color: inherit;
     --inline-title-size: 2em;
+    --inline-title-line-height: var(--line-height-tight);
     --inline-title-font: var(--font-text-override), "Instrument Serif";
 
     --h1-size: 1.125em;
@@ -409,7 +410,6 @@
   .inline-title:not([data-level]),
   .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
   .HyperMD-header {
-    letter-spacing: normal !important;
     text-wrap: pretty;
   }
 
