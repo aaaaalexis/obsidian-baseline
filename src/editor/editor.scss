@@ -11,6 +11,7 @@
     --inline-title-margin-bottom: calc(0.5em * var(--readable-spacing-modifier, 1));
 
     --inline-title-color: inherit;
+    --inline-title-line-height: var(--line-height-tight);
     --inline-title-font: var(--font-text-override), "Instrument Serif";
 
     --h1-font: var(--font-text-override), "Instrument Serif";
