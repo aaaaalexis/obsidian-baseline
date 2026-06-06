@@ -42,7 +42,12 @@
   <body>
     <div class="header">
       <h1 class="header-title">
-        <a href=".."><i data-lucide="chevron-left"></i>Baseline for Obsidian</a><span>/</span>Stories
+        <a href="..">
+          <i data-lucide="chevron-left"></i>
+          Baseline for Obsidian
+        </a>
+        <span>/</span>
+        A Living Palette
       </h1>
       <div class="header-actions">
         <a href="https://buymeacoffee.com/sevenaxis" aria-label="Support development" title="Support development">Support</a>
@@ -51,15 +56,16 @@
       </div>
     </div>
 
-    <div class="stories-header">
-      <h1 class="stories-title">A Living Palette</h1>
-      <div class="stories-description">TBD.</div>
-    </div>
-
     <div class="content">
+      <h2>Meet Dynamic Palette</h2>
+
       <p>Color schemes in Baseline were simple and reliable. You picked a preset. The vault changed. Done. But we all knoetheming is a rabbit hole.</p>
 
-      <p><i>“This one's nice. Wait, this is better.”</i> (30 seconds later) <i>“Actually, this one fits better. Let's try that too... Maybe another one?”</i></p>
+      <p>
+        <i>“This one's nice. Wait, this is better.”</i>
+        (30 seconds later)
+        <i>“Actually, this one fits better. Let's try that too... Maybe another one?”</i>
+      </p>
 
       <div class="widget-container list-widget">
         <div class="widget">
@@ -86,10 +92,22 @@
       <p>Forget the list. Now color is driven by variables. Together they form a complete palette that breathes with your vault.</p>
 
       <ul>
-        <li><strong>Signature</strong> sets the harmony of the palette.</li>
-        <li><strong>Clarity</strong> shapes how far light and dark pull apart.</li>
-        <li><strong>Vibrancy</strong> decides whether the palette feels electric or refined.</li>
-        <li><strong>Spectrum</strong> shifts the mood from neon dream to warm dawn.</li>
+        <li>
+          <strong>Signature</strong>
+          sets the harmony of the palette.
+        </li>
+        <li>
+          <strong>Clarity</strong>
+          shapes how far light and dark pull apart.
+        </li>
+        <li>
+          <strong>Vibrancy</strong>
+          decides whether the palette feels electric or refined.
+        </li>
+        <li>
+          <strong>Spectrum</strong>
+          shifts the mood from neon dream to warm dawn.
+        </li>
       </ul>
 
       <div class="widget-container colorist-widget">
@@ -108,9 +126,18 @@
               <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
             </div>
             <div class="workspace-tab-header-container">
-              <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
-              <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
-              <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+              <div class="workspace-tab-header is-active">
+                <i data-lucide="folder"></i>
+                Files
+              </div>
+              <div class="workspace-tab-header">
+                <i data-lucide="search"></i>
+                Search
+              </div>
+              <div class="workspace-tab-header">
+                <i data-lucide="bookmark"></i>
+                Bookmarks
+              </div>
             </div>
           </div>
           <div class="mod-root">
@@ -154,7 +181,11 @@
 
       <h2>Presets Aren't Gone</h2>
 
-      <p>The presets you know are still here. They have been translated into the new system. You will find them on <a href="../marketplace">Baseline Marketplace ↗</a> both as converted dynamic recipes and as their original static builds.</p>
+      <p>
+        The presets you know are still here. They have been translated into the new system. You will find them on
+        <a href="../marketplace">Baseline Marketplace ↗</a>
+        both as converted dynamic recipes and as their original static builds.
+      </p>
 
       <div class="widget-container colorist-widget preset-widget">
         <div class="widget-option">
@@ -172,9 +203,18 @@
               <div class="clickable-icon"><i data-lucide="panel-left"></i></div>
             </div>
             <div class="workspace-tab-header-container">
-              <div class="workspace-tab-header is-active"><i data-lucide="folder"></i>Files</div>
-              <div class="workspace-tab-header"><i data-lucide="search"></i>Search</div>
-              <div class="workspace-tab-header"><i data-lucide="bookmark"></i>Bookmarks</div>
+              <div class="workspace-tab-header is-active">
+                <i data-lucide="folder"></i>
+                Files
+              </div>
+              <div class="workspace-tab-header">
+                <i data-lucide="search"></i>
+                Search
+              </div>
+              <div class="workspace-tab-header">
+                <i data-lucide="bookmark"></i>
+                Bookmarks
+              </div>
             </div>
           </div>
           <div class="mod-root">
@@ -222,7 +262,10 @@
 
       <p>Baseline is a foundation you build upon. Now your colors can scale right alongside it.</p>
     </div>
-    <a href="#" class="top-btn"><i data-lucide="arrow-up"></i>Back to Top</a>
+    <a href="#" class="top-btn">
+      <i data-lucide="arrow-up"></i>
+      Back to Top
+    </a>
 
     <style>
       .widget-container {
@@ -242,12 +285,15 @@
       .widget {
         display: flex;
         border-radius: var(--radius-m);
-        background: var(--background-secondary-w);
+        background-color: var(--background-secondary-w);
         overflow: hidden;
         color: var(--text-normal-w);
         font-size: var(--font-ui-small);
         border: var(--border-width) solid var(--background-modifier-border-w);
         corner-shape: superellipse(1.1);
+        transition:
+          background-color 160ms,
+          border-color 160ms;
       }
 
       .widget-description {
@@ -323,7 +369,7 @@
         appearance: none;
         border: var(--border-width) solid var(--background-modifier-border);
         border-radius: 100vh;
-        background: #fff;
+        background-color: #fff;
         width: 20px;
         height: 20px;
       }
@@ -429,6 +475,9 @@
         width: 200px;
         height: 32px;
         font-size: var(--font-ui-small);
+        transition:
+          background-color 160ms,
+          box-shadow 160ms;
       }
       .mod-root .workspace-tab-header::before,
       .mod-root .workspace-tab-header::after {
@@ -441,6 +490,7 @@
         width: calc(var(--radius-s) * 2);
         height: calc(var(--radius-s) * 2);
         content: "";
+        transition: box-shadow 160ms;
       }
       .mod-root .workspace-tab-header::before {
         left: calc(var(--radius-s) * -2);
@@ -457,6 +507,9 @@
         border-radius: var(--radius-s);
         background-color: var(--background-primary-w);
         padding: 24px;
+        transition:
+          background-color 160ms,
+          outline-color 160ms;
       }
       .mod-root .inline-title {
         font-size: 1.5em;

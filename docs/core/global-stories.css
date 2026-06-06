@@ -1,36 +1,29 @@
-.stories-header {
-  margin: 128px 64px;
-}
-.stories-title {
-  margin-bottom: 8px;
-  font-size: 2rem;
-}
-.stories-description {
-  color: var(--text-faint);
-}
-
 .content {
+  margin-inline: var(--size-32);
   gap: 0;
   border: var(--border-width) solid var(--background-modifier-border);
   border-radius: var(--radius-l);
   background-color: var(--background-secondary-alt);
-  padding: 16px 64px;
+  padding: var(--size-8) var(--size-16);
   flex-direction: column;
+}
+.widget-container {
+  margin-block: var(--size-8);
 }
 p,
 ul {
-  margin-block: 32px;
+  margin-block: var(--size-4);
   color: var(--text-muted);
 }
 ul {
-  gap: 8px;
-  margin-left: 32px;
+  gap: var(--size-2);
+  margin-left: var(--size-8);
   list-style: disc;
 }
 li::marker {
   color: var(--text-faint);
 }
 hr {
-  margin: 48px auto;
+  margin: var(--size-12) auto;
   width: 50%;
 }

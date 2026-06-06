@@ -51,11 +51,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!el.className) el.removeAttribute("class");
   };
 
+  const resetLucideIcon = (iconEl) => {
+    if (!iconEl) return;
+    const classes = [...iconEl.classList].filter((cls) => !cls.startsWith("lucide"));
+    if (classes.length) iconEl.className = classes.join(" ");
+    else iconEl.removeAttribute("class");
+  };
+
   const flashCopy = (el) => {
     if (!el) return;
     const iconEl = el.querySelector("[data-lucide]");
     if (iconEl) {
       if (!el._origIcon) el._origIcon = iconEl.getAttribute("data-lucide");
+      resetLucideIcon(iconEl);
       iconEl.setAttribute("data-lucide", "circle-check");
       lucide.createIcons({ root: el });
     }
@@ -63,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     el._copyTimeout = setTimeout(() => {
       const iconEl = el.querySelector("[data-lucide]");
       if (iconEl && el._origIcon) {
+        resetLucideIcon(iconEl);
         iconEl.setAttribute("data-lucide", el._origIcon);
         lucide.createIcons({ root: el });
       }
