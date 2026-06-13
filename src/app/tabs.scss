@@ -90,6 +90,7 @@ body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-und
 
 // Editor panel: Floating
 body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+  --tab-background-active: var(--background-modifier-hover);
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
@@ -100,10 +101,6 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
   }
   .workspace-tab-header {
     padding: 0;
-    background-color: var(--background-modifier-hover);
-  }
-  .workspace-tab-header:not(.is-active):not(:hover) {
-    opacity: 0.5;
   }
   .workspace-tab-header-inner {
     padding-inline-start: 12px;
