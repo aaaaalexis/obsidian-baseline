@@ -12,9 +12,8 @@
     --inline-title-margin-bottom: 0.5em;
 
     --inline-title-color: inherit;
-    --inline-title-size: 2em;
+    --inline-title-size: 1.125em;
     --inline-title-line-height: var(--line-height-tight);
-    --inline-title-font: var(--font-text-override), "Instrument Serif";
 
     --h1-size: 1.125em;
     --h2-size: 1.0625em;
@@ -70,6 +69,7 @@
     --hr-align: center;
     --hr-dashed-size: 1em;
     --hr-dashed-spacing: 0.5em;
+    --hr-thickness: 1px;
   }
 
   // Layout
