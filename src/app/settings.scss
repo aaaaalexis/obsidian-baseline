@@ -76,7 +76,7 @@ body:not(.is-phone) {
       background-color: transparent;
       border: none;
     }
-    .setting-group.mod-list:not(.installed-plugins-container) .setting-group-search + .setting-items {
+    .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
       border: var(--setting-items-border-width) solid var(--setting-items-border-color);
     }
@@ -108,52 +108,6 @@ body:not(.is-phone) {
 
     .setting-item-name {
       overflow: visible;
-    }
-  }
-
-  .installed-plugins-container .setting-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 8px;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-
-    .setting-item {
-      display: flex;
-      flex-direction: column;
-      margin: 0px !important;
-      border: var(--setting-items-border-width) solid var(--setting-items-border-color);
-      border-radius: var(--setting-items-radius) !important;
-      background-color: var(--setting-items-background);
-      padding: calc(16px * var(--density-modifier)) var(--setting-items-padding-x) !important;
-      overflow: hidden;
-    }
-    .setting-item:has(button) {
-      order: -1;
-    }
-    .setting-item-info {
-      margin-inline-end: 0;
-      width: 100%;
-    }
-    .setting-item-description > div:last-child {
-      color: var(--text-muted);
-      margin-top: 4px;
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-    }
-    .setting-item-control {
-      flex: none;
-      flex-wrap: wrap;
-      align-self: flex-end;
-      width: 100%;
-    }
-    .setting-item-control button.mod-cta {
-      flex-grow: 1;
-      flex-basis: 100%;
     }
   }
 

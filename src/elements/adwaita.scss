@@ -271,17 +271,6 @@ body.input-adwaita:not(.is-mobile) {
       }
     }
   }
-
-  // Settings
-  .modal.mod-settings {
-    .installed-plugins-container .setting-items {
-      box-shadow: none !important;
-      background-color: transparent;
-    }
-    .installed-plugins-container .setting-item:not(.setting-item-heading) {
-      box-shadow: var(--setting-items-shadow);
-    }
-  }
 }
 
 body.input-adwaita:not(.is-phone) .prompt {

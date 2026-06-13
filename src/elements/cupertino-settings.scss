@@ -69,10 +69,6 @@ body.input-cupertino:not(.is-mobile) {
     .setting-item:not(.setting-item-heading, .setting-items .setting-item) {
       padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
     }
-
-    .installed-plugins-container .extra-setting-button {
-      min-width: unset;
-    }
   }
 }
 
