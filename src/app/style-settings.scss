@@ -11,23 +11,33 @@ settings:
 		level: 1
 		collapsed: false
 	-
-		id: migrate
-		title: Migrate settings
-		type: info-text
-		level: 1
-		markdown: true
-		description: Migrate settings[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
-	-
 		id: marketplace
 		title: Browse presets
 		type: info-text
 		level: 1
 		markdown: true
-		description: Browse presets[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
+		description: Browse Marketplace[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
 	-
-		id: hide-baseline-info
-		title: Hide quick links
-		type: class-toggle
+		id: migration
+		title: Migrate
+		type: info-text
+		level: 1
+		markdown: true
+		description: Migrate[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
+	-
+		id: documentation
+		title: Docs
+		type: info-text
+		level: 1
+		markdown: true
+		description: Docs[](https://aaaaalexis.github.io/obsidian-baseline/documentation/)
+	-
+		id: support
+		title: Support Development
+		type: info-text
+		level: 1
+		markdown: true
+		description: Support[](https://aaaaalexis.github.io/obsidian-baseline/support/)
 	-
 		id: colors
 		title: Colors
@@ -1327,6 +1337,28 @@ settings:
 		min: 100
 		max: 900
 		step: 50
+	-
+		id: settings
+		title: Settings
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: hide-baseline-marketplace
+		title: Hide Marketplace
+		type: class-toggle
+	-
+		id: hide-baseline-migration
+		title: Hide Migrate
+		type: class-toggle
+	-
+		id: hide-baseline-documentation
+		title: Hide Docs
+		type: class-toggle
+	-
+		id: hide-baseline-support
+		title: Hide Support
+		type: class-toggle
 	-
 		id: colorful-frame
 		title: Tinted frame
@@ -3145,7 +3177,6 @@ settings:
     margin-bottom: 0;
     background-color: transparent;
     border: none;
-    gap: 4px !important;
   }
   .setting-item[data-id="divider"] .setting-item-info {
     height: var(--border-width);
@@ -3189,6 +3220,7 @@ settings:
         background-color: var(--color-base-10);
         color: var(--color-base-100);
         padding: 0 8px;
+        box-shadow: none;
       }
     }
   }
@@ -3309,36 +3341,31 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
 }
 
 // Get started
-body.hide-baseline-info .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container,
-body .style-settings-container .setting-item-heading[data-id="info"] {
+.style-settings-container .setting-item-heading[data-id="info"] {
   display: none;
 
   + .style-settings-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 4px;
     padding-bottom: 0;
     padding-left: 0;
 
     .setting-item {
       margin-top: 0 !important;
-    }
-
-    .setting-item:not(:last-child) {
       flex: 1;
-      position: relative;
-      display: flex;
       gap: 8px;
       align-items: center;
       justify-content: center;
       transition: var(--anim-duration-fast);
-      border: var(--setting-items-border-width) solid var(--setting-items-border-color);
+      box-shadow: var(--input-shadow);
       border-radius: var(--setting-items-radius) !important;
       background-color: var(--setting-items-background) !important;
       padding: calc(16px * var(--density-modifier)) !important;
+      height: var(--input-height);
 
       &:hover {
         background-color: var(--background-modifier-hover) !important;
+        box-shadow: var(--input-shadow-hover);
       }
 
       &::after {
@@ -3353,8 +3380,8 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
         display: none;
       }
       .setting-item-description {
-        font-size: var(--font-ui-large);
-        font-family: var(--inline-title-font);
+        font-size: var(--font-ui-small);
+        font-weight: var(--input-font-weight);
         padding: 0;
         color: var(--text-normal);
       }
@@ -3368,52 +3395,46 @@ body .style-settings-container .setting-item-heading[data-id="info"] {
         background-image: none;
       }
 
+      &:nth-child(1) {
+        flex-basis: 100%;
+      }
+
       &::before {
         background-color: var(--text-normal);
-        width: var(--font-ui-large);
-        height: var(--font-ui-large);
+        width: var(--icon-s);
+        height: var(--icon-s);
         content: "";
         -webkit-mask-position: 50% 50%;
         -webkit-mask-size: 100% 100%;
       }
       &:nth-child(1)::before {
-        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNoYXJlLWljb24gbHVjaWRlLXNoYXJlIj48cGF0aCBkPSJNMTIgMnYxMyIvPjxwYXRoIGQ9Im0xNiA2LTQtNC00IDQiLz48cGF0aCBkPSJNNCAxMnY4YTIgMiAwIDAgMCAyIDJoMTJhMiAyIDAgMCAwIDItMnYtOCIvPjwvc3ZnPg==);
+        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN0b3JlLWljb24gbHVjaWRlLXN0b3JlIj48cGF0aCBkPSJNMTUgMjF2LTVhMSAxIDAgMCAwLTEtMWgtNGExIDEgMCAwIDAtMSAxdjUiLz48cGF0aCBkPSJNMTcuNzc0IDEwLjMxYTEuMTIgMS4xMiAwIDAgMC0xLjU0OSAwIDIuNSAyLjUgMCAwIDEtMy40NTEgMCAxLjEyIDEuMTIgMCAwIDAtMS41NDggMCAyLjUgMi41IDAgMCAxLTMuNDUyIDAgMS4xMiAxLjEyIDAgMCAwLTEuNTQ5IDAgMi41IDIuNSAwIDAgMS0zLjc3LTMuMjQ4bDIuODg5LTQuMTg0QTIgMiAwIDAgMSA3IDJoMTBhMiAyIDAgMCAxIDEuNjUzLjg3M2wyLjg5NSA0LjE5MmEyLjUgMi41IDAgMCAxLTMuNzc0IDMuMjQ0Ii8+PHBhdGggZD0iTTQgMTAuOTVWMTlhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04LjA1Ii8+PC9zdmc+);
       }
       &:nth-child(2)::before {
-        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNwYXJrbGVzLWljb24gbHVjaWRlLXNwYXJrbGVzIj48cGF0aCBkPSJNMTEuMDE3IDIuODE0YTEgMSAwIDAgMSAxLjk2NiAwbDEuMDUxIDUuNTU4YTIgMiAwIDAgMCAxLjU5NCAxLjU5NGw1LjU1OCAxLjA1MWExIDEgMCAwIDEgMCAxLjk2NmwtNS41NTggMS4wNTFhMiAyIDAgMCAwLTEuNTk0IDEuNTk0bC0xLjA1MSA1LjU1OGExIDEgMCAwIDEtMS45NjYgMGwtMS4wNTEtNS41NThhMiAyIDAgMCAwLTEuNTk0LTEuNTk0bC01LjU1OC0xLjA1MWExIDEgMCAwIDEgMC0xLjk2Nmw1LjU1OC0xLjA1MWEyIDIgMCAwIDAgMS41OTQtMS41OTR6Ii8+PHBhdGggZD0iTTIwIDJ2NCIvPjxwYXRoIGQ9Ik0yMiA0aC00Ii8+PGNpcmNsZSBjeD0iNCIgY3k9IjIwIiByPSIyIi8+PC9zdmc+);
+        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LXJpZ2h0LWxlZnQtaWNvbiBsdWNpZGUtYXJyb3ctcmlnaHQtbGVmdCI+PHBhdGggZD0ibTE2IDMgNCA0LTQgNCIvPjxwYXRoIGQ9Ik0yMCA3SDQiLz48cGF0aCBkPSJtOCAyMS00LTQgNC00Ii8+PHBhdGggZD0iTTQgMTdoMTYiLz48L3N2Zz4=);
       }
       &:nth-child(3)::before {
-        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXR5cGUtaWNvbiBsdWNpZGUtdHlwZSI+PHBhdGggZD0iTTEyIDR2MTYiLz48cGF0aCBkPSJNNCA3VjVhMSAxIDAgMCAxIDEtMWgxNGExIDEgMCAwIDEgMSAxdjIiLz48cGF0aCBkPSJNOSAyMGg2Ii8+PC9zdmc+);
+        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJvb2stb3Blbi1pY29uIGx1Y2lkZS1ib29rLW9wZW4iPjxwYXRoIGQ9Ik0xMiA3djE0Ii8+PHBhdGggZD0iTTMgMThhMSAxIDAgMCAxLTEtMVY0YTEgMSAwIDAgMSAxLTFoNWE0IDQgMCAwIDEgNCA0IDQgNCAwIDAgMSA0LTRoNWExIDEgMCAwIDEgMSAxdjEzYTEgMSAwIDAgMS0xIDFoLTZhMyAzIDAgMCAwLTMgMyAzIDMgMCAwIDAtMy0zeiIvPjwvc3ZnPg==);
       }
-    }
-
-    .setting-item:last-child {
-      flex-basis: 100%;
-      transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
-      border-top: none;
-      background-color: transparent !important;
-
-      .extra-setting-button {
-        display: none;
+      &:nth-child(4)::before {
+        -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhlYXJ0LWljb24gbHVjaWRlLWhlYXJ0Ij48cGF0aCBkPSJNMiA5LjVhNS41IDUuNSAwIDAgMSA5LjU5MS0zLjY3Ni41Ni41NiAwIDAgMCAuODE4IDBBNS40OSA1LjQ5IDAgMCAxIDIyIDkuNWMwIDIuMjktMS41IDQtMyA1LjVsLTUuNDkyIDUuMzEzYTIgMiAwIDAgMS0zIC4wMTlMNSAxNWMtMS41LTEuNS0zLTMuMi0zLTUuNSIvPjwvc3ZnPg==);
       }
     }
   }
-}
-.style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container {
-  &:hover .setting-item:last-child {
-    transition-delay: var(--anim-duration-slow);
-    height: calc-size(auto, size);
-  }
-  &:not(:hover) .setting-item:last-child {
-    visibility: hidden;
-    opacity: 0;
-    padding-block: 0 !important;
-    height: 0px;
-  }
-}
-body.is-mobile .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:last-child {
-  display: none;
 }
 body.is-phone .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container {
   flex-direction: column;
+}
+
+body.hide-baseline-marketplace .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(1) {
+  display: none;
+}
+body.hide-baseline-migration .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(2) {
+  display: none;
+}
+body.hide-baseline-documentation .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(3) {
+  display: none;
+}
+body.hide-baseline-support .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(4) {
+  display: none;
 }
