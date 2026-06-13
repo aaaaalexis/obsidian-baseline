@@ -114,12 +114,12 @@ body {
   table.dataview {
     thead {
       user-select: none;
-      width: 160px;
+      width: 24px;
       height: 24px;
       float: right;
       position: relative;
+      cursor: help;
     }
-    thead:after,
     thead:before {
       content: "";
       position: absolute;
@@ -127,43 +127,37 @@ body {
       top: 0;
       width: var(--icon-size);
       height: var(--icon-size);
-    }
-    thead:before {
       background-color: var(--text-faint);
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: 16px;
       -webkit-mask-position: center center;
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 100 100"><path fill="currentColor" d="M49.792 33.125l-5.892 5.892L33.333 28.45V83.333H25V28.45L14.438 39.017L8.542 33.125L29.167 12.5l20.625 20.625zm41.667 33.75L70.833 87.5l-20.625 -20.625l5.892 -5.892l10.571 10.567L66.667 16.667h8.333v54.883l10.567 -10.567l5.892 5.892z"></path></svg>');
+      -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJvd3MyLWljb24gbHVjaWRlLXJvd3MtMiI+PHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4IiB4PSIzIiB5PSIzIiByeD0iMiIvPjxwYXRoIGQ9Ik0zIDEyaDE4Ii8+PC9zdmc+");
     }
     thead > tr {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
       position: absolute;
       z-index: 1;
-      border: 1px solid var(--background-modifier-border-hover);
-      background-color: var(--background-secondary);
-      box-shadow: var(--shadow-s);
-      padding: 4px;
-      border-radius: var(--radius-s);
+      background-color: var(--menu-background);
+      corner-shape: var(--menu-corner-shape);
+      box-shadow: var(--menu-shadow);
+      padding: var(--menu-padding);
+      border-radius: var(--menu-radius);
       flex-direction: column;
-      margin-top: 24px;
-      width: 100%;
+      margin: 0;
+      width: fit-content;
+      right: 24px;
+      display: flex;
     }
     thead:not(:hover) > tr {
       opacity: 0;
-      filter: blur(4px);
-      transform: translateY(-8px);
+      transform: translateY(-2px);
       pointer-events: none;
     }
-    thead:hover > tr {
-      display: flex;
-    }
     thead > tr > th {
-      display: block;
-      padding: 6px 8px;
-      border-radius: var(--radius-s);
+      padding: 6px 12px;
       font-weight: var(--font-normal);
-      color: var(--text-normal);
       font-size: var(--font-ui-small);
+      white-space: nowrap;
     }
   }
 }
