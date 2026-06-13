@@ -32,7 +32,7 @@ body:not(.block-width-off) {
     .cm-content > .cm-lang-dataview,
     .cm-content > .cm-lang-dataviewjs,
     .cm-content > .cm-lang-datacorejsx {
-      max-width: var(--table-line-max-width);
+      max-width: var(--table-line-max-width) !important;
       width: var(--table-line-width) !important;
       justify-self: center;
       margin-inline: var(--table-line-width-offset) !important;
@@ -81,7 +81,7 @@ body:not(.block-width-off) {
     .markdown-preview-sizer > .el-p .bases-embed,
     .cm-content > .bases-embed,
     .cm-content > .cm-lang-base {
-      max-width: var(--bases-line-max-width);
+      max-width: var(--bases-line-max-width) !important;
       width: var(--bases-line-width) !important;
       justify-self: center;
       margin-inline: var(--bases-line-width-offset) !important;
@@ -110,7 +110,7 @@ body:not(.block-width-off) {
     .markdown-preview-sizer > .el-p p:has(img),
     .markdown-preview-sizer > .el-iframe,
     .cm-content .image-embed {
-      max-width: var(--img-line-max-width);
+      max-width: var(--img-line-max-width) !important;
       width: var(--img-line-width) !important;
       justify-self: center;
       margin-inline: var(--img-line-width-offset) !important;
