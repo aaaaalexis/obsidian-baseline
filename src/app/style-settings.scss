@@ -3360,7 +3360,7 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
       box-shadow: var(--input-shadow);
       border-radius: var(--setting-items-radius) !important;
       background-color: var(--setting-items-background) !important;
-      padding: calc(16px * var(--density-modifier)) !important;
+      padding: 0 16px !important;
       height: var(--input-height);
 
       &:hover {

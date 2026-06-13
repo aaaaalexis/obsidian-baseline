@@ -114,3 +114,6 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 input[type="range"]::-webkit-slider-thumb {
   box-shadow: none;
 }
+.slider-value {
+  color: var(--text-faint);
+}

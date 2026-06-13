@@ -34,6 +34,15 @@ body {
     .setting-item-heading {
       border: none;
     }
+    .setting-item-info {
+      margin-block: auto;
+      display: flex;
+      gap: 4px;
+      flex-direction: column;
+    }
+    .setting-item-description {
+      padding-top: 0;
+    }
 
     .setting-group.mod-list {
       --setting-items-padding-x: inherit;
