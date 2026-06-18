@@ -1,4 +1,4 @@
-body:is(.layout-cupertino, .layout-tahoe, .layout-fusion):not(.is-mobile) {
+body:is(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile) {
   --radius-window: 8px;
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {

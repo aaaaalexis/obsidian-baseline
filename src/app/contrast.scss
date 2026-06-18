@@ -44,7 +44,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
     background-color: black !important;
   }
 
-  &:not(.is-mobile):not(.layout-cupertino, .layout-tahoe, .layout-fusion) {
+  &:not(.is-mobile):not(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion) {
     .menu,
     .menu-scroll {
       background-color: black;
@@ -56,18 +56,18 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 }
 
 // Light contrast: High contrast
-.theme-light.contrast-light-vivid:not(.layout-tahoe, .layout-fusion, .layout-minimal) {
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-tahoe, .layout-fusion, .layout-minimal) {
   --graph-text: var(--text-faint) !important;
   --graph-line: var(--text-muted) !important;
   --graph-node: var(--text-faint) !important;
   --graph-node-unresolved: var(--text-muted) !important;
 }
-.theme-light.contrast-light-vivid:not(.layout-tahoe, .layout-fusion, .layout-minimal) .app-container,
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-tahoe, .layout-fusion, .layout-minimal) .app-container,
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split) {
   --background-secondary: #1f1f1f;
 }
-.theme-light.contrast-light-vivid:not(.layout-tahoe, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.contrast-light-vivid:not(.layout-tahoe, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder):not(.tab-default) .mod-root .workspace-tab-header,
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-tahoe, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-tahoe, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder):not(.tab-default) .mod-root .workspace-tab-header,
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock) {
   color-scheme: dark;
