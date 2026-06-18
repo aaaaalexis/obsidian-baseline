@@ -40,6 +40,8 @@ body.input-cupertino {
 }
 
 body.input-cupertino:not(.is-mobile) {
+  --settings-background: var(--background-primary);
+  --setting-items-background: var(--background-primary-alt);
   --setting-items-padding-x: var(--side-padding);
   --setting-items-padding-y: calc(12px * var(--density-modifier));
   --setting-group-heading-color: var(--text-normal);

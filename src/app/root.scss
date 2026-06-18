@@ -99,8 +99,6 @@ body,
   --shadow-l: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 .theme-dark {
-  -webkit-font-smoothing: antialiased;
-
   --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-dark-opacity));
 
   --color-red-rgb: 217, 90, 95;
