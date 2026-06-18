@@ -80,11 +80,11 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body.tab-default:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-macos, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header,
+body.tab-default:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-tahoe, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header,
 body.tab-default.layout-fusion .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header {
   --tab-outline-width: var(--border-width);
 }
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-macos, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tab-header-container {
+body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-tahoe, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tab-header-container {
   padding-left: var(--tab-radius);
 }
 
@@ -493,7 +493,7 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(
   margin-top: calc(-1 * var(--header-height) + 8px);
   margin-right: 48px;
 }
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-macos, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
   margin-top: calc(-1 * var(--header-height) + 24px);
 }
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {

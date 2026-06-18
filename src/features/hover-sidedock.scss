@@ -64,7 +64,7 @@ body:not(.is-mobile).hover-sidedock {
   }
 
   // Solid background
-  &.hover-sidedock-solid:not(.layout-cupertino, .layout-macos, .layout-fusion) .mod-sidedock.is-sidedock-collapsed[style*="display"]::before {
+  &.hover-sidedock-solid:not(.layout-cupertino, .layout-tahoe, .layout-fusion) .mod-sidedock.is-sidedock-collapsed[style*="display"]::before {
     width: 100%;
     background: var(--background-primary) !important;
     box-shadow: var(--shadow-s);
