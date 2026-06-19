@@ -34,8 +34,9 @@ body:is(.layout-fusion, .layout-tahoe):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).theme-dark .mod-sidedock {
-    background-color: oklch(from var(--background-primary) calc(l * 0.9) c h);
+  &:not(.is-translucent).theme-dark.layout-fusion .mod-sidedock.mod-left-split,
+  &:not(.is-translucent).theme-dark.layout-tahoe .mod-sidedock {
+    background-color: var(--blur-background);
   }
   &.is-translucent.layout-fusion .mod-sidedock.mod-left-split,
   &.is-translucent.layout-tahoe .mod-sidedock {

@@ -17,6 +17,10 @@ body {
     --input-radius: var(--radius-s);
     --search-input-radius: var(--input-radius);
     --search-input-corner-shape: var(--corner-shape);
+
+    .search-input-container {
+      corner-shape: var(--search-input-corner-shape);
+    }
   }
 
   // Toggle

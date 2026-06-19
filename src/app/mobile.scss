@@ -73,6 +73,10 @@ body.is-mobile {
     --font-ui-large: calc(20px + var(--font-ui-modifier));
   }
 
+  .mod-raised::after {
+    content: none !important;
+  }
+
   // Non-Liquid Glass
   &:not(.input-cupertino) {
     .mod-raised {
@@ -81,9 +85,6 @@ body.is-mobile {
       background-color: transparent;
       background-image: none;
       border: none;
-    }
-    .mod-raised::after {
-      content: none !important;
     }
     .mobile-navbar {
       background-color: var(--background-secondary) !important;
@@ -335,7 +336,7 @@ body.is-phone {
       mask-image: var(--view-bottom-fade-mask);
     }
   }
-  &:not(.mode-switcher-off) .mod-root {
+  &:not(.mode-switcher-off) {
     .view-action,
     .view-actions {
       backdrop-filter: none;

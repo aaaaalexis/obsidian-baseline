@@ -20,12 +20,12 @@ body:not(.is-mobile) {
 }
 body.is-mobile {
   --header-height: 44px !important;
+  --tab-action-width: 44px;
   --tab-text-color-active: var(--text-normal);
   --tab-text-color-focused: var(--text-normal);
 }
 body.is-tablet {
   --header-height: 52px !important;
-  --tab-action-width: 44px;
 }
 
 // All panels
@@ -279,7 +279,7 @@ body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
 
       &.is-active {
         background-color: var(--blur-background);
-        box-shadow: var(--shadow-tab);
+        box-shadow: var(--shadow-xs);
       }
     }
     .workspace-tab-header-inner {
