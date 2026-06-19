@@ -37,22 +37,6 @@ body.input-cupertino {
     --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
   }
 
-  &.is-mobile.theme-light {
-    --interactive-normal: var(--background-secondary);
-  }
-  &.is-mobile.theme-dark {
-    --settings-background: var(--background-secondary);
-    --setting-items-background: var(--background-secondary-alt);
-
-    .modal.mod-sidebar-layout {
-      --background-modifier-border: color-mix(in srgb, var(--background-secondary), white 15%);
-    }
-  }
-  &.is-phone.theme-dark {
-    --modal-sidebar-background: var(--background-secondary);
-    --mobile-sidebar-background: var(--background-primary);
-  }
-
   &.theme-light {
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
@@ -77,6 +61,28 @@ body.input-cupertino {
     --shadow-xs: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
     --shadow-s: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.7), 0 16px 64px rgba(0, 0, 0, 0.3);
+  }
+
+  &.is-mobile.theme-light {
+    --interactive-normal: var(--background-secondary);
+  }
+  &.is-mobile.theme-dark {
+    --settings-background: var(--background-secondary);
+    --setting-items-background: var(--background-secondary-alt);
+
+    .modal.mod-sidebar-layout {
+      --background-modifier-border: color-mix(in srgb, var(--background-secondary), white 15%);
+    }
+  }
+  &.is-phone.theme-dark {
+    --modal-sidebar-background: var(--background-secondary);
+    --mobile-sidebar-background: var(--background-primary);
+  }
+  &.is-tablet.theme-light {
+    --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+  }
+  &.is-tablet.theme-dark {
+    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
   }
 
   // Button
@@ -278,7 +284,7 @@ body.input-cupertino {
     .workspace-tab-header {
       border-radius: var(--clickable-icon-radius);
     }
-    .workspace-tab-header-inner {
+    .workspace-tab-header-container:hover .workspace-tab-header-inner {
       padding: 8px;
     }
     .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {

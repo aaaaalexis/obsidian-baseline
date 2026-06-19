@@ -109,22 +109,22 @@
         gap: 8px;
       }
       .mod-root .workspace-tabs > .workspace-leaf-resize-handle:not(:hover) {
-        opacity: 0;
+        border-color: transparent;
       }
     }
 
     &.is-tablet {
-      .workspace-drawer.mod-left.is-pinned + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
+      .workspace-drawer.is-pinned.mod-left + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
         margin-right: 8px;
       }
-      .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) .workspace-tabs:first-of-type .workspace-tab-container {
+      .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) .workspace-tabs:first-of-type .workspace-tab-container {
         margin-left: 8px;
       }
     }
   }
   body:is(.layout-baseline, .layout-cupertino, .layout-fusion.tab-default, :not(.css-settings-manager)).is-tablet {
-    .workspace-drawer.mod-left.is-pinned + .mod-root,
-    .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
+    .workspace-drawer.is-pinned.mod-left + .mod-root,
+    .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) {
       padding-bottom: 8px;
     }
   }
@@ -138,6 +138,22 @@
     box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
     transition: var(--anim-duration-moderate);
     overflow: hidden;
+  }
+
+  // Editor panel: Cupertino Workspace
+  body.layout-cupertino:not(.is-phone) {
+    &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+      box-shadow:
+        0 0 0 var(--tab-outline-width) var(--tab-outline-color),
+        rgba(0, 0, 0, 0.04) 0px 24px 48px,
+        rgba(0, 0, 0, 0.02) 0px 4px 16px;
+    }
+    &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+      box-shadow:
+        0 0 0 var(--tab-outline-width) var(--tab-outline-color),
+        rgba(0, 0, 0, 0.16) 0px 24px 48px,
+        rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    }
   }
 
   .markdown-preview-view,

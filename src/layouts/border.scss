@@ -26,7 +26,7 @@ body.layout-border:not(.is-mobile) {
     }
 
     > .workspace-leaf-resize-handle:not(:hover) {
-      opacity: 1;
+      border-color: var(--divider-color);
     }
 
     &.mod-left-split .workspace-tabs {
@@ -123,14 +123,14 @@ body.layout-border.is-tablet {
     top: var(--header-height);
   }
 
-  .workspace-drawer.mod-left.is-pinned + .mod-root {
+  .workspace-drawer.is-pinned.mod-left + .mod-root {
     padding-left: 0;
   }
   .workspace-drawer.mod-left:not(.is-pinned) + .mod-root > div:first-of-type .workspace-tab-container {
     border-top-left-radius: var(--tab-radius);
     border-bottom-left-radius: var(--tab-radius);
   }
-  .mod-root:has(+ .workspace-drawer.mod-right.is-pinned) {
+  .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) {
     padding-right: 0;
   }
   .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) > div:last-of-type .workspace-tab-container {

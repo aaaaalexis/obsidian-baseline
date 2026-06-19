@@ -43,7 +43,7 @@ body.nav-item-strong {
     --nav-item-color-active: var(--text-normal);
   }
 
-  &.input-cupertino:is(.layout-tahoe, .layout-fusion):not(.is-mobile) .nav-files-container > div {
+  &.input-cupertino:is(.layout-fusion, .layout-tahoe):not(.is-mobile) .nav-files-container > div {
     --nav-item-background-hover: transparent;
     --nav-item-background-active: var(--background-modifier-hover);
     --nav-item-color: var(--text-normal);

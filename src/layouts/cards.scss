@@ -126,7 +126,7 @@ body.layout-cards:not(.is-phone) {
     gap: 8px;
   }
   .workspace-leaf-resize-handle:not(:hover) {
-    opacity: 0;
+    border-color: transparent;
   }
 }
 

@@ -160,7 +160,6 @@ body.is-mobile {
 
     .nav-header {
       padding: 0;
-      align-items: stretch;
     }
     .search-row,
     .nav-header .search-input-container {
@@ -622,7 +621,7 @@ body.is-tablet {
       max-width: 35%;
     }
     &.is-pinned > .workspace-leaf-resize-handle:not(:hover) {
-      opacity: 0;
+      border-color: transparent;
     }
 
     .workspace-drawer-tab-options {
