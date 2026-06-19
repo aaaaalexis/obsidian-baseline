@@ -24,32 +24,19 @@ body.layout-fusion:not(.is-mobile) {
 
 body.layout-fusion:not(.is-phone) {
   // Editor panel
-  &.theme-light {
-    --shadow-tab: var(--shadow-base), 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.025);
-  }
-  &.theme-dark {
-    --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
+  &:not(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
+    --tab-outline-color: transparent;
   }
 
-  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .workspace-tabs:not(.mod-stacked) .mod-root {
-    .workspace-tab-container {
-      background-color: hsl(from var(--background-primary) h s l/ 75%);
+  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-leaf {
+      background-color: var(--blur-background);
     }
 
     .view-header,
     .view-content,
     .document-search-container {
       background-color: transparent;
-    }
-  }
-
-  // Contrast
-  &:not(.tab-floating, .tab-floating-center):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark) .mod-root {
-    .workspace-tab-container {
-      outline: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: -1px;
     }
   }
 }
@@ -60,7 +47,7 @@ body.layout-fusion.is-tablet {
   }
 
   &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-    background-color: var(--raised-background) !important;
+    background-color: var(--blur-background) !important;
     box-shadow: var(--shadow-tab);
   }
 

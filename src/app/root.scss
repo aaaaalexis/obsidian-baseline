@@ -20,7 +20,6 @@ body,
 
   --border-width: 0.5px;
   --divider-width: var(--border-width);
-  --tab-outline-width: var(--border-width);
 
   --divider-color-hover: var(--color-base-50);
 
@@ -94,6 +93,7 @@ body,
   --code-value: #a626a4;
 
   --background-modifier-form-field: var(--background-primary);
+  --blur-background: rgba(255, 255, 255, 0.5);
 
   --shadow-s: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-l: 0 0 0 0.5px rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -131,6 +131,7 @@ body,
   --code-value: #c678de;
 
   --background-modifier-form-field: var(--background-secondary);
+  --blur-background: rgba(255, 255, 255, 0.075);
 
   --shadow-s: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-l: 0 0 0 0.5px rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
@@ -179,7 +180,6 @@ body:not(.is-mobile) {
   --blur-l: none !important;
 
   --divider-color: var(--background-modifier-border) !important;
-  --tab-outline-color: var(--background-modifier-border);
 }
 
 // Popout window
@@ -235,28 +235,17 @@ body:not(.mod-macos):not(.is-mobile) {
   }
 }
 
-// Baseline & Cupertino Workspace
-body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino):not(.is-phone) {
-  --tab-outline-width: var(--border-width);
-
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    outline: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-}
-
 // Cupertino Workspace
 body.layout-cupertino:not(.is-phone) {
-  // Editor panel
   &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
+      0 0 0 var(--tab-outline-width) var(--tab-outline-color),
       rgba(0, 0, 0, 0.04) 0px 24px 48px,
       rgba(0, 0, 0, 0.02) 0px 4px 16px;
   }
   &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
+      0 0 0 var(--tab-outline-width) var(--tab-outline-color),
       rgba(0, 0, 0, 0.16) 0px 24px 48px,
       rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }

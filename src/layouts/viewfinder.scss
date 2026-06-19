@@ -1,14 +1,10 @@
 body.layout-viewfinder:not(.is-mobile) {
   --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
-  --tab-outline-width: var(--border-width);
 
-  .workspace {
-    padding: 4px;
-  }
   .mod-root {
-    margin: 4px;
+    margin-block: 8px;
     height: unset;
-    background-color: var(--background-primary);
+    background-color: var(--background-primary) !important;
     border-radius: var(--radius-s);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
@@ -45,13 +41,6 @@ body.layout-viewfinder.is-tablet {
     border-radius: var(--radius-m);
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
-  }
-
-  &.contrast-dark-black.theme-dark,
-  &.contrast-dark-black-mobile.theme-dark {
-    .workspace-drawer {
-      border: none;
-    }
   }
 
   // Tab style

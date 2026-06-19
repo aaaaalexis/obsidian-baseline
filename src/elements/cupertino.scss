@@ -56,11 +56,10 @@ body.input-cupertino {
   &.theme-light {
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
-    --blur-background: rgba(255, 255, 255, 0.5);
-
     --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(0, 0, 0, 0.4);
     --shadow-surface: 0 0 1px rgba(0, 0, 0, 0.4), inset 0 0 1px 1px rgba(255, 255, 255, 0.8), 0 4px 24px rgba(0, 0, 0, 0.075);
+    --shadow-tab: var(--shadow-base), 0 0 1px rgba(0, 0, 0, 0.2), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.025);
 
     --shadow-xs: var(--shadow-base), inset 0 -8px 48px rgba(0, 0, 0, 0.02), 0 0 8px rgba(0, 0, 0, 0.025), 0 4px 24px rgba(0, 0, 0, 0.075);
     --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-edges), 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -70,11 +69,10 @@ body.input-cupertino {
   &.theme-dark {
     --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
-    --blur-background: rgba(255, 255, 255, 0.075);
-
     --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(255, 255, 255, 0.3);
     --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-tab: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
 
     --shadow-xs: var(--shadow-base), 0 4px 8px rgba(0, 0, 0, 0.1);
     --shadow-s: var(--shadow-edges), 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -101,7 +99,7 @@ body.input-cupertino {
     .clickable-icon.has-active-menu,
     .modal-header-button:hover {
       box-shadow: var(--shadow-xs);
-      background-color: var(--raised-background);
+      background-color: var(--blur-background);
     }
   }
 
@@ -136,7 +134,7 @@ body.input-cupertino {
         inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
         inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
         var(--shadow-xs) !important;
-      background-color: var(--raised-background);
+      background-color: var(--blur-background);
     }
   }
 
@@ -182,7 +180,7 @@ body.input-cupertino {
         inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
         inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
         var(--shadow-xs);
-      background-color: var(--raised-background);
+      background-color: var(--blur-background);
     }
   }
   &.is-mobile .checkbox-container:active:after {

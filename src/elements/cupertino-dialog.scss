@@ -19,7 +19,7 @@ body.input-cupertino {
   }
   .cm-tooltip,
   .notice {
-    backdrop-filter: var(--raised-blur);
+    backdrop-filter: var(--blur-s);
     background-color: var(--modal-background);
   }
 }

@@ -6,7 +6,7 @@ body {
   --tab-radius-active: var(--tab-radius) var(--tab-radius) 0 0;
   --tab-curve: calc(var(--tab-radius) + 4px);
 
-  --tab-outline-width: 0px;
+  --tab-outline-width: var(--divider-width);
   --tab-divider-color: var(--background-modifier-border);
 
   --tab-text-align: left;
@@ -63,7 +63,6 @@ body:not(.is-phone) .workspace .mod-root {
   }
 
   .workspace-tab-header {
-    --tab-outline-width: 0px;
     padding: 0;
   }
 
@@ -80,35 +79,34 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body.tab-default:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-macos, .layout-tahoe, .layout-classic, .layout-minimal, .layout-frame, .layout-viewfinder) .mod-root .workspace-tab-header,
-body.tab-default.layout-fusion .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header {
-  --tab-outline-width: var(--border-width);
-}
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-macos, .layout-tahoe, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tab-header-container {
+body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-tahoe, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tab-header-container {
   padding-left: var(--tab-radius);
 }
 
 // Editor panel: Floating
-body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+body:is(.tab-floating, .tab-floating-center):not(.is-phone) {
   --tab-background-active: var(--background-modifier-hover);
   --tab-radius-active: var(--tab-radius);
   --tab-curve: 0;
 
-  .workspace-tab-header-container-inner {
-    padding-bottom: 8px;
-    gap: 4px;
-    margin: 0;
-  }
-  .workspace-tab-header {
-    max-height: 48px;
-    margin: auto 0;
-    height: 100%;
-    padding: 0;
-  }
-  .workspace-tab-header-inner {
-    padding-inline-start: 12px;
-    padding-inline-end: 8px;
-    margin-bottom: 0;
+  .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header-container-inner {
+      padding-bottom: 8px;
+      gap: 4px;
+      margin: 0;
+    }
+    .workspace-tab-header {
+      max-height: 48px;
+      margin: auto 0;
+      height: 100%;
+      padding: 0;
+      box-shadow: none;
+    }
+    .workspace-tab-header-inner {
+      padding-inline-start: 12px;
+      padding-inline-end: 8px;
+      margin-bottom: 0;
+    }
   }
 }
 body:is(.tab-floating, .tab-floating-center).is-tablet {
@@ -280,7 +278,7 @@ body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
       }
 
       &.is-active {
-        background-color: hsl(from var(--background-primary) h s l / 75%);
+        background-color: var(--blur-background);
         box-shadow: var(--shadow-tab);
       }
     }
@@ -521,7 +519,7 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(
   margin-top: calc(-1 * var(--header-height) + 8px);
   margin-right: 48px;
 }
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-macos, .layout-tahoe, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
   margin-top: calc(-1 * var(--header-height) + 24px);
 }
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {

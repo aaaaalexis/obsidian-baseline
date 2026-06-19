@@ -1,4 +1,6 @@
 body:is(.layout-cards, .layout-border):not(.is-mobile) {
+  --tab-outline-color: transparent;
+
   // Editor panel
   &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root {
     margin-left: 8px;
@@ -115,32 +117,6 @@ body:is(.layout-cards, .layout-border).is-tablet {
       margin-right: 8px;
     }
   }
-
-  // Contrast
-  &.contrast-light-tonal.theme-light,
-  &.contrast-dark-tonal.theme-dark,
-  &.contrast-dark-black.theme-dark,
-  &.contrast-dark-black-mobile.theme-dark {
-    .mod-root {
-      .workspace-tab-container {
-        border: var(--divider-width) solid var(--divider-color);
-      }
-      .workspace-tab-header-container-inner {
-        margin-bottom: -1px;
-      }
-    }
-
-    .workspace-drawer {
-      border: var(--divider-width) solid var(--divider-color);
-    }
-  }
-  &.contrast-dark-black.theme-dark,
-  &.contrast-dark-black-mobile.theme-dark {
-    .workspace-drawer,
-    .view-header {
-      background-color: black !important;
-    }
-  }
 }
 
 // Cards specific
@@ -149,16 +125,13 @@ body.layout-cards:not(.is-phone) {
   .workspace-split.mod-vertical {
     gap: 8px;
   }
-  .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
-    border-color: transparent;
+  .workspace-leaf-resize-handle:not(:hover) {
+    opacity: 0;
   }
 }
 
 body.layout-cards:not(.is-mobile) {
   // Side panels
-  .mod-sidedock .workspace-leaf-resize-handle:not(:hover) {
-    border-color: transparent;
-  }
   &.tab-top-left-stacked .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space {
     .workspace-tab-header-container-inner {
       margin: 0 8px 8px;
@@ -172,20 +145,5 @@ body.layout-cards:not(.is-mobile) {
     border-radius: var(--tab-radius);
     background-color: var(--background-primary);
     width: auto;
-  }
-
-  // Contrast
-  &.contrast-light-tonal.theme-light,
-  &.contrast-dark-tonal.theme-dark,
-  &.contrast-dark-black.theme-dark {
-    &.tab-top-left-stacked .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-    .mod-sidedock .workspace-tabs .workspace-tab-container,
-    .mod-root .workspace-tab-container {
-      border: var(--divider-width) solid var(--divider-color);
-    }
-
-    .mod-root .workspace-tab-header-container-inner {
-      margin-bottom: -1px;
-    }
   }
 }

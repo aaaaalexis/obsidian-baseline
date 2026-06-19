@@ -728,14 +728,11 @@ settings:
 				label: Baseline
 				value: layout-baseline
 			-
-				label: Fusion
-				value: layout-fusion
-			-
 				label: Cupertino
 				value: layout-cupertino
 			-
-				label: macOS
-				value: layout-macos
+				label: Fusion
+				value: layout-fusion
 			-
 				label: Tahoe
 				value: layout-tahoe
@@ -3340,7 +3337,7 @@ settings:
 // Disabling input
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
-body:not(.layout-macos, .layout-tahoe, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
+body:not(.layout-tahoe, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
 body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
 body.block-width-off .style-settings-container .setting-item[data-id="line-width"] ~ .setting-item,
 body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,
@@ -3361,6 +3358,7 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
 
   + .style-settings-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
     padding-bottom: 0;
     padding-left: 0;

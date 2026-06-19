@@ -576,7 +576,6 @@ body.is-tablet {
   .workspace-split.mod-root,
   .workspace-split.mod-root .workspace-split {
     background-color: transparent;
-    border-width: 0;
   }
 
   .workspace-drawer {
@@ -621,6 +620,9 @@ body.is-tablet {
     &.is-pinned {
       flex-shrink: 0;
       max-width: 35%;
+    }
+    &.is-pinned > .workspace-leaf-resize-handle:not(:hover) {
+      opacity: 0;
     }
 
     .workspace-drawer-tab-options {

@@ -1,32 +1,12 @@
-body:is(.layout-frame, .layout-viewfinder) {
-  // Tab styles
-  &:is(.tab-floating, .tab-floating-center):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
-    --tab-outline-width: var(--border-width);
-    margin-inline: var(--tab-outline-width) !important;
-    background-color: var(--tab-background-active);
-  }
-
-  .mod-root {
-    .workspace-tab-header-container {
-      border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-    }
-    .workspace-tab-header-container-inner {
-      margin-bottom: -1px !important;
-    }
-    .workspace-tab-container {
-      border-radius: 0;
-    }
-  }
+body:is(.layout-frame, .layout-viewfinder) .mod-root .workspace-tab-container {
+  border-radius: 0;
 }
 
 body.layout-frame:not(.is-mobile) {
-  --tab-outline-width: var(--border-width);
-
   .workspace {
     padding: 4px;
   }
-  .workspace > .workspace-ribbon,
-  .workspace > .workspace-split {
+  .workspace-split {
     margin: 4px;
     height: unset;
     background-color: var(--background-primary) !important;
@@ -128,14 +108,6 @@ body.layout-frame.is-tablet {
   .workspace-drawer-ribbon,
   .workspace-drawer-inner {
     padding-block: 0px 16px;
-  }
-
-  &.contrast-dark-black.theme-dark,
-  &.contrast-dark-black-mobile.theme-dark {
-    .mod-root,
-    .workspace-drawer {
-      background-color: black;
-    }
   }
 
   // Tab style

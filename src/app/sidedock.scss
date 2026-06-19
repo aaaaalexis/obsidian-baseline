@@ -109,7 +109,7 @@ body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-man
 // Desktop sidedock
 body:not(.is-mobile) {
   .mod-sidedock > .workspace-leaf-resize-handle:not(:hover) {
-    border-color: transparent;
+    opacity: 0;
   }
 
   .mod-sidedock .workspace-leaf {

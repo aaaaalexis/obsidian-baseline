@@ -102,13 +102,14 @@
       }
     }
 
+    // Editor panel
     &:not(.is-phone) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
-      // Editor panel
-      .workspace-split.mod-vertical {
+      .mod-root,
+      .mod-root .workspace-split.mod-vertical {
         gap: 8px;
       }
-      .workspace-split:not(.mod-sidedock) > * > .workspace-leaf-resize-handle:not(:hover) {
-        border-color: transparent;
+      .mod-root .workspace-tabs > .workspace-leaf-resize-handle:not(:hover) {
+        opacity: 0;
       }
     }
 
@@ -129,8 +130,12 @@
   }
 
   // Editor panel
-  .workspace-split.mod-root .workspace-tab-container {
+  .mod-root .workspace-tabs {
+    overflow: visible;
+  }
+  .mod-root .workspace-tab-container {
     border-radius: var(--tab-radius);
+    box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
     transition: var(--anim-duration-moderate);
     overflow: hidden;
   }

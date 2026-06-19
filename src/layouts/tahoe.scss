@@ -1,7 +1,6 @@
 body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
   --shadow-sidedock-spread: -32px 0 0 32px var(--background-primary);
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
-  --tab-outline-width: var(--border-width);
 
   &:not(.is-focused):not(.reduce-contrast-change) {
     --workspace-background-translucent: var(--background-secondary);
@@ -41,11 +40,12 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
       height: calc(var(--header-height) - 24px);
     }
     &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
+      margin-top: calc(var(--header-height) - 8px);
       padding-left: 16px;
     }
     &:not(.hover-ribbon) .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
       margin-left: calc(-1 * var(--ribbon-width) + 8px);
-      padding-left: var(--ribbon-width);
+      padding-left: calc(var(--ribbon-width) - 8px);
     }
 
     .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
@@ -107,20 +107,13 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
 
 // Ribbon
 body:is(.layout-tahoe, .layout-fusion:not(.tab-floating, .tab-floating-center)):not(.is-mobile).mod-macos.is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed {
-  margin-top: calc(var(--header-height) - 1px);
   padding-top: 8px;
-  border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+  box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
 }
 
 // Tab style
-body.layout-tahoe:not(.is-phone):not(.tab-floating, .tab-floating-center) .mod-root,
-body.layout-fusion:not(.is-phone):not(.tab-floating, .tab-floating-center) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-  .workspace-tab-header-container {
-    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
-  }
-  .workspace-tab-header-container-inner {
-    margin-bottom: -1px !important;
-  }
+body.layout-tahoe:not(.is-phone):not(.tab-floating, .tab-floating-center) .mod-root .workspace-tab-container {
+  box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
 }
 
 body:is(.layout-tahoe, .layout-fusion).is-tablet {
@@ -149,7 +142,7 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
   }
 
   .workspace-drawer.is-pinned.mod-left {
-    background-color: var(--raised-background);
+    background-color: var(--blur-background);
     box-shadow: var(--shadow-surface);
     border: none;
     margin: calc(var(--safe-area-inset-top) + 8px) 0 8px 8px;
@@ -167,15 +160,16 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
     border-radius: var(--radius-m);
     border: none;
     z-index: 1;
-    background-color: var(--raised-background);
+    background-color: var(--blur-background);
     box-shadow: var(--shadow-surface);
   }
 }
 
 // Tahoe specific
-body.layout-tahoe .workspace-split.mod-root .workspace-tab-container {
+body.layout-tahoe .mod-root .workspace-tab-container {
   border-radius: 0;
 }
+
 body.layout-tahoe:not(.is-mobile) {
   &:not(.is-hidden-frameless) {
     .titlebar {
@@ -198,8 +192,6 @@ body.layout-tahoe:not(.is-mobile) {
   }
 }
 
-body.layout-tahoe.is-tablet {
-  .workspace-drawer.is-pinned.mod-right {
-    border-width: var(--divider-width);
-  }
+body.layout-tahoe.is-tablet .workspace-drawer.mod-right .workspace-leaf-resize-handle {
+  opacity: 1;
 }
