@@ -100,6 +100,9 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
     margin: 0;
   }
   .workspace-tab-header {
+    max-height: 48px;
+    margin: auto 0;
+    height: 100%;
     padding: 0;
   }
   .workspace-tab-header-inner {
@@ -258,6 +261,31 @@ body.is-tablet.tab-floating-center {
       &:not(.mod-top-left-space).mod-top-right-space .workspace-tab-header-container-inner {
         padding-left: calc(var(--tab-action-width) * 2);
       }
+    }
+  }
+}
+
+// Editor panel: Floating (Cupertino Personality)
+body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
+  .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-tab-header {
+      corner-shape: var(--corner-shape);
+      border-radius: 100vh;
+
+      &:first-child {
+        margin-inline-start: 2px;
+      }
+      &:last-child {
+        margin-inline-end: 2px;
+      }
+
+      &.is-active {
+        background-color: hsl(from var(--background-primary) h s l / 75%);
+        box-shadow: var(--shadow-tab);
+      }
+    }
+    .workspace-tab-header-inner {
+      border-radius: inherit;
     }
   }
 }

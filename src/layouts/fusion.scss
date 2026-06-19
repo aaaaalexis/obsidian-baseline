@@ -43,44 +43,6 @@ body.layout-fusion:not(.is-phone) {
     }
   }
 
-  // Editor panel: Tab style
-  &.input-cupertino:is(.tab-floating, .tab-floating-center) {
-    .mod-root .workspace-tabs:not(.mod-stacked) {
-      .workspace-tab-header {
-        @starting-style {
-          filter: blur(4px);
-          scale: 0.75;
-          opacity: 0;
-        }
-
-        corner-shape: var(--corner-shape);
-        border-radius: 100vh;
-        transition:
-          opacity var(--anim-duration-moderate),
-          filter var(--anim-duration-moderate),
-          background-color 0s;
-
-        &:first-child {
-          margin-inline-start: 2px;
-        }
-        &:last-child {
-          margin-inline-end: 2px;
-        }
-      }
-      .workspace-tab-header:not(.is-active) {
-        background-color: transparent;
-      }
-      .workspace-tab-header-inner {
-        border-radius: inherit;
-      }
-    }
-
-    .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
-      background-color: hsl(from var(--background-primary) h s l / 75%);
-      box-shadow: var(--shadow-tab);
-    }
-  }
-
   // Contrast
   &:not(.tab-floating, .tab-floating-center):is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark) .mod-root {
     .workspace-tab-container {

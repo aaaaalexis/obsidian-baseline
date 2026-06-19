@@ -1,6 +1,4 @@
 body:is(.layout-frame, .layout-viewfinder) {
-  --radius-window: 8px;
-
   // Tab styles
   &:is(.tab-floating, .tab-floating-center):not(.colorful-frame) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     --tab-outline-width: var(--border-width);
@@ -32,7 +30,7 @@ body.layout-frame:not(.is-mobile) {
     margin: 4px;
     height: unset;
     background-color: var(--background-primary) !important;
-    border-radius: var(--radius-window);
+    border-radius: var(--radius-window, var(--radius-m));
     border: var(--border-width) solid var(--background-modifier-border);
     overflow: hidden;
   }

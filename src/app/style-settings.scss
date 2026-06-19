@@ -1167,6 +1167,22 @@ settings:
 				label: Large
 				value: 16px
 	-
+		id: hover-sidedock-solid
+		title: Hover sidebars style
+		type: class-select
+		allowEmpty: false
+		default: hover-sidedock-subtle
+		options:
+			-
+				label: Subtle
+				value: hover-sidedock-subtle
+			-
+				label: Solid
+				value: hover-sidedock-solid
+			-
+				label: Floating
+				value: hover-sidedock-floating
+	-
 		id: hover-sidedock-width
 		title: Hover sidebars width
 		type: variable-text
@@ -1176,10 +1192,6 @@ settings:
 		title: Hover sidebars delay
 		type: variable-text
 		default: 160ms
-	-
-		id: hover-sidedock-solid
-		title: Solid background
-		type: class-toggle
 	-
 		id: hover-sidedock-active-off
 		title: Discard interactions

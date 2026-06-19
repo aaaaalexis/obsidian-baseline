@@ -78,6 +78,9 @@
       .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
         padding-bottom: 0;
       }
+      &.show-ribbon .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+        border-top-left-radius: var(--tab-radius);
+      }
       .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
         border-radius: 0;
       }

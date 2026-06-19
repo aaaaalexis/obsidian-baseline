@@ -10,6 +10,7 @@ body {
   --radius-m: calc(16px * var(--radius-modifier));
   --radius-l: calc(24px * var(--radius-modifier));
   --radius-xl: calc(32px * var(--radius-modifier));
+  --radius-window: 8px;
 
   &.obsidian-app {
     --clickable-icon-radius: var(--radius-s);

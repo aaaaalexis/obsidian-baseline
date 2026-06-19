@@ -33,12 +33,19 @@ body:is(body, .status-bar-default):not(.status-bar-full, .status-bar-cupertino) 
 
 // Status bar: Full width
 body.status-bar-full {
+  --status-bar-background: transparent;
   --status-bar-border-width: 0;
   --status-bar-position: relative;
   --status-bar-radius: 0;
 
   .status-bar {
     width: 100%;
+    z-index: -1;
+  }
+
+  .horizontal-main-container,
+  .workspace {
+    overflow: visible;
   }
 }
 

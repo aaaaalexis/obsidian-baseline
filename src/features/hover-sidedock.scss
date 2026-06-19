@@ -14,6 +14,7 @@ body:not(.is-mobile).hover-ribbon .workspace-ribbon.mod-left:hover ~ .mod-root {
   }
 }
 
+// Hover sidedock
 body:not(.is-mobile).hover-sidedock {
   .mod-sidedock.is-sidedock-collapsed[style*="display"] {
     display: flex !important;
@@ -63,14 +64,38 @@ body:not(.is-mobile).hover-sidedock {
     }
   }
 
-  // Solid background
-  &.hover-sidedock-solid:not(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion) .mod-sidedock.is-sidedock-collapsed[style*="display"]::before {
+  // Hover sidedock: Solid
+  &.hover-sidedock-solid .mod-sidedock.is-sidedock-collapsed[style*="display"]::before {
     width: 100%;
     background: var(--background-primary) !important;
     box-shadow: var(--shadow-s);
   }
 
-  // Hovered
+  // Hover sidedock: Floating
+  &.hover-sidedock-floating .mod-sidedock.is-sidedock-collapsed[style*="display"] {
+    box-shadow: var(--shadow-s);
+    border-radius: var(--radius-window, var(--radius-m));
+    background-color: var(--modal-background) !important;
+    backdrop-filter: var(--blur-m);
+    height: stretch;
+
+    &.mod-left-split {
+      margin: 8px 0 8px 8px;
+      overflow: visible;
+    }
+    &.mod-right-split {
+      margin: 8px 8px 8px 0;
+    }
+
+    &::before {
+      background: none;
+      margin-inline: -8px;
+      pointer-events: auto;
+      width: 8px;
+    }
+  }
+
+  // Hover sidedock: Hovered
   .mod-sidedock.is-sidedock-collapsed[style*="display"]:hover,
   &.hover-ribbon .workspace-ribbon.mod-left.is-collapsed:hover + .mod-sidedock,
   &:not(.hover-sidedock-active-off) > .app-container > .horizontal-main-container > .workspace > .mod-sidedock:has(> .workspace-tabs.mod-active) {
@@ -93,6 +118,7 @@ body:not(.is-mobile).hover-sidedock {
   }
 }
 
+// Hover ribbon
 body:not(.is-mobile).hover-ribbon.show-ribbon {
   .workspace-ribbon.mod-left {
     position: absolute;
