@@ -35,7 +35,7 @@ body.input-fluent {
     --slider-thumb-height: 24px;
   }
   &.theme-light {
-    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.05), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.05), 0 -0.5pt 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-00);
@@ -46,7 +46,7 @@ body.input-fluent {
     --modal-background: hsl(from white h s l / 85%);
   }
   &.theme-dark {
-    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.1), 0 0.5px 0 rgba(255, 255, 255, 0.1) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.1), 0 0.5pt 0 rgba(255, 255, 255, 0.1) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-35);
@@ -81,7 +81,7 @@ body.input-fluent {
 
   // Text input
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    box-shadow: 0 -0.5px 0 var(--color-base-50) inset;
+    box-shadow: 0 -0.5pt 0 var(--color-base-50) inset;
 
     &:active,
     &:focus,
@@ -94,7 +94,7 @@ body.input-fluent {
   // Slider
   input[type="range"]::-webkit-slider-thumb {
     transition: var(--anim-duration-fast);
-    box-shadow: 0 0.5px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5pt 1px 1px rgba(0, 0, 0, 0.1);
     background-color: var(--interactive-accent);
   }
   input[type="range"]::-webkit-slider-thumb:hover,

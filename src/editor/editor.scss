@@ -130,14 +130,16 @@
   }
 
   // Editor panel
-  .mod-root .workspace-tabs {
-    overflow: visible;
-  }
-  .mod-root .workspace-tab-container {
-    border-radius: var(--tab-radius);
-    box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
-    transition: var(--anim-duration-moderate);
-    overflow: hidden;
+  body:not(.is-phone) {
+    .mod-root .workspace-tabs {
+      overflow: visible;
+    }
+    .mod-root .workspace-tab-container {
+      border-radius: var(--tab-radius);
+      box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
+      transition: var(--anim-duration-moderate);
+      overflow: hidden;
+    }
   }
 
   // Editor panel: Cupertino Workspace

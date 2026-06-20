@@ -62,6 +62,13 @@ body.input-cupertino.is-mobile {
   .nav-files-container > div {
     --nav-item-color: var(--text-normal);
   }
+
+  // Pull action
+  .pull-action.mod-activated {
+    color: var(--text-normal);
+    background-color: transparent;
+    backdrop-filter: var(--blur-l) brightness(1.1);
+  }
 }
 
 body.input-cupertino.is-phone {
