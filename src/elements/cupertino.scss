@@ -40,10 +40,10 @@ body.input-cupertino {
 
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
-    --shadow-base: 0 0 0 0.5pt rgba(0, 0, 0, 0.075), -1pt 0 0 -0.5pt rgba(0, 0, 0, 0.1), 1pt 0 0 -0.5pt rgba(0, 0, 0, 0.1), inset 0 1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.75), inset 0 -1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.75);
+    --shadow-base: 0 0 0 0.5pt rgba(0, 0, 0, 0.075), -1pt 0 0 -0.5pt rgba(0, 0, 0, 0.15), 1pt 0 0 -0.5pt rgba(0, 0, 0, 0.15), inset 0 1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.9), inset 0 -1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.9);
     --shadow-surface: var(--shadow-base), 0 4px 24px rgba(0, 0, 0, 0.075);
 
-    --shadow-xs: var(--shadow-base), inset 0 24px 24px -8px rgba(255, 255, 255, 0.5), inset 0 16px 8px -8px rgba(255, 255, 255, 0.5), inset 0 -16px 8px -8px rgba(255, 255, 255, 0.5), inset 0 -16px 16px -8px rgba(255, 255, 255, 0.5), inset 0 8px 12px 4px rgba(0, 0, 0, 0.05);
+    --shadow-xs: var(--shadow-base), inset 0 20px 16px -8px rgba(255, 255, 255, 0.5), inset 0 -16px 16px -8px rgba(255, 255, 255, 0.35), inset 0 8px 12px 4px rgba(0, 0, 0, 0.05), inset 0 16px 8px -8px rgba(255, 255, 255, 0.25), inset 0 -16px 8px -8px rgba(255, 255, 255, 0.25);
     --shadow-s: var(--shadow-base), 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-l: var(--shadow-base), 0 16px 64px rgba(0, 0, 0, 0.15);
   }
