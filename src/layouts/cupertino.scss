@@ -1,0 +1,286 @@
+body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-fusion) {
+  &:not(.is-mobile) {
+    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+      padding-bottom: 0;
+    }
+    &.show-ribbon .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+      border-top-left-radius: var(--tab-radius);
+    }
+    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+      border-radius: 0;
+    }
+
+    &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+      margin-left: 8px;
+    }
+    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+      margin-right: 8px;
+    }
+
+    &:not(.status-bar-full) .mod-root {
+      padding-bottom: 8px;
+    }
+
+    // Windows & Linux fix
+    &:not(.mod-macos).is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+      padding-right: var(--frame-right-space);
+    }
+  }
+
+  // Editor panel
+  &:not(.is-phone) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
+    .mod-root,
+    .mod-root .workspace-split.mod-vertical {
+      gap: 8px;
+    }
+    .mod-root .workspace-tabs > .workspace-leaf-resize-handle:not(:hover) {
+      border-color: transparent;
+    }
+  }
+
+  &.is-tablet {
+    .workspace-drawer.is-pinned.mod-left + .mod-root,
+    .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) {
+      padding-bottom: 8px;
+    }
+    .workspace-drawer.is-pinned.mod-left + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
+      margin-right: 8px;
+    }
+    .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) .workspace-tabs:first-of-type .workspace-tab-container {
+      margin-left: 8px;
+    }
+  }
+}
+
+// Unfocused
+body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
+  --workspace-background-translucent: var(--background-secondary);
+  --tab-outline-color: transparent;
+
+  .workspace-ribbon,
+  .mod-sidedock > div,
+  .modal.mod-settings .vertical-tab-header > div {
+    opacity: 0.75;
+  }
+  .workspace {
+    background-color: var(--background-modifier-hover);
+  }
+  &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
+  .mod-sidedock {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .modal.mod-settings .vertical-tab-header {
+    background-color: var(--background-secondary);
+  }
+}
+
+body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
+  // Side panels
+  &.is-fullscreen .mod-sidedock.mod-left-split {
+    border-radius: var(--radius-m);
+
+    .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+      height: calc(var(--header-height) - 8px);
+      padding-left: var(--frame-left-space);
+    }
+  }
+
+  &.show-ribbon {
+    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
+    &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
+      margin-block: 8px;
+    }
+    &:not(.mod-macos):not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+      height: calc(var(--header-height) - 24px);
+    }
+    &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
+      margin-top: calc(var(--header-height) - 8px);
+      padding-left: 16px;
+    }
+    &:not(.hover-ribbon) .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) {
+      margin-left: calc(-1 * var(--ribbon-width) + 8px);
+      padding-left: calc(var(--ribbon-width) - 8px);
+    }
+
+    .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
+    .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action:hover {
+      box-shadow: none !important;
+      background-color: transparent !important;
+      color: var(--text-normal);
+    }
+  }
+
+  &:not(.is-translucent).layout-tahoe .mod-sidedock,
+  &:not(.is-translucent).layout-fusion .mod-sidedock.mod-left-split {
+    background-color: var(--blur-background);
+  }
+  &.is-translucent.layout-tahoe .mod-sidedock,
+  &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
+    background-color: hsl(from var(--background-primary) h s l / 50%) !important;
+  }
+  .mod-sidedock {
+    transition:
+      var(--anim-duration-moderate),
+      background-color 0s,
+      box-shadow 0s;
+  }
+  .mod-sidedock.mod-left-split {
+    corner-shape: var(--corner-shape);
+    z-index: var(--layer-sidedock);
+    margin: 8px;
+    box-shadow: var(--shadow-surface);
+    border-radius: var(--radius-window, var(--radius-m));
+    height: stretch;
+    overflow: hidden;
+  }
+
+  &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    padding-block: 0px;
+  }
+  &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+  .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container .sidebar-toggle-button {
+    min-height: calc(var(--header-height) - 16px);
+    max-height: calc(var(--header-height) - 16px);
+
+    div:is(.workspace-tab-header-inner, .clickable-icon) {
+      padding-block: 4px;
+    }
+  }
+
+  // Ribbon
+  &.layout-tahoe,
+  &.layout-fusion:not(.tab-floating, .tab-floating-center) {
+    .mod-macos.is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed {
+      padding-top: 8px;
+      box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
+    }
+  }
+
+  // Settings
+  .modal.mod-settings .vertical-tab-header {
+    margin: 8px 0 8px 8px;
+    box-shadow: var(--shadow-surface);
+    border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
+    background-color: hsl(from var(--background-primary) h s l / 75%);
+  }
+}
+
+// Tablet
+body:is(.layout-tahoe, .layout-fusion).is-tablet {
+  .workspace {
+    background-color: var(--background-primary);
+  }
+
+  .workspace-drawer:not(.is-pinned) {
+    background-color: var(--modal-background);
+    box-shadow: var(--shadow-xs);
+    backdrop-filter: var(--blur-l);
+  }
+
+  .workspace-drawer.is-pinned.mod-left {
+    background-color: var(--blur-background);
+    box-shadow: var(--shadow-surface);
+    border: none;
+    margin: calc(var(--safe-area-inset-top) + 8px) 8px 8px;
+    border-radius: calc(env(safe-area-inset-bottom) - 8px);
+    height: auto;
+
+    .workspace-drawer-ribbon,
+    .workspace-drawer-inner {
+      padding-block: 0px 16px;
+    }
+  }
+
+  .modal.mod-settings .vertical-tab-header {
+    margin: 8px 0 8px 8px;
+    border-radius: var(--radius-m);
+    border: none;
+    z-index: 1;
+    background-color: var(--blur-background);
+    box-shadow: var(--shadow-surface);
+  }
+}
+
+// Cupertino specific
+body.layout-cupertino:not(.is-phone) {
+  &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+    box-shadow:
+      0 0 0 var(--tab-outline-width) var(--tab-outline-color),
+      rgba(0, 0, 0, 0.04) 0px 24px 48px,
+      rgba(0, 0, 0, 0.02) 0px 4px 16px;
+  }
+  &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+    box-shadow:
+      0 0 0 var(--tab-outline-width) var(--tab-outline-color),
+      rgba(0, 0, 0, 0.16) 0px 24px 48px,
+      rgba(0, 0, 0, 0.12) 0px 4px 16px;
+  }
+}
+
+// macOS specific
+body.layout-macos:not(.is-phone) .modal.mod-settings .vertical-tab-header {
+  background-color: var(--background-secondary);
+}
+
+body:is(.layout-macos, .layout-tahoe):not(.is-phone) {
+  .mod-root {
+    background-color: var(--background-primary) !important;
+  }
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
+    box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
+  }
+  &:is(.tab-floating, .tab-floating-center) {
+    --tab-outline-color: transparent;
+  }
+}
+
+// Tahoe specific
+body.layout-tahoe:not(.is-phone) {
+  &:not(.is-hidden-frameless) .titlebar {
+    background-color: var(--background-primary);
+  }
+  &:not(.is-translucent) .workspace {
+    background-color: var(--background-primary);
+  }
+
+  // Side panels
+  .mod-sidedock.mod-left-split {
+    margin-right: 0px;
+    box-shadow:
+      var(--shadow-surface),
+      -32px 0 0 32px var(--background-primary);
+  }
+  .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
+    border-color: var(--divider-color);
+  }
+
+  .workspace-drawer.is-pinned.mod-left {
+    margin-right: 0px;
+  }
+}
+
+// Fusion specific
+body.layout-fusion:not(.is-phone) {
+  // Editor panel
+  &:not(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
+    --tab-outline-color: transparent;
+  }
+
+  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-leaf {
+      background-color: var(--blur-background) !important;
+    }
+
+    .view-header,
+    .view-content,
+    .document-search-container {
+      background-color: transparent;
+    }
+  }
+
+  &.is-tablet:not(.tab-floating, .tab-floating-center) .workspace {
+    background-color: var(--background-secondary);
+  }
+}

@@ -69,11 +69,11 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Workspace: Use sidedock for tint
-  &:is(.layout-fusion, .layout-tahoe).theme-light .mod-sidedock {
-    background-color: color-mix(in srgb, #ffffff, var(--colorful-frame-background, var(--color-accent)) 2%);
+  &.layout-macos .workspace {
+    background-color: color-mix(in srgb, var(--background-primary-alt), var(--colorful-frame-background, var(--color-accent)) 2%);
   }
-  &:is(.layout-fusion, .layout-tahoe).theme-dark .mod-sidedock {
-    background-color: color-mix(in srgb, var(--background-modifier-cover), var(--colorful-frame-background, var(--color-accent)) 2%);
+  &:is(.layout-tahoe, .layout-fusion) .mod-sidedock {
+    background-color: color-mix(in srgb, var(--blur-background), var(--colorful-frame-background, var(--color-accent)) 2%);
   }
 
   // Fix: Obsidian frame color bleed

@@ -60,7 +60,7 @@ body:is(.layout-cards, .layout-border) {
     border-bottom-width: 0;
   }
 }
-body:is(.layout-cupertino, .layout-fusion, .layout-tahoe).is-phone {
+body:is(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion).is-phone {
   @media only screen and (max-width: 600px) {
     .omnisearch-modal {
       --prompt-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
@@ -239,7 +239,7 @@ body:not(.is-mobile):not(.nav-action-center, .nav-action-left) .mod-sidedock .wo
   }
 }
 
-body:is(.layout-cupertino, .layout-fusion, .layout-tahoe).is-mobile .workspace-drawer .novel-word-count--active {
+body:is(.layout-cupertino, .layout-macos, .layout-tahoe, .layout-fusion).is-mobile .workspace-drawer .novel-word-count--active {
   .nav-buttons-container {
     overflow: visible;
   }

@@ -50,6 +50,7 @@ body:not(.is-phone) .workspace-tab-header-container {
   margin: 0;
 
   .clickable-icon {
+    min-width: var(--tab-action-width);
     padding: 8px;
   }
 }
@@ -79,7 +80,7 @@ body:not(.is-phone) .workspace .mod-root {
 }
 
 // Editor panel: Baseline
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-tahoe, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.is-pinned.mod-left + .mod-root .workspace-tab-header-container {
+body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-macos, .layout-tahoe, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.is-pinned.mod-left + .mod-root .workspace-tab-header-container {
   padding-left: var(--tab-radius);
 }
 
@@ -290,14 +291,13 @@ body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
 
 // Editor panel: Underline
 body:not(.is-phone):is(.tab-underline, .tab-underline-accented) .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
-  --tab-background-active: transparent;
-
   .workspace-tab-header-container-inner {
     padding-top: 0;
     gap: 0;
   }
   .workspace-tab-header {
     --tab-background-active: transparent;
+    --tab-outline-width: 0px;
     border-bottom: 2px solid transparent;
     padding-top: 8px;
   }
@@ -519,11 +519,12 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(
   margin-top: calc(-1 * var(--header-height) + 8px);
   margin-right: 48px;
 }
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-fusion, .layout-tahoe):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-  margin-top: calc(-1 * var(--header-height) + 24px);
-}
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
   margin-top: 8px;
+}
+
+body.tab-top-left-stacked:not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  margin-top: calc(-1 * var(--header-height) + 24px);
 }
 
 body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
@@ -542,6 +543,10 @@ body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right
 
     .workspace-tab-header {
       background-color: var(--background-modifier-hover);
+    }
+
+    .workspace-tab-header-inner {
+      padding-block: 0px !important;
     }
 
     .workspace-tab-header-inner-icon svg.svg-icon {

@@ -98,12 +98,10 @@ body.input-cupertino {
   &:not(.is-mobile) {
     --tab-action-width: 40px;
 
-    .clickable-icon {
-      min-width: var(--tab-action-width);
-    }
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
-    .modal-header-button:hover {
+    .modal-header-button:hover,
+    .search-input-container input {
       box-shadow: var(--shadow-xs);
       background-color: var(--blur-background);
     }
@@ -271,7 +269,7 @@ body.input-cupertino {
     .workspace-tab-header {
       border-radius: var(--clickable-icon-radius);
     }
-    .workspace-tab-header-container:hover .workspace-tab-header-inner {
+    .workspace-tab-header-inner {
       padding: 8px;
     }
     .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {

@@ -26,8 +26,7 @@
 @use "layouts/border.scss";
 @use "layouts/frame.scss";
 @use "layouts/viewfinder.scss";
-@use "layouts/macos.scss";
-@use "layouts/fusion.scss";
+@use "layouts/cupertino.scss" as layout-cupertino;
 
 @use "elements/baseline.scss";
 @use "elements/cupertino.scss" as element-cupertino;

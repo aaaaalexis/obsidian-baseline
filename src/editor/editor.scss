@@ -72,63 +72,6 @@
     --hr-thickness: 1px;
   }
 
-  // Layout
-  body:is(.layout-baseline, .layout-cupertino, .layout-fusion, :not(.css-settings-manager)) {
-    &:not(.is-mobile) {
-      .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
-        padding-bottom: 0;
-      }
-      &.show-ribbon .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-        border-top-left-radius: var(--tab-radius);
-      }
-      .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
-        border-radius: 0;
-      }
-
-      &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
-        margin-left: 8px;
-      }
-      .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
-        margin-right: 8px;
-      }
-
-      &:not(.status-bar-full) .mod-root {
-        padding-bottom: 8px;
-      }
-
-      // Windows & Linux fix
-      &:not(.mod-macos).is-hidden-frameless .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-        padding-right: var(--frame-right-space);
-      }
-    }
-
-    // Editor panel
-    &:not(.is-phone) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
-      .mod-root,
-      .mod-root .workspace-split.mod-vertical {
-        gap: 8px;
-      }
-      .mod-root .workspace-tabs > .workspace-leaf-resize-handle:not(:hover) {
-        border-color: transparent;
-      }
-    }
-
-    &.is-tablet {
-      .workspace-drawer.is-pinned.mod-left + .mod-root:has(+ .workspace-drawer.mod-right:not(.is-pinned)) .workspace-tabs:last-of-type .workspace-tab-container {
-        margin-right: 8px;
-      }
-      .workspace-drawer.mod-left:not(.is-pinned) + .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) .workspace-tabs:first-of-type .workspace-tab-container {
-        margin-left: 8px;
-      }
-    }
-  }
-  body:is(.layout-baseline, .layout-cupertino, .layout-fusion.tab-default, :not(.css-settings-manager)).is-tablet {
-    .workspace-drawer.is-pinned.mod-left + .mod-root,
-    .mod-root:has(+ .workspace-drawer.is-pinned.mod-right) {
-      padding-bottom: 8px;
-    }
-  }
-
   // Editor panel
   body:not(.is-phone) {
     .mod-root .workspace-tabs {
@@ -139,22 +82,6 @@
       box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
       transition: var(--anim-duration-moderate);
       overflow: hidden;
-    }
-  }
-
-  // Editor panel: Cupertino Workspace
-  body.layout-cupertino:not(.is-phone) {
-    &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
-      box-shadow:
-        0 0 0 var(--tab-outline-width) var(--tab-outline-color),
-        rgba(0, 0, 0, 0.04) 0px 24px 48px,
-        rgba(0, 0, 0, 0.02) 0px 4px 16px;
-    }
-    &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
-      box-shadow:
-        0 0 0 var(--tab-outline-width) var(--tab-outline-color),
-        rgba(0, 0, 0, 0.16) 0px 24px 48px,
-        rgba(0, 0, 0, 0.12) 0px 4px 16px;
     }
   }
 

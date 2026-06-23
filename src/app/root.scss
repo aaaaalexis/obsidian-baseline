@@ -27,6 +27,7 @@ body,
   --corner-shape: superellipse(1.1);
 
   --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px rgba(var(--mono-rgb-100), 0.05);
+  --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
   --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
@@ -153,9 +154,6 @@ body:not(.is-mobile) {
   &:not(.is-translucent) .workspace,
   .workspace-fake-target-overlay {
     background: var(--background-secondary);
-  }
-  .workspace {
-    transition: var(--anim-duration-moderate);
   }
 
   .workspace-split {
