@@ -106,7 +106,7 @@ body.input-cupertino.is-phone {
     .menu-item-title::after {
       position: absolute;
       inset: auto 0 -14px;
-      background-color: rgba(var(--mono-rgb-100), 0.1);
+      background-color: hsl(from var(--mono-100) h s l / 0.1);
       height: var(--border-width);
       content: "";
     }

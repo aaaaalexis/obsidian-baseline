@@ -15,7 +15,7 @@ body:not(.is-mobile).contrast-dark-black.theme-dark {
   --background-primary-alt: var(--color-base-00);
   --background-secondary: black;
   --background-secondary-alt: var(--color-base-05);
-  --background-modifier-hover: rgba(var(--mono-rgb-100), 0.2);
+  --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.2);
   --interactive-normal: var(--color-base-10);
 }
 
@@ -90,8 +90,8 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --interactive-normal: var(--color-base-30);
   --interactive-hover: var(--color-base-35);
   --text-selection: color-mix(in oklch, var(--interactive-accent) 33%, transparent);
-  --shadow-s: 0 0 0 0.5pt rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-l: 0 0 0 0.5pt rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
+  --shadow-l: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.25);
   --mono-rgb-0: 0, 0, 0;
   --mono-rgb-100: 255, 255, 255;
 
@@ -160,7 +160,7 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --collapse-icon-color-collapsed: var(--text-accent);
   --divider-color: var(--background-modifier-border);
   --divider-color-hover: var(--interactive-accent);
-  --drag-ghost-background: rgba(0, 0, 0, 0.85);
+  --drag-ghost-background: hsl(0 0% 0% / 0.85);
   --drag-ghost-text-color: #fff;
   --drag-item-background: var(--background-primary);
   --embed-background: inherit;

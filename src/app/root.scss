@@ -26,7 +26,7 @@ body,
 
   --corner-shape: superellipse(1.1);
 
-  --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px rgba(var(--mono-rgb-100), 0.05);
+  --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px hsl(from var(--mono-100) h s l / 0.05);
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
@@ -56,10 +56,10 @@ body,
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
 
-  --background-modifier-cover: hsl(0 0% 0% / 15%);
-  --background-modifier-hover: hsl(from var(--mono-100) h s l / 5%) !important;
+  --background-modifier-cover: hsl(0 0% 0% / 0.15);
+  --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
   --interactive-normal: var(--background-modifier-hover);
-  --interactive-hover: hsl(from var(--mono-100) h s l / 6.5%);
+  --interactive-hover: hsl(from var(--mono-100) h s l / 0.065);
 }
 
 .theme-light {
@@ -97,8 +97,8 @@ body,
   --background-modifier-form-field: var(--background-primary);
   --blur-background: hsl(0 0% 100% / 0.5);
 
-  --shadow-s: 0 0 0 0.5pt rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-l: 0 0 0 0.5pt rgba(0, 0, 0, 0.1), 0 24px 48px rgba(0, 0, 0, 0.1), 0 16px 96px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-s: 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05);
+  --shadow-l: 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.05);
 }
 .theme-dark {
   --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-dark-opacity));
@@ -135,8 +135,8 @@ body,
   --background-modifier-form-field: var(--background-secondary);
   --blur-background: hsl(0 0% 100% / 0.1);
 
-  --shadow-s: 0 0 0 0.5pt rgba(255, 255, 255, 0.1), 0 8px 24px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-l: 0 0 0 0.5pt rgba(255, 255, 255, 0.1), 0 24px 48px rgba(0, 0, 0, 0.05), 0 16px 96px rgba(0, 0, 0, 0.25), 0 16px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
+  --shadow-l: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.25);
 }
 
 body:not(.is-mobile) {

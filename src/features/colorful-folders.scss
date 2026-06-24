@@ -77,35 +77,35 @@ body:is(.colorful-folders-subtle, .colorful-folders-frame) {
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
     --nav-item-color: color-mix(in srgb, var(--color-red) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-red-rgb), 0.15);
+    background-color: hsl(from var(--color-red) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
     --nav-item-color: color-mix(in srgb, var(--color-orange) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-orange-rgb), 0.15);
+    background-color: hsl(from var(--color-orange) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
     --nav-item-color: color-mix(in srgb, var(--color-yellow) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-yellow-rgb), 0.15);
+    background-color: hsl(from var(--color-yellow) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
     --nav-item-color: color-mix(in srgb, var(--color-green) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-green-rgb), 0.15);
+    background-color: hsl(from var(--color-green) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
     --nav-item-color: color-mix(in srgb, var(--color-cyan) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-cyan-rgb), 0.15);
+    background-color: hsl(from var(--color-cyan) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
     --nav-item-color: color-mix(in srgb, var(--color-blue) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-blue-rgb), 0.15);
+    background-color: hsl(from var(--color-blue) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
     --nav-item-color: color-mix(in srgb, var(--color-purple) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-purple-rgb), 0.15);
+    background-color: hsl(from var(--color-purple) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
     --nav-item-color: color-mix(in srgb, var(--color-pink) var(--nav-item-tint), var(--text-normal));
-    background-color: rgba(var(--color-pink-rgb), 0.15);
+    background-color: hsl(from var(--color-pink) h s l / 0.15);
   }
 }
 
@@ -157,27 +157,27 @@ body.colorful-folders-mono {
   }
 
   .nav-files-container > div > .nav-folder:nth-child(8n + 2) {
-    background-color: rgba(var(--mono-rgb-100), 0.24);
+    background-color: hsl(from var(--mono-100) h s l / 0.24);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 3) {
-    background-color: rgba(var(--mono-rgb-100), 0.21);
+    background-color: hsl(from var(--mono-100) h s l / 0.21);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 4) {
-    background-color: rgba(var(--mono-rgb-100), 0.18);
+    background-color: hsl(from var(--mono-100) h s l / 0.18);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 5) {
-    background-color: rgba(var(--mono-rgb-100), 0.15);
+    background-color: hsl(from var(--mono-100) h s l / 0.15);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 6) {
-    background-color: rgba(var(--mono-rgb-100), 0.12);
+    background-color: hsl(from var(--mono-100) h s l / 0.12);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 7) {
-    background-color: rgba(var(--mono-rgb-100), 0.09);
+    background-color: hsl(from var(--mono-100) h s l / 0.09);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 8) {
-    background-color: rgba(var(--mono-rgb-100), 0.06);
+    background-color: hsl(from var(--mono-100) h s l / 0.06);
   }
   .nav-files-container > div > .nav-folder:nth-child(8n + 9) {
-    background-color: rgba(var(--mono-rgb-100), 0.03);
+    background-color: hsl(from var(--mono-100) h s l / 0.03);
   }
 }

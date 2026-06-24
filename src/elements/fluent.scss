@@ -35,24 +35,24 @@ body.input-fluent {
     --slider-thumb-height: 24px;
   }
   &.theme-light {
-    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.05), 0 -0.5pt 0 0 rgba(0, 0, 0, 0.25) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) hsl(0 0% 0% / 0.05), 0 -0.5pt 0 0 hsl(0 0% 0% / 0.25) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-00);
 
-    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.19), 0px 2px 21px 0px rgba(0, 0, 0, 0.15);
+    --shadow-s: 0px 1px 2px hsl(0 0% 0% / 0.028), 0px 3.4px 6.7px hsl(0 0% 0% / 0.042), 0px 15px 30px hsl(0 0% 0% / 0.07);
+    --shadow-l: 0px 32px 64px 0px hsl(0 0% 0% / 0.19), 0px 2px 21px 0px hsl(0 0% 0% / 0.15);
 
     --modal-background: hsl(from white h s l / 85%);
   }
   &.theme-dark {
-    --input-shadow: 0px 0px 0px var(--input-border-width) rgba(0, 0, 0, 0.1), 0 0.5pt 0 rgba(255, 255, 255, 0.1) inset !important;
+    --input-shadow: 0px 0px 0px var(--input-border-width) hsl(0 0% 0% / 0.1), 0 0.5pt 0 hsl(0 0% 100% / 0.1) inset !important;
     --input-shadow-hover: var(--input-shadow) !important;
     --input-shadow-active: inset 0 0 1px var(--background-modifier-border);
     --slider-thumb-border-color: var(--color-base-35);
 
-    --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-    --shadow-l: 0px 32px 64px 0px rgba(0, 0, 0, 0.37), 0px 2px 21px 0px rgba(0, 0, 0, 0.37);
+    --shadow-s: 0px 1px 2px hsl(0 0% 0% / 0.028), 0px 3.4px 6.7px hsl(0 0% 0% / 0.042), 0px 15px 30px hsl(0 0% 0% / 0.07);
+    --shadow-l: 0px 32px 64px 0px hsl(0 0% 0% / 0.37), 0px 2px 21px 0px hsl(0 0% 0% / 0.37);
 
     --modal-background: hsl(from var(--color-base-20) h s l / 65%);
   }
@@ -94,7 +94,7 @@ body.input-fluent {
   // Slider
   input[type="range"]::-webkit-slider-thumb {
     transition: var(--anim-duration-fast);
-    box-shadow: 0 0.5pt 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5pt 1px 1px hsl(0 0% 0% / 0.1);
     background-color: var(--interactive-accent);
   }
   input[type="range"]::-webkit-slider-thumb:hover,
@@ -165,7 +165,7 @@ body.input-fluent {
     }
 
     .setting-item:not(.setting-item-heading) {
-      border: var(--border-width) solid rgba(0, 0, 0, 0.1);
+      border: var(--border-width) solid hsl(0 0% 0% / 0.1);
       border-radius: var(--radius-m);
       background-color: var(--setting-items-background);
 
@@ -184,7 +184,7 @@ body.input-fluent {
 body.input-fluent:not(.is-mobile) {
   --menu-padding: 4px;
   --prompt-input-height: 64px;
-  --tab-outline-color: rgba(var(--mono-rgb-100), 0.05);
+  --tab-outline-color: hsl(from var(--mono-100) h s l / 0.05);
 
   // Side panels
   @keyframes workspaceLeafInFluent {
@@ -315,7 +315,7 @@ body.input-fluent:not(.is-mobile) {
     .modal-button-container {
       margin: 0;
       border-top: var(--border-width) solid var(--background-modifier-border);
-      background-color: rgba(0, 0, 0, 0.05);
+      background-color: hsl(0 0% 0% / 0.05);
       padding: 24px;
 
       button {

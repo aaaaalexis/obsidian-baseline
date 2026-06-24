@@ -12,7 +12,7 @@ body.input-cupertino {
   --input-height: 24px;
 
   --interactive-hover: var(--interactive-normal);
-  --background-modifier-border: rgba(var(--mono-rgb-100), 0.075);
+  --background-modifier-border: hsl(from var(--mono-100) h s l / 0.075);
   --background-modifier-border-hover: var(--background-modifier-border);
   --background-modifier-border-focus: hsl(from var(--interactive-accent) h s l / 0.5);
 
@@ -44,8 +44,8 @@ body.input-cupertino {
     --shadow-edge: 0 0 0 0.5pt hsl(0 0% 0% / 0.1);
 
     --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
-    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 rgba(0, 0, 0, 0.25);
-    --shadow-l: var(--shadow-edge), 0 0 1px 0 rgba(0, 0, 0, 0.8), 0 18px 54px 0 rgba(0, 0, 0, 0.3);
+    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
+    --shadow-l: var(--shadow-edge), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
 
     --shadow-surface: var(--shadow-highlight), 0 4px 24px hsl(0 0% 0% / 0.075);
   }
@@ -61,8 +61,8 @@ body.input-cupertino {
     --shadow-edge: 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
 
     --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
-    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 rgba(0, 0, 0, 0.45);
-    --shadow-l: var(--shadow-edge), 0 0 1px 0 rgba(0, 0, 0, 0.8), 0 18px 54px 0 rgba(0, 0, 0, 0.57);
+    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
+    --shadow-l: var(--shadow-edge), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
 
     --shadow-surface: var(--shadow-highlight), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
   }
@@ -139,8 +139,8 @@ body.input-cupertino {
     &:active {
       scale: 1.2;
       box-shadow:
-        inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
-        inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        inset 1px 1px 2px -2px hsl(from var(--mono-100) h s l / 1),
+        inset -1px -1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         var(--shadow-xs) !important;
       background-color: var(--blur-background);
     }
@@ -185,8 +185,8 @@ body.input-cupertino {
       --toggle-s-thumb-width: var(--toggle-thumb-width);
 
       box-shadow:
-        inset 1px 1px 2px -2px rgba(var(--mono-rgb-100), 1),
-        inset -1px -1px 2px -2px rgba(var(--mono-rgb-100), 1),
+        inset 1px 1px 2px -2px hsl(from var(--mono-100) h s l / 1),
+        inset -1px -1px 2px -2px hsl(from var(--mono-100) h s l / 1),
         var(--shadow-xs);
       background-color: var(--blur-background);
     }
