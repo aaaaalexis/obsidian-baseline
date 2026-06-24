@@ -55,23 +55,13 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 // Unfocused
 body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
   --workspace-background-translucent: var(--background-secondary);
-  --tab-outline-color: transparent;
+  --blur-background: var(--background-modifier-hover);
+  --shadow-highlight: 0 0 transparent;
 
   .workspace-ribbon,
   .mod-sidedock > div,
   .modal.mod-settings .vertical-tab-header > div {
     opacity: 0.75;
-  }
-  .workspace {
-    background-color: var(--background-modifier-hover);
-  }
-  &.input-cupertino:is(.tab-floating, .tab-floating-center) .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
-  .mod-sidedock {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  .modal.mod-settings .vertical-tab-header {
-    background-color: var(--background-secondary);
   }
 }
 
@@ -162,7 +152,7 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
-    background-color: hsl(from var(--background-primary) h s l / 75%);
+    background-color: var(--blur-background);
   }
 }
 

@@ -34,9 +34,9 @@ body.input-cupertino {
   }
 
   &.theme-light {
-    --blur-s: blur(1px) saturate(1.5) contrast(0.95) brightness(1.01);
-    --blur-m: blur(2px) saturate(1.5) contrast(0.95) brightness(1.01);
-    --blur-l: blur(4px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-s: blur(2px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-m: blur(4px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-l: blur(8px) saturate(1.5) contrast(0.95) brightness(1.01);
 
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
@@ -47,13 +47,13 @@ body.input-cupertino {
     --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
     --shadow-l: var(--shadow-edge), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
 
-    --shadow-surface: var(--shadow-highlight), 0 4px 24px hsl(0 0% 0% / 0.075);
+    --shadow-surface: var(--shadow-edge), var(--shadow-highlight), 0 4px 24px hsl(0 0% 0% / 0.075);
   }
 
   &.theme-dark {
-    --blur-s: blur(1px) saturate(1.5) contrast(0.75) brightness(0.5);
-    --blur-m: blur(2px) saturate(1.5) contrast(0.75) brightness(0.5);
-    --blur-l: blur(4px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-s: blur(2px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-m: blur(4px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-l: blur(8px) saturate(1.5) contrast(0.75) brightness(0.5);
 
     --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
@@ -64,7 +64,7 @@ body.input-cupertino {
     --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
     --shadow-l: var(--shadow-edge), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
 
-    --shadow-surface: var(--shadow-highlight), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
+    --shadow-surface: var(--shadow-edge), var(--shadow-highlight), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
   }
 
   &.is-mobile.theme-light {
@@ -100,8 +100,6 @@ body.input-cupertino {
     padding: 4px var(--side-padding);
   }
   &:not(.is-mobile) {
-    --tab-action-width: 40px;
-
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
     .modal-header-button:hover,
@@ -265,7 +263,7 @@ body.input-cupertino {
       outline-color: var(--background-modifier-hover);
     }
     .workspace-tab-header-container-inner:hover .workspace-tab-header.is-active {
-      background-color: var(--background-primary);
+      background-color: var(--blur-background);
       box-shadow: var(--shadow-xs);
 
       .workspace-tab-header-inner-icon {
@@ -275,6 +273,7 @@ body.input-cupertino {
 
     .workspace-tab-header {
       border-radius: var(--clickable-icon-radius);
+      min-width: 40px;
     }
     .workspace-tab-header-inner {
       padding: 8px;
@@ -285,7 +284,6 @@ body.input-cupertino {
     .sidebar-toggle-button,
     .workspace-tab-header-inner {
       border-radius: var(--clickable-icon-radius);
-      width: var(--tab-action-width);
       height: fit-content;
       z-index: 1;
     }
@@ -303,8 +301,9 @@ body.input-cupertino {
   // Panel actions
   &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
-    background-color: var(--background-modifier-hover);
     padding: 2px;
+    box-shadow: var(--shadow-xs);
+    background-color: var(--blur-background);
     gap: 0;
 
     .nav-action-button {
