@@ -34,33 +34,37 @@ body.input-cupertino {
   }
 
   &.theme-light {
-    --blur-s: blur(2px) saturate(1.5) contrast(0.95) brightness(1.01);
-    --blur-m: blur(4px) saturate(1.5) contrast(0.95) brightness(1.01);
-    --blur-l: blur(8px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-s: blur(1px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-m: blur(2px) saturate(1.5) contrast(0.95) brightness(1.01);
+    --blur-l: blur(4px) saturate(1.5) contrast(0.95) brightness(1.01);
 
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
-    --shadow-base: 0 0 0 0.5pt rgba(0, 0, 0, 0.075), -1pt 0 0 -0.5pt rgba(0, 0, 0, 0.15), 1pt 0 0 -0.5pt rgba(0, 0, 0, 0.15), inset 0 1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.9), inset 0 -1.5px 1.5px -0.5pt rgba(255, 255, 255, 0.9);
-    --shadow-surface: var(--shadow-base), 0 4px 24px rgba(0, 0, 0, 0.075);
+    --shadow-highlight: inset 0 1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 -1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 20px 16px -8px hsl(0 0% 100% / 0.5), inset 0 -16px 16px -8px hsl(0 0% 100% / 0.35), inset 0 8px 12px 4px hsl(0 0% 0% / 0.05), inset 0 16px 8px -8px hsl(0 0% 100% / 0.25), inset 0 -16px 8px -8px hsl(0 0% 100% / 0.25);
+    --shadow-edge: 0 0 0 0.5pt hsl(0 0% 0% / 0.1);
 
-    --shadow-xs: var(--shadow-base), inset 0 20px 16px -8px rgba(255, 255, 255, 0.5), inset 0 -16px 16px -8px rgba(255, 255, 255, 0.35), inset 0 8px 12px 4px rgba(0, 0, 0, 0.05), inset 0 16px 8px -8px rgba(255, 255, 255, 0.25), inset 0 -16px 8px -8px rgba(255, 255, 255, 0.25);
-    --shadow-s: var(--shadow-base), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-l: var(--shadow-base), 0 16px 64px rgba(0, 0, 0, 0.15);
+    --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
+    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 rgba(0, 0, 0, 0.25);
+    --shadow-l: var(--shadow-edge), 0 0 1px 0 rgba(0, 0, 0, 0.8), 0 18px 54px 0 rgba(0, 0, 0, 0.3);
+
+    --shadow-surface: var(--shadow-highlight), 0 4px 24px hsl(0 0% 0% / 0.075);
   }
 
   &.theme-dark {
-    --blur-s: blur(2px) saturate(1.5) contrast(0.75) brightness(0.5);
-    --blur-m: blur(4px) saturate(1.5) contrast(0.75) brightness(0.5);
-    --blur-l: blur(8px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-s: blur(1px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-m: blur(2px) saturate(1.5) contrast(0.75) brightness(0.5);
+    --blur-l: blur(4px) saturate(1.5) contrast(0.75) brightness(0.5);
 
     --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
-    --shadow-base: 0 0 0 0.5pt rgba(0, 0, 0, 0.1), inset 0 1px 1px -0.5pt rgba(255, 255, 255, 0.25), inset 0 -1px 1px -0.5pt rgba(255, 255, 255, 0.25);
-    --shadow-surface: var(--shadow-base), inset 0 0 1px 1px rgba(255, 255, 255, 0.05), 0 8px 16px rgba(0, 0, 0, 0.2);
+    --shadow-highlight: inset 0 1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 16px 16px -8px hsl(0 0% 100% / 0.05), inset 0 -16px 16px -8px hsl(0 0% 100% / 0.05);
+    --shadow-edge: 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
 
-    --shadow-xs: var(--shadow-base), inset 0 16px 16px -8px rgba(255, 255, 255, 0.025), inset 0 -16px 16px -8px rgba(255, 255, 255, 0.025);
-    --shadow-s: var(--shadow-base), 0 8px 16px rgba(0, 0, 0, 0.2);
-    --shadow-l: var(--shadow-base), 0 16px 64px rgba(0, 0, 0, 0.3);
+    --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
+    --shadow-s: var(--shadow-edge), var(--shadow-highlight), 0 8px 48px 0 rgba(0, 0, 0, 0.45);
+    --shadow-l: var(--shadow-edge), 0 0 1px 0 rgba(0, 0, 0, 0.8), 0 18px 54px 0 rgba(0, 0, 0, 0.57);
+
+    --shadow-surface: var(--shadow-highlight), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
   }
 
   &.is-mobile.theme-light {
@@ -79,10 +83,10 @@ body.input-cupertino {
     --mobile-sidebar-background: var(--background-primary);
   }
   &.is-tablet.theme-light {
-    --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    --shadow-surface: inset 1px 1px 2px hsl(0 0% 100% / 0.5), inset -1px -1px 2px hsl(0 0% 100% / 0.5), inset 0 4px 16px hsl(0 0% 100% / 0.025), 0 0 1px hsl(0 0% 0% / 0.25), 0 8px 16px 0 hsl(0 0% 0% / 0.05);
   }
   &.is-tablet.theme-dark {
-    --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
+    --shadow-surface: 0 0 1px hsl(0 0% 100% / 0.3), 0 0 1px hsl(0 0% 100% / 0.5);
   }
 
   // Button
@@ -129,8 +133,8 @@ body.input-cupertino {
   input[type="range"]::-webkit-slider-thumb {
     transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
     box-shadow:
-      0 1px 4px rgba(0, 0, 0, 0.075),
-      0 1px 16px rgba(0, 0, 0, 0.1) !important;
+      0 1px 4px hsl(0 0% 0% / 0.075),
+      0 1px 16px hsl(0 0% 0% / 0.1) !important;
 
     &:active {
       scale: 1.2;
@@ -169,8 +173,8 @@ body.input-cupertino {
     &::after {
       transition: var(--anim-duration-moderate) var(--anim-motion-baseline) !important;
       box-shadow:
-        0 1px 4px rgba(0, 0, 0, 0.075),
-        0 1px 16px rgba(0, 0, 0, 0.1);
+        0 1px 4px hsl(0 0% 0% / 0.075),
+        0 1px 16px hsl(0 0% 0% / 0.1);
     }
     &:active:after {
       --toggle-border-width: -2.5px;
@@ -209,6 +213,7 @@ body.input-cupertino {
 
   // Search bar
   .search-input-container {
+    --search-icon-size: var(--icon-xs);
     display: flex;
     align-items: center;
     overflow: visible;
@@ -216,10 +221,12 @@ body.input-cupertino {
 
     &::before {
       top: unset;
+      inset-inline-start: 10px !important;
     }
 
     input {
       border: none;
+      padding-inline-start: 32px;
       min-height: inherit;
       border-radius: 100vh;
     }

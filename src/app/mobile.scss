@@ -526,10 +526,10 @@ body.is-phone {
     }
 
     .mobile-toolbar {
+      width: auto;
       top: calc(100vh - var(--keyboard-height) - var(--mobile-toolbar-height) - var(--keyboard-spacing));
-      padding-left: var(--keyboard-spacing);
-      padding-bottom: var(--keyboard-spacing);
-      padding-right: calc(var(--keyboard-spacing) + var(--touch-size-m) + 4px);
+      left: var(--keyboard-spacing);
+      right: calc(var(--keyboard-spacing) + var(--touch-size-m) + 4px);
     }
     .mobile-toolbar-options-container {
       gap: 4px;

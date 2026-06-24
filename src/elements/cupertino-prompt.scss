@@ -2,10 +2,11 @@ body.input-cupertino {
   .prompt-input-container {
     align-items: center;
   }
+  .search-input-container::before,
   .prompt-input-container::before,
   .omnisearch-input-field::before {
     position: absolute;
-    left: var(--side-padding);
+    inset-inline-start: var(--side-padding);
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
