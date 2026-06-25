@@ -161,7 +161,7 @@ body.input-material {
     }
 
     .setting-item:not(.setting-item-heading)::before {
-      content: none;
+      border: none;
     }
     .setting-item-name {
       font-weight: var(--font-medium);

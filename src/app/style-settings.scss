@@ -12,21 +12,21 @@ settings:
 		collapsed: false
 	-
 		id: marketplace
-		title: Browse presets
+		title: Browse Marketplace
 		type: info-text
 		level: 1
 		markdown: true
-		description: Browse Marketplace[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
+		description: Marketplace[](https://aaaaalexis.github.io/obsidian-baseline/marketplace/)
 	-
 		id: migration
-		title: Migrate
+		title: Switch to Baseline
 		type: info-text
 		level: 1
 		markdown: true
-		description: Migrate[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
+		description: Switch[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
 	-
 		id: documentation
-		title: Docs
+		title: View Documentation
 		type: info-text
 		level: 1
 		markdown: true
@@ -1364,7 +1364,7 @@ settings:
 		type: class-toggle
 	-
 		id: hide-baseline-migration
-		title: Hide Migrate
+		title: Hide Switch
 		type: class-toggle
 	-
 		id: hide-baseline-documentation
@@ -3363,7 +3363,7 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
     display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    padding-bottom: 0;
+    padding-bottom: 8px;
     padding-left: 0;
 
     .setting-item {
@@ -3375,9 +3375,11 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
       transition: var(--anim-duration-fast);
       box-shadow: var(--input-shadow);
       border-radius: var(--setting-items-radius) !important;
+      border: none !important;
       background-color: var(--setting-items-background) !important;
       padding: 0 16px !important;
       height: var(--input-height);
+      flex-direction: row;
 
       &:hover {
         background-color: var(--background-modifier-hover) !important;
@@ -3411,10 +3413,6 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
         background-image: none;
       }
 
-      &:nth-child(1) {
-        flex-basis: 100%;
-      }
-
       &::before {
         background-color: var(--text-normal);
         width: var(--icon-s);
@@ -3422,6 +3420,7 @@ body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[da
         content: "";
         -webkit-mask-position: 50% 50%;
         -webkit-mask-size: 100% 100%;
+        flex-shrink: 0;
       }
       &:nth-child(1)::before {
         -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN0b3JlLWljb24gbHVjaWRlLXN0b3JlIj48cGF0aCBkPSJNMTUgMjF2LTVhMSAxIDAgMCAwLTEtMWgtNGExIDEgMCAwIDAtMSAxdjUiLz48cGF0aCBkPSJNMTcuNzc0IDEwLjMxYTEuMTIgMS4xMiAwIDAgMC0xLjU0OSAwIDIuNSAyLjUgMCAwIDEtMy40NTEgMCAxLjEyIDEuMTIgMCAwIDAtMS41NDggMCAyLjUgMi41IDAgMCAxLTMuNDUyIDAgMS4xMiAxLjEyIDAgMCAwLTEuNTQ5IDAgMi41IDIuNSAwIDAgMS0zLjc3LTMuMjQ4bDIuODg5LTQuMTg0QTIgMiAwIDAgMSA3IDJoMTBhMiAyIDAgMCAxIDEuNjUzLjg3M2wyLjg5NSA0LjE5MmEyLjUgMi41IDAgMCAxLTMuNzc0IDMuMjQ0Ii8+PHBhdGggZD0iTTQgMTAuOTVWMTlhMiAyIDAgMCAwIDIgMmgxMmEyIDIgMCAwIDAgMi0ydi04LjA1Ii8+PC9zdmc+);
