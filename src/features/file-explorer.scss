@@ -1,4 +1,4 @@
-body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > div {
+body.nav-item-dot .nav-files-container > div {
   --nav-item-background-active: transparent;
   --nav-item-weight-active: var(--font-medium);
 
@@ -13,7 +13,7 @@ body:is(.nav-item-baseline, :not(.css-settings-manager)) .nav-files-container > 
   }
 }
 
-body.nav-item-baseline.input-fluent .nav-files-container > div {
+body.nav-item-subtle.input-fluent .nav-files-container > div {
   --nav-item-background-active: var(--background-modifier-hover);
   --nav-item-color-active: var(--nav-item-color);
 

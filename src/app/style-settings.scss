@@ -1208,11 +1208,11 @@ settings:
 		title: Active file style
 		type: class-select
 		allowEmpty: false
-		default: nav-item-baseline
+		default: nav-item-subtle
 		options:
 			-
-				label: Baseline
-				value: nav-item-baseline
+				label: Dot
+				value: nav-item-dot
 			-
 				label: Subtle
 				value: nav-item-subtle
