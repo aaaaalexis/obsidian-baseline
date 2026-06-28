@@ -4,30 +4,34 @@
     --file-margins-x: 32px;
     --file-margins: var(--file-margins-y) var(--file-margins-x);
 
-    --heading-spacing: 2.5em;
-    --p-spacing: 1.25em;
+    --heading-spacing: 2.5rem;
+    --p-spacing: 1.25rem;
     --p-spacing-empty: var(--p-spacing);
     --line-height-normal: 1.625;
-    --list-spacing: 0.175em;
-    --inline-title-margin-bottom: 0.5em;
+    --list-spacing: 0.175rem;
+    --inline-title-margin-bottom: 0.5rem;
 
     --inline-title-color: inherit;
-    --inline-title-size: 1.125em;
+    --inline-title-size: 1.5rem;
+    --inline-title-weight: var(--font-semibold);
     --inline-title-line-height: var(--line-height-tight);
 
-    --h1-size: 1.125em;
-    --h2-size: 1.0625em;
-    --h3-size: 1em;
-    --h4-size: 0.9375em;
-    --h5-size: 0.875em;
-    --h6-size: 0.875em;
+    --h1-size: 1.5rem;
+    --h2-size: 1.25rem;
+    --h3-size: 1rem;
+    --h4-size: 1rem;
+    --h5-size: 0.9375rem;
+    --h6-size: 0.9375rem;
 
     --h1-weight: var(--font-medium);
     --h2-weight: var(--font-medium);
     --h3-weight: var(--font-medium);
-    --h4-weight: var(--font-medium);
+    --h4-weight: var(--font-semibold);
     --h5-weight: var(--font-medium);
-    --h6-weight: var(--font-medium);
+    --h6-weight: var(--font-semibold);
+
+    --h4-color: var(--text-muted);
+    --h6-color: var(--text-muted);
 
     --h1-line-height: var(--line-height-normal);
     --h2-line-height: var(--line-height-normal);
@@ -67,8 +71,8 @@
 
     --hr-width: 100%;
     --hr-align: center;
-    --hr-dashed-size: 1em;
-    --hr-dashed-spacing: 0.5em;
+    --hr-dashed-size: 1rem;
+    --hr-dashed-spacing: 0.5rem;
     --hr-thickness: 1px;
   }
 
@@ -233,7 +237,7 @@
     font-size: var(--font-smallest);
     text-align: right;
     color: var(--text-muted);
-    padding-right: 1em;
+    padding-right: 1rem;
   }
 
   kbd {
@@ -356,7 +360,7 @@
   .markdown-rendered h6,
   .HyperMD-header-6,
   .HyperMD-list-line .cm-header-6 {
-    text-transform: var(--h6-transform, uppercase);
+    text-transform: var(--h6-transform);
     text-align: var(--h6-align);
   }
 
@@ -529,7 +533,7 @@
     --checklist-done-color: var(--text-normal);
   }
   .task-list-item {
-    --indentation-guide-reading-indent: -1.05em;
+    --indentation-guide-reading-indent: -1.05rem;
   }
 
   // PDF Viewer

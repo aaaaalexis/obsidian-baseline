@@ -1448,7 +1448,7 @@ settings:
 		id: p-spacing
 		title: Paragraph spacing
 		type: variable-text
-		default: 1.25em
+		default: 1.25rem
 	-
 		id: focus-view
 		title: Focus view
@@ -1598,7 +1598,7 @@ settings:
 		id: inline-title-size
 		title: Inline title font size
 		type: variable-text
-		default: 2em
+		default: 1.5rem
 	-
 		id: inline-title-align
 		title: Inline title alignment
@@ -1616,7 +1616,7 @@ settings:
 		id: inline-title-weight
 		title: Inline title font weight
 		type: variable-number-slider
-		default: 400
+		default: 600
 		min: 100
 		max: 900
 		step: 50
@@ -1704,7 +1704,7 @@ settings:
 		title: Heading spacing
 		description: Adjust space between headings and paragraphs.
 		type: variable-text
-		default: 2.5em
+		default: 2.5rem
 	-
 		id: colorful-headings
 		title: Colorful headings
@@ -1766,7 +1766,7 @@ settings:
 		id: h1-size
 		title: H1 font size
 		type: variable-text
-		default: 1.125em
+		default: 1.5rem
 	-
 		id: h1-weight
 		title: H1 font weight
@@ -1862,7 +1862,7 @@ settings:
 		id: h2-size
 		title: H2 font size
 		type: variable-text
-		default: 1.0625em
+		default: 1.25rem
 	-
 		id: h2-weight
 		title: H2 font weight
@@ -1958,7 +1958,7 @@ settings:
 		id: h3-size
 		title: H3 font size
 		type: variable-text
-		default: 1em
+		default: 1rem
 	-
 		id: h3-weight
 		title: H3 font weight
@@ -2054,12 +2054,12 @@ settings:
 		id: h4-size
 		title: H4 font size
 		type: variable-text
-		default: 0.9375em
+		default: 1rem
 	-
 		id: h4-weight
 		title: H4 font weight
 		type: variable-number-slider
-		default: 500
+		default: 600
 		min: 100
 		max: 900
 		step: 50
@@ -2151,7 +2151,7 @@ settings:
 		id: h5-size
 		title: H5 font size
 		type: variable-text
-		default: 0.875em
+		default: 0.9375rem
 	-
 		id: h5-weight
 		title: H5 font weight
@@ -2247,12 +2247,12 @@ settings:
 		id: h6-size
 		title: H6 font size
 		type: variable-text
-		default: 0.875em
+		default: 0.9375rem
 	-
 		id: h6-weight
 		title: H6 font weight
 		type: variable-number-slider
-		default: 500
+		default: 600
 		min: 100
 		max: 900
 		step: 50
@@ -2290,7 +2290,7 @@ settings:
 		title: H6 text case
 		type: variable-select
 		allowEmpty: false
-		default: uppercase
+		default: normal
 		options:
 			-
 				label: Normal
@@ -2372,13 +2372,13 @@ settings:
 		title: Dashed line size
 		type: variable-text
 		allowEmpty: false
-		default: 1em
+		default: 1rem
 	- 
 		id: hr-dashed-spacing
 		title: Dashed line spacing
 		type: variable-text
 		allowEmpty: false
-		default: 0.5em
+		default: 0.5rem
 	-
 		id: banner
 		title: Banner
@@ -2525,7 +2525,7 @@ settings:
 		id: blockquote-size
 		title: Blockquote font size
 		type: variable-text
-		default: 1em
+		default: 1rem
 	-
 		id: blockquote-font-style
 		title: Blockquote font style
@@ -2636,7 +2636,7 @@ settings:
 		id: callout-size
 		title: Callout font size
 		type: variable-text
-		default: 1em
+		default: 1rem
 	-
 		id: callout-lucide
 		title: Disable custom icons
@@ -2852,7 +2852,7 @@ settings:
         id: list-spacing
         title: List spacing
         type: variable-text
-        default: 0.175em
+        default: 0.175rem
     -
         id: list-numbered-style
         title: List order style
@@ -3031,7 +3031,7 @@ settings:
 		id: table-text-size
 		title: Table font size
 		type: variable-text
-		default: 0.933em
+		default: 0.933rem
 	-
 		id: table-width
 		title: Table width
