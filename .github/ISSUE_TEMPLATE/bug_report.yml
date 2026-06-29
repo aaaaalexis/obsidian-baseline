@@ -1,16 +1,7 @@
 name: 🐞 Bug Report
-description: Report something that is not working
+description: Report something that isn't working
+labels: "bug"
 body:
-  - type: checkboxes
-    attributes:
-      label: Prerequisite
-      options:
-        - label: I've confirmed that my **Obsidian** is up to date.
-          required: true
-        - label: I've confirmed that my **Obsidian installer** is up to date with the [latest GitHub release](https://github.com/obsidianmd/obsidian-releases/releases/latest).
-          required: true
-        - label: I've confirmed that my **Baseline** is up to date with the [latest GitHub release](https://github.com/aaaaalexis/obsidian-baseline/releases/latest).
-          required: true
   - type: input
     attributes:
       label: Obsidian version

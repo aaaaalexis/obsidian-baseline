@@ -1,0 +1,199 @@
+name: Check Version Freshness
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  version-check:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compare reported versions against latest releases
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || "";
+
+            // Pull a field's value out of the rendered issue-form body.
+            // GitHub renders each "label:" as a "### <label>" markdown header.
+            function extractField(label) {
+              const re = new RegExp(`###\\s*${label}\\s*\\n+([^\\n]+)`, "i");
+              const match = body.match(re);
+              return match ? match[1].trim() : null;
+            }
+
+            // Returns a numeric array like [1, 13, 2], or null if `v` doesn't
+            // look like a real version string at all (e.g. "latest", "idk").
+            function parseVersion(v) {
+              if (!v) return null;
+              const cleaned = v.replace(/^v/i, "").trim();
+              if (!/^\d+(\.\d+)*/.test(cleaned)) return null;
+              return cleaned.split(".").map(n => {
+                const num = parseInt(n, 10);
+                return Number.isNaN(num) ? 0 : num;
+              });
+            }
+
+            // Returns -1 (a older than b), 0 (equal), 1 (a newer than b),
+            // or null if either side can't be parsed as a version.
+            function compareVersions(a, b) {
+              const pa = parseVersion(a);
+              const pb = parseVersion(b);
+              if (!pa || !pb) return null;
+              const len = Math.max(pa.length, pb.length);
+              for (let i = 0; i < len; i++) {
+                const x = pa[i] || 0, y = pb[i] || 0;
+                if (x < y) return -1;
+                if (x > y) return 1;
+              }
+              return 0;
+            }
+
+            const reportedObsidian  = extractField("Obsidian version");
+            const reportedInstaller = extractField("Obsidian installer version");
+            const reportedBaseline  = extractField("Baseline version");
+
+            // None of the three fields were found at all — this issue probably
+            // wasn't filed through the bug report form. Bail out quietly.
+            if (!reportedObsidian && !reportedInstaller && !reportedBaseline) {
+              console.log("No version fields found in issue body; skipping version check.");
+              return;
+            }
+
+            // Obsidian's GitHub release tag tracks both the installer build and
+            // the app version it ships, so we use one fetch for both fields.
+            const installerRelease = await github.rest.repos.getLatestRelease({
+              owner: "obsidianmd",
+              repo: "obsidian-releases",
+            });
+            const latestObsidian = installerRelease.data.tag_name.replace(/^v/i, "");
+
+            const baselineRelease = await github.rest.repos.getLatestRelease({
+              owner: "aaaaalexis",
+              repo: "obsidian-baseline",
+            });
+            const latestBaseline = baselineRelease.data.tag_name.replace(/^v/i, "");
+
+            // Each field carries its own "how to fix" instruction, since Obsidian's
+            // app version, installer version, and a theme's version all update
+            // through different actions.
+            const fields = [
+              {
+                name: "Obsidian",
+                reported: reportedObsidian,
+                latest: latestObsidian,
+                checkInsider: true,
+                howTo: "Open Settings → General and select Check for updates, then relaunch Obsidian.",
+              },
+              {
+                name: "Obsidian installer",
+                reported: reportedInstaller,
+                latest: latestObsidian,
+                checkInsider: true,
+                howTo: "Download the latest installer from [GitHub release](https://github.com/obsidianmd/obsidian-releases/releases/latest) or [obsidian.md/download](https://obsidian.md/download) and run it. You do not need to uninstall Obsidian first.",
+              },
+              {
+                name: "Baseline",
+                reported: reportedBaseline,
+                latest: latestBaseline,
+                checkInsider: false,
+                howTo: "Open Settings → Appearance and check for theme updates.",
+              },
+            ];
+
+            const outdatedBlocks = [];
+            const insiderFieldNames = [];
+            const unparsedFieldNames = [];
+
+            for (const f of fields) {
+              if (!f.reported) {
+                unparsedFieldNames.push(f.name); // required field, couldn't read it at all
+                continue;
+              }
+              const cmp = compareVersions(f.reported, f.latest);
+              if (cmp === null) {
+                unparsedFieldNames.push(f.name); // value present, but not a real version string
+              } else if (cmp < 0) {
+                outdatedBlocks.push(
+                  `**${f.name} — reported \`${f.reported}\`, latest is \`${f.latest}\`**\n${f.howTo}`
+                );
+              } else if (cmp > 0 && f.checkInsider) {
+                insiderFieldNames.push(f.name);
+              }
+            }
+
+            const sections = [...outdatedBlocks];
+
+            if (insiderFieldNames.length > 0) {
+              sections.push(
+                `**${insiderFieldNames.join(" and ")} — reported version is newer than the latest public release (\`${latestObsidian}\`)**\n` +
+                "This usually means you're on an insider build. Insider builds are pre-release and support is limited. Please check whether this also happens on the latest public release."
+              );
+            }
+
+            if (unparsedFieldNames.length > 0) {
+              sections.push(
+                `**${unparsedFieldNames.join(", ")} — could not read a version number from this field**\n` +
+                "Please edit the issue so it contains just the version number, for example `1.13.2`."
+              );
+            }
+
+            if (sections.length > 0) {
+              const closing = (outdatedBlocks.length > 0 || insiderFieldNames.length > 0)
+                ? "Once everything's up to date, let us know if the issue still happens."
+                : "Once that's fixed, we'll take another look.";
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body:
+                  "Thanks for filing this issue. Before we look into it, a few things stood out:\n\n" +
+                  sections.join("\n\n") +
+                  "\n\n" + closing,
+              });
+
+              const labels = [];
+              if (outdatedBlocks.length > 0) labels.push("outdated");
+              if (insiderFieldNames.length > 0) labels.push("insider");
+              if (labels.length > 0) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  labels,
+                });
+              }
+            }
+
+  clear-labels:
+    if: >
+      github.event_name == 'issue_comment' &&
+      github.event.comment.user.id == github.event.issue.user.id
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Remove outdated / insider labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labelsToClear = ["outdated", "insider"];
+            const currentLabels = context.payload.issue.labels.map(l => l.name);
+
+            for (const label of labelsToClear) {
+              if (currentLabels.includes(label)) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: label,
+                }).catch(() => {}); // already removed or never applied — fine either way
+              }
+            }
