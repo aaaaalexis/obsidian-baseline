@@ -45,9 +45,13 @@ body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-s
   }
 }
 
-body.focus-view.mod-macos:not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+body.focus-view.mod-macos:not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless)
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open)
+  .mod-root {
   --frame-left-space: 0px;
 }
-body.focus-view:not(.mod-macos):not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+body.focus-view:not(.mod-macos):not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless)
+  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open)
+  .mod-root {
   --frame-right-space: 0px;
 }

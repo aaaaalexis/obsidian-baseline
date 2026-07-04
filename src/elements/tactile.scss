@@ -13,10 +13,15 @@ body.input-tactile {
 
     --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), inset 0 -1px 2px hsl(0 0 0 / 0.025), var(--input-shadow-base);
     --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover), inset 0 -1px hsl(0 0 0 / 0.025);
-    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
+    --input-shadow-inset:
+      inset 0 0 0 var(--input-border-width) var(--background-modifier-border), 0 1px hsl(0 0 100 / 0.25), inset 0 4px 4px -2px hsl(0 0 0 / 0.025);
 
-    --shadow-s: inset 0 0.5pt rgb(255, 255, 255), 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05);
-    --shadow-l: inset 0 0.5pt rgb(255, 255, 255), 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.05);
+    --shadow-s:
+      inset 0 0.5pt rgb(255, 255, 255), 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05),
+      0 2px 4px hsl(0 0% 0% / 0.05);
+    --shadow-l:
+      inset 0 0.5pt rgb(255, 255, 255), 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1),
+      0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.05);
   }
   &.theme-dark {
     --interactive-normal: var(--color-base-30);
@@ -24,10 +29,15 @@ body.input-tactile {
 
     --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 1px hsl(0 0 0 / 0.1), var(--input-shadow-base);
     --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
-    --input-shadow-inset: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
+    --input-shadow-inset:
+      inset 0 0 0 var(--input-border-width) var(--background-modifier-hover), inset 0 4px 4px -2px hsl(0 0 0 / 0.15), inset 0 -1px hsl(0 0 0 / 0.05);
 
-    --shadow-s: inset 0 0.5pt hsl(0 0% 100% / 0.1), 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
-    --shadow-l: inset 0 0.5pt hsl(0 0% 100% / 0.1), 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.25);
+    --shadow-s:
+      inset 0 0.5pt hsl(0 0% 100% / 0.1), 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1),
+      0 2px 4px hsl(0 0% 0% / 0.1);
+    --shadow-l:
+      inset 0 0.5pt hsl(0 0% 100% / 0.1), 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25),
+      0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.25);
   }
 
   // Input

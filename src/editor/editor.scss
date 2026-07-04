@@ -396,7 +396,13 @@
   body.hr-dashed .markdown-rendered hr,
   body.hr-dashed .markdown-source-view.mod-cm6 .hr {
     border-top: none;
-    background: repeating-linear-gradient(to right, var(--hr-color), var(--hr-color) var(--hr-dashed-size), transparent var(--hr-dashed-size), transparent calc(var(--hr-dashed-size) + var(--hr-dashed-spacing)));
+    background: repeating-linear-gradient(
+      to right,
+      var(--hr-color),
+      var(--hr-color) var(--hr-dashed-size),
+      transparent var(--hr-dashed-size),
+      transparent calc(var(--hr-dashed-size) + var(--hr-dashed-spacing))
+    );
   }
 
   // Highlights

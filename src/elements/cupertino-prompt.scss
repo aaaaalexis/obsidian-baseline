@@ -104,7 +104,13 @@ body.input-cupertino.is-phone {
     }
 
     .prompt-results {
-      mask: linear-gradient(to bottom, transparent, black calc(var(--safe-area-inset-top) + 16px), black calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom) - 96px), transparent calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom)));
+      mask: linear-gradient(
+        to bottom,
+        transparent,
+        black calc(var(--safe-area-inset-top) + 16px),
+        black calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom) - 96px),
+        transparent calc(100vh - var(--side-padding) - var(--safe-area-inset-bottom))
+      );
       padding: calc(var(--safe-area-inset-top) + 16px) var(--side-padding) 128px;
     }
     .suggestion-item {

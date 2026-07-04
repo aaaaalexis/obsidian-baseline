@@ -11,7 +11,10 @@ body.input-cupertino {
         0 0 2px hsl(0 0% 0% / 0.25),
         0 1px 4px hsl(0 0% 0% / 0.15);
       border-radius: 6px;
-      background-image: linear-gradient(oklch(from var(--setting-nav-icon-background) calc(l * 1.125) c h), oklch(from var(--setting-nav-icon-background) calc(l * 0.975) c h));
+      background-image: linear-gradient(
+        oklch(from var(--setting-nav-icon-background) calc(l * 1.125) c h),
+        oklch(from var(--setting-nav-icon-background) calc(l * 0.975) c h)
+      );
       background-color: var(--setting-nav-icon-background);
       padding: 4px;
       color: var(--setting-nav-icon-color, white);

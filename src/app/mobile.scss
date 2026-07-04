@@ -312,7 +312,27 @@ body.is-phone {
     padding-top: 16px !important;
 
     // cubic-bezier(0.4, 0, 0.6, 1)
-    mask: linear-gradient(to top, hsl(0 0 0 / 0) 0px, hsl(0 0 0 / 0.013) 5px, hsl(0 0 0 / 0.049) 10px, hsl(0 0 0 / 0.104) 14px, hsl(0 0 0 / 0.175) 18px, hsl(0 0 0 / 0.259) 22px, hsl(0 0 0 / 0.352) 26px, hsl(0 0 0 / 0.45) 30px, hsl(0 0 0 / 0.55) 34px, hsl(0 0 0 / 0.648) 38px, hsl(0 0 0 / 0.741) 42px, hsl(0 0 0 / 0.825) 46px, hsl(0 0 0 / 0.896) 50px, hsl(0 0 0 / 0.951) 54px, hsl(0 0 0 / 0.987) 59px, hsl(0, 0%, 0%) 64px, black calc(100% - 16px), transparent);
+    mask: linear-gradient(
+      to top,
+      hsl(0 0 0 / 0) 0px,
+      hsl(0 0 0 / 0.013) 5px,
+      hsl(0 0 0 / 0.049) 10px,
+      hsl(0 0 0 / 0.104) 14px,
+      hsl(0 0 0 / 0.175) 18px,
+      hsl(0 0 0 / 0.259) 22px,
+      hsl(0 0 0 / 0.352) 26px,
+      hsl(0 0 0 / 0.45) 30px,
+      hsl(0 0 0 / 0.55) 34px,
+      hsl(0 0 0 / 0.648) 38px,
+      hsl(0 0 0 / 0.741) 42px,
+      hsl(0 0 0 / 0.825) 46px,
+      hsl(0 0 0 / 0.896) 50px,
+      hsl(0 0 0 / 0.951) 54px,
+      hsl(0 0 0 / 0.987) 59px,
+      hsl(0, 0%, 0%) 64px,
+      black calc(100% - 16px),
+      transparent
+    );
   }
   .workspace-drawer-inner {
     padding-top: calc(var(--safe-area-inset-top) + 32px);
@@ -429,7 +449,9 @@ body.is-phone {
       height: var(--view-bottom-spacing);
     }
   }
-  &:not(html:where([style*="--keyboard-height: 0px"], :not([style*="--keyboard-height"])) body):not(.mod-toolbar-open) .mod-root .workspace-leaf-content[data-type="markdown"] {
+  &:not(html:where([style*="--keyboard-height: 0px"], :not([style*="--keyboard-height"])) body):not(.mod-toolbar-open)
+    .mod-root
+    .workspace-leaf-content[data-type="markdown"] {
     .view-actions button:nth-last-child(2) {
       opacity: 0;
       pointer-events: none;
@@ -466,21 +488,50 @@ body.is-phone {
     margin-right: var(--keyboard-spacing);
     margin-bottom: var(--keyboard-spacing);
   }
-  &:not(.is-floating-nav):not(.mod-toolbar-open):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  &:not(.is-floating-nav):not(.mod-toolbar-open):not(.mode-switcher-off)
+    .mod-root
+    .workspace-leaf-content[data-type="markdown"]
+    .view-actions
+    button:nth-last-child(2) {
     margin-right: 16px;
     margin-bottom: 16px;
   }
-  &:not(.is-floating-nav):not(.mod-toolbar-open):not(.mode-switcher-off).auto-full-screen .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  &:not(.is-floating-nav):not(.mod-toolbar-open):not(.mode-switcher-off).auto-full-screen
+    .mod-root
+    .workspace-leaf-content[data-type="markdown"]
+    .view-actions
+    button:nth-last-child(2) {
     margin-bottom: calc(var(--navbar-height) + 16px);
   }
-  & > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) .view-actions button:nth-last-child(2) {
+  &
+    > .app-container
+    > .horizontal-main-container:has(
+      .workspace
+        > .mod-root
+        > .workspace-tabs.mod-visible
+        > .workspace-tab-container
+        > .workspace-leaf.mod-active
+        > .workspace-leaf-content:not([data-type="markdown"])
+    )
+    .view-actions
+    button:nth-last-child(2) {
     opacity: 0;
     pointer-events: none;
   }
 
   // Navigation bar
   &.is-floating-nav.mode-switcher-off .mobile-navbar,
-  &.is-floating-nav > .app-container > .horizontal-main-container:has(.workspace > .mod-root > .workspace-tabs.mod-visible > .workspace-tab-container > .workspace-leaf.mod-active > .workspace-leaf-content:not([data-type="markdown"])) ~ .mobile-navbar {
+  &.is-floating-nav
+    > .app-container
+    > .horizontal-main-container:has(
+      .workspace
+        > .mod-root
+        > .workspace-tabs.mod-visible
+        > .workspace-tab-container
+        > .workspace-leaf.mod-active
+        > .workspace-leaf-content:not([data-type="markdown"])
+    )
+    ~ .mobile-navbar {
     margin-right: var(--navbar-side-offset);
   }
 

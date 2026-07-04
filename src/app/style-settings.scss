@@ -23,7 +23,7 @@ settings:
 		type: info-text
 		level: 1
 		markdown: true
-		description: Switch[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
+		description: Migrate[](https://aaaaalexis.github.io/obsidian-baseline/migration/)
 	-
 		id: documentation
 		title: View Documentation
@@ -79,7 +79,7 @@ settings:
 				value: softlight-light
 	-
 		id: background-contrast-light
-		title: Personality
+		title: Type
 		type: class-select
 		allowEmpty: false
 		default: contrast-light
@@ -154,7 +154,7 @@ settings:
 				value: softlight-dark
 	-
 		id: background-contrast-dark
-		title: Personality
+		title: Type
 		type: class-select
 		allowEmpty: false
 		default: contrast-dark
@@ -203,8 +203,8 @@ settings:
 		title: Use as accent
 		type: class-toggle
 	-
-		id: colors-advanced
-		title: Advanced
+		id: colors-custom
+		title: Customize
 		type: heading
 		level: 2
 		collapsed: true
@@ -1364,7 +1364,7 @@ settings:
 		type: class-toggle
 	-
 		id: hide-baseline-migration
-		title: Hide Switch
+		title: Hide Migrate
 		type: class-toggle
 	-
 		id: hide-baseline-documentation
@@ -3338,16 +3338,16 @@ settings:
 }
 
 // Disabling input
-body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
-body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
-body:not(.layout-tahoe, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],
-body.view-header-title-hidden .style-settings-container .setting-item[data-id="file-header-visibility"] ~ .setting-item,
-body.block-width-off .style-settings-container .setting-item[data-id="line-width"] ~ .setting-item,
-body.unstyled-tags .style-settings-container .setting-item[data-id="unstyled-tags"] ~ .setting-item,
-body:not(.colorful-headings-background) .style-settings-container .setting-item[data-id="colorful-headings-full-width"],
-body:not(.hr-dashed) .style-settings-container .setting-item[data-id="hr-dashed"] ~ .setting-item,
-body:is(.is-hidden-frameless, :not(.is-frameless)) .style-settings-container .setting-item[data-id="titlebar-info"] ~ .setting-item,
-body:not(.is-translucent, .mod-macos) .style-settings-container .setting-item[data-id="translucent-window-info"] ~ .setting-item {
+body:is(.tab-floating, .tab-floating-center) .setting-item[data-id="tab-divider"],
+body:not(.hover-sidedock) .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
+body:not(.layout-tahoe, .layout-fusion) .setting-item[data-id="reduce-contrast-change"],
+body.view-header-title-hidden .setting-item[data-id="file-header-visibility"] ~ .setting-item,
+body.block-width-off .setting-item[data-id="line-width"] ~ .setting-item,
+body.unstyled-tags .setting-item[data-id="unstyled-tags"] ~ .setting-item,
+body:not(.colorful-headings-background) .setting-item[data-id="colorful-headings-full-width"],
+body:not(.hr-dashed) .setting-item[data-id="hr-dashed"] ~ .setting-item,
+body:is(.is-hidden-frameless, :not(.is-frameless)) .setting-item[data-id="titlebar-info"] ~ .setting-item,
+body:not(.is-translucent, .mod-macos) .setting-item[data-id="translucent-window-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {

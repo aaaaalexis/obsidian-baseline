@@ -57,9 +57,18 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
       padding-block: 8px;
     }
   }
-  &.show-ribbon.tab-top-left-stacked:not(.mod-macos):not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-  &.show-ribbon.tab-top-left-stacked:not(.mod-macos).hover-sidedock .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed) .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
-  &.show-ribbon.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {
+  &.show-ribbon.tab-top-left-stacked:not(.mod-macos):not(.hover-sidedock)
+    .mod-sidedock.mod-left-split
+    .workspace-tabs.mod-top-left-space
+    .workspace-tab-header-container-inner,
+  &.show-ribbon.tab-top-left-stacked:not(.mod-macos).hover-sidedock
+    .mod-sidedock.mod-left-split:not(.is-sidedock-collapsed)
+    .workspace-tabs.mod-top-left-space
+    .workspace-tab-header-container-inner,
+  &.show-ribbon.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless)
+    .mod-sidedock.mod-left-split
+    .workspace-tabs.mod-top-left-space
+    .workspace-tab-header-container-inner {
     margin-top: var(--header-height);
     margin-left: 0;
   }

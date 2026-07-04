@@ -40,7 +40,10 @@ body.input-cupertino {
 
     --divider-color: color-mix(in srgb, var(--background-secondary), black 7.5%);
 
-    --shadow-highlight: inset 0 1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 -1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 20px 16px -8px hsl(0 0% 100% / 0.5), inset 0 -16px 16px -8px hsl(0 0% 100% / 0.35), inset 0 8px 12px 4px hsl(0 0% 0% / 0.05), inset 0 16px 8px -8px hsl(0 0% 100% / 0.25), inset 0 -16px 8px -8px hsl(0 0% 100% / 0.25);
+    --shadow-highlight:
+      inset 0 1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 -1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 20px 16px -8px hsl(0 0% 100% / 0.5),
+      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.35), inset 0 8px 12px 4px hsl(0 0% 0% / 0.05), inset 0 16px 8px -8px hsl(0 0% 100% / 0.25),
+      inset 0 -16px 8px -8px hsl(0 0% 100% / 0.25);
     --shadow-edge: 0 0 0 0.5pt hsl(0 0% 0% / 0.1);
 
     --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
@@ -57,7 +60,9 @@ body.input-cupertino {
 
     --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
-    --shadow-highlight: inset 0 1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 16px 16px -8px hsl(0 0% 100% / 0.05), inset 0 -16px 16px -8px hsl(0 0% 100% / 0.05);
+    --shadow-highlight:
+      inset 0 1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 16px 16px -8px hsl(0 0% 100% / 0.05),
+      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.05);
     --shadow-edge: 0 0 0 0.5pt hsl(0 0% 100% / 0.25);
 
     --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-highlight);
@@ -83,7 +88,9 @@ body.input-cupertino {
     --mobile-sidebar-background: var(--background-primary);
   }
   &.is-tablet.theme-light {
-    --shadow-surface: inset 1px 1px 2px hsl(0 0% 100% / 0.5), inset -1px -1px 2px hsl(0 0% 100% / 0.5), inset 0 4px 16px hsl(0 0% 100% / 0.025), 0 0 1px hsl(0 0% 0% / 0.25), 0 8px 16px 0 hsl(0 0% 0% / 0.05);
+    --shadow-surface:
+      inset 1px 1px 2px hsl(0 0% 100% / 0.5), inset -1px -1px 2px hsl(0 0% 100% / 0.5), inset 0 4px 16px hsl(0 0% 100% / 0.025), 0 0 1px hsl(0 0% 0% / 0.25),
+      0 8px 16px 0 hsl(0 0% 0% / 0.05);
   }
   &.is-tablet.theme-dark {
     --shadow-surface: 0 0 1px hsl(0 0% 100% / 0.3), 0 0 1px hsl(0 0% 100% / 0.5);
@@ -335,8 +342,16 @@ body.input-cupertino {
     opacity: 0;
   }
 
-  &.tab-left-compact .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner,
-  &.tab-right-compact .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+  &.tab-left-compact
+    .mod-sidedock.mod-left-split
+    .workspace-tabs:not(.mod-top)
+    .workspace-tab-header-container:not(:hover)
+    .workspace-tab-header-container-inner,
+  &.tab-right-compact
+    .mod-sidedock.mod-right-split
+    .workspace-tabs:not(.mod-top)
+    .workspace-tab-header-container:not(:hover)
+    .workspace-tab-header-container-inner {
     gap: calc(8px * var(--density-modifier));
   }
 }

@@ -29,7 +29,10 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.tab-top-left-stacked:not(.theme-light.contrast-light-vivid) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
     --colorful-frame-icon-color: initial;
   }
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-default .mod-root .workspace-tabs.mod-top .workspace-tab-header.is-active {
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal, .layout-cards, .layout-border, .layout-viewfinder).tab-default
+    .mod-root
+    .workspace-tabs.mod-top
+    .workspace-tab-header.is-active {
     --tab-text-color: initial;
     --tab-text-color-active: initial;
     --tab-text-color-focused: initial;
@@ -39,16 +42,28 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   // Workspace: Using top space for tint
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace,
   &.layout-viewfinder .mod-root {
-    background-image: linear-gradient(var(--colorful-frame-background, var(--color-accent)) calc(var(--header-height) - var(--tab-outline-width)), transparent calc(var(--header-height) - var(--tab-outline-width)));
+    background-image: linear-gradient(
+      var(--colorful-frame-background, var(--color-accent)) calc(var(--header-height) - var(--tab-outline-width)),
+      transparent calc(var(--header-height) - var(--tab-outline-width))
+    );
   }
 
   // Fix: Stacked tabs spacing
   &:is(.layout-baseline, .layout-cupertino, .layout-classic) .workspace-ribbon .side-dock-actions,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic).tab-top-left-stacked
+    .mod-sidedock.mod-left-split
+    .mod-top-left-space
+    .workspace-tab-header-container-inner {
     margin-top: 8px;
   }
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic):not(.mod-macos).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner,
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic).mod-macos.is-frameless:not(.is-hidden-frameless).tab-top-left-stacked .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic):not(.mod-macos).tab-top-left-stacked
+    .mod-sidedock.mod-left-split
+    .mod-top-left-space
+    .workspace-tab-header-container-inner,
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic).mod-macos.is-frameless:not(.is-hidden-frameless).tab-top-left-stacked
+    .mod-sidedock.mod-left-split
+    .mod-top-left-space
+    .workspace-tab-header-container-inner {
     margin-top: calc(var(--header-height) + 8px);
   }
 
@@ -64,7 +79,11 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
 
   // Fix: Cards workspace indicator color for compact tabs
   &.layout-cards.tab-left-compact .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header,
-  &.layout-cards.tab-right-compact .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header {
+  &.layout-cards.tab-right-compact
+    .mod-sidedock.mod-right-split
+    .workspace-tabs:not(.mod-top)
+    .workspace-tab-header-container:not(:hover)
+    .workspace-tab-header {
     background-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
   }
 
@@ -91,7 +110,11 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Fix: Override underline tab style
-  &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal, .layout-viewfinder) .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
+  &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal, .layout-viewfinder)
+    .workspace
+    .mod-root
+    .workspace-tabs:not(.mod-stacked)
+    .workspace-tab-header {
     margin-bottom: 1px;
 
     &.is-active {
