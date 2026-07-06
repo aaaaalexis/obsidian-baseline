@@ -50,6 +50,11 @@ settings:
 		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
+		id: colorist-accent
+		title: Spectrum accent
+		description: Use spectrum as accent color.
+		type: class-toggle
+	-
 		id: colorist-light
 		title: Light
 		type: heading
@@ -120,10 +125,6 @@ settings:
 		min: 0
 		max: 360
 		step: 1
-	-
-		id: colorist-accent-light
-		title: Use as accent
-		type: class-toggle
 	-
 		id: colorist-dark
 		title: Dark
@@ -198,10 +199,6 @@ settings:
 		min: 0
 		max: 360
 		step: 1
-	-
-		id: colorist-accent-dark
-		title: Use as accent
-		type: class-toggle
 	-
 		id: colors-custom
 		title: Customize

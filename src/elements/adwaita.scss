@@ -87,7 +87,7 @@ body.input-adwaita {
   select,
   .dropdown {
     background-color: transparent;
-    field-sizing: content;
+    padding-inline-start: 0px;
     font-weight: var(--font-normal);
 
     &:focus-visible {

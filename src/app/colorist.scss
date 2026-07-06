@@ -84,7 +84,7 @@
     pow(var(--colorist-l-100), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-light))) var(--colorist-h-light)
   );
 
-  &.colorist-accent-light:not(.cupertino-light) {
+  &.colorist-accent:not(.cupertino-light) {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
     --color-accent-1: oklch(0.7 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
     --color-accent-2: oklch(0.75 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
@@ -167,7 +167,7 @@
     pow(var(--colorist-l-100), calc(1 / var(--colorist-l-dark))) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) var(--colorist-h-dark)
   );
 
-  &.colorist-accent-dark:not(.cupertino-dark) {
+  &.colorist-accent:not(.cupertino-dark) {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
     --color-accent-1: oklch(0.8 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
     --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
@@ -391,7 +391,7 @@
       min(c, 0.1) h
   );
 
-  &.colorist-accent-light {
+  &.colorist-accent {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 45));
     --color-accent-1: oklch(0.7 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 60));
     --color-accent-2: oklch(0.75 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 60));
@@ -457,7 +457,7 @@
       h
   );
 
-  &.colorist-accent-dark {
+  &.colorist-accent {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 45));
     --color-accent-1: oklch(0.8 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 60));
     --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 60));
@@ -577,7 +577,7 @@
 }
 
 // Style Settings
-body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control input[type="color"] {
+body.colorist-accent .setting-item-control input[type="color"] {
   width: auto;
   height: auto;
 
@@ -595,19 +595,23 @@ body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control inp
 }
 
 .setting-item:where(
-    [data-id="colorist-l-light"],
-    [data-id="colorist-c-light"],
-    [data-id="colorist-h-light"],
-    [data-id="colorist-l-dark"],
-    [data-id="colorist-c-dark"],
-    [data-id="colorist-h-dark"]
-  )
+  [data-id="colorist-l-light"],
+  [data-id="colorist-c-light"],
+  [data-id="colorist-h-light"],
+  [data-id="colorist-l-dark"],
+  [data-id="colorist-c-dark"],
+  [data-id="colorist-h-dark"]
+) {
+  .slider-value {
+    display: none !important;
+  }
   input[type="range"] {
-  width: 100%;
-  max-width: 160px;
+    width: 100%;
+  }
 }
 
 @each $mode in light, dark {
+  // Styling
   .setting-item[data-id="colorist-c-#{$mode}"] input[type="range"] {
     background: linear-gradient(
       to right,
@@ -640,6 +644,35 @@ body:is(.colorist-accent-light, .colorist-accent-dark) .setting-item-control inp
 
     > * {
       opacity: 0.5;
+    }
+  }
+
+  // Layout
+  body:not(.is-phone) .setting-item-heading[data-id="colorist-#{$mode}"]:not(.is-collapsed) + .style-settings-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    padding-left: 0;
+
+    .setting-item {
+      flex-direction: column;
+      margin: 0px !important;
+    }
+
+    .setting-item:nth-child(-n + 2) {
+      grid-column: span 3;
+      row-gap: 8px;
+    }
+
+    .setting-item:nth-child(n + 3) {
+      grid-column: span 2;
+      row-gap: 0;
+    }
+
+    .setting-item-control,
+    .dropdown {
+      width: 100% !important;
+      text-align: start;
     }
   }
 }
