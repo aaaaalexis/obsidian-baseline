@@ -8,15 +8,6 @@ body {
     --setting-items-border-width: var(--border-width);
   }
 
-  &.theme-light {
-    --settings-background: var(--background-secondary);
-    --setting-items-background: var(--background-primary);
-  }
-  &.theme-dark {
-    --settings-background: var(--background-primary);
-    --setting-items-background: var(--background-secondary);
-  }
-
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-container:hover,
     .vertical-tab-content:hover {
@@ -53,7 +44,7 @@ body {
 }
 
 body.mod-macos:not(.is-mobile) .mod-settings {
-  --dropdown-background: inherit;
+  --dropdown-background: var(--interactive-normal);
   --dropdown-icon-background: transparent;
 }
 

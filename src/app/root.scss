@@ -56,8 +56,8 @@ body,
 
   --background-modifier-cover: hsl(0 0% 0% / 0.15);
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
-  --interactive-normal: var(--background-modifier-hover);
-  --interactive-hover: hsl(from var(--mono-100) h s l / 0.065);
+  --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
+  --interactive-hover: color-mix(in srgb, var(--background-primary), white 7.5%);
 }
 
 .theme-light {
@@ -91,6 +91,9 @@ body,
   --code-string: #0d97b3;
   --code-tag: #e45749;
   --code-value: #a626a4;
+
+  // --interactive-normal: var(--color-base-00);
+  // --interactive-hover: var(--color-base-10);
 
   --background-modifier-form-field: var(--background-primary);
   --blur-background: hsl(0 0% 100% / 0.5);
@@ -131,6 +134,9 @@ body,
   --code-string: #58b6c2;
   --code-tag: #e16d76;
   --code-value: #c678de;
+
+  // --interactive-normal: var(--color-base-30);
+  // --interactive-hover: var(--color-base-35);
 
   --background-modifier-form-field: var(--background-secondary);
   --blur-background: hsl(0 0% 100% / 0.1);

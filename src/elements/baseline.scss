@@ -54,8 +54,8 @@ body {
 }
 
 body:is(.input-baseline, :not(.css-settings-manager)) {
-  --input-shadow: none;
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-hover);
+  --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
+  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
   --input-font-weight: var(--font-medium);
 
   button,
@@ -79,7 +79,7 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
 
 // Button
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
-  padding: 16px;
+  padding: 12px;
   display: inline-flex;
 }
 

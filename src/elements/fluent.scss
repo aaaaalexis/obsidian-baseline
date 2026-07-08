@@ -28,6 +28,9 @@ body.input-fluent {
   --blur-m: blur(16px) saturate(0.75);
   --blur-l: blur(32px) saturate(0.75);
 
+  --interactive-normal: var(--background-primary);
+  --interactive-hover: var(--background-primary-alt);
+
   &.is-mobile {
     --input-border-width: var(--border-width);
 
@@ -131,6 +134,7 @@ body.input-fluent {
 
   // Settings
   --settings-background: var(--modal-background);
+  --setting-items-background: var(--background-primary);
   --setting-items-padding-x: calc(16px * var(--density-modifier));
   --setting-items-padding-y: calc(16px * var(--density-modifier));
 
@@ -162,6 +166,10 @@ body.input-fluent {
     .setting-items {
       background-color: transparent;
       padding-block: 0;
+    }
+
+    .setting-item::before {
+      content: none;
     }
 
     .setting-item:not(.setting-item-heading) {

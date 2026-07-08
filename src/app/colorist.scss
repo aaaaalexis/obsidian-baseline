@@ -214,8 +214,6 @@
     --colorist-l-100: 0.27;
 
     --background-secondary-alt: var(--color-base-30);
-    --interactive-normal: hsl(0 0% 0% / 5%);
-    --interactive-hover: hsl(0 0% 0% / 5%);
   }
 
   &.is-mobile {
@@ -290,9 +288,6 @@
     --colorist-l-60: 0.56;
     --colorist-l-70: 0.69;
     --colorist-l-100: 0.9;
-
-    --interactive-normal: hsl(0 0% 100% / 5%);
-    --interactive-hover: hsl(0 0% 100% / 5%);
   }
 
   &.is-mobile {
