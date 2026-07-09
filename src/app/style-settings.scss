@@ -3373,7 +3373,7 @@ body:not(.is-translucent, .mod-macos) .setting-item[data-id="translucent-window-
       box-shadow: var(--input-shadow);
       border-radius: var(--setting-items-radius) !important;
       border: none !important;
-      background-color: var(--setting-items-background) !important;
+      background-color: var(--interactive-normal) !important;
       padding: 0 16px !important;
       height: var(--input-height);
       flex-direction: row;

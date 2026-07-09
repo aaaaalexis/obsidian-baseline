@@ -329,6 +329,11 @@ body.input-cupertino {
     overflow: visible;
   }
 
+  // File explorer
+  .tree-item-self.is-active {
+    --nav-item-weight-active: calc(var(--font-weight) + var(--bold-modifier));
+  }
+
   // Editor panel
   .markdown-source-view,
   .markdown-preview-view {

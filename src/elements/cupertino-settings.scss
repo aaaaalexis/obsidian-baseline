@@ -53,6 +53,7 @@ body.input-cupertino:not(.is-mobile) {
       --text-normal: var(--text-on-accent);
       color: var(--text-on-accent);
       background-color: var(--interactive-accent);
+      font-weight: calc(var(--font-weight) + var(--bold-modifier));
     }
     .vertical-tab-nav-item:not(.is-active):hover {
       background-color: transparent;
