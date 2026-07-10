@@ -57,6 +57,9 @@ body:not(.is-phone) {
       font-size: var(--font-ui-small);
       border-radius: var(--radius-s);
     }
+    .vertical-tab-nav-item:hover {
+      background-color: var(--background-modifier-hover);
+    }
 
     .vertical-tab-content {
       background-color: transparent;
