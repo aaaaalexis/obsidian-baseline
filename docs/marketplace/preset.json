@@ -111,5 +111,11 @@
     "author": "Alexis C",
     "url": "https://github.com/aaaaalexis",
     "description": "Absolutely! Here's a preset with minimal, elegant, and calming design."
+  },
+  "draftroom": {
+    "name": "Draftroom",
+    "author": "Terry Li",
+    "url": "https://github.com/terry-li-hm",
+    "description": "A quiet, typewriter-minded workspace that keeps the page narrow and the chrome out of the way."
   }
 }
