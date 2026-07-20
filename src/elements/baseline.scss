@@ -4,8 +4,7 @@ body {
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
   --button-radius: calc(
-    (8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh *
-      var(--radius-modifier-check)
+    (8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check)
   );
 
   --radius-modifier: 1;
@@ -58,8 +57,7 @@ body {
 
 body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
-  --input-shadow-hover: inset 0 0 0 var(--input-border-width)
-    var(--background-modifier-border-hover);
+  --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
   --input-font-weight: var(--font-medium);
 
   button,
@@ -81,24 +79,21 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   }
 
   input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    --input-border-width-focus: 1px;
+    transition-timing-function: ease;
 
     &:active,
     &:focus,
     &:focus-visible {
       background-color: var(--interactive-hover);
+      box-shadow: none;
+      border-color: var(--interactive-accent);
     }
   }
 }
 
 // Button
 button:where(
-  :not(
-    .clickable-icon,
-    .ant-switch,
-    .workspace-leaf-content:not([data-type="markdown"]) button,
-    .copy-code-button
-  )
+  :not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)
 ) {
   padding: 12px;
   display: inline-flex;
