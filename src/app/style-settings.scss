@@ -2501,22 +2501,22 @@ settings:
 		title: Blockquote style
 		type: class-select
 		allowEmpty: false
-		default: blockquote-baseline
+		default: blockquote-edge
 		options:
-			-
-				label: Baseline
-				value: blockquote-baseline
 			-
 				label: Edge
 				value: blockquote-edge
+			-
+				label: Block
+				value: blockquote-block
 	-
 		id: blockquote-border-thickness
 		title: Blockquote border thickness
 		type: variable-number-slider
 		format: px
-		default: 1
+		default: 4
 		min: 0
-		max: 5
+		max: 8
 		step: 1
 	-
 		id: blockquote-size
@@ -3343,8 +3343,12 @@ body.block-width-off .setting-item[data-id="line-width"] ~ .setting-item,
 body.unstyled-tags .setting-item[data-id="unstyled-tags"] ~ .setting-item,
 body:not(.colorful-headings-background) .setting-item[data-id="colorful-headings-full-width"],
 body:not(.hr-dashed) .setting-item[data-id="hr-dashed"] ~ .setting-item,
-body:is(.is-hidden-frameless, :not(.is-frameless)) .setting-item[data-id="titlebar-info"] ~ .setting-item,
-body:not(.is-translucent, .mod-macos) .setting-item[data-id="translucent-window-info"] ~ .setting-item {
+body:is(.is-hidden-frameless, :not(.is-frameless))
+  .setting-item[data-id="titlebar-info"]
+  ~ .setting-item,
+body:not(.is-translucent, .mod-macos)
+  .setting-item[data-id="translucent-window-info"]
+  ~ .setting-item {
   pointer-events: none;
 
   > * {
@@ -3434,19 +3438,38 @@ body:not(.is-translucent, .mod-macos) .setting-item[data-id="translucent-window-
     }
   }
 }
-body.is-phone .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container {
+body.is-phone
+  .style-settings-container
+  .setting-item-heading[data-id="info"]
+  + .style-settings-container {
   flex-direction: column;
 }
 
-body.hide-baseline-marketplace .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(1) {
+body.hide-baseline-marketplace
+  .style-settings-container
+  .setting-item-heading[data-id="info"]
+  + .style-settings-container
+  .setting-item:nth-child(1) {
   display: none;
 }
-body.hide-baseline-migration .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(2) {
+body.hide-baseline-migration
+  .style-settings-container
+  .setting-item-heading[data-id="info"]
+  + .style-settings-container
+  .setting-item:nth-child(2) {
   display: none;
 }
-body.hide-baseline-documentation .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(3) {
+body.hide-baseline-documentation
+  .style-settings-container
+  .setting-item-heading[data-id="info"]
+  + .style-settings-container
+  .setting-item:nth-child(3) {
   display: none;
 }
-body.hide-baseline-support .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(4) {
+body.hide-baseline-support
+  .style-settings-container
+  .setting-item-heading[data-id="info"]
+  + .style-settings-container
+  .setting-item:nth-child(4) {
   display: none;
 }
