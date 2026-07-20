@@ -9,7 +9,7 @@
     --p-spacing-empty: var(--p-spacing);
     --line-height-normal: 1.625;
     --list-spacing: 0.175rem;
-    --inline-title-margin-bottom: 0.5rem;
+    --inline-title-margin-bottom: 1rem;
 
     --inline-title-color: inherit;
     --inline-title-size: 1.5rem;
@@ -44,7 +44,8 @@
     --embed-padding: 16px;
     --embed-max-height: none;
     --embed-background: var(--background-primary-alt);
-    --embed-border-start: var(--embed-border-thickness, 1px) solid var(--embed-border-color, var(--color-base-50));
+    --embed-border-start: var(--embed-border-thickness, 1px) solid
+      var(--embed-border-color, var(--color-base-50));
 
     --media-radius: var(--radius-s);
 
@@ -134,7 +135,10 @@
   .view-header-title {
     font-weight: max(var(--file-header-font-weight), var(--font-medium));
   }
-  body:not(.is-phone, .view-header-title-always) .view-header:not(.view-header-always-show):not(:hover) .view-header-title-container > div:not(:focus-within) {
+  body:not(.is-phone, .view-header-title-always)
+    .view-header:not(.view-header-always-show):not(:hover)
+    .view-header-title-container
+    > div:not(:focus-within) {
     opacity: 0 !important;
   }
   body:not(.is-phone).view-header-title-hidden .view-header-title-container > div {
@@ -150,7 +154,10 @@
   }
 
   // Active line
-  body.active-line-side .view-content > .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
+  body.active-line-side
+    .view-content
+    > .markdown-source-view
+    .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     position: absolute;
     top: 4px;
     bottom: 4px;
@@ -160,7 +167,12 @@
     content: "";
   }
   body.active-line-block .view-content > .markdown-source-view {
-    .cm-line.cm-active:not(.cm-gutterElement, .HyperMD-callout, .HyperMD-codeblock-bg, .HyperMD-quote)::before {
+    .cm-line.cm-active:not(
+        .cm-gutterElement,
+        .HyperMD-callout,
+        .HyperMD-codeblock-bg,
+        .HyperMD-quote
+      )::before {
       position: absolute;
       inset: -2px -4px;
       background: var(--background-secondary);
@@ -193,10 +205,16 @@
       }
     }
   }
-  body.active-line-color-accent.active-line-side .view-content > .markdown-source-view .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
+  body.active-line-color-accent.active-line-side
+    .view-content
+    > .markdown-source-view
+    .cm-line.cm-active:not(:has(.cm-fold-indicator):hover)::before {
     border-color: var(--color-accent);
   }
-  body.active-line-color-accent:is(.active-line-block, .active-line-background) .view-content > .markdown-source-view .cm-line.cm-active::before {
+  body.active-line-color-accent:is(.active-line-block, .active-line-background)
+    .view-content
+    > .markdown-source-view
+    .cm-line.cm-active::before {
     background-color: var(--background-modifier-active-hover);
   }
 
@@ -231,7 +249,8 @@
   body.code-line-numbers .HyperMD-codeblock-begin {
     counter-reset: codeblock-line-numbers;
   }
-  body.code-line-numbers .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
+  body.code-line-numbers
+    .HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end)::before {
     counter-increment: codeblock-line-numbers;
     content: counter(codeblock-line-numbers);
     font-size: var(--font-smallest);
@@ -448,7 +467,8 @@
     --media-radius: 0px;
   }
 
-  body:is(.media-width-full, .media-width-full-always, :not(.css-settings-manager)) .markdown-preview-sizer,
+  body:is(.media-width-full, .media-width-full-always, :not(.css-settings-manager))
+    .markdown-preview-sizer,
   body:is(.media-width-full, .media-width-full-always, :not(.css-settings-manager)) .cm-content {
     .image-embed:not([width]),
     .image-embed:not([width]) > .image-wrapper,
@@ -483,7 +503,8 @@
     }
   }
 
-  body.theme-dark.media-muted div:is(.markdown-preview-sizer, .cm-content, .markdown-embed, .bases-view) {
+  body.theme-dark.media-muted
+    div:is(.markdown-preview-sizer, .cm-content, .markdown-embed, .bases-view) {
     img:not(.cm-widgetBuffer, .link-favicon, .emoji, [alt="banner"]),
     .bases-cards-cover {
       transition: opacity var(--anim-duration-moderate);
