@@ -80,7 +80,7 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
     box-shadow: none !important;
   }
 
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]) {
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
     --input-border-width-focus: 1px;
 
     &:active,
