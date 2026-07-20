@@ -28,15 +28,18 @@ body {
   .menu-item-icon {
     order: unset !important;
   }
-
   .menu-item-icon .svg-icon {
     --icon-size: var(--icon-xs);
     --icon-stroke: var(--icon-xs-stroke-width);
   }
-
   .menu-separator {
     margin: 4px 8px;
     border-color: var(--background-modifier-hover);
+  }
+  .suggestion-hotkey {
+    background-color: transparent;
+    border: none;
+    padding: 0 !important;
   }
 }
 
@@ -47,29 +50,28 @@ body:not(.is-phone) {
   & > .menu,
   & > .suggestion-container {
     animation: menuIn var(--anim-duration-moderate) var(--anim-motion-baseline) forwards;
-  }
 
-  .menu,
-  .suggestion-container div:is(.suggestion-item, .suggestion-empty) {
-    font-size: var(--font-ui-small);
-    align-items: center;
+    .suggestion {
+      padding: var(--menu-padding);
+    }
+    .suggestion-item,
+    .suggestion-empty {
+      font-size: var(--font-ui-small);
+    }
   }
 }
 
 body.is-mobile {
-  .menu,
-  .suggestion-container {
-    .menu-item-icon .svg-icon {
-      --icon-size: var(--icon-s);
-      --icon-stroke: var(--icon-s-stroke-width);
-    }
+  .menu-item-icon .svg-icon {
+    --icon-size: var(--icon-s);
+    --icon-stroke: var(--icon-s-stroke-width);
   }
 }
 
 body.is-phone {
   --menu-padding: 32px 16px;
 
-  .menu {
+  & > .menu {
     border-radius: var(--radius-l) var(--radius-l) 0 0;
     overflow: hidden;
 
@@ -96,7 +98,7 @@ body.is-phone {
     }
   }
 
-  .suggestion-container {
+  & > .suggestion-container {
     border-radius: var(--radius-l);
 
     .suggestion-item {
@@ -107,8 +109,8 @@ body.is-phone {
 }
 
 body.is-tablet {
-  .menu,
-  .suggestion-container {
+  & > .menu,
+  & > .suggestion-container {
     border-radius: var(--menu-radius);
     overflow: auto;
     max-height: 80vh;
