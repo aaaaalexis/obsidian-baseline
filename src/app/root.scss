@@ -24,7 +24,9 @@ body,
 
   --corner-shape: superellipse(1.1);
 
-  --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px hsl(from var(--mono-100) h s l / 0.05);
+  --shadow-tactile:
+    inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05),
+    0px 2px 4px -2px hsl(from var(--mono-100) h s l / 0.05);
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
@@ -57,11 +59,13 @@ body,
   --background-modifier-cover: hsl(0 0% 0% / 0.15);
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
   --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
-  --interactive-hover: color-mix(in srgb, var(--background-primary), white 7.5%);
+  --interactive-hover: color-mix(in srgb, var(--background-primary), black 5%);
 }
 
 .theme-light {
-  --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-light-opacity));
+  --workspace-background-translucent: hsl(
+    from var(--background-secondary) h s l / var(--translucent-light-opacity)
+  );
 
   --color-red-rgb: 254, 112, 112;
   --color-orange-rgb: 242, 154, 100;
@@ -98,13 +102,17 @@ body,
   --background-modifier-form-field: var(--background-primary);
   --blur-background: hsl(0 0% 100% / 0.5);
 
-  --shadow-s: 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05);
+  --shadow-s:
+    0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05),
+    0 2px 4px hsl(0 0% 0% / 0.05);
   --shadow-l:
-    0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1), 0 16px 32px hsl(0 0% 0% / 0.1),
-    0 4px 8px hsl(0 0% 0% / 0.05);
+    0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1),
+    0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.05);
 }
 .theme-dark {
-  --workspace-background-translucent: hsl(from var(--background-secondary) h s l / var(--translucent-dark-opacity));
+  --workspace-background-translucent: hsl(
+    from var(--background-secondary) h s l / var(--translucent-dark-opacity)
+  );
 
   --color-red-rgb: 217, 90, 95;
   --color-orange-rgb: 219, 134, 80;
@@ -141,10 +149,12 @@ body,
   --background-modifier-form-field: var(--background-secondary);
   --blur-background: hsl(0 0% 100% / 0.1);
 
-  --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
+  --shadow-s:
+    0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1),
+    0 2px 4px hsl(0 0% 0% / 0.1);
   --shadow-l:
-    0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1),
-    0 4px 8px hsl(0 0% 0% / 0.25);
+    0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05),
+    0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1), 0 4px 8px hsl(0 0% 0% / 0.25);
 }
 
 body:not(.is-mobile) {
