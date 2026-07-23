@@ -32,8 +32,4 @@ body:not(.is-phone) .workspace-leaf-content[data-type="empty"] {
       display: none;
     }
   }
-
-  .empty-state-action.mod-close {
-    visibility: hidden;
-  }
 }
