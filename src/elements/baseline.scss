@@ -3,9 +3,7 @@ body {
 
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
-  --button-radius: calc(
-    (8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check)
-  );
+  --button-radius: calc((8px * var(--radius-modifier)) * (1 - var(--radius-modifier-check)) + 100vh * var(--radius-modifier-check));
 
   --radius-modifier: 1;
   --radius-s: calc(8px * var(--radius-modifier));
@@ -60,15 +58,12 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
   --input-font-weight: var(--font-medium);
 
-  button,
-  .clickable-icon,
-  select,
-  .combobox-button,
-  .dropdown {
-    transition: var(--anim-duration-fast);
+  // Input
+  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
+    transition-timing-function: ease;
 
+    &:focus,
     &:focus-visible {
-      box-shadow: none;
       background-color: var(--interactive-hover);
     }
   }
@@ -77,24 +72,10 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   input[type="range"]::-webkit-slider-thumb {
     box-shadow: none !important;
   }
-
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    transition-timing-function: ease;
-
-    &:active,
-    &:focus,
-    &:focus-visible {
-      background-color: var(--interactive-hover);
-      box-shadow: none;
-      border-color: var(--interactive-accent);
-    }
-  }
 }
 
 // Button
-button:where(
-  :not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)
-) {
+button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
   padding: 12px;
   display: inline-flex;
 }
