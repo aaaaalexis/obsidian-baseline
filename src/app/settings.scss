@@ -153,6 +153,10 @@ body:not(.is-phone) {
     .community-modal-search-results {
       gap: 8px;
     }
+    .community-modal-search {
+      padding: 0;
+      margin: 0;
+    }
     .community-item {
       border: none;
     }
