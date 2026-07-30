@@ -124,7 +124,7 @@ body:not(.is-mobile) {
   // Sidedock padding
   .mod-sidedock .workspace-leaf-content > .node-insert-event,
   .mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 0 8px;
+    padding: 0 8px 8px;
 
     > .node-insert-event {
       padding: 0;
