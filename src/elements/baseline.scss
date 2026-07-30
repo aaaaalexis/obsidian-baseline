@@ -70,7 +70,7 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
 
   // Slider
   input[type="range"]::-webkit-slider-thumb {
-    box-shadow: none !important;
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 }
 
@@ -90,10 +90,6 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 .obsidian-app .checkbox-container {
   transition: var(--anim-duration-moderate);
   box-shadow: none;
-
-  &:focus-within {
-    outline: none;
-  }
 
   &::after {
     box-shadow: none;

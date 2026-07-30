@@ -1,0 +1,83 @@
+/*
+Tiniri
+MIT License
+Copyright (c) 2024 Vladislav Gerasimov
+https://tiniri.vlad.studio/
+*/
+
+.theme-light.tiniri-light {
+  --background-primary: #fdfcfc;
+  --background-primary-alt: #fdfcfc;
+  --background-secondary: #f7f3f0;
+  --background-secondary-alt: #f7f3f0;
+  --text-normal: #333231;
+  --text-muted: #807974;
+  --text-faint: hsla(25, 5%, 48%, 0.6);
+  --color-red: #ad514c;
+  --color-orange: #d28450;
+  --color-yellow: #78716c;
+  --color-green: #538a8a;
+  --color-cyan: #78716c;
+  --color-blue: #356b94;
+  --color-purple: #804c6e;
+  --color-pink: #bd71a4;
+
+  &.color-scheme-accent {
+    --accent-h: 3;
+    --accent-l: 54;
+    --accent-s: 70;
+
+    --interactive-normal: #f7f3f0;
+    --interactive-hover: #ede9e1;
+    --interactive-accent: #538a8a;
+    --interactive-accent-hover: #5c9e9e;
+    --text-on-accent: #fdfcfc;
+    --text-on-accent-inverted: #333231;
+
+    --text-success: #538a8a;
+    --text-warning: #ad514c;
+    --text-error: #ad514c;
+    --text-accent: #ad514c;
+    --text-accent-hover: #cc645e;
+    --text-selection: #dae5e2;
+    --text-highlight-bg: #fab48588;
+  }
+}
+.theme-dark.tiniri-dark {
+  --background-primary: #1f2122;
+  --background-primary-alt: #1f2122;
+  --background-secondary: #1b1d1e;
+  --background-secondary-alt: #1b1d1e;
+  --text-normal: #dbd3ca;
+  --text-muted: #938a80;
+  --text-faint: hsla(32, 8%, 54%, 0.6);
+  --color-red: #c66b67;
+  --color-orange: #eb9350;
+  --color-yellow: #eb9350;
+  --color-green: #ad8301;
+  --color-cyan: #78716c;
+  --color-blue: #68a0a0;
+  --color-purple: #a89080;
+  --color-pink: #a89080;
+
+  &.color-scheme-accent {
+    --accent-h: 0;
+    --accent-l: 50;
+    --accent-s: 77;
+
+    --interactive-normal: #353a42;
+    --interactive-hover: #3f444d;
+    --interactive-accent: #314f52;
+    --interactive-accent-hover: #39595c;
+    --text-on-accent: #dbd3ca;
+    --text-on-accent-inverted: #1f2122;
+
+    --text-success: #aac2ae;
+    --text-warning: #f5a571;
+    --text-error: #f5a571;
+    --text-accent: #ad514c;
+    --text-accent-hover: #e07575;
+    --text-selection: #353a42;
+    --text-highlight-bg: #ad514c44;
+  }
+}

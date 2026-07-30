@@ -1,0 +1,61 @@
+/*
+Gruvbox
+MIT License
+https://github.com/morhetz/gruvbox
+*/
+
+.theme-light.gruvbox-light,
+.theme-dark.gruvbox-dark {
+  &.color-scheme-accent {
+    --accent-h: 24;
+    --accent-s: 88%;
+    --accent-l: 45%;
+  }
+}
+
+.theme-light.gruvbox-light {
+  --background-primary: #fcf2c7;
+  --background-primary-alt: #f2e6bd;
+  --background-secondary: #f2e6bd;
+  --background-modifier-border: #ebdbb2;
+  --background-modifier-border-hover: #d5c4a1;
+  --background-modifier-border-focus: #bdae93;
+  --interactive-normal: #ebd9b3;
+  --interactive-hover: #f2e6bd;
+  --text-normal: #282828;
+  --text-muted: #7c7065;
+  --text-faint: #a89a85;
+  --text-selection: hsla(36, 35%, 62%, 0.3);
+  --text-highlight-bg: hsla(40, 73%, 49%, 0.4);
+  --color-red: #cc241d;
+  --color-orange: #d65d0e;
+  --color-yellow: #d79921;
+  --color-green: #98971a;
+  --color-cyan: #689d6a;
+  --color-blue: #458588;
+  --color-purple: #b16286;
+  --color-pink: #b16286;
+}
+.theme-dark.gruvbox-dark {
+  --background-primary: #282828;
+  --background-primary-alt: #1e2021;
+  --background-secondary: #1e2021;
+  --background-modifier-border: #3c3836;
+  --background-modifier-border-hover: #504945;
+  --background-modifier-border-focus: #665c54;
+  --interactive-normal: #3d3836;
+  --interactive-hover: #333130;
+  --text-normal: #fbf1c7;
+  --text-muted: #bdae93;
+  --text-faint: #7c6f64;
+  --text-selection: hsla(18, 17%, 61%, 0.3);
+  --text-highlight-bg: hsla(40, 73%, 49%, 0.4);
+  --color-red: #cc241d;
+  --color-orange: #d65d0e;
+  --color-yellow: #d79921;
+  --color-green: #98971a;
+  --color-cyan: #689d6a;
+  --color-blue: #458588;
+  --color-purple: #b16286;
+  --color-pink: #b16286;
+}

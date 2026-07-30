@@ -1,0 +1,36 @@
+/*
+Catppuccin: Macchiato
+MIT License
+Copyright (c) 2021 Catppuccin
+https://github.com/catppuccin/catppuccin
+*/
+
+.theme-dark.macchiato-dark {
+  --background-primary: #181926;
+  --background-primary-alt: #1e2030;
+  --background-secondary: #1e2030;
+  --background-secondary-alt: #24273a;
+  --background-modifier-border: #363a4f;
+  --background-modifier-border-hover: #484c64;
+  --background-modifier-border-focus: #5a5f78;
+  --text-normal: #c5cff5;
+  --text-muted: #8f97b7;
+  --text-faint: #6c728d;
+  --color-red: #ed8796;
+  --color-orange: #f5a97f;
+  --color-yellow: #eed49f;
+  --color-green: #a6da95;
+  --color-cyan: #91d7e3;
+  --color-blue: #8aadf4;
+  --color-purple: #b7bdf8;
+  --color-pink: #f5bde6;
+
+  &.color-scheme-accent {
+    --accent-h: 10;
+    --accent-s: 58%;
+    --accent-l: 90%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

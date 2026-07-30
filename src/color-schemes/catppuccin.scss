@@ -1,0 +1,70 @@
+/*
+Catppuccin
+MIT License
+Copyright (c) 2021 Catppuccin
+https://github.com/catppuccin/catppuccin
+*/
+
+.theme-light.catppuccin-light {
+  --background-primary: #f0f1f5;
+  --background-primary-alt: #dce0e8;
+  --background-secondary: #dce0e8;
+  --background-modifier-border: #ccd0da;
+  --background-modifier-border-hover: #bcc0cc;
+  --background-modifier-border-focus: #acb0be;
+  --interactive-normal: #dbdde4;
+  --interactive-hover: #c6c9d3;
+  --text-normal: #4d4f69;
+  --text-muted: #5d5f77;
+  --text-faint: #8d8fa2;
+  --text-selection: hsla(227, 12%, 71%, 0.3);
+  --text-highlight-bg: hsla(35, 77%, 49%, 0.3);
+  --color-red: #e64553;
+  --color-orange: #fe640c;
+  --color-yellow: #df8e1d;
+  --color-green: #40a02b;
+  --color-cyan: #17929a;
+  --color-blue: #2166f6;
+  --color-purple: #8938ef;
+  --color-pink: #ea77cb;
+
+  &.color-scheme-accent {
+    --accent-h: 11;
+    --accent-s: 59%;
+    --accent-l: 67%;
+  }
+}
+.theme-dark.catppuccin-dark {
+  --background-primary: #303446;
+  --background-primary-alt: #242634;
+  --background-secondary: #242634;
+  --background-modifier-border: #41455a;
+  --background-modifier-border-hover: #51576d;
+  --background-modifier-border-focus: #626880;
+  --interactive-normal: #41465a;
+  --interactive-hover: #53586e;
+  --text-normal: #c6d0f5;
+  --text-muted: #a6adce;
+  --text-faint: #848ba7;
+  --text-selection: hsla(228, 13%, 44%, 0.5);
+  --text-highlight-bg: hsla(35, 77%, 49%, 0.4);
+  --color-red: #eb999c;
+  --color-orange: #efa076;
+  --color-yellow: #e5c890;
+  --color-green: #a6d18a;
+  --color-cyan: #81c8be;
+  --color-blue: #8caaee;
+  --color-purple: #ca9ee6;
+  --color-pink: #f4b9e5;
+  --text-on-accent: var(--background-primary);
+  --text-on-accent-inverted: var(--background-primary);
+
+  &.color-scheme-accent {
+    --accent-h: 10;
+    --accent-s: 57%;
+    --accent-l: 88%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

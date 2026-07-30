@@ -1,0 +1,61 @@
+/*
+Nord
+MIT License
+Copyright (c) 2016-present Sven Greb <development@svengreb.de> (https://www.svengreb.de)
+https://github.com/nordtheme/nord
+*/
+
+.theme-light.nord-light,
+.theme-dark.nord-dark {
+  &.color-scheme-accent {
+    --accent-h: 213;
+    --accent-s: 32%;
+    --accent-l: 52%;
+  }
+}
+
+.theme-light.nord-light {
+  --background-primary: #fff;
+  --background-primary-alt: #eceff4;
+  --background-secondary: #eceff4;
+  --background-modifier-border: #d8dee9;
+  --background-modifier-border-hover: #bbcadc;
+  --background-modifier-border-focus: #81a1c1;
+  --interactive-normal: #e7ebf3;
+  --interactive-hover: #ced7e7;
+  --text-normal: #2e3440;
+  --text-muted: #7d8697;
+  --text-faint: #adb1b8;
+  --text-highlight-bg: hsla(14, 51%, 63%, 0.35);
+  --color-red: #bf616a;
+  --color-orange: #d08a70;
+  --color-yellow: #ebcb8b;
+  --color-green: #a3be8c;
+  --color-cyan: #88c0d0;
+  --color-blue: #81a1c1;
+  --color-purple: #b48ead;
+  --color-pink: #b48ead;
+}
+.theme-dark.nord-dark {
+  --background-primary: #2e3440;
+  --background-primary-alt: #3b4252;
+  --background-secondary: #3b4252;
+  --background-modifier-border: #434c5e;
+  --background-modifier-border-hover: #58647b;
+  --background-modifier-border-focus: #58647b;
+  --interactive-normal: #3b4353;
+  --interactive-hover: #4d576c;
+  --text-normal: #d8dee9;
+  --text-muted: #9eafcc;
+  --text-faint: #67738d;
+  --text-selection: hsla(225, 25%, 61%, 0.3);
+  --text-highlight-bg: hsla(14, 51%, 63%, 0.35);
+  --color-red: #bf616a;
+  --color-orange: #d08a70;
+  --color-yellow: #ebcb8b;
+  --color-green: #a3be8c;
+  --color-cyan: #88c0d0;
+  --color-blue: #81a1c1;
+  --color-purple: #b48ead;
+  --color-pink: #b48ead;
+}

@@ -1,0 +1,68 @@
+/*
+Everforest
+MIT License
+Copyright (c) 2019 sainnhe
+https://github.com/sainnhe/everforest
+*/
+
+.theme-light.everforest-light {
+  --background-primary: #fdf6e3;
+  --background-primary-alt: #efebd4;
+  --background-secondary: #efebd4;
+  --background-modifier-border: #e0dcc7;
+  --background-modifier-border-hover: #bec5b2;
+  --background-modifier-border-focus: #bec5b2;
+  --interactive-normal: #f0ead5;
+  --interactive-hover: #e2dec6;
+  --text-normal: #5c6a72;
+  --text-muted: #829181;
+  --text-faint: #a6b0a0;
+  --text-selection: hsla(75, 43%, 72%, 0.4);
+  --text-highlight-bg: hsla(45, 72%, 54%, 0.3);
+  --color-red: #f85552;
+  --color-orange: #f57d26;
+  --color-yellow: #dfa000;
+  --color-green: #8da101;
+  --color-cyan: #35a77c;
+  --color-blue: #3894c4;
+  --color-purple: #df69ba;
+  --color-pink: #df69ba;
+
+  &.color-scheme-accent {
+    --accent-h: 83;
+    --accent-s: 36%;
+    --accent-l: 53%;
+  }
+}
+.theme-dark.everforest-dark {
+  --background-primary: #2d353b;
+  --background-primary-alt: #232a2e;
+  --background-secondary: #232a2e;
+  --background-modifier-border: #475258;
+  --background-modifier-border-hover: #4f585e;
+  --background-modifier-border-focus: #525c62;
+  --interactive-normal: #3a444a;
+  --interactive-hover: #475258;
+  --text-normal: #d3c6aa;
+  --text-muted: #9da9a0;
+  --text-faint: #7a8478;
+  --text-selection: hsla(338, 31%, 40%, 0.5);
+  --text-highlight-bg: hsla(86, 39%, 55%, 0.3);
+  --color-red: #e67e80;
+  --color-orange: #e69875;
+  --color-yellow: #dbbc7f;
+  --color-green: #a7c080;
+  --color-cyan: #83c092;
+  --color-blue: #7fbbb3;
+  --color-purple: #df69ba;
+  --color-pink: #df69ba;
+
+  &.color-scheme-accent {
+    --accent-h: 81;
+    --accent-s: 34%;
+    --accent-l: 63%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

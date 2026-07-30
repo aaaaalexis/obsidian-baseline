@@ -1,0 +1,62 @@
+/*
+Solarized
+MIT License
+Copyright (c) 2011 Ethan Schoonover
+https://ethanschoonover.com/solarized/
+*/
+
+.theme-light.solarized-light,
+.theme-dark.solarized-dark {
+  &.color-scheme-accent {
+    --accent-h: 205;
+    --accent-s: 70%;
+    --accent-l: 48%;
+  }
+}
+
+.theme-light.solarized-light {
+  --background-primary: #fdf6e3;
+  --background-primary-alt: #eee8d5;
+  --background-secondary: #eee8d5;
+  --background-modifier-border: #e9e1c8;
+  --background-modifier-border-hover: #d0cab8;
+  --background-modifier-border-focus: #d0cab8;
+  --interactive-normal: #ede7d5;
+  --interactive-hover: #d7d1c1;
+  --text-normal: #073642;
+  --text-muted: #586e75;
+  --text-faint: #abb2ac;
+  --text-selection: hsla(45, 16%, 75%, 0.3);
+  --text-highlight-bg: hsla(18, 80%, 44%, 0.3);
+  --color-red: #dc322f;
+  --color-orange: #cb4d16;
+  --color-yellow: #b58900;
+  --color-green: #859900;
+  --color-cyan: #2aa198;
+  --color-blue: #268bd2;
+  --color-purple: #6c71c4;
+  --color-pink: #d33682;
+}
+.theme-dark.solarized-dark {
+  --background-primary: #002b36;
+  --background-primary-alt: #073642;
+  --background-secondary: #073642;
+  --background-modifier-border: #19414b;
+  --background-modifier-border-hover: #274850;
+  --background-modifier-border-focus: #31535b;
+  --interactive-normal: #103842;
+  --interactive-hover: #264b54;
+  --text-normal: #bccaca;
+  --text-muted: #97abb2;
+  --text-faint: #4a717a;
+  --text-selection: hsla(192, 73%, 22%, 0.3);
+  --text-highlight-bg: hsla(18, 80%, 44%, 0.35);
+  --color-red: #dc322f;
+  --color-orange: #cb4d16;
+  --color-yellow: #b58900;
+  --color-green: #859900;
+  --color-cyan: #2aa198;
+  --color-blue: #268bd2;
+  --color-purple: #6c71c4;
+  --color-pink: #d33682;
+}

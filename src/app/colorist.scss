@@ -7,7 +7,7 @@
   --colorist-h-dark: calc(var(--accent-h) + 25);
 }
 
-.theme-light.obsidian-app {
+.theme-light:is(:not(.css-settings-manager), .baseline-light) {
   --color-base-00: var(--colorist-00, #ffffff);
   --color-base-05: var(--colorist-05, #fcfcfc);
   --color-base-10: var(--colorist-10, #f8f8f8);
@@ -84,13 +84,13 @@
     pow(var(--colorist-l-100), var(--colorist-l-light)) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-light))) var(--colorist-h-light)
   );
 
-  &.colorist-accent:not(.cupertino-light) {
+  &.color-scheme-accent:not(.cupertino-light) {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
     --color-accent-1: oklch(0.7 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
     --color-accent-2: oklch(0.75 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
   }
 }
-.theme-dark.obsidian-app {
+.theme-dark:is(:not(.css-settings-manager), .baseline-dark) {
   --color-base-00: var(--colorist-00, #181818);
   --color-base-05: var(--colorist-05, #1b1b1b);
   --color-base-10: var(--colorist-10, #1d1d1d);
@@ -167,7 +167,7 @@
     pow(var(--colorist-l-100), calc(1 / var(--colorist-l-dark))) min(0.1, calc(var(--colorist-c-100) * var(--colorist-c-dark))) var(--colorist-h-dark)
   );
 
-  &.colorist-accent:not(.cupertino-dark) {
+  &.color-scheme-accent:not(.cupertino-dark) {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
     --color-accent-1: oklch(0.8 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
     --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-dark) * 0.1)) var(--colorist-h-dark));
@@ -214,6 +214,12 @@
     --colorist-l-100: 0.27;
 
     --background-secondary-alt: var(--color-base-30);
+
+    &.color-scheme-accent {
+      --accent-h: 211;
+      --accent-s: 100%;
+      --accent-l: 50%;
+    }
   }
 
   &.is-mobile {
@@ -249,6 +255,12 @@
     --background-secondary-alt: var(--color-base-00);
     --interactive-normal: oklch(from var(--colorist-70) calc(l - 0.08) 0.01 h / 12%);
     --interactive-hover: oklch(from var(--colorist-70) calc(l - 0.1) c h / 20%);
+
+    &.color-scheme-accent {
+      --accent-h: 208;
+      --accent-s: 100%;
+      --accent-l: 50%;
+    }
   }
 }
 .theme-dark.cupertino-dark {
@@ -288,6 +300,12 @@
     --colorist-l-60: 0.56;
     --colorist-l-70: 0.69;
     --colorist-l-100: 0.9;
+
+    &.color-scheme-accent {
+      --accent-h: 211;
+      --accent-s: 100%;
+      --accent-l: 50%;
+    }
   }
 
   &.is-mobile {
@@ -322,6 +340,12 @@
     --background-primary-alt: var(--color-base-20);
     --interactive-normal: oklch(from var(--colorist-70) calc(l - 0.08) 0.01 h / 24%);
     --interactive-hover: oklch(from var(--colorist-70) calc(l - 0.1) c h / 36%);
+
+    &.color-scheme-accent {
+      --accent-h: 206;
+      --accent-s: 100%;
+      --accent-l: 50%;
+    }
   }
 }
 
@@ -386,7 +410,7 @@
       min(c, 0.1) h
   );
 
-  &.colorist-accent {
+  &.color-scheme-accent {
     --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 45));
     --color-accent-1: oklch(0.7 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 60));
     --color-accent-2: oklch(0.75 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-light) + 60));
@@ -452,10 +476,10 @@
       h
   );
 
-  &.colorist-accent {
-    --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 45));
-    --color-accent-1: oklch(0.8 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 60));
-    --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-light) * 0.1)) calc(var(--colorist-h-dark) + 60));
+  &.color-scheme-accent {
+    --color-accent: oklch(0.65 max(0.15, calc(var(--colorist-c-dark) * 0.1)) calc(var(--colorist-h-dark) + 45));
+    --color-accent-1: oklch(0.8 max(0.15, calc(var(--colorist-c-dark) * 0.1)) calc(var(--colorist-h-dark) + 60));
+    --color-accent-2: oklch(0.95 max(0.15, calc(var(--colorist-c-dark) * 0.1)) calc(var(--colorist-h-dark) + 60));
   }
 }
 
@@ -572,23 +596,6 @@
 }
 
 // Style Settings
-body.colorist-accent .setting-item-control input[type="color"] {
-  width: auto;
-  height: auto;
-
-  &::-webkit-color-swatch-wrapper {
-    display: none;
-  }
-  &::after {
-    content: "Style Settings → Baseline → Colors";
-    color: var(--text-muted);
-    line-height: var(--line-height-tight);
-    font-family: var(--font-interface);
-    font-weight: var(--input-font-weight);
-    font-size: var(--font-ui-smaller);
-  }
-}
-
 .setting-item:where(
   [data-id="colorist-l-light"],
   [data-id="colorist-c-light"],
@@ -634,12 +641,10 @@ body.colorist-accent .setting-item-control input[type="color"] {
     );
   }
 
-  .cupertino-#{$mode} .style-settings-container .setting-item[data-id="background-contrast-#{$mode}"] ~ .setting-item {
-    pointer-events: none;
-
-    > * {
-      opacity: 0.5;
-    }
+  body:not(.baseline-#{$mode}, .material-#{$mode}, .radiance-#{$mode}, .softlight-#{$mode})
+    .style-settings-container
+    .setting-item:where([data-id="colorist-l-#{$mode}"], [data-id="colorist-c-#{$mode}"], [data-id="colorist-h-#{$mode}"]) {
+    display: none;
   }
 
   // Layout

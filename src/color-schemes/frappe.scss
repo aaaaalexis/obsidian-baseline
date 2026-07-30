@@ -1,0 +1,36 @@
+/*
+Catppuccin: Frappe
+MIT License
+Copyright (c) 2021 Catppuccin
+https://github.com/catppuccin/catppuccin
+*/
+
+.theme-dark.frappe-dark {
+  --background-primary: #232634;
+  --background-primary-alt: #292c3c;
+  --background-secondary: #292c3c;
+  --background-secondary-alt: #303446;
+  --background-modifier-border: #414559;
+  --background-modifier-border-hover: #51566c;
+  --background-modifier-border-focus: #62677e;
+  --text-normal: #c6ceef;
+  --text-muted: #949bb7;
+  --text-faint: #737891;
+  --color-red: #e78284;
+  --color-orange: #ef9f76;
+  --color-yellow: #e5c890;
+  --color-green: #a6d189;
+  --color-cyan: #99d1db;
+  --color-blue: #8caaee;
+  --color-purple: #babbf1;
+  --color-pink: #f4b8e4;
+
+  &.color-scheme-accent {
+    --accent-h: 10;
+    --accent-s: 57%;
+    --accent-l: 88%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

@@ -1,0 +1,65 @@
+/*
+Flexoki
+MIT License
+Copyright (c) 2023 Steph Ango
+https://stephango.com/flexoki
+*/
+
+.theme-light.flexoki-light {
+  --background-primary: #fffcf0;
+  --background-primary-alt: #f2f0e5;
+  --background-secondary: #f2f0e5;
+  --background-modifier-border: #e6e4d9;
+  --background-modifier-border-hover: #dad8ce;
+  --background-modifier-border-focus: #cecdc3;
+  --interactive-normal: hsla(0, 3%, 6%, 0.05);
+  --interactive-hover: hsla(0, 3%, 6%, 0.15);
+  --text-normal: #100f0f;
+  --text-muted: #6f6e69;
+  --text-faint: #b7b5ac;
+  --text-selection: hsla(155, 32%, 80%, 0.3);
+  --text-highlight-bg: hsla(48, 92%, 60%, 0.3);
+  --color-red: #af3029;
+  --color-orange: #bc5215;
+  --color-yellow: #ad8301;
+  --color-green: #66800b;
+  --color-cyan: #24837b;
+  --color-blue: #205ea6;
+  --color-purple: #5e409d;
+  --color-pink: #a02f6f;
+
+  &.color-scheme-accent {
+    --accent-h: 175;
+    --accent-s: 57%;
+    --accent-l: 33%;
+  }
+}
+.theme-dark.flexoki-dark {
+  --background-primary: #100f0f;
+  --background-primary-alt: #100f0f;
+  --background-secondary: #1c1b1a;
+  --background-modifier-border: #282726;
+  --background-modifier-border-hover: #343331;
+  --background-modifier-border-focus: #403e3c;
+  --interactive-normal: hsla(51, 88%, 97%, 0.05);
+  --interactive-hover: hsla(51, 88%, 97%, 0.15);
+  --text-normal: #cecdc3;
+  --text-muted: #878580;
+  --text-faint: #575653;
+  --text-selection: hsla(176, 52%, 25%, 0.3);
+  --text-highlight-bg: hsla(43, 85%, 45%, 0.3);
+  --color-red: #d14d41;
+  --color-orange: #da702c;
+  --color-yellow: #d0a215;
+  --color-green: #879a39;
+  --color-cyan: #3aa99f;
+  --color-blue: #4385be;
+  --color-purple: #8b7ec8;
+  --color-pink: #ce5d97;
+
+  &.color-scheme-accent {
+    --accent-h: 175;
+    --accent-s: 49%;
+    --accent-l: 45%;
+  }
+}

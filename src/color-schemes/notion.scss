@@ -1,0 +1,52 @@
+/* Notion */
+
+.theme-light.notion-light,
+.theme-dark.notion-dark {
+  &.color-scheme-accent {
+    --accent-h: 217;
+    --accent-s: 67%;
+    --accent-l: 57%;
+
+    --background-modifier-border-focus: var(--color-accent);
+  }
+}
+
+.theme-light.notion-light {
+  --background-primary: #fff;
+  --background-primary-alt: #f9f8f7;
+  --background-secondary: #f9f8f7;
+  --background-modifier-hover: hsla(0, 0%, 0%, 0.03);
+  --background-modifier-border: #e9e8e5;
+  --background-modifier-border-hover: #e6e6e4;
+  --text-normal: #2c2c2b;
+  --text-muted: #5f5e5b;
+  --text-faint: #a8a49c;
+  --text-selection: hsla(197, 65%, 71%, 0.3);
+  --color-red: #e56458;
+  --color-orange: #d5803b;
+  --color-yellow: #d8a32f;
+  --color-green: #46a171;
+  --color-cyan: #37a4b4;
+  --color-blue: #2783de;
+  --color-purple: #b577d6;
+  --color-pink: #db6999;
+}
+.theme-dark.notion-dark {
+  --background-primary: #191919;
+  --background-primary-alt: #202020;
+  --background-secondary: #202020;
+  --background-modifier-hover: hsla(0, 0%, 100%, 0.06);
+  --background-modifier-border: #313131;
+  --background-modifier-border-hover: #30302e;
+  --text-normal: #f0efed;
+  --text-muted: #9b9b9b;
+  --text-faint: #65645f;
+  --color-red: #e56458;
+  --color-orange: #d5803b;
+  --color-yellow: #d8a32f;
+  --color-green: #46a171;
+  --color-cyan: #37a4b4;
+  --color-blue: #2783de;
+  --color-purple: #b577d6;
+  --color-pink: #db6999;
+}

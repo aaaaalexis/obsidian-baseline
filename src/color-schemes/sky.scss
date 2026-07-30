@@ -1,0 +1,47 @@
+/*
+Sky
+MIT License
+Copyright (c) 2023 Steph Ango
+https://github.com/kepano/obsidian-minimal
+*/
+
+.theme-light.sky-light {
+  --background-primary: #fff;
+  --background-primary-alt: #f7f6f4;
+  --background-secondary: #f7f6f4;
+  --background-modifier-border: #ededec;
+  --background-modifier-border-hover: #dbdbda;
+  --background-modifier-border-focus: #aaa9a5;
+  --interactive-normal: #e8e7e4;
+  --interactive-hover: #dbdbda;
+  --text-normal: #37352f;
+  --text-muted: #72706c;
+  --text-faint: #aaa9a5;
+  --text-selection: hsla(197, 65%, 71%, 0.3);
+
+  &.color-scheme-accent {
+    --accent-h: 197;
+    --accent-s: 71%;
+    --accent-l: 52%;
+  }
+}
+.theme-dark.sky-dark {
+  --background-primary: #2f3437;
+  --background-primary-alt: #373c3f;
+  --background-secondary: #373c3f;
+  --background-modifier-border: #3e4245;
+  --background-modifier-border-hover: #585d5f;
+  --background-modifier-border-focus: #585d5f;
+  --interactive-normal: #4b5053;
+  --interactive-hover: #373c3f;
+  --text-normal: #ebebeb;
+  --text-muted: #a3a5a9;
+  --text-faint: #6d7476;
+  --text-selection: hsla(197, 48%, 43%, 0.3);
+
+  &.color-scheme-accent {
+    --accent-h: 197;
+    --accent-s: 71%;
+    --accent-l: 52%;
+  }
+}

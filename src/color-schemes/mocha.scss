@@ -1,0 +1,37 @@
+/*
+Catppuccin: Mocha
+MIT License
+Copyright (c) 2021 Catppuccin
+https://github.com/catppuccin/catppuccin
+*/
+
+.theme-dark.mocha-dark {
+  --background-primary: #11111b;
+  --background-primary-alt: #181825;
+  --background-secondary: #181825;
+  --background-secondary-alt: #1e1e2e;
+  --background-modifier-border: #313244;
+  --background-modifier-border-hover: #43465a;
+  --background-modifier-border-focus: #565970;
+  --text-normal: #c6d0f5;
+  --text-muted: #8e95b3;
+  --text-faint: #696d86;
+  --color-red: #f38ba8;
+  --color-base-00: #11111b;
+  --color-orange: #fab387;
+  --color-yellow: #f9e2af;
+  --color-green: #a6e3a1;
+  --color-cyan: #89dceb;
+  --color-blue: #87b0f9;
+  --color-purple: #b4befe;
+  --color-pink: #f5c2e7;
+
+  &.color-scheme-accent {
+    --accent-h: 10;
+    --accent-s: 56%;
+    --accent-l: 91%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

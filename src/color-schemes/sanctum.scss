@@ -1,0 +1,65 @@
+/*
+Sanctum
+MIT License
+Copyright (c) 2021-2022 José Daniel Mourão (jdanielmourao)
+https://github.com/jdanielmourao/obsidian-sanctum/
+*/
+
+.theme-light.sanctum-light {
+  --background-primary: #fdfefe;
+  --background-primary-alt: #f0efed;
+  --background-secondary: #f4f4f0;
+  --background-secondary-alt: #e2e0dc;
+  --background-modifier-hover: hsla(20, 1%, 55%, 0.12);
+  --background-modifier-border: #e2e0dc;
+  --background-modifier-border-hover: #e2e0dc;
+  --background-modifier-border-focus: #c7c5c2;
+  --interactive-normal: #fdfefe;
+  --interactive-hover: #f4f4f0;
+  --text-normal: #161616;
+  --text-muted: #545151;
+  --text-faint: #a9a8a5;
+  --color-red: #c34128;
+  --color-orange: #f58b42;
+  --color-yellow: #f3bd4f;
+  --color-green: #669861;
+  --color-cyan: #63959c;
+  --color-blue: #536f9d;
+  --color-purple: #a577da;
+  --color-pink: #eb5673;
+
+  &.color-scheme-accent {
+    --accent-h: 24;
+    --accent-s: 90%;
+    --accent-l: 61%;
+  }
+}
+.theme-dark.sanctum-dark {
+  --background-primary: #161616;
+  --background-primary-alt: #262625;
+  --background-secondary: #262625;
+  --background-secondary-alt: #3a3838;
+  --background-modifier-hover: hsla(20, 1%, 55%, 0.16);
+  --background-modifier-border: #3a3838;
+  --background-modifier-border-hover: #3a3838;
+  --background-modifier-border-focus: #545151;
+  --interactive-normal: #262625;
+  --interactive-hover: #282727;
+  --text-normal: #f4f4f0;
+  --text-muted: #c7c5c2;
+  --text-faint: #706e6d;
+  --color-red: #c34128;
+  --color-orange: #f58b42;
+  --color-yellow: #f3bd4f;
+  --color-green: #669861;
+  --color-cyan: #63959c;
+  --color-blue: #536f9d;
+  --color-purple: #a577da;
+  --color-pink: #eb5673;
+
+  .color-scheme-accent {
+    --accent-h: 115;
+    --accent-s: 22%;
+    --accent-l: 49%;
+  }
+}

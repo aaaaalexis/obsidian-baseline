@@ -1,0 +1,58 @@
+/* Things */
+
+.theme-light.things-light {
+  --background-primary: #fff;
+  --background-primary-alt: #f5f6f8;
+  --background-secondary: #f5f6f8;
+  --background-modifier-border: #eef0f4;
+  --background-modifier-border-hover: #d8dadd;
+  --background-modifier-border-focus: #c1c3c6;
+  --interactive-normal: #e8ecee;
+  --interactive-hover: #d1d8dd;
+  --text-normal: #26272b;
+  --text-muted: #7d7f84;
+  --text-faint: #a9abb0;
+  --text-selection: #cae2ff;
+  --color-red: #ff306c;
+  --color-orange: #ff9502;
+  --color-yellow: #ffd500;
+  --color-green: #4bbf5e;
+  --color-cyan: #49aea4;
+  --color-blue: #1b61c2;
+  --color-purple: #b051de;
+  --color-pink: #ff2e55;
+
+  &.color-scheme-accent {
+    --accent-h: 215;
+    --accent-s: 76%;
+    --accent-l: 43%;
+  }
+}
+.theme-dark.things-dark {
+  --background-primary: #24262a;
+  --background-primary-alt: #202225;
+  --background-secondary: #202225;
+  --background-modifier-border: #3a3b3f;
+  --background-modifier-border-hover: #45464a;
+  --background-modifier-border-focus: #6c6e70;
+  --interactive-normal: #3d3f41;
+  --interactive-hover: #202225;
+  --text-normal: #fbfbfb;
+  --text-muted: #cbcccd;
+  --text-faint: #6c6e70;
+  --text-selection: hsla(216, 84%, 54%, 0.35);
+  --color-red: #ff306c;
+  --color-orange: #ff9502;
+  --color-yellow: #ffd500;
+  --color-green: #4bbf5e;
+  --color-cyan: #49aea4;
+  --color-blue: #4d95f7;
+  --color-purple: #b051de;
+  --color-pink: #ff2e55;
+
+  &.color-scheme-accent {
+    --accent-h: 215;
+    --accent-s: 91%;
+    --accent-l: 64%;
+  }
+}

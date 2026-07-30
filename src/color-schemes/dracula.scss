@@ -1,0 +1,54 @@
+/*
+Dracula
+MIT License
+Copyright (c) 2016 Dracula Theme
+https://github.com/dracula/dracula-theme
+*/
+
+.theme-light.dracula-light {
+  --background-primary: #fffbeb;
+  --background-primary-alt: #efeddc;
+  --background-secondary: #efeddc;
+  --background-modifier-border-hover: #cfcfde;
+  --background-modifier-border-focus: #6c664b;
+  --text-normal: #1f1f1f;
+  --text-muted: #6b655b;
+  --text-faint: #a9a299;
+  --text-selection: #cfcfde;
+  --color-red: #cb3a2a;
+  --color-orange: #a34d14;
+  --color-yellow: #846e15;
+  --color-green: #14710a;
+  --color-cyan: #036a96;
+  --color-blue: #7862d0;
+  --color-purple: #644ac9;
+  --color-pink: #a3144d;
+}
+.theme-dark.dracula-dark {
+  --background-primary: #282a36;
+  --background-primary-alt: #21222c;
+  --background-secondary: #21222c;
+  --background-modifier-border-hover: #44475a;
+  --background-modifier-border-focus: #6272a4;
+  --text-normal: #f8f8f2;
+  --text-muted: #7d859d;
+  --text-faint: #5e6174;
+  --text-selection: #44475a;
+  --color-red: #ff5555;
+  --color-orange: #ffb86c;
+  --color-yellow: #f1fa8c;
+  --color-green: #50fa7b;
+  --color-cyan: #8be9fd;
+  --color-blue: #d6acff;
+  --color-purple: #bd93f9;
+  --color-pink: #ff79c6;
+
+  &.color-scheme-accent {
+    --accent-h: 265;
+    --accent-s: 89%;
+    --accent-l: 78%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

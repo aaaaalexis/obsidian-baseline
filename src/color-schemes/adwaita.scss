@@ -1,0 +1,55 @@
+/*
+Adwaita
+GNOME Project
+https://gitlab.gnome.org/GNOME/libadwaita/
+*/
+
+.theme-light.adwaita-light,
+.theme-dark.adwaita-dark {
+  &.color-scheme-accent {
+    --accent-h: 213;
+    --accent-s: 76%;
+    --accent-l: 55%;
+  }
+}
+
+.theme-light.adwaita-light {
+  --background-primary: #fff;
+  --background-primary-alt: #fff;
+  --background-secondary: #ebebed;
+  --background-secondary-alt: #f3f3f5;
+  --background-modifier-border: #d0d0d2;
+  --interactive-normal: #d9d9dc;
+  --interactive-hover: #d0d0d2;
+  --text-normal: #333338;
+  --text-muted: #5c5c60;
+  --text-faint: #858587;
+  --color-red: #ed333b;
+  --color-orange: #ff7800;
+  --color-yellow: #f6d32d;
+  --color-green: #2ec27e;
+  --color-cyan: #23a4ad;
+  --color-blue: #62a0ea;
+  --color-purple: #c061cb;
+  --color-pink: #e061b2;
+}
+.theme-dark.adwaita-dark {
+  --background-primary: #1d1d20;
+  --background-primary-alt: #2e2e32;
+  --background-secondary: #2e2e32;
+  --background-secondary-alt: #28282c;
+  --background-modifier-border: #4d4d51;
+  --interactive-normal: #424246;
+  --interactive-hover: #4d4d51;
+  --text-normal: #fff;
+  --text-muted: #d2d2d2;
+  --text-faint: #99999b;
+  --color-red: #e01b24;
+  --color-orange: #e66100;
+  --color-yellow: #f5c211;
+  --color-green: #26a269;
+  --color-cyan: #2190a4;
+  --color-blue: #3584e4;
+  --color-purple: #9141ac;
+  --color-pink: #d561aa;
+}

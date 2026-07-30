@@ -1,0 +1,60 @@
+/*
+Minimal
+MIT License
+Copyright (c) 2023 Steph Ango
+https://github.com/kepano/obsidian-minimal
+*/
+
+.theme-light.minimal-light,
+.theme-dark.minimal-dark {
+  &.color-scheme-accent {
+    --accent-h: 201;
+    --accent-s: 17%;
+    --accent-l: 50%;
+  }
+}
+
+.theme-light.minimal-light {
+  --background-primary: #fff;
+  --background-primary-alt: #f5f5f5;
+  --background-secondary: #f5f5f5;
+  --background-secondary-alt: #fff;
+  --background-modifier-border: #e6e6e6;
+  --background-modifier-border-hover: #d6d6d6;
+  --background-modifier-border-focus: #c2c2c2;
+  --interactive-normal: #fff;
+  --text-normal: #0f0f0f;
+  --text-muted: #757575;
+  --text-faint: #b5b5b5;
+  --color-red: #d04255;
+  --color-orange: #d5763f;
+  --color-yellow: #e5b567;
+  --color-green: #a8c373;
+  --color-cyan: #73bbb2;
+  --color-blue: #6c99bb;
+  --color-purple: #9e86c8;
+  --color-pink: #b05279;
+}
+.theme-dark.minimal-dark {
+  --background-primary: #262626;
+  --background-primary-alt: #212121;
+  --background-secondary: #212121;
+  --background-secondary-alt: #262626;
+  --background-modifier-hover: hsla(0, 0%, 55%, 0.12);
+  --background-modifier-border: #363636;
+  --background-modifier-border-hover: #454545;
+  --background-modifier-border-focus: #595959;
+  --background-modifier-hover-active: hsla(0, 0%, 55%, 0.12);
+  --interactive-normal: #323232;
+  --text-normal: #d4d4d4;
+  --text-muted: #999999;
+  --text-faint: #595959;
+  --color-red: #d04255;
+  --color-orange: #d5763f;
+  --color-yellow: #e5b567;
+  --color-green: #a8c373;
+  --color-cyan: #73bbb2;
+  --color-blue: #6c99bb;
+  --color-purple: #9e86c8;
+  --color-pink: #b05279;
+}

@@ -1,0 +1,64 @@
+/*
+Melange
+MIT License
+Copyright (c) 2021 Sergio Alejandro Vargas
+https://github.com/savq/melange-nvim
+*/
+
+.theme-light.melange-light {
+  --background-primary: #f0ecea;
+  --background-primary-alt: #e9e1db;
+  --background-secondary: #e9e1db;
+  --background-modifier-border: #d6c0b3;
+  --background-modifier-border-hover: #cdb8ad;
+  --background-modifier-border-focus: #b09b8f;
+  --interactive-normal: #f0ecea;
+  --interactive-hover: #e9e1db;
+  --text-normal: #54433a;
+  --text-muted: #7d6658;
+  --text-faint: #a98a78;
+  --color-red: #c77b8b;
+  --color-orange: #bc5c00;
+  --color-yellow: #bda240;
+  --color-green: #6e9b72;
+  --color-cyan: #739797;
+  --color-blue: #7892bd;
+  --color-purple: #ad6bc0;
+  --color-pink: #d65cbc;
+
+  &.color-scheme-accent {
+    --accent-h: 29;
+    --accent-s: 100%;
+    --accent-l: 37%;
+  }
+}
+.theme-dark.melange-dark {
+  --background-primary: #292522;
+  --background-primary-alt: #34302c;
+  --background-secondary: #34302c;
+  --background-modifier-border: #403a36;
+  --background-modifier-border-hover: #635851;
+  --background-modifier-border-focus: #7e7469;
+  --interactive-normal: #292522;
+  --interactive-hover: #34302c;
+  --text-normal: #ece1d7;
+  --text-muted: #c1a78e;
+  --text-faint: #867462;
+  --color-red: #bd8183;
+  --color-orange: #e49b5d;
+  --color-yellow: #d2be73;
+  --color-green: #78997a;
+  --color-cyan: #7b9695;
+  --color-blue: #7f91b2;
+  --color-purple: #b380b0;
+  --color-pink: #c070ae;
+
+  &.color-scheme-accent {
+    --accent-h: 28;
+    --accent-s: 71%;
+    --accent-l: 63%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

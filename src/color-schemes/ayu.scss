@@ -1,0 +1,62 @@
+/*
+ayu
+MIT License
+Copyright (c) Konstantin Pschera <me@kons.ch> (kons.ch)
+https://github.com/ayu-theme/ayu-colors
+*/
+
+.theme-light.ayu-light {
+  --background-primary: #fff;
+  --background-primary-alt: #f8f9fa;
+  --background-secondary: #f8f9fa;
+  --background-modifier-border: #e6eaed;
+  --interactive-normal: #e8edf0;
+  --interactive-hover: #d1dae0;
+  --text-normal: #5c6165;
+  --text-muted: #8a9199;
+  --text-faint: #aaaeb0;
+  --text-selection: hsla(215, 97%, 43%, 0.15);
+  --color-red: #e65050;
+  --color-orange: #fa8d3e;
+  --color-yellow: #f2ae49;
+  --color-green: #6cbf43;
+  --color-cyan: #4cbf99;
+  --color-blue: #399ee6;
+  --color-purple: #a37acc;
+  --color-pink: #ff7383;
+
+  &.color-scheme-accent {
+    --accent-h: 36;
+    --accent-s: 100%;
+    --accent-l: 50%;
+  }
+}
+.theme-dark.ayu-dark {
+  --background-primary: #232937;
+  --background-primary-alt: #1e2431;
+  --background-secondary: #1e2431;
+  --background-modifier-border: #333c4a;
+  --interactive-normal: #2b3344;
+  --interactive-hover: #333d50;
+  --text-normal: #cccac2;
+  --text-muted: #a0a9b9;
+  --text-faint: #6f768a;
+  --text-selection: hsla(210, 100%, 63%, 0.25);
+  --color-red: #ff6666;
+  --color-orange: #faad66;
+  --color-yellow: #ffd137;
+  --color-green: #87d96c;
+  --color-cyan: #95e6cb;
+  --color-blue: #73d0ff;
+  --color-purple: #dfbfff;
+  --color-pink: #f27983;
+
+  &.color-scheme-accent {
+    --accent-h: 35;
+    --accent-s: 100%;
+    --accent-l: 60%;
+
+    --text-on-accent: var(--background-primary);
+    --text-on-accent-inverted: var(--background-primary);
+  }
+}

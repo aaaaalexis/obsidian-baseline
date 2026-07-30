@@ -16,14 +16,14 @@ settings:
 		type: info-text
 		level: 1
 		markdown: true
-		description: Marketplace[](https://baseline.svnaxis.me/)
+		description: Marketplace[](https://baseline.svnaxis.me/marketplace)
 	-
 		id: migration
 		title: Switch to Baseline
 		type: info-text
 		level: 1
 		markdown: true
-		description: Migrate[](https://baseline.svnaxis.me/migration/)
+		description: Migrate[](https://baseline.svnaxis.me/onboarder/)
 	-
 		id: documentation
 		title: View Documentation
@@ -50,9 +50,9 @@ settings:
 		description: Apply accent color throughout the app.
 		type: class-toggle
 	-
-		id: colorist-accent
-		title: Spectrum accent
-		description: Use spectrum as accent color.
+		id: color-scheme-accent
+		title: Adaptive accent
+		description: Set accent color based on the current color scheme.
 		type: class-toggle
 	-
 		id: colorist-light
@@ -68,20 +68,80 @@ settings:
 		default: baseline-light
 		options:
 			-
-				label: Baseline
+				label: Baseline (Dynamic)
 				value: baseline-light
+			-
+				label: Material (Dynamic)
+				value: material-light
+			-
+				label: Radiance (Dynamic)
+				value: radiance-light
+			-
+				label: Softlight (Dynamic)
+				value: softlight-light
+			-
+				label: Adwaita
+				value: adwaita-light
+			-
+				label: Alucard
+				value: dracula-light
+			-
+				label: Atom
+				value: atom-light
+			-
+				label: Ayu
+				value: ayu-light
+			-
+				label: Catppuccin
+				value: catppuccin-light
 			-
 				label: Cupertino
 				value: cupertino-light
 			-
+				label: Everforest
+				value: everforest-light
+			-
+				label: Flexoki
+				value: flexoki-light
+			-
+				label: Gruvbox
+				value: gruvbox-light
+			-
+				label: Latte
+				value: latte-light
+			-
 				label: Material
 				value: material-light
 			-
-				label: Radiance
-				value: radiance-light
+				label: Melange
+				value: melange-light
 			-
-				label: Softlight
-				value: softlight-light
+				label: Minimal
+				value: minimal-light
+			-
+				label: Nord
+				value: nord-light
+			-
+				label: Notion
+				value: notion-light
+			-
+				label: Rosé Pine
+				value: rose-pine-light
+			-
+				label: Sanctum
+				value: sanctum-light
+			-
+				label: Sky
+				value: sky-light
+			-
+				label: Solarized
+				value: solarized-light
+			-
+				label: Things
+				value: things-light
+			-
+				label: Tiniri
+				value: tiniri-light
 	-
 		id: background-contrast-light
 		title: Type
@@ -139,20 +199,86 @@ settings:
 		default: baseline-dark
 		options:
 			-
-				label: Baseline
+				label: Baseline (Dynamic)
 				value: baseline-dark
+			-
+				label: Material (Dynamic)
+				value: material-dark
+			-
+				label: Radiance (Dynamic)
+				value: radiance-dark
+			-
+				label: Softlight (Dynamic)
+				value: softlight-dark
+			-
+				label: Adwaita
+				value: adwaita-dark
+			-
+				label: Atom
+				value: atom-dark
+			-
+				label: Ayu
+				value: ayu-dark
+			-
+				label: Catppuccin
+				value: catppuccin-dark
 			-
 				label: Cupertino
 				value: cupertino-dark
 			-
+				label: Dracula
+				value: dracula-dark
+			-
+				label: Everforest
+				value: everforest-dark
+			-
+				label: Flexoki
+				value: flexoki-dark
+			-
+				label: Frappe
+				value: frappe-dark
+			-
+				label: Gruvbox
+				value: gruvbox-dark
+			-
+				label: Macchiato
+				value: macchiato-dark
+			-
 				label: Material
 				value: material-dark
 			-
-				label: Radiance
-				value: radiance-dark
+				label: Melange
+				value: melange-dark
 			-
-				label: Softlight
-				value: softlight-dark
+				label: Minimal
+				value: minimal-dark
+			-
+				label: Mocha
+				value: mocha-dark
+			-
+				label: Nord
+				value: nord-dark
+			-
+				label: Notion
+				value: notion-dark
+			-
+				label: Rosé Pine
+				value: rose-pine-dark
+			-
+				label: Sanctum
+				value: sanctum-dark
+			-
+				label: Sky
+				value: sky-dark
+			-
+				label: Solarized
+				value: solarized-dark
+			-
+				label: Things
+				value: things-dark
+			-
+				label: Tiniri
+				value: tiniri-dark
 	-
 		id: background-contrast-dark
 		title: Type
@@ -3343,16 +3469,30 @@ body.block-width-off .setting-item[data-id="line-width"] ~ .setting-item,
 body.unstyled-tags .setting-item[data-id="unstyled-tags"] ~ .setting-item,
 body:not(.colorful-headings-background) .setting-item[data-id="colorful-headings-full-width"],
 body:not(.hr-dashed) .setting-item[data-id="hr-dashed"] ~ .setting-item,
-body:is(.is-hidden-frameless, :not(.is-frameless))
-  .setting-item[data-id="titlebar-info"]
-  ~ .setting-item,
-body:not(.is-translucent, .mod-macos)
-  .setting-item[data-id="translucent-window-info"]
-  ~ .setting-item {
+body:is(.is-hidden-frameless, :not(.is-frameless)) .setting-item[data-id="titlebar-info"] ~ .setting-item,
+body:not(.is-translucent, .mod-macos) .setting-item[data-id="translucent-window-info"] ~ .setting-item {
   pointer-events: none;
 
   > * {
     opacity: 0.5;
+  }
+}
+
+// Disabling accent
+body.color-scheme-accent .setting-item-control input[type="color"] {
+  width: auto;
+  height: auto;
+
+  &::-webkit-color-swatch-wrapper {
+    display: none;
+  }
+  &::after {
+    content: "Style Settings → Baseline → Colors";
+    color: var(--text-muted);
+    line-height: var(--line-height-tight);
+    font-family: var(--font-interface);
+    font-weight: var(--input-font-weight);
+    font-size: var(--font-ui-smaller);
   }
 }
 
@@ -3438,38 +3578,19 @@ body:not(.is-translucent, .mod-macos)
     }
   }
 }
-body.is-phone
-  .style-settings-container
-  .setting-item-heading[data-id="info"]
-  + .style-settings-container {
+body.is-phone .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container {
   flex-direction: column;
 }
 
-body.hide-baseline-marketplace
-  .style-settings-container
-  .setting-item-heading[data-id="info"]
-  + .style-settings-container
-  .setting-item:nth-child(1) {
+body.hide-baseline-marketplace .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(1) {
   display: none;
 }
-body.hide-baseline-migration
-  .style-settings-container
-  .setting-item-heading[data-id="info"]
-  + .style-settings-container
-  .setting-item:nth-child(2) {
+body.hide-baseline-migration .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(2) {
   display: none;
 }
-body.hide-baseline-documentation
-  .style-settings-container
-  .setting-item-heading[data-id="info"]
-  + .style-settings-container
-  .setting-item:nth-child(3) {
+body.hide-baseline-documentation .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(3) {
   display: none;
 }
-body.hide-baseline-support
-  .style-settings-container
-  .setting-item-heading[data-id="info"]
-  + .style-settings-container
-  .setting-item:nth-child(4) {
+body.hide-baseline-support .style-settings-container .setting-item-heading[data-id="info"] + .style-settings-container .setting-item:nth-child(4) {
   display: none;
 }

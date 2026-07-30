@@ -1,0 +1,28 @@
+/*
+Catppuccin: Latte
+MIT License
+Copyright (c) 2021 Catppuccin
+https://github.com/catppuccin/catppuccin
+*/
+
+.theme-light.latte-light {
+  --background-primary: #dce0e8;
+  --background-primary-alt: #e6e9ef;
+  --background-secondary: #e6e9ef;
+  --background-secondary-alt: #eff1f5;
+  --text-normal: #4c4f69;
+  --color-red: #d20f39;
+  --color-orange: #fe640b;
+  --color-yellow: #e49320;
+  --color-green: #40a02b;
+  --color-cyan: #04a5e5;
+  --color-blue: #2a6ef5;
+  --color-purple: #7287fd;
+  --color-pink: #ec83d0;
+
+  &.color-scheme-accent {
+    --accent-h: 11;
+    --accent-s: 58%;
+    --accent-l: 69%;
+  }
+}
