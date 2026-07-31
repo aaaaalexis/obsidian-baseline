@@ -20,8 +20,7 @@
   .markdown-rendered blockquote {
     position: relative;
     border-inline-start: none;
-    border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s)
-      calc(var(--blockquote-border-thickness) / 2);
+    border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
     padding-inline: calc(var(--blockquote-border-thickness) + 16px) 16px;
     padding-block: 8px;
   }
