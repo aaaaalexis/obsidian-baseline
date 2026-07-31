@@ -3414,7 +3414,9 @@ body.layout-frame .style-settings-container .setting-item[data-id="layout-style"
 }
 
 // Disabling input
-body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark)) .style-settings-container .setting-item[data-id="color-scheme-accent"],
+body:not(.accented-interface:not(.default-light.default-dark, .material-light.material-dark))
+  .style-settings-container
+  .setting-item[data-id="color-scheme-accent"],
 body:is(.tab-floating, .tab-floating-center) .style-settings-container .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .style-settings-container .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
 body:not(.layout-macos, .layout-fusion) .style-settings-container .setting-item[data-id="reduce-contrast-change"],

@@ -50,7 +50,8 @@ https://developer.apple.com/design/human-interface-guidelines/color
   --accent-s: 100%;
   --accent-l: 50%;
 }
-.theme-light.cupertino-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.cupertino-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.cupertino-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
 .theme-light.cupertino-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.cupertino-dark {

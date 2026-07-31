@@ -56,7 +56,8 @@ https://github.com/jdanielmourao/obsidian-sanctum/
   --accent-s: 22%;
   --accent-l: 49%;
 }
-.theme-light.sanctum-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.sanctum-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.sanctum-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
 .theme-light.sanctum-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.sanctum-dark {

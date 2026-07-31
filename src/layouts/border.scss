@@ -203,7 +203,9 @@ body.layout-border.is-tablet {
   }
 
   // Contrast
-  &:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark) .mod-root .workspace-tab-container {
+  &:is(.contrast-light-tonal.theme-light, .contrast-dark-tonal.theme-dark, .contrast-dark-black.theme-dark, .contrast-dark-black-mobile.theme-dark)
+    .mod-root
+    .workspace-tab-container {
     border-width: var(--divider-width) 0 var(--divider-width);
   }
 }

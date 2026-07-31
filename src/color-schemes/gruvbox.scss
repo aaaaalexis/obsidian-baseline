@@ -40,7 +40,8 @@ https://github.com/morhetz/gruvbox
   --text-selection: rgba(192, 165, 125, 0.3);
   --text-highlight-bg: rgba(215, 153, 33, 0.4);
 }
-.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.gruvbox-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.gruvbox-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
 .theme-light.gruvbox-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.gruvbox-dark {

@@ -91,7 +91,17 @@ body.tab-default:is(.layout-cupertino, .layout-macos, .layout-classic, .layout-m
 body.tab-default.layout-fusion .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-header {
   --tab-outline-width: 1px;
 }
-body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(.layout-macos, .layout-classic, .layout-minimal, .layout-border, .layout-frame, .layout-viewfinder) .workspace-drawer.mod-left.is-pinned + .mod-root .workspace-tab-header-container {
+body.is-tablet:not(.tab-floating, .tab-floating-center, .tab-underline, .tab-underline-accented):not(
+    .layout-macos,
+    .layout-classic,
+    .layout-minimal,
+    .layout-border,
+    .layout-frame,
+    .layout-viewfinder
+  )
+  .workspace-drawer.mod-left.is-pinned
+  + .mod-root
+  .workspace-tab-header-container {
   padding-left: var(--tab-radius);
 }
 
@@ -216,7 +226,8 @@ body:not(.mod-macos):not(.is-mobile).tab-floating-center {
         padding-left: var(--tab-action-width);
       }
       // Left split pane & Non-top pane
-      &:is(.mod-root > .workspace-tabs):not(:only-of-type):first-of-type:not(.mod-top-left-space):not(.mod-top-right-space) .workspace-tab-header-container-inner,
+      &:is(.mod-root > .workspace-tabs):not(:only-of-type):first-of-type:not(.mod-top-left-space):not(.mod-top-right-space)
+        .workspace-tab-header-container-inner,
       &:not(.mod-top) .workspace-tab-header-container-inner {
         padding-left: calc(var(--tab-action-width) * 2);
       }
@@ -501,23 +512,38 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
   }
 }
 
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border):not(.show-ribbon)
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
   margin-top: calc(-1 * var(--header-height) + 8px);
   margin-right: 48px;
 }
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-macos, .layout-fusion):not(.show-ribbon) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):is(.layout-macos, .layout-fusion):not(.show-ribbon)
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
   margin-top: calc(-1 * var(--header-height) + 24px);
 }
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
   margin-top: 8px;
 }
 
-body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
   margin-top: 8px;
 }
 
 // Side panels: Dropdown tabs
-body.tab-top-left-dropdown:is(.layout-macos, .layout-fusion):not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header {
+body.tab-top-left-dropdown:is(.layout-macos, .layout-fusion):not(.is-grabbing)
+  .mod-sidedock.mod-left-split
+  .workspace-tabs.mod-top-left-space
+  .workspace-tab-header {
   padding: 0;
 }
 body.tab-top-left-dropdown:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,

@@ -74,7 +74,8 @@ body.input-cupertino {
 
     --blur-background: rgba(255, 255, 255, 0.075);
 
-    --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+    --shadow-base:
+      inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
     --shadow-edges: 0 0 1px rgba(255, 255, 255, 0.3);
     --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.5), 0 0 1px rgba(0, 0, 0, 0.4), 0 8px 16px rgba(0, 0, 0, 0.2);
 
@@ -351,8 +352,16 @@ body.input-cupertino {
     color: oklch(from var(--interactive-accent) 0.95 c h);
     box-shadow: var(--shadow-xs);
   }
-  &.tab-left-compact .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner,
-  &.tab-right-compact .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) .workspace-tab-header-container-inner {
+  &.tab-left-compact
+    .mod-sidedock.mod-left-split
+    .workspace-tabs:not(.mod-top)
+    .workspace-tab-header-container:not(:hover)
+    .workspace-tab-header-container-inner,
+  &.tab-right-compact
+    .mod-sidedock.mod-right-split
+    .workspace-tabs:not(.mod-top)
+    .workspace-tab-header-container:not(:hover)
+    .workspace-tab-header-container-inner {
     gap: calc(8px * var(--density-modifier));
   }
 }

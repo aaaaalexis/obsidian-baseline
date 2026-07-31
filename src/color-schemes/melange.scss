@@ -41,7 +41,8 @@ https://github.com/savq/melange-nvim
   --text-on-accent: var(--background-primary);
   --text-on-accent-inverted: var(--background-primary);
 }
-.theme-light.melange-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.melange-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.melange-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
 .theme-light.melange-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.melange-dark {

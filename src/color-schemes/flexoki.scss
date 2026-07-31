@@ -43,7 +43,8 @@ https://stephango.com/flexoki
   --accent-s: 49%;
   --accent-l: 45%;
 }
-.theme-light.flexoki-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
+.theme-light.flexoki-light.contrast-light-vivid:not(.layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(.titlebar, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
 .theme-light.flexoki-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .mod-sidedock),
 .theme-light.flexoki-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-dark.flexoki-dark {

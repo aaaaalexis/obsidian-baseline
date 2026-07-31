@@ -61,8 +61,17 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
   --tab-container-background: var(--background-secondary);
   --background-secondary: #262626;
 }
-.theme-light.contrast-light-vivid:not(.layout-macos, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock, .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)),
-.theme-light.contrast-light-vivid:not(.layout-macos, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder):not(.tab-default) .mod-root .workspace-tab-header,
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder)
+  div:is(
+    .titlebar,
+    .workspace-ribbon,
+    .workspace-ribbon,
+    .mod-sidedock,
+    .mod-root .workspace-tab-header-container > div:not(.workspace-tab-header-container-inner)
+  ),
+.theme-light.contrast-light-vivid:not(.layout-macos, .layout-fusion, .layout-minimal, .layout-frame, .layout-viewfinder):not(.tab-default)
+  .mod-root
+  .workspace-tab-header,
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock) {
   color-scheme: dark;

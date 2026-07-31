@@ -117,10 +117,18 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
     &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       transition-timing-function: ease;
     }
-    &:not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
+    &:not(.tab-top-left-stacked)
+      .workspace-ribbon.mod-left:not(.is-collapsed):hover
+      ~ .mod-sidedock.mod-left-split
+      .mod-top-left-space
+      .workspace-tab-header-container {
       padding-left: 52px;
     }
-    &:not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover) ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container,
+    &:not(.tab-top-left-stacked)
+      .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover)
+      ~ .mod-sidedock.mod-left-split
+      .mod-top-left-space
+      .workspace-tab-header-container,
     .workspace-ribbon.mod-left.is-collapsed ~ .mod-root > div:first-of-type .workspace-tab-header-container {
       padding-left: 88px;
     }

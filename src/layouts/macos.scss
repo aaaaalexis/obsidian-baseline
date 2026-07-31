@@ -106,7 +106,8 @@ body:is(.layout-macos, .layout-fusion):not(.is-mobile) {
 }
 
 // Ribbon
-body:is(.layout-macos, .layout-fusion:not(.tab-floating, .tab-floating-center)):not(.is-mobile).mod-macos.is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed {
+body:is(.layout-macos, .layout-fusion:not(.tab-floating, .tab-floating-center)):not(.is-mobile).mod-macos.is-hidden-frameless
+  .workspace-ribbon.mod-left.is-collapsed {
   margin-top: calc(var(--header-height) - 1px);
   padding-top: 8px;
   border-top: var(--tab-outline-width) solid var(--tab-outline-color);
@@ -125,7 +126,9 @@ body.layout-fusion:not(.is-phone):not(.tab-floating, .tab-floating-center) .work
 
 body:is(.layout-macos, .layout-fusion).is-tablet {
   &.theme-light {
-    --shadow-surface: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025), 0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
+    --shadow-surface:
+      inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025),
+      0 0 1px rgba(0, 0, 0, 0.25), 0 8px 16px 0 rgba(0, 0, 0, 0.05);
   }
   &.theme-dark {
     --shadow-surface: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 1px rgba(255, 255, 255, 0.5);
