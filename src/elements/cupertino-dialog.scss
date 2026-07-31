@@ -1,29 +1,27 @@
 body.input-cupertino {
   --background-modifier-message: var(--modal-background);
-  --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+  --modal-background: hsl(from var(--background-secondary) h s l / 75%) !important;
+  --menu-background: var(--blur-background);
 
   &.is-translucent {
     --modal-background: var(--background-primary) !important;
   }
 
-  .menu,
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-l);
-    border: none;
     background-color: var(--modal-background);
   }
+  .menu,
   .suggestion-container,
   .popover {
     backdrop-filter: var(--blur-m);
-    border: none;
-    background-color: var(--modal-background);
+    background-color: var(--menu-background);
   }
   .cm-tooltip,
   .notice {
-    backdrop-filter: var(--raised-blur);
-    border: none;
-    background-color: var(--modal-background);
+    backdrop-filter: var(--blur-s);
+    background-color: var(--blur-background);
   }
 }
 
@@ -92,7 +90,6 @@ body.input-cupertino.is-phone {
   }
 
   .menu .menu-item {
-    min-height: 48px;
     font-size: var(--font-ui-medium);
   }
   .menu .menu-item::after {
@@ -108,7 +105,7 @@ body.input-cupertino.is-phone {
     .menu-item-title::after {
       position: absolute;
       inset: auto 0 -14px;
-      background-color: rgba(var(--mono-rgb-100), 0.1);
+      background-color: hsl(from var(--mono-100) h s l / 0.1);
       height: var(--border-width);
       content: "";
     }
@@ -178,7 +175,6 @@ body.input-cupertino:not(.is-mobile) {
 
 body.input-cupertino.is-mobile {
   .modal-setting-back-button,
-  .modal-close-button,
   .modal-header-button {
     --icon-size: var(--icon-xl);
     padding: 6px;
@@ -198,7 +194,6 @@ body.input-cupertino.is-phone {
     width: calc(100vw - 16px) !important;
     left: 0 !important;
 
-    .modal-close-button,
     .modal-header-button {
       top: 16px !important;
       inset-inline-end: 16px !important;
@@ -221,10 +216,16 @@ body.input-cupertino.is-phone {
 // Notice & Tooltip
 body.input-cupertino {
   .notice {
-    box-shadow: var(--shadow-l);
     border-radius: var(--radius-m);
     padding: calc(16px * var(--density-modifier)) var(--side-padding);
     color: var(--text-normal);
+    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
+  }
+
+  .notice[style^="opacity: 0"] {
+    margin-top: unset !important;
+    transform: scale(1.1);
+    filter: blur(8px);
   }
 
   .tooltip {
@@ -240,15 +241,21 @@ body.input-cupertino {
 }
 
 body.input-cupertino:not(.is-mobile) .notice {
-  transition: var(--anim-duration-moderate) !important;
+  box-shadow: var(--shadow-l);
+
+  &:last-child {
+    @starting-style {
+      transform: translateX(50%) !important;
+      filter: blur(8px);
+      opacity: 0;
+    }
+  }
 }
 
 body.input-cupertino.is-mobile .notice {
   box-shadow: var(--shadow-xs);
 
   &:last-child {
-    transition: var(--anim-duration-slow) var(--anim-motion-baseline) !important;
-
     @starting-style {
       transform: translateY(-50%) scaleX(0.5) !important;
       filter: blur(4px);

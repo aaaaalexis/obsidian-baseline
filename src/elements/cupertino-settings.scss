@@ -24,6 +24,10 @@ body.input-cupertino {
       --setting-nav-icon-color: var(--color-red);
       --setting-nav-icon-background: var(--color-base-10);
     }
+    &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-color: var(--color-blue);
+      --setting-nav-icon-background: var(--color-base-10);
+    }
     &[data-setting-id="command-palette"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: #242424;
     }
@@ -39,13 +43,10 @@ body.input-cupertino {
 }
 
 body.input-cupertino:not(.is-mobile) {
-  --setting-items-padding: calc(12px * var(--density-modifier)) var(--side-padding);
+  --settings-background: var(--background-primary);
+  --setting-items-padding-x: var(--side-padding);
+  --setting-items-padding-y: calc(12px * var(--density-modifier));
   --setting-group-heading-color: var(--text-normal);
-
-  .modal.mod-sidebar-layout {
-    background-color: var(--background-primary);
-    border: none;
-  }
 
   .modal.mod-settings {
     .vertical-tab-nav-item.is-active {
@@ -61,25 +62,16 @@ body.input-cupertino:not(.is-mobile) {
       padding: 6px 8px;
     }
 
+    .vertical-tab-content {
+      animation: none;
+    }
+
     .setting-group-search + .setting-items {
       border-radius: var(--setting-items-radius);
     }
 
-    .setting-items .setting-item {
-      padding: 12px 0;
-    }
-    .setting-items .setting-item:first-child {
-      padding-top: 0;
-    }
-    .setting-items .setting-item:last-child {
-      padding-bottom: 0;
-    }
     .setting-item:not(.setting-item-heading, .setting-items .setting-item) {
-      padding: var(--setting-items-padding);
-    }
-
-    .installed-plugins-container .extra-setting-button {
-      min-width: unset;
+      padding: var(--setting-items-padding-y) var(--setting-items-padding-x);
     }
   }
 }
@@ -88,7 +80,7 @@ body.input-cupertino.is-mobile {
   .modal.mod-settings .vertical-tab-nav-item .vertical-tab-nav-item-icon {
     padding: 5px;
     border-radius: 8px;
-    box-shadow: 0 0 0 0.5px var(--background-modifier-border);
+    box-shadow: 0 0 0 0.5pt var(--background-modifier-border);
     margin-left: -4px;
   }
 }
@@ -104,7 +96,6 @@ body.input-cupertino.is-phone {
     .modal-setting-back-button {
       inset-inline-start: var(--safe-area-inset-side);
     }
-    .modal-close-button,
     .modal-header-button {
       top: var(--safe-area-inset-side);
       inset-inline-end: var(--safe-area-inset-side) !important;
@@ -117,6 +108,9 @@ body.input-cupertino.is-phone {
 
     .vertical-tab-nav-item {
       height: var(--touch-size-xl);
+    }
+    .vertical-tab-nav-item-title {
+      line-height: var(--touch-size-xl);
     }
   }
   .modal.mod-settings {

@@ -119,9 +119,6 @@ body:is(.tab-floating, .tab-floating-center):not(.is-phone) .workspace .mod-root
     padding: 0;
     background-color: var(--background-modifier-hover);
   }
-  .workspace-tab-header:not(.is-active):not(:hover) {
-    opacity: 0.5;
-  }
   .workspace-tab-header-inner {
     padding-inline-start: 12px;
     padding-inline-end: 8px;

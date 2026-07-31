@@ -7,6 +7,8 @@ body {
   --ribbon-background-collapsed: var(--ribbon-background);
 
   --divider-vertical-height: 100% !important;
+
+  --vault-profile-radius: var(--radius-s) !important;
 }
 
 body.is-mobile {

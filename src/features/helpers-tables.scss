@@ -55,17 +55,17 @@
     &:not(.table-editor) > :is(thead, tbody) > tr > :is(th, td):first-child,
     &.table-editor > :is(thead, tbody) > tr > :is(th, td):first-child .table-cell-wrapper {
       position: relative;
-      padding-left: 3em;
+      padding-left: 3rem;
     }
 
     &:not(.table-editor) tbody > tr > td:first-child::before,
     &.table-editor tbody > tr > td:first-child .table-cell-wrapper::before {
       display: inline-block;
       position: absolute;
-      top: 0.5em;
-      left: 0.5em;
+      top: 0.5rem;
+      left: 0.5rem;
       counter-increment: section;
-      min-width: 2em;
+      min-width: 2rem;
       content: counter(section);
       color: var(--text-faint);
       font-variant-numeric: tabular-nums;

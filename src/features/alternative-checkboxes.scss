@@ -99,7 +99,7 @@ li[data-task="-"] > p > input:checked {
 }
 input[data-task="-"],
 li[data-task="-"],
-.HyperMD-list-line[data-task="-"] .cm-list-1 {
+.HyperMD-list-line[data-task="-"] {
   text-decoration: var(--checklist-done-decoration);
   color: var(--text-faint);
 }

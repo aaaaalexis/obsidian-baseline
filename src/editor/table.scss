@@ -3,6 +3,7 @@
     --table-text-size: var(--font-small);
 
     --table-border-color: var(--background-modifier-border);
+    --table-border-width: var(--border-width);
 
     --table-add-button-border-width: 0;
     --table-header-border-color: transparent;
@@ -147,7 +148,7 @@
     }
 
     &.table-view-table > tbody > tr:not(:only-child) > td {
-      max-width: 20em;
+      max-width: 20rem;
     }
 
     &.dataview-error-box {

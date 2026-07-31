@@ -1,140 +1,119 @@
-body.mod-macos:not(.is-mobile) .mod-settings {
-  --dropdown-background: inherit;
-  --dropdown-icon-background: transparent;
-}
-
-body:not(.is-phone) {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    .setting-group .setting-items {
-      padding-inline: 0;
-      padding-top: 0;
-      background-color: transparent;
-    }
-    .setting-item-heading {
-      padding: 0;
-    }
-
-    .setting-group .setting-item:not(.setting-item-heading)::before {
-      content: none;
-    }
-    .setting-group .setting-item:not(.setting-item-heading):not(:first-child) {
-      padding-top: 12px;
-    }
-    .setting-group .setting-item:not(.setting-item-heading):not(:last-child) {
-      padding-bottom: 12px;
-    }
-
-    .setting-item {
-      border-top: none;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 12px 0;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-
-    .setting-item-description {
-      color: var(--text-faint);
-    }
-  }
-  &:is(.input-baseline, :not(.css-settings-manager)):not(.plugins-grid-off) .installed-plugins-container .setting-item:not(.setting-item-heading) {
-    border: var(--border-width) solid var(--background-modifier-border);
-  }
-
-  --setting-items-radius: var(--radius-m);
-  --setting-items-padding: calc(16px * var(--density-modifier)) 16px;
-  --setting-items-padding-x: 0px;
-  --setting-items-padding-y: 0px;
+body {
   --setting-group-heading-color: var(--text-faint);
   --setting-group-heading-size: var(--font-ui-small);
-
-  .modal-sidebar {
-    --background-modifier-form-field: var(--interactive-normal);
-  }
+  --setting-items-radius: var(--radius-m);
+  --setting-items-padding-y: calc(16px * var(--density-modifier));
 
   .modal.mod-sidebar-layout {
-    .vertical-tab-header {
-      border-inline-end: none;
-    }
-    .vertical-tab-nav-item-icon {
-      color: inherit;
-    }
     .vertical-tab-header-group-container:hover,
     .vertical-tab-content:hover {
       will-change: transform;
     }
+
+    .vertical-tab-header {
+      border-right: none;
+      background-color: transparent;
+      min-width: 150px;
+    }
+    .vertical-tab-nav-item-icon {
+      color: inherit;
+    }
+
+    .setting-item-heading {
+      border: none;
+    }
+    .setting-item-info {
+      margin-block: auto;
+      display: flex;
+      gap: 4px;
+      flex-direction: column;
+    }
+    .setting-item-description {
+      padding-top: 0;
+    }
+
+    .setting-group.mod-list {
+      --setting-items-padding-x: inherit;
+      --setting-items-padding-y: inherit;
+    }
+  }
+}
+
+body.mod-macos:not(.is-mobile) .mod-settings {
+  --dropdown-background: var(--interactive-normal);
+  --dropdown-icon-background: transparent;
+}
+
+body:not(.is-phone) {
+  .modal.mod-sidebar-layout {
     .vertical-tab-header-group-title,
     .vertical-tab-nav-item {
       padding: calc(8px * var(--density-modifier)) 12px;
       align-items: center;
       font-size: var(--font-ui-small);
+      border-radius: var(--radius-s);
+    }
+    .vertical-tab-nav-item:hover {
+      background-color: var(--background-modifier-hover);
     }
 
     .vertical-tab-content {
-      background-color: var(--modal-sidebar-background);
+      background-color: transparent;
     }
+    .vertical-tab-content[style*="transform: translateX(-20%)"] {
+      opacity: 0;
+    }
+
+    .setting-page-titlebar {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 12px;
+    }
+
     .setting-group-search {
       padding: 0 0 8px;
       background-color: transparent;
-    }
-    .setting-item-heading {
       border: none;
     }
+    .setting-group-search + .setting-items {
+      border-radius: var(--setting-items-radius);
+      border: var(--setting-items-border-width) solid var(--setting-items-border-color);
+    }
+
+    .search-input-container {
+      margin: 0;
+    }
+    .setting-group-search-control {
+      margin: 0;
+      padding: 0;
+    }
+    .setting-group-filter {
+      height: var(--input-height);
+      align-items: center;
+      display: flex;
+      padding: 16px;
+      font-weight: var(--input-font-weight);
+      color: var(--text-faint);
+      border: none;
+    }
+    .setting-group-filter:hover {
+      color: var(--text-muted);
+    }
+    .setting-group-filter.is-active {
+      background-color: var(--background-modifier-hover);
+      border-color: var(--interactive-accent);
+      color: var(--text-normal);
+    }
+
     .setting-item-name {
       overflow: visible;
     }
   }
 
-  .installed-plugins-container .setting-item .setting-item-description div:last-child {
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-
-  &:not(.plugins-grid-off) .installed-plugins-container .setting-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 1fr;
-    gap: 8px;
-    padding: 0;
-    background-color: transparent;
-
-    .setting-item {
-      display: flex;
-      flex-direction: column;
-      margin: 0px !important;
-      border: none;
-      border-radius: var(--setting-items-radius) !important;
-      background-color: var(--setting-items-background);
-      padding: calc(16px * var(--density-modifier)) !important;
-      overflow: hidden;
-    }
-    .setting-item-info {
-      margin-inline-end: 0;
-      width: 100%;
-    }
-    .setting-item-description > div:last-child {
-      display: -webkit-box;
-      overflow: hidden;
-      -webkit-line-clamp: 5;
-      -webkit-box-orient: vertical;
-    }
-    .setting-item-control {
-      flex: none;
-      flex-wrap: wrap;
-      align-self: flex-end;
-      width: 100%;
-    }
-    .setting-item-control button.mod-cta {
-      flex-grow: 1;
-      flex-basis: 100%;
-    }
-
-    .setting-item:has(button) {
-      order: -1;
-    }
-  }
-
   .modal.mod-community-modal {
+    background-color: var(--settings-background, var(--modal-background));
+
     .modal-sidebar {
       padding: 0;
     }
@@ -142,7 +121,7 @@ body:not(.is-phone) {
       display: flex;
       height: auto;
       align-items: center;
-      padding: 0 8px;
+      padding: 0 12px;
       width: 100%;
       flex-wrap: wrap;
     }
@@ -152,7 +131,7 @@ body:not(.is-phone) {
     }
     .community-modal-controls .setting-item {
       margin: 0;
-      padding: 8px 0;
+      padding: 12px 0;
       display: flex;
       align-items: center;
     }
@@ -168,7 +147,13 @@ body:not(.is-phone) {
     }
     .community-modal-search-results {
       gap: 8px;
-      padding: 8px;
+    }
+    .community-modal-search {
+      padding: 0;
+      margin: 0;
+    }
+    .community-item {
+      border: none;
     }
     .community-item:not(.is-selected) {
       background-color: var(--setting-items-background);
@@ -177,48 +162,6 @@ body:not(.is-phone) {
 }
 
 body.is-phone {
-  &:is(.input-baseline, :not(.css-settings-manager)) .modal.mod-settings {
-    --setting-items-background: transparent;
-    --setting-items-padding: 0 8px;
-
-    .vertical-tab-header {
-      padding-inline: 16px;
-    }
-    .vertical-tab-header-group {
-      padding-inline: 0;
-    }
-    .vertical-tab-header-group-items {
-      background-color: transparent;
-    }
-    .vertical-tab-nav-item {
-      border-radius: var(--radius-s);
-      padding-inline: 8px;
-    }
-    .vertical-tab-nav-item-title,
-    .vertical-tab-nav-item-chevron {
-      border-bottom: none;
-    }
-
-    .setting-item-heading {
-      padding-inline: 8px;
-    }
-    .setting-item:not(.setting-items > .setting-item):not(.setting-item-heading) {
-      padding: 16px 8px;
-      margin-bottom: 0;
-      background-color: transparent;
-    }
-    .setting-item-description {
-      color: var(--text-faint);
-    }
-
-    .setting-group-search {
-      padding-inline: 0;
-    }
-    .setting-group-search + .setting-items {
-      padding-top: 16px;
-    }
-  }
-
   .modal.mod-sidebar-layout {
     box-shadow: none;
 
@@ -259,17 +202,10 @@ body.is-phone {
   }
 }
 
-body.is-tablet {
-  &.theme-dark {
-    --settings-background: var(--background-secondary);
-    --setting-items-background: var(--background-primary);
-  }
-
-  .modal.mod-sidebar-layout {
-    .vertical-tab-header-group-title,
-    .vertical-tab-nav-item {
-      padding: calc(12px * var(--density-modifier)) 16px;
-    }
+body.is-tablet .modal.mod-sidebar-layout {
+  .vertical-tab-header-group-title,
+  .vertical-tab-nav-item {
+    padding: calc(12px * var(--density-modifier)) 16px;
   }
 }
 
@@ -281,14 +217,17 @@ body:is(.input-cupertino, .input-material) {
     &[data-setting-id="mobile"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-blue);
     }
+    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-purple);
+    }
     &[data-setting-id="file"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-orange);
     }
-    &[data-setting-id="appearance"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-accent);
+    &[data-setting-id="interface"] .vertical-tab-nav-item-icon {
+      --setting-nav-icon-background: var(--color-pink);
     }
     &[data-setting-id="hotkeys"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-pink);
+      --setting-nav-icon-background: var(--color-red);
     }
     &[data-setting-id="keychain"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-green);
@@ -297,7 +236,7 @@ body:is(.input-cupertino, .input-material) {
       --setting-nav-icon-background: var(--color-cyan);
     }
     &[data-setting-id="community-plugins"] .vertical-tab-nav-item-icon {
-      --setting-nav-icon-background: var(--color-purple);
+      --setting-nav-icon-background: var(--color-blue);
     }
     &[data-setting-id="backlink"] .vertical-tab-nav-item-icon {
       --setting-nav-icon-background: var(--color-purple);

@@ -8,13 +8,12 @@ body.input-cupertino.is-mobile {
   .mobile-tab-switcher-menu-button,
   .mobile-tab-switcher-menu-spacer .clickable-icon,
   .modal-setting-back-button,
-  .modal-close-button,
   .modal-header-button,
   .pull-action {
-    backdrop-filter: var(--raised-blur);
+    backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
     border: none;
-    background-color: var(--raised-background);
+    background-color: var(--blur-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
 
@@ -50,45 +49,6 @@ body.input-cupertino.is-mobile {
     margin-bottom: 0;
   }
 
-  // HDR element
-  &.theme-dark .mod-raised::after {
-    content: none !important;
-  }
-  &.mod-macos.theme-light {
-    .mod-raised::after,
-    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
-    &.is-phone .prompt-input-container::after,
-    &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
-    &.is-phone .prompt-input-container .search-input-clear-button::before,
-    &.is-tablet .menu::after,
-    &.is-tablet .workspace-drawer:not(.is-pinned)::after,
-    .mobile-tab-switcher-menu-button::after,
-    .mobile-tab-switcher-menu-spacer .clickable-icon::before,
-    .modal-setting-back-button::after,
-    .modal-close-button::after,
-    .modal-header-button::after,
-    .notice::after {
-      position: absolute;
-      z-index: 1;
-      backdrop-filter: brightness(var(--blur-brightness));
-      mask: var(--raised-mask);
-      mask-composite: var(--raised-mask-composite);
-      filter: blur(1px);
-      inset: 0;
-      border: var(--raised-mask-border-width) solid transparent;
-      border-radius: inherit;
-      background: var(--raised-mask-background);
-      pointer-events: none;
-      content: "";
-    }
-
-    &.is-phone .prompt-input-container::after {
-      height: auto;
-      border-radius: 100vh;
-      margin-right: 56px;
-    }
-  }
-
   // Bases: Cards padding fix
   .bases-cards-item {
     padding: var(--side-padding);
@@ -101,6 +61,13 @@ body.input-cupertino.is-mobile {
   // File explorer
   .nav-files-container > div {
     --nav-item-color: var(--text-normal);
+  }
+
+  // Pull action
+  .pull-action.mod-activated {
+    color: var(--text-normal);
+    background-color: transparent;
+    backdrop-filter: var(--blur-l) brightness(1.1);
   }
 }
 
@@ -198,18 +165,12 @@ body.input-cupertino.is-phone {
     }
   }
 
-  // Navigaition bar
-  .mobile-navbar {
-    border: none !important;
-    background-color: var(--raised-background) !important;
-  }
-
   // Tab switcher
   --tab-switcher-background: transparent;
-  --tab-switcher-preview-background-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --tab-switcher-preview-background-shadow: 0 4px 16px hsl(0 0% 0% / 0.2);
 
   .mobile-tab-switcher {
-    background: linear-gradient(rgba(var(--mono-rgb-0), 0.5), var(--mobile-sidebar-background)) !important;
+    background: linear-gradient(hsl(from var(--mono-0) h s l / 0.5), var(--mobile-sidebar-background)) !important;
     backdrop-filter: var(--blur-l);
   }
 

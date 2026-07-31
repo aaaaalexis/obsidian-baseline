@@ -23,12 +23,22 @@ body {
 .theme-light {
   --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
+
+  &.mod-macos {
+    --interactive-normal: var(--color-base-00);
+    --interactive-hover: var(--color-base-10);
+  }
 }
 .theme-dark {
   --input-shadow: inset 0 0 0 var(--input-border-width) var(--background-modifier-border);
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
 
   --background-modifier-form-field: var(--interactive-normal);
+
+  &.mod-macos {
+    --interactive-normal: var(--color-base-30);
+    --interactive-hover: var(--color-base-35);
+  }
 }
 
 body:is(.input-baseline, :not(.css-settings-manager)) {

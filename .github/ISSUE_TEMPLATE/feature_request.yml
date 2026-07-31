@@ -1,5 +1,6 @@
 name: 💡 Feature request
-description: Suggest an idea for Baseline
+description: Suggest a new feature or improvement
+labels: "enhancement"
 body:
   - type: checkboxes
     attributes:

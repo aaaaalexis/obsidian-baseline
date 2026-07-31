@@ -16,7 +16,7 @@ body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-b
   height: 200%;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(farthest-side at right bottom, var(--background-primary), rgba(var(--mono-rgb-0), 0));
+  background: radial-gradient(farthest-side at right bottom, var(--background-primary), hsl(from var(--mono-0) h s l / 0));
 }
 body:not(.status-bar-default, .status-bar-full, .status-bar-cupertino) .status-bar:not(:hover) {
   transform: scale(0.8);
@@ -40,6 +40,12 @@ body.status-bar-full {
 
   .status-bar {
     width: 100%;
+    z-index: -1;
+  }
+
+  .horizontal-main-container,
+  .workspace {
+    overflow: visible;
   }
 }
 
@@ -62,7 +68,7 @@ body.status-bar-cupertino .status-bar {
   &:not(:hover) {
     bottom: 2px;
     border-width: 0;
-    background-color: rgba(var(--mono-rgb-100), 0.2);
+    background-color: hsl(from var(--mono-100) h s l / 0.2);
     padding-block: 0;
     max-width: 160px;
     height: 4px;

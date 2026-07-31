@@ -14,7 +14,7 @@ body:not(.callout-lucide) .callout-icon {
   .lucide-quote {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
-    background-color: rgb(var(--callout-color));
+    background-color: var(--callout-color);
 
     path,
     rect,
