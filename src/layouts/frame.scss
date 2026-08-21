@@ -1,7 +1,3 @@
-body:is(.layout-frame, .layout-viewfinder) .mod-root .workspace-tab-container {
-  border-radius: 0;
-}
-
 body.layout-frame:not(.is-mobile) {
   .workspace {
     padding: 4px;
@@ -21,6 +17,10 @@ body.layout-frame:not(.is-mobile) {
   }
   .workspace-ribbon.mod-left:not(.is-collapsed) {
     padding-left: 4px;
+  }
+
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
   }
 
   // macOS fix

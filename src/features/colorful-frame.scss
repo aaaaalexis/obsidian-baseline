@@ -6,8 +6,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-cards, .layout-border) .workspace-ribbon .sidebar-toggle-button,
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container,
   &.layout-cards .workspace-tabs .workspace-tab-header-container,
-  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container,
-  &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
+  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container {
     --icon-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
     --icon-color-hover: var(--colorful-frame-icon-color);
     --icon-color-active: var(--colorful-frame-icon-color);
@@ -17,8 +16,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   // Tab text & icon color
   &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-border) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
   &.layout-cards .workspace-split .workspace-tabs .workspace-tab-header-container-inner,
-  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container-inner,
-  &.layout-viewfinder .mod-root .workspace-tabs.mod-top .workspace-tab-header-container-inner {
+  &.layout-minimal .workspace-split:not(.mod-left-split) .workspace-tabs.mod-top .workspace-tab-header-container-inner {
     --tab-text-color: hsl(from var(--colorful-frame-icon-color) h s l / 0.5);
     --tab-text-color-active: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
     --tab-text-color-focused: hsl(from var(--colorful-frame-icon-color) h s l / 0.7);
@@ -40,8 +38,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Workspace: Using top space for tint
-  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace,
-  &.layout-viewfinder .mod-root {
+  &:is(.layout-baseline, .layout-cupertino, .layout-classic, .layout-minimal) .workspace {
     background-image: linear-gradient(
       var(--colorful-frame-background, var(--color-accent)) calc(var(--header-height) - var(--tab-outline-width)),
       transparent calc(var(--header-height) - var(--tab-outline-width))
@@ -110,7 +107,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Fix: Override underline tab style
-  &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal, .layout-viewfinder)
+  &:is(.tab-underline, .tab-underline-accented):is(.layout-cupertino, .layout-classic, .layout-minimal)
     .workspace
     .mod-root
     .workspace-tabs:not(.mod-stacked)

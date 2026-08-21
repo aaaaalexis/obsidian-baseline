@@ -1,50 +1,12 @@
-body.layout-viewfinder:not(.is-mobile) {
-  --viewfinder-sidedock-header-height: calc(var(--header-height) + 16px);
-
+body.layout-viewfinder:not(.is-phone) {
   .mod-root {
-    margin-block: 8px;
-    height: unset;
-    background-color: var(--background-primary) !important;
-    border-radius: var(--radius-s);
-    border: var(--border-width) solid var(--background-modifier-border);
-    overflow: hidden;
-  }
-
-  // Windows & Linux fix
-  &:not(.mod-macos).is-hidden-frameless .titlebar {
-    height: var(--header-height);
-    top: 4px;
-    right: 4px;
-
-    .titlebar-button {
-      border-radius: var(--radius-s);
-    }
-  }
-
-  // Title bar fix
-  &.is-frameless:not(.is-hidden-frameless) {
-    .workspace {
-      padding-top: 0;
-    }
-    .mod-root {
-      margin-top: 0;
-    }
-  }
-}
-
-body.layout-viewfinder.is-tablet {
-  .mod-root {
-    padding-top: 0;
-    margin: var(--safe-area-inset-top) 8px 8px;
-    height: auto;
     background-color: var(--background-primary);
-    border-radius: var(--radius-m);
-    border: var(--border-width) solid var(--background-modifier-border);
+    border-radius: var(--radius-window);
+    box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color);
     overflow: hidden;
   }
-
-  // Tab style
-  &.tab-default .workspace-tab-header-container-inner {
-    padding-top: 8px !important;
+  .mod-root .workspace-tab-container {
+    border-radius: 0;
+    box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
   }
 }
