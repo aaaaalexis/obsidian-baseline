@@ -212,11 +212,9 @@
     white-space: var(--code-white-space);
   }
 
-  body.code-tactile {
-    .markdown-rendered pre {
-      background: linear-gradient(var(--background-primary-alt), var(--background-secondary));
-      box-shadow: var(--shadow-tactile);
-    }
+  body.code-tactile .markdown-rendered pre {
+    background: linear-gradient(var(--background-primary-alt), var(--background-secondary));
+    box-shadow: var(--shadow-tactile);
   }
 
   body.code-scroll {

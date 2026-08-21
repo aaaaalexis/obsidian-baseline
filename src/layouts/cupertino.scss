@@ -60,7 +60,11 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
   --workspace-background-translucent: var(--background-secondary);
   --blur-background: var(--background-modifier-hover);
-  --shadow-highlight: 0 0 transparent;
+  --shadow-xs: var(--shadow-edges);
+  --shadow-s: var(--shadow-edges);
+  --shadow-l: var(--shadow-edges);
+  --shadow-surface: var(--shadow-edges);
+  --tab-outline-color: transparent;
 
   .workspace-ribbon,
   .mod-sidedock > div,
@@ -105,13 +109,9 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).layout-tahoe .mod-sidedock,
-  &:not(.is-translucent).layout-fusion .mod-sidedock.mod-left-split {
-    background-color: var(--blur-background);
-  }
-  &.is-translucent.layout-tahoe .mod-sidedock,
-  &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
-    background-color: hsl(from var(--background-primary) h s l / 50%) !important;
+  &.layout-tahoe .mod-sidedock,
+  &.layout-fusion .mod-sidedock.mod-left-split {
+    background-color: var(--blur-background) !important;
   }
   .mod-sidedock {
     transition:
@@ -260,6 +260,17 @@ body.layout-fusion:not(.is-phone) {
   // Editor panel
   &:not(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
     --tab-outline-color: transparent;
+  }
+
+  &.is-translucent:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .mod-root .workspace-tabs:not(.mod-stacked) {
+    .workspace-leaf {
+      background-color: hsl(from var(--background-secondary) h s l / 75%) !important;
+    }
+    .view-header,
+    .view-content,
+    .document-search-container {
+      background-color: transparent;
+    }
   }
 
   &.is-tablet:not(.tab-floating, .tab-floating-center) .workspace {

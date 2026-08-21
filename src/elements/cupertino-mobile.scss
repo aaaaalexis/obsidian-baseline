@@ -7,8 +7,6 @@ body.input-cupertino.is-mobile {
   &:where(.is-phone) .workspace-drawer-header-icon,
   .mobile-tab-switcher-menu-button,
   .mobile-tab-switcher-menu-spacer .clickable-icon,
-  .modal-setting-back-button,
-  .modal-header-button,
   .pull-action {
     backdrop-filter: var(--blur-s);
     box-shadow: var(--shadow-xs);
@@ -21,6 +19,42 @@ body.input-cupertino.is-mobile {
       opacity: 0;
       filter: blur(4px);
       transform: scale(0.75);
+    }
+  }
+
+  // HDR effects
+  &.theme-dark .mod-raised::after {
+    content: none !important;
+  }
+  &.mod-macos.theme-light {
+    .mod-raised:not(.prompt-input-container)::after,
+    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
+    &.is-phone .prompt-input-container::after,
+    &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
+    &.is-phone .prompt-input-container .search-input-clear-button::before,
+    &.is-tablet .menu::after,
+    &.is-tablet .workspace-drawer:not(.is-pinned)::after,
+    .mobile-tab-switcher-menu-button::after,
+    .mobile-tab-switcher-menu-spacer .clickable-icon::after,
+    .notice::after,
+    .pull-action::after {
+      display: var(--raised-mask-display);
+      position: absolute;
+      content: "";
+      backdrop-filter: brightness(1.1);
+      background: var(--raised-mask-background);
+      mask: var(--raised-mask);
+      mask-composite: var(--raised-mask-composite);
+      inset: 0;
+      border: var(--raised-mask-border-width) solid transparent;
+      border-width: var(--border-width) 0;
+      border-radius: inherit;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &.is-phone .prompt-input-container::after {
+      margin-right: 56px;
     }
   }
 

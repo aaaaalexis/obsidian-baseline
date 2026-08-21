@@ -1,7 +1,7 @@
 body.input-cupertino {
   --background-modifier-message: var(--modal-background);
   --modal-background: hsl(from var(--background-secondary) h s l / 75%) !important;
-  --menu-background: var(--blur-background);
+  --menu-background: var(--modal-background);
 
   &.is-translucent {
     --modal-background: var(--background-primary) !important;

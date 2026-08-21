@@ -18,13 +18,14 @@ body,
 
   --border-width: 1px;
   --divider-width: var(--border-width);
-  --raised-mask-border-width: 0px;
+  --raised-mask-border-width: 0px !important;
+
+  --raised-mask-background: transparent;
 
   --divider-color-hover: var(--color-base-50);
 
   --corner-shape: superellipse(1.1);
 
-  --shadow-tactile: inset 0px 1px 2px hsl(0 0 100 / 0.5), 0px 2px 8px -2px hsl(0 0 0 / 0.05), 0px 2px 4px -2px hsl(from var(--mono-100) h s l / 0.05);
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
@@ -100,6 +101,8 @@ body,
   --background-modifier-form-field: var(--background-primary);
   --blur-background: hsl(0 0% 100% / 0.5);
 
+  --shadow-tactile: inset 0px 1px hsl(0 0 100 / 0.5), 0px 2px 2px -2px hsl(0 0 0 / 0.05), 0px 4px 8px -4px hsl(0 0 0 / 0.05);
+
   --shadow-s: 0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.05), 0 8px 8px hsl(0 0% 0% / 0.05), 0 2px 4px hsl(0 0% 0% / 0.05);
   --shadow-l:
     0 0 0 0.5pt hsl(0 0% 0% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.1), 0 16px 96px hsl(0 0% 0% / 0.1), 0 16px 32px hsl(0 0% 0% / 0.1),
@@ -138,7 +141,10 @@ body,
   --code-value: #c678de;
 
   --background-modifier-form-field: var(--background-secondary);
-  --blur-background: hsl(0 0% 100% / 0.1);
+  --blur-background: hsl(0 0% 100% / 0.025);
+
+  --shadow-tactile:
+    inset 0px 2px 1px -1px hsl(0 0 100 / 0.05), inset 0px -4px 2px -2px hsl(0 0 0 / 0.1), 0px 2px 2px -2px hsl(0 0 0 / 0.1), 0px 4px 8px -4px hsl(0 0 0 / 0.1);
 
   --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
   --shadow-l:

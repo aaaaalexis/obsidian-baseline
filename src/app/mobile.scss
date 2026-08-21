@@ -73,10 +73,6 @@ body.is-mobile {
     --font-ui-large: calc(20px + var(--font-ui-modifier));
   }
 
-  .mod-raised::after {
-    content: none !important;
-  }
-
   // Non-Liquid Glass
   &:not(.input-cupertino) {
     .mod-raised {

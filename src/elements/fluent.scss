@@ -24,9 +24,10 @@ body.input-fluent {
   --slider-track-background: var(--color-base-50);
   --slider-track-height: 4px;
 
-  --blur-s: blur(8px) saturate(0.75);
-  --blur-m: blur(16px) saturate(0.75);
-  --blur-l: blur(32px) saturate(0.75);
+  --blur-radius-s: 8px;
+  --blur-radius-m: 16px;
+  --blur-radius-l: 32px;
+  --blur-saturation: 0.75;
 
   --interactive-normal: var(--background-primary);
   --interactive-hover: var(--background-primary-alt);
