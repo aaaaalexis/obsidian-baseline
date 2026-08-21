@@ -60,10 +60,10 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
   --workspace-background-translucent: var(--background-secondary);
   --blur-background: var(--background-modifier-hover);
-  --shadow-xs: var(--shadow-edges);
-  --shadow-s: var(--shadow-edges);
-  --shadow-l: var(--shadow-edges);
-  --shadow-surface: var(--shadow-edges);
+  --shadow-xs: none;
+  --shadow-s: none;
+  --shadow-l: none;
+  --shadow-surface: none;
   --tab-outline-color: transparent;
 
   .workspace-ribbon,

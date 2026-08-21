@@ -115,6 +115,7 @@ body.input-cupertino.is-phone {
     }
   }
   .modal.mod-settings {
+    --setting-items-background: var(--background-secondary-alt);
     --modal-header-height: 76px;
 
     .modal-title {

@@ -73,7 +73,7 @@ body:not(.is-phone) {
       background-color: transparent;
       border: none;
       box-shadow: none;
-      padding: 12px;
+      padding: 8px;
     }
 
     .setting-group-search {
@@ -124,11 +124,12 @@ body:not(.is-phone) {
     }
     .community-modal-controls {
       display: flex;
-      height: auto;
-      align-items: center;
-      padding: 0 12px;
-      width: 100%;
+      row-gap: 8px;
       flex-wrap: wrap;
+      align-items: center;
+      padding: 8px;
+      width: 100%;
+      height: auto;
     }
     .modal-sidebar:not(:only-child) .community-modal-controls .setting-item {
       width: 100%;
@@ -136,7 +137,7 @@ body:not(.is-phone) {
     }
     .community-modal-controls .setting-item {
       margin: 0;
-      padding: 12px 0;
+      padding: 0;
       display: flex;
       align-items: center;
     }
@@ -152,6 +153,7 @@ body:not(.is-phone) {
     }
     .community-modal-search-results {
       gap: 8px;
+      padding: 8px;
     }
     .community-modal-search {
       padding: 0;

@@ -5,6 +5,7 @@ body.input-cupertino.is-mobile {
   &:where(.is-phone) .prompt-input-container .prompt-input-cta:not(:empty),
   &:where(.is-phone) .prompt-input-container .search-input-clear-button,
   &:where(.is-phone) .workspace-drawer-header-icon,
+  .search-input-container,
   .mobile-tab-switcher-menu-button,
   .mobile-tab-switcher-menu-spacer .clickable-icon,
   .pull-action {
@@ -14,12 +15,6 @@ body.input-cupertino.is-mobile {
     background-color: var(--blur-background);
     color: var(--text-normal);
     transition: var(--anim-duration-moderate);
-
-    @starting-style {
-      opacity: 0;
-      filter: blur(4px);
-      transform: scale(0.75);
-    }
   }
 
   // HDR effects
@@ -34,6 +29,7 @@ body.input-cupertino.is-mobile {
     &.is-phone .prompt-input-container .search-input-clear-button::before,
     &.is-tablet .menu::after,
     &.is-tablet .workspace-drawer:not(.is-pinned)::after,
+    .search-input-container::after,
     .mobile-tab-switcher-menu-button::after,
     .mobile-tab-switcher-menu-spacer .clickable-icon::after,
     .notice::after,

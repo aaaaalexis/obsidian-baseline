@@ -1,10 +1,11 @@
 body.input-cupertino {
   --background-modifier-message: var(--modal-background);
   --modal-background: hsl(from var(--background-secondary) h s l / 75%) !important;
-  --menu-background: var(--modal-background);
+  --menu-background: hsl(from var(--background-secondary-alt) h s l / 75%);
 
   &.is-translucent {
     --modal-background: var(--background-primary) !important;
+    --menu-background: var(--background-primary);
   }
 
   .prompt,
@@ -68,7 +69,7 @@ body.input-cupertino.is-mobile {
     }
     .menu-item,
     .suggestion-item {
-      padding: calc(8px * var(--density-modifier)) var(--side-padding);
+      padding: calc(12px * var(--density-modifier)) var(--side-padding);
 
       &:not([class*="is-"]) .menu-item-icon {
         color: var(--text-normal);
@@ -88,6 +89,9 @@ body.input-cupertino.is-phone {
     margin: 8px;
     border-radius: var(--modal-radius) var(--modal-radius) calc(var(--safe-area-inset-top) - 8px) calc(var(--safe-area-inset-top) - 8px);
   }
+  .menu-scroll {
+    mask: linear-gradient(to bottom, transparent, white 32px);
+  }
 
   .menu .menu-item {
     font-size: var(--font-ui-medium);
@@ -98,14 +102,12 @@ body.input-cupertino.is-phone {
   .menu .menu-item:not(:last-child) {
     border-bottom: none;
 
-    .menu-item-title {
-      position: relative;
-      overflow: visible;
-    }
-    .menu-item-title::after {
+    &::after {
       position: absolute;
-      inset: auto 0 -14px;
-      background-color: hsl(from var(--mono-100) h s l / 0.1);
+      right: var(--side-padding);
+      left: 56px;
+      background-color: var(--background-modifier-border);
+      width: auto;
       height: var(--border-width);
       content: "";
     }
@@ -170,14 +172,6 @@ body.input-cupertino:not(.is-mobile) {
       border-radius: 100vh;
       min-height: 32px;
     }
-  }
-}
-
-body.input-cupertino.is-mobile {
-  .modal-setting-back-button,
-  .modal-header-button {
-    --icon-size: var(--icon-xl);
-    padding: 6px;
   }
 }
 

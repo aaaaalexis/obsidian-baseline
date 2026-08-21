@@ -47,9 +47,9 @@ body.input-cupertino {
       inset 0 1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 -1.5px 1.5px -0.5pt hsl(0 0% 100% / 0.9), inset 0 20px 16px -8px hsl(0 0% 100% / 0.5),
       inset 0 -16px 16px -8px hsl(0 0% 100% / 0.35), inset 0 8px 12px 4px hsl(0 0% 0% / 0.035), inset 0 16px 8px -8px hsl(0 0% 100% / 0.25),
       inset 0 -16px 8px -8px hsl(0 0% 100% / 0.25);
-    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.1);
+    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15) !important;
 
-    --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-base);
+    --shadow-xs: var(--shadow-edges), var(--shadow-base), 0 2px 4px hsl(0 0% 0% / 0.025);
     --shadow-s: var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
     --shadow-l: var(--shadow-edges), var(--shadow-base), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
     --shadow-surface: var(--shadow-edges), var(--shadow-base), 0 4px 24px hsl(0 0% 0% / 0.05);
@@ -63,11 +63,11 @@ body.input-cupertino {
     --shadow-base:
       inset 0 1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 16px 16px -8px hsl(0 0% 100% / 0.025),
       inset 0 -16px 16px -8px hsl(0 0% 100% / 0.025);
-    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 100% / 0.05);
+    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15) !important;
 
-    --shadow-xs: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), var(--shadow-base);
-    --shadow-s: var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
-    --shadow-l: var(--shadow-edges), var(--shadow-base), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
+    --shadow-xs: var(--shadow-edges), var(--shadow-base);
+    --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.15), var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
+    --shadow-l: 0 0 0 0.5pt hsl(0 0% 100% / 0.15), var(--shadow-edges), var(--shadow-base), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
     --shadow-surface: var(--shadow-edges), var(--shadow-base), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
   }
 
@@ -224,12 +224,12 @@ body.input-cupertino {
 
     &::before {
       top: unset;
-      inset-inline-start: 10px !important;
+      inset-inline-start: 12px !important;
     }
 
     input {
       border: none;
-      padding-inline-start: 32px;
+      padding-inline-start: calc(12px + var(--search-icon-size) + 8px);
       min-height: inherit;
       border-radius: 100vh;
     }
