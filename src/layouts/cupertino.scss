@@ -262,18 +262,6 @@ body.layout-fusion:not(.is-phone) {
     --tab-outline-color: transparent;
   }
 
-  &:is(.tab-floating, .tab-floating-center):not(.is-popout-window) .mod-root .workspace-tabs:not(.mod-stacked) {
-    .workspace-leaf {
-      background-color: var(--blur-background) !important;
-    }
-
-    .view-header,
-    .view-content,
-    .document-search-container {
-      background-color: transparent;
-    }
-  }
-
   &.is-tablet:not(.tab-floating, .tab-floating-center) .workspace {
     background-color: var(--background-secondary);
   }
