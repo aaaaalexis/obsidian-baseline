@@ -3294,7 +3294,7 @@ settings:
 
 .style-settings-heading {
   margin-block: 0 !important;
-  padding: 16px !important;
+  padding: var(--setting-items-padding-y) var(--setting-items-padding-x) !important;
 
   &:not(.is-collapsed) {
     border-bottom: none;

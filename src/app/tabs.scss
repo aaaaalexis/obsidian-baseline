@@ -46,7 +46,6 @@ body:not(.is-phone) .workspace-tab-header-container {
 }
 .workspace-tab-header-new-tab,
 .workspace-tab-header-tab-list {
-  transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
   padding: 4px 0;
   margin: 0;
 

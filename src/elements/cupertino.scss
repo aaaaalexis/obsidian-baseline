@@ -21,6 +21,9 @@ body.input-cupertino {
   --blur-radius-m: 4px;
   --blur-radius-l: 8px;
 
+  &:not(.is-mobile) {
+    --tab-action-width: 36px;
+  }
   &.is-mobile {
     --titlebar-background: transparent;
     --titlebar-background-focused: transparent;
@@ -51,7 +54,7 @@ body.input-cupertino {
 
     --shadow-xs: var(--shadow-edges), var(--shadow-base), 0 2px 4px hsl(0 0% 0% / 0.025);
     --shadow-s: var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.25);
-    --shadow-l: var(--shadow-edges), var(--shadow-base), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
+    --shadow-l: var(--shadow-edges), 0 18px 54px 0 hsl(0 0% 0% / 0.3);
     --shadow-surface: var(--shadow-edges), var(--shadow-base), 0 4px 24px hsl(0 0% 0% / 0.05);
   }
 
@@ -61,13 +64,13 @@ body.input-cupertino {
     --divider-color: color-mix(in srgb, var(--background-secondary), white 7.5%);
 
     --shadow-base:
-      inset 0 1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.75), inset 0 16px 16px -8px hsl(0 0% 100% / 0.025),
-      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.025);
-    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.075), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15) !important;
+      inset 0 1px 1px -1px hsl(0 0% 100% / 0.7), inset 0 -1px 1px -1px hsl(0 0% 100% / 0.7), inset 0 16px 16px -8px hsl(0 0% 100% / 0.035),
+      inset 0 -16px 16px -8px hsl(0 0% 100% / 0.035);
+    --shadow-edges: 0 0 0 0.5pt hsl(0 0% 0% / 0.07), -1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15), 1pt 0 0 -0.5pt hsl(0 0% 0% / 0.15) !important;
 
     --shadow-xs: var(--shadow-edges), var(--shadow-base);
     --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.15), var(--shadow-edges), var(--shadow-base), 0 8px 48px 0 hsl(0 0% 0% / 0.45);
-    --shadow-l: 0 0 0 0.5pt hsl(0 0% 100% / 0.15), var(--shadow-edges), var(--shadow-base), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
+    --shadow-l: 0 0 0 0.5pt hsl(0 0% 100% / 0.15), var(--shadow-edges), 0 0 1px 0 hsl(0 0% 0% / 0.8), 0 18px 54px 0 hsl(0 0% 0% / 0.57);
     --shadow-surface: var(--shadow-edges), var(--shadow-base), inset 0 0 1px 1px hsl(0 0% 100% / 0.05), 0 8px 16px hsl(0 0% 0% / 0.2);
   }
 
@@ -105,6 +108,11 @@ body.input-cupertino {
     padding: 4px var(--side-padding);
   }
   &:not(.is-mobile) {
+    .clickable-icon {
+      transition: var(--anim-duration-superfast);
+      padding: 10px;
+      box-shadow: 0 0 transparent;
+    }
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
     .modal-header-button:hover,
@@ -306,14 +314,14 @@ body.input-cupertino {
   // Panel actions
   &:not(.nav-action-center, .nav-action-left) .mod-sidedock .workspace-leaf-content .nav-header:first-child .nav-buttons-container {
     border-radius: var(--clickable-icon-radius);
-    padding: 2px;
+    padding: 4px;
     box-shadow: var(--shadow-xs);
     background-color: var(--blur-background);
     gap: 0;
 
     .nav-action-button {
       position: relative;
-      padding: 8px;
+      padding: 6px 9px;
       border-radius: var(--clickable-icon-radius);
     }
     .nav-action-button:hover:not([aria-disabled="true"]) {

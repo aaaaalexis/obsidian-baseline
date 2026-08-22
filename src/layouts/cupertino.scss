@@ -59,6 +59,8 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 // Unfocused
 body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
   --workspace-background-translucent: var(--background-secondary);
+  --modal-background: var(--background-secondary);
+  --menu-background: var(--background-secondary);
   --blur-background: var(--background-modifier-hover);
   --shadow-xs: none;
   --shadow-s: none;
