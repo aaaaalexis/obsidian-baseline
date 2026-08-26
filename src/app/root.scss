@@ -104,6 +104,11 @@ body,
 }
 
 body:not(.is-mobile) {
+  &:not(.is-translucent) {
+    --titlebar-background: var(--background-secondary);
+    --titlebar-background-focused: var(--background-secondary);
+  }
+
   --icon-xs: calc(14px + var(--icon-size-modifier));
   --icon-s: calc(16px + var(--icon-size-modifier));
   --icon-m: calc(16px + var(--icon-size-modifier));
