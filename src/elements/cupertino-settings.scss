@@ -98,14 +98,6 @@ body.input-cupertino.is-phone {
     --modal-radius: var(--radius-xl) var(--radius-xl) 0 0;
     max-height: calc(100% - var(--safe-area-inset-top));
 
-    .modal-setting-back-button {
-      inset-inline-start: var(--safe-area-inset-side);
-    }
-    .modal-header-button {
-      top: var(--safe-area-inset-side);
-      inset-inline-end: var(--safe-area-inset-side) !important;
-    }
-
     .vertical-tab-header,
     .vertical-tab-content {
       padding-top: var(--modal-header-height);
@@ -120,11 +112,6 @@ body.input-cupertino.is-phone {
   }
   .modal.mod-settings {
     --setting-items-background: var(--background-secondary-alt);
-    --modal-header-height: 76px;
-
-    .modal-title {
-      margin-top: 16px;
-    }
   }
   .modal.mod-community-modal {
     .modal-header {

@@ -170,42 +170,24 @@ body:not(.is-phone) {
 
 body.is-phone {
   .modal.mod-sidebar-layout {
+    --modal-header-height: calc(var(--modal-header-inset-top) + var(--touch-size-m) + var(--modal-header-inset-top)) !important;
     box-shadow: none;
 
     .modal-header {
-      padding: 0;
       align-items: center;
-      display: inline;
-      z-index: 1;
+      padding: 0;
     }
     .modal-title {
       display: flex;
       align-items: center;
-      min-width: fit-content;
-      max-width: 0;
-    }
-    .modal-title:not(:has(.modal-setting-back-button)) {
-      font-size: 1.5rem;
-      font-weight: calc(var(--font-weight) + var(--bold-modifier));
-      max-width: 100%;
-      padding-left: 20px;
     }
     .modal-setting-back-button {
-      inset-inline-start: 8px;
       bottom: unset;
     }
 
     .vertical-tab-header-group-title {
       display: none;
     }
-  }
-
-  .modal.mod-settings .modal-title {
-    margin-top: var(--safe-area-inset-top);
-    height: var(--touch-size-m);
-  }
-  .modal.mod-community-modal .modal-title {
-    height: calc(var(--touch-size-m) + 16px);
   }
 }
 

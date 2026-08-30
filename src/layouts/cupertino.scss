@@ -1,19 +1,19 @@
 body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layout-fusion) {
   &:not(.is-mobile) {
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root {
+    .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open) .mod-root {
       padding-bottom: 0;
     }
-    &.show-ribbon .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+    &.show-ribbon .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open) .mod-root .workspace-tab-container {
       border-top-left-radius: var(--tab-radius);
     }
-    .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
+    .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open) .mod-root .workspace-tab-container {
       border-radius: 0;
     }
 
-    &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root {
+    &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-primary-sidedock-open).is-secondary-sidedock-open .mod-root {
       margin-left: 8px;
     }
-    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root {
+    .workspace.is-primary-sidedock-open:not(.is-secondary-sidedock-open) .mod-root {
       margin-right: 8px;
     }
 
@@ -23,7 +23,7 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 
     // Windows & Linux fix
     &:not(.mod-macos).is-hidden-frameless
-      .workspace.is-left-sidedock-open:not(.is-right-sidedock-open)
+      .workspace.is-primary-sidedock-open:not(.is-secondary-sidedock-open)
       .mod-root
       .workspace-tabs.mod-top-right-space
       .workspace-tab-header-container {
@@ -32,7 +32,7 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
   }
 
   // Editor panel
-  &:not(.is-phone) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
+  &:not(.is-phone) .workspace:is(.is-primary-sidedock-open, .is-secondary-sidedock-open) {
     .mod-root,
     .mod-root .workspace-split.mod-vertical {
       gap: 8px;
@@ -200,13 +200,13 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
 
 // Cupertino specific
 body.layout-cupertino:not(.is-phone) {
-  &.theme-light .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+  &.theme-light .workspace:is(.is-primary-sidedock-open, .is-secondary-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
       0 0 0 var(--tab-outline-width) var(--tab-outline-color),
       hsl(0 0% 0% / 0.04) 0px 24px 48px,
       hsl(0 0% 0% / 0.02) 0px 4px 16px;
   }
-  &.theme-dark .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) .mod-root .workspace-tab-container {
+  &.theme-dark .workspace:is(.is-primary-sidedock-open, .is-secondary-sidedock-open) .mod-root .workspace-tab-container {
     box-shadow:
       0 0 0 var(--tab-outline-width) var(--tab-outline-color),
       hsl(0 0% 0% / 0.16) 0px 24px 48px,
@@ -260,7 +260,7 @@ body.layout-tahoe:not(.is-phone) {
 // Fusion specific
 body.layout-fusion:not(.is-phone) {
   // Editor panel
-  &:not(.tab-floating, .tab-floating-center) .workspace:is(.is-left-sidedock-open, .is-right-sidedock-open) {
+  &:not(.tab-floating, .tab-floating-center) .workspace:is(.is-primary-sidedock-open, .is-secondary-sidedock-open) {
     --tab-outline-color: transparent;
   }
 

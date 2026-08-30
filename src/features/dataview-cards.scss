@@ -256,7 +256,7 @@ body {
       padding: 0 !important;
       background-color: var(--background-secondary);
       display: block;
-      margin: calc(var(--cards-padding) * -1) calc(var(--cards-padding) * -1) 0;
+      margin: calc(-1 * var(--cards-padding)) calc(-1 * var(--cards-padding)) 0;
       width: calc(100% + calc(var(--cards-padding) * 2));
       img {
         border-radius: 0;

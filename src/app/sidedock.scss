@@ -1,6 +1,7 @@
 body {
   --nav-indentation-guide-color: var(--background-modifier-border-hover);
   --nav-indentation-guide-width: 0px;
+  --nav-item-radius: var(--radius-s);
   --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 32px;
   --nav-item-children-margin-start: calc(20px - var(--nav-indentation-guide-width) / 2);
 
@@ -32,8 +33,8 @@ body.is-mobile {
 .sidebar-toggle-button .clickable-icon:hover .sidebar-toggle-icon-inner {
   width: 24%;
 }
-.workspace.is-left-sidedock-open .sidebar-toggle-button.mod-left .clickable-icon:hover .sidebar-toggle-icon-inner,
-.workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right .clickable-icon:hover .sidebar-toggle-icon-inner {
+.workspace.is-primary-sidedock-open .sidebar-toggle-button.mod-left .clickable-icon:hover .sidebar-toggle-icon-inner,
+.workspace.is-secondary-sidedock-open .sidebar-toggle-button.mod-right .clickable-icon:hover .sidebar-toggle-icon-inner {
   width: revert-layer;
 }
 

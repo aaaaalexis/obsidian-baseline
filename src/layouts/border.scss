@@ -106,11 +106,11 @@ body.layout-border:not(.is-mobile) {
   .mod-root .workspace-tab-container {
     border-radius: 0;
   }
-  .workspace:not(.is-left-sidedock-open) .mod-root > div:first-of-type .workspace-tab-container {
+  .workspace:not(.is-primary-sidedock-open) .mod-root > div:first-of-type .workspace-tab-container {
     border-top-left-radius: var(--tab-radius);
     border-bottom-left-radius: var(--tab-radius);
   }
-  .workspace:not(.is-right-sidedock-open) .mod-root > div:last-of-type .workspace-tab-container {
+  .workspace:not(.is-secondary-sidedock-open) .mod-root > div:last-of-type .workspace-tab-container {
     border-top-right-radius: var(--tab-radius);
     border-bottom-right-radius: var(--tab-radius);
   }

@@ -104,7 +104,7 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
     margin-top: var(--toggle-border-width);
   }
   &.is-enabled:active:after {
-    left: calc(var(--toggle-border-width) * -1);
+    left: calc(-1 * var(--toggle-border-width));
   }
 }
 

@@ -2,10 +2,10 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   --tab-outline-color: transparent;
 
   // Editor panel
-  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-left-sidedock-open) .mod-root {
+  &:not(.show-ribbon:not(.hover-ribbon)) .workspace:not(.is-primary-sidedock-open) .mod-root {
     margin-left: 8px;
   }
-  .workspace:not(.is-right-sidedock-open) .mod-root {
+  .workspace:not(.is-secondary-sidedock-open) .mod-root {
     margin-right: 8px;
   }
 
@@ -35,7 +35,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   &.show-ribbon:not(.hover-ribbon) {
     .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner,
     &:not(.hover-sidedock) .mod-sidedock.mod-left-split .workspace-tabs .workspace-tab-container,
-    .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
+    .workspace:not(.is-primary-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 0 !important;
     }
     &.tab-top-left-stacked:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),

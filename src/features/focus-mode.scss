@@ -1,4 +1,4 @@
-body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) {
+body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open) {
   --ribbon-width: 0px;
   --ribbon-padding: 0px;
   --view-top-spacing-markdown: var(--header-height);
@@ -48,17 +48,17 @@ body.focus-view:not(.is-mobile):not(.is-popout-window) .workspace:not(.is-left-s
 }
 
 body.focus-view.mod-macos:not(.is-mobile):not(.is-popout-window).is-hidden-frameless
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open)
+  .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open)
   .mod-root {
   --frame-left-space: 80px;
 }
 body.focus-view.mod-macos:not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless)
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open)
+  .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open)
   .mod-root {
   --frame-left-space: 0px;
 }
 body.focus-view:not(.mod-macos):not(.is-mobile):not(.is-popout-window):not(.is-hidden-frameless)
-  .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open)
+  .workspace:not(.is-primary-sidedock-open):not(.is-secondary-sidedock-open)
   .mod-root {
   --frame-right-space: 0px;
 }
