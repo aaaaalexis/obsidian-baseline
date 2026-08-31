@@ -445,3 +445,146 @@ body.is-tablet .workspace .mod-root {
     gap: 8px;
   }
 }
+
+// Side panels: Labeled tabs
+body.tab-top-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+body.tab-top-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+body.tab-left-labeled:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+body.tab-right-labeled:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  --sidebar-tab-text-display: inline-block;
+
+  .workspace-tab-header-container-inner {
+    gap: 0;
+  }
+}
+
+// Side panels: Text tabs
+body.tab-top-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space,
+body.tab-top-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs.mod-top-right-space,
+body.tab-left-text:not(.is-grabbing) .mod-sidedock.mod-left-split .workspace-tabs:not(.mod-top),
+body.tab-right-text:not(.is-grabbing) .mod-sidedock.mod-right-split .workspace-tabs:not(.mod-top) {
+  --sidebar-tab-text-display: inline-block;
+
+  .workspace-tab-header-container-inner {
+    gap: 0;
+  }
+  .workspace-tab-header.is-active {
+    font-weight: var(--font-medium);
+  }
+  .workspace-tab-header-inner-icon {
+    display: none;
+  }
+  .workspace-tab-header-inner-title {
+    text-transform: capitalize;
+  }
+}
+
+// Side panels: Stacked tabs
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-left-split .mod-top-left-space {
+  --sidebar-tab-text-display: inline-block;
+
+  .workspace-tab-header-container {
+    height: fit-content;
+    flex-direction: column;
+    padding: 0;
+  }
+  .workspace-tab-header-container-inner {
+    flex-direction: column;
+    width: stretch;
+    gap: 0;
+    animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
+    padding: 0 8px;
+    max-height: unset;
+  }
+  .workspace-tab-header {
+    padding: 8px 12px;
+    height: auto;
+  }
+  .workspace-tab-header-inner {
+    gap: 8px;
+    padding: 0;
+    border-radius: 0;
+  }
+  .workspace-tab-header-spacer {
+    display: none;
+  }
+
+  .sidebar-toggle-button {
+    order: -1;
+    margin-left: auto;
+    max-height: var(--header-height);
+    min-height: var(--header-height);
+  }
+  .sidebar-toggle-button .clickable-icon {
+    margin: 8px;
+  }
+}
+
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border):not(.show-ribbon)
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
+  margin-top: calc(-1 * var(--header-height) + 8px);
+  margin-right: 48px;
+}
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(.layout-border).show-ribbon
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
+  margin-top: 8px;
+}
+
+body.tab-top-left-stacked:not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon)
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
+  margin-top: calc(-1 * var(--header-height) + 24px);
+}
+
+body:is(.tab-top-left-stacked, :not(.css-settings-manager)).mod-macos:not(.is-hidden-frameless).show-ribbon
+  .mod-sidedock.mod-left-split
+  .mod-top-left-space
+  .workspace-tab-header-container-inner {
+  margin-top: 8px;
+}
+
+// Side panels: Compact tabs
+body:is(.tab-left-compact, :not(.css-settings-manager)) .mod-sidedock.mod-left-split,
+body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right-split {
+  .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+    height: var(--header-height);
+  }
+
+  .workspace-tabs:not(.mod-top) .workspace-tab-header-container:not(:hover) {
+    height: calc-size(auto, size);
+
+    .workspace-tab-header {
+      background-color: var(--background-modifier-hover);
+    }
+
+    .workspace-tab-header-inner {
+      padding-block: 0px !important;
+    }
+
+    .workspace-tab-header-inner-icon svg.svg-icon {
+      opacity: 0;
+      height: 4px;
+    }
+  }
+}
+
+// Side panels: Platforms
+body:not(.mod-macos).is-hidden-frameless .mod-sidedock .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+  padding-right: var(--frame-right-space);
+}
+
+body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
+  .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+    padding-right: 8px;
+  }
+
+  .mod-root .sidebar-toggle-button.mod-right {
+    position: relative;
+    padding-right: 0;
+  }
+}
