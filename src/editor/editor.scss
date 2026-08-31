@@ -366,6 +366,7 @@
   .markdown-rendered :is(h1, h2, h3, h4, h5, h6),
   .HyperMD-header {
     text-wrap: pretty;
+    letter-spacing: normal;
   }
 
   // Underline headings
