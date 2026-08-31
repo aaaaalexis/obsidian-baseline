@@ -80,31 +80,30 @@ body.is-mobile.contrast-dark-black-mobile.theme-dark {
 .theme-light.contrast-light-vivid.layout-minimal div:is(.workspace-ribbon, .mod-sidedock.mod-left-split),
 .theme-light.contrast-light-vivid:is(.layout-frame, .layout-viewfinder) div:is(.titlebar, .workspace-ribbon, .workspace-ribbon, .mod-sidedock) {
   color-scheme: dark;
-  --mono-0: black;
-  --mono-100: white;
-  --color-base-00: #181818;
-  --color-base-05: #1b1b1b;
-  --color-base-10: #1d1d1d;
-  --color-base-20: #1f1f1f;
-  --color-base-25: #242424;
-  --color-base-30: #292929;
-  --color-base-35: #353535;
-  --color-base-40: #454545;
-  --color-base-50: #585858;
-  --color-base-60: #7a7a7a;
-  --color-base-70: #ababab;
-  --color-base-100: #dbdbdb;
-  --background-modifier-form-field: var(--interactive-normal);
-  --background-secondary-alt: var(--color-base-30);
-  --interactive-normal: var(--color-base-30);
-  --interactive-hover: var(--color-base-35);
-  --text-selection: color-mix(in oklch, var(--interactive-accent) 33%, transparent);
-  --shadow-s: 0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1);
-  --shadow-l:
-    0 0 0 0.5pt hsl(0 0% 100% / 0.1), 0 24px 48px hsl(0 0% 0% / 0.05), 0 16px 96px hsl(0 0% 0% / 0.25), 0 16px 32px hsl(0 0% 0% / 0.1),
-    0 4px 8px hsl(0 0% 0% / 0.25);
   --mono-rgb-0: 0, 0, 0;
   --mono-rgb-100: 255, 255, 255;
+  --mono-0: black;
+  --mono-100: white;
+  --color-base-00: #121212;
+  --color-base-05: #141414;
+  --color-base-10: #161616;
+  --color-base-20: #181818;
+  --color-base-25: #1b1b1b;
+  --color-base-30: #222222;
+  --color-base-35: #292929;
+  --color-base-40: #383838;
+  --color-base-50: #4d4d4d;
+  --color-base-60: #6f6f6f;
+  --color-base-70: #989898;
+  --color-base-100: #cacaca;
+  --background-modifier-form-field: var(--interactive-normal);
+  --background-secondary-alt: var(--color-base-30);
+  --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
+  --interactive-hover: color-mix(in srgb, var(--interactive-normal), black 5%);
+  --text-selection: color-mix(in oklch, var(--interactive-accent) 33%, transparent);
+  --shadow-s: 0 0 0 var(--border-width) hsl(0 0% 100% / 0.07), 0 8px 24px hsl(0 0% 0% / 0.1), 0 8px 8px hsl(0 0% 0% / 0.1), 0 4px 12px -4px hsl(0 0% 0% / 0.35);
+  --shadow-l:
+    0 0 0 var(--border-width) hsl(0 0% 100% / 0.07), 0 1px 2px -1px hsl(0 0% 0% / 0.1), 0 2px 4px hsl(0 0% 0% / 0.1), 0px 12px 24px -16px hsl(0 0% 15% / 0.35);
 
   --bases-group-heading-property-color: var(--text-muted);
   --bases-table-group-background: var(--background-primary-alt);
