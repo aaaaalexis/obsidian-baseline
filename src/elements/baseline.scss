@@ -23,6 +23,9 @@ body {
     }
   }
 
+  // Dropdown
+  --dropdown-padding-start: var(--font-ui-small);
+
   // Toggle
   &:not(.accented-interface) .checkbox-container {
     --interactive-accent: var(--color-green);
@@ -76,7 +79,7 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
 
 // Button
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
-  padding: 12px;
+  padding: var(--font-ui-small);
   display: inline-flex;
 }
 
