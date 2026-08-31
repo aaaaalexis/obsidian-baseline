@@ -17,6 +17,7 @@ body,
   --titlebar-background-focused: transparent;
 
   --border-width: 1px;
+  --border-width-offset: calc(-1 * var(--border-width));
   --divider-width: var(--border-width);
   --raised-mask-border-width: 0px !important;
 
@@ -59,11 +60,6 @@ body,
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
   --interactive-normal: color-mix(in srgb, var(--background-primary), white 5%);
   --interactive-hover: color-mix(in srgb, var(--interactive-normal), black 5%);
-
-  // High DPI override
-  @media (min-resolution: 2x) {
-    --border-width: 0.5pt;
-  }
 }
 
 .theme-light {

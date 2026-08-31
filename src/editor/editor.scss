@@ -465,7 +465,8 @@
       background: var(--background-primary-alt);
       max-height: 75vh;
       object-fit: contain;
-      border: var(--border-width) solid var(--background-modifier-border);
+      outline: 1px solid var(--background-modifier-hover);
+      outline-offset: -1px;
     }
   }
 
@@ -490,6 +491,12 @@
         opacity: 0.7;
       }
     }
+  }
+
+  // Lightbox
+  .lightbox .media-wrapper img {
+    padding: 0;
+    border-radius: 0;
   }
 
   // Image grid
