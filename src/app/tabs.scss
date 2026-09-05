@@ -573,16 +573,16 @@ body:is(.tab-right-compact, :not(.css-settings-manager)) .mod-sidedock.mod-right
 }
 
 // Side panels: Platforms
-body:not(.mod-macos).is-hidden-frameless .mod-sidedock .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+body:not(.mod-macos).is-hidden-frameless .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
   padding-right: var(--frame-right-space);
 }
 
 body.mod-macos.is-frameless:not(.is-popout-window) .workspace {
   .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
-    padding-right: 8px;
+    padding-right: 8px !important;
   }
 
-  .mod-root .sidebar-toggle-button.mod-right {
+  .sidebar-toggle-button.mod-right {
     position: relative;
     padding-right: 0;
   }
