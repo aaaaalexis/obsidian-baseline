@@ -1,11 +1,10 @@
 body.layout-frame:not(.is-mobile) {
   .workspace {
-    padding: 4px 6px;
+    padding: 8px;
+    gap: 4px;
   }
   .workspace-ribbon,
   .workspace-split {
-    margin: 4px 2px;
-    height: unset;
     background-color: var(--background-primary) !important;
     border-radius: var(--radius-window, var(--radius-m));
     border: var(--border-width) solid var(--background-modifier-border);
@@ -28,7 +27,11 @@ body.layout-frame:not(.is-mobile) {
     }
     &:not(.hover-ribbon) .workspace-ribbon {
       --ribbon-width: 80px;
+      margin-top: 0;
       padding-top: var(--header-height);
+    }
+    &.hover-ribbon .workspace-ribbon {
+      height: fit-content;
     }
   }
 
@@ -48,30 +51,6 @@ body.layout-frame:not(.is-mobile) {
   &:not(.status-bar-full, .status-bar-cupertino) .status-bar {
     right: 8px;
     bottom: 8px;
-  }
-
-  // Hover sidedock
-  &.hover-sidedock .mod-sidedock.is-sidedock-collapsed[style*="display"] {
-    height: calc(100% - 16px);
-    overflow: visible;
-    background-color: var(--background-primary);
-
-    &.mod-left-split {
-      margin: 4px 4px 4px 8px;
-    }
-    &.mod-right-split {
-      margin: 4px 8px 4px 4px;
-    }
-
-    &::before {
-      background: none;
-      margin-inline: -16px;
-      pointer-events: auto;
-      width: 16px;
-    }
-  }
-  &.hover-ribbon.show-ribbon .workspace-ribbon:not(.is-collapsed) {
-    --ribbon-width: 56px;
   }
 
   // Style Settings: Status bar fix

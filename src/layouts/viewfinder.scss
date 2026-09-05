@@ -9,4 +9,14 @@ body.layout-viewfinder:not(.is-phone) {
     border-radius: 0;
     box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
   }
+
+  // macOS fix
+  &.mod-macos.is-hidden-frameless {
+    &.show-ribbon {
+      --frame-left-space: 0px;
+    }
+    &:not(.hover-ribbon) .workspace-ribbon {
+      --ribbon-width: 96px;
+    }
+  }
 }

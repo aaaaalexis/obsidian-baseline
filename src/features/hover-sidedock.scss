@@ -21,10 +21,11 @@ body:not(.is-mobile).hover-sidedock {
     position: absolute;
     opacity: 0;
     z-index: 11;
+    margin: 0;
+    border: none;
     background-color: transparent;
     width: var(--hover-sidedock-width) !important;
     overflow: visible;
-    margin: 0;
 
     .workspace-tabs {
       visibility: visible;

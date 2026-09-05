@@ -20,14 +20,6 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     }
   }
 
-  // Vault switcher
-  .mod-sidedock .workspace-sidedock-vault-profile {
-    padding: 8px;
-    margin: 0 8px 8px;
-    overflow: hidden;
-    border-radius: 0 0 var(--tab-radius) var(--tab-radius);
-  }
-
   // Ribbon
   .workspace-ribbon:not(.is-collapsed) {
     padding-left: 4px;
