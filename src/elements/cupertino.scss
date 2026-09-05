@@ -251,8 +251,8 @@ body.input-cupertino {
   }
 
   // Ribbon
-  .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
-  .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action:hover {
+  .workspace-ribbon .sidebar-toggle-button .clickable-icon:hover,
+  .workspace-ribbon .side-dock-actions .side-dock-ribbon-action:hover {
     box-shadow: none !important;
     background-color: transparent !important;
     color: var(--text-normal);

@@ -8,7 +8,7 @@ body:not(.is-mobile) {
 body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed.mod-left-split:hover + .mod-root,
 body:not(.is-mobile).hover-sidedock .mod-root:has(+ .mod-sidedock.is-sidedock-collapsed.mod-right-split:hover),
 body:not(.is-mobile).hover-sidedock .mod-sidedock.is-sidedock-collapsed,
-body:not(.is-mobile).hover-ribbon .workspace-ribbon.mod-left:hover ~ .mod-root {
+body:not(.is-mobile).hover-ribbon .workspace-ribbon:hover ~ .mod-root {
   div:is(.workspace-tab-header-container, .workspace-tab-header-container-inner) {
     -webkit-app-region: no-drag;
   }
@@ -23,6 +23,8 @@ body:not(.is-mobile).hover-sidedock {
     z-index: 11;
     background-color: transparent;
     width: var(--hover-sidedock-width) !important;
+    overflow: visible;
+    margin: 0;
 
     .workspace-tabs {
       visibility: visible;
@@ -71,10 +73,9 @@ body:not(.is-mobile).hover-sidedock {
     box-shadow: var(--shadow-s);
   }
 
-
   // Hover sidedock: Hovered
   .mod-sidedock.is-sidedock-collapsed[style*="display"]:hover,
-  &.hover-ribbon .workspace-ribbon.mod-left.is-collapsed:hover + .mod-sidedock,
+  &.hover-ribbon .workspace-ribbon.is-collapsed:hover + .mod-sidedock,
   &:not(.hover-sidedock-active-off) > .app-container > .horizontal-main-container > .workspace > .mod-sidedock:has(> .workspace-tabs.mod-active) {
     transition-delay: var(--hover-sidedock-delay);
     transform: none;
@@ -97,7 +98,7 @@ body:not(.is-mobile).hover-sidedock {
 
 // Hover ribbon
 body:not(.is-mobile).hover-ribbon.show-ribbon {
-  .workspace-ribbon.mod-left {
+  .workspace-ribbon {
     position: absolute;
     z-index: 12;
     height: stretch;
@@ -105,20 +106,20 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
     transform: translateX(calc(-1 * var(--ribbon-width) + var(--hover-sidedock-trigger-area)));
     background-color: transparent;
   }
-  .workspace-ribbon.mod-left:hover {
+  .workspace-ribbon:hover {
     opacity: 1;
     transform: none;
   }
 
-  .workspace-ribbon.mod-left:hover + .mod-sidedock {
+  .workspace-ribbon:hover + .mod-sidedock {
     padding-left: calc(var(--ribbon-width) - 8px);
   }
-  .workspace-ribbon.mod-left.is-collapsed:hover,
-  .workspace-ribbon.mod-left.is-collapsed:hover + .mod-sidedock {
+  .workspace-ribbon.is-collapsed:hover,
+  .workspace-ribbon.is-collapsed:hover + .mod-sidedock {
     transition-delay: var(--hover-sidedock-delay) !important;
   }
 
-  &.hover-sidedock .workspace-ribbon.mod-left.is-collapsed {
+  &.hover-sidedock .workspace-ribbon.is-collapsed {
     z-index: 13;
   }
 
@@ -127,19 +128,15 @@ body:not(.is-mobile).hover-ribbon.show-ribbon {
     &:not(.tab-top-left-stacked) .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       transition-timing-function: ease;
     }
-    &:not(.tab-top-left-stacked)
-      .workspace-ribbon.mod-left:not(.is-collapsed):hover
-      ~ .mod-sidedock.mod-left-split
-      .mod-top-left-space
-      .workspace-tab-header-container {
+    &:not(.tab-top-left-stacked) .workspace-ribbon:not(.is-collapsed):hover ~ .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container {
       padding-left: 52px;
     }
     &:not(.tab-top-left-stacked)
-      .workspace-ribbon.mod-left:not(.is-collapsed):not(:hover)
+      .workspace-ribbon:not(.is-collapsed):not(:hover)
       ~ .mod-sidedock.mod-left-split
       .mod-top-left-space
       .workspace-tab-header-container,
-    .workspace-ribbon.mod-left.is-collapsed ~ .mod-root > div:first-of-type .workspace-tab-header-container {
+    .workspace-ribbon.is-collapsed ~ .mod-root > div:first-of-type .workspace-tab-header-container {
       padding-left: 88px;
     }
   }

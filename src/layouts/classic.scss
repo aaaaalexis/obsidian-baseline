@@ -27,10 +27,10 @@ body:is(.layout-classic, .layout-minimal):not(.is-mobile) {
   }
 
   // Ribbon
-  &:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+  &:not(.hover-ribbon) .workspace-ribbon.is-collapsed {
     border-right: var(--divider-width) solid var(--divider-color);
   }
-  &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.mod-left.is-collapsed {
+  &.mod-macos.is-hidden-frameless:not(.hover-ribbon) .workspace-ribbon.is-collapsed {
     padding-top: 8px;
     box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
   }

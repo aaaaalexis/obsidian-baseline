@@ -1,24 +1,22 @@
 body.layout-frame:not(.is-mobile) {
   .workspace {
-    padding: 4px;
+    padding: 4px 6px;
   }
+  .workspace-ribbon,
   .workspace-split {
-    margin: 4px;
+    margin: 4px 2px;
     height: unset;
     background-color: var(--background-primary) !important;
     border-radius: var(--radius-window, var(--radius-m));
     border: var(--border-width) solid var(--background-modifier-border);
-    overflow: hidden;
   }
 
-  .workspace-ribbon.mod-left {
-    background-color: transparent !important;
-    border-color: transparent;
-  }
-  .workspace-ribbon.mod-left:not(.is-collapsed) {
+  .workspace-ribbon:not(.is-collapsed) {
     padding-left: 4px;
   }
-
+  .mod-root {
+    overflow: hidden;
+  }
   .mod-root .workspace-tab-container {
     border-radius: 0;
   }
@@ -28,11 +26,9 @@ body.layout-frame:not(.is-mobile) {
     &.show-ribbon {
       --frame-left-space: 0px;
     }
-    .workspace-ribbon.mod-left {
-      padding-top: var(--header-height);
-    }
-    &:not(.hover-ribbon) .workspace-ribbon.mod-left {
+    &:not(.hover-ribbon) .workspace-ribbon {
       --ribbon-width: 80px;
+      padding-top: var(--header-height);
     }
   }
 
@@ -74,7 +70,7 @@ body.layout-frame:not(.is-mobile) {
       width: 16px;
     }
   }
-  &.hover-ribbon.show-ribbon .workspace-ribbon.mod-left:not(.is-collapsed) {
+  &.hover-ribbon.show-ribbon .workspace-ribbon:not(.is-collapsed) {
     --ribbon-width: 56px;
   }
 

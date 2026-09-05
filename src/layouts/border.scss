@@ -71,14 +71,6 @@ body.layout-border:not(.is-mobile) {
         border-top-left-radius: 0;
       }
     }
-
-    .workspace-tabs.mod-top-left-space {
-      .workspace-leaf-content > .nav-header,
-      .workspace-leaf-content > .view-content > div:not(.nav-buttons-container):not(.graph-controls) {
-        padding-top: 0;
-        padding-bottom: 8px;
-      }
-    }
   }
 
   &.tab-top-left-stacked.show-ribbon.hover-ribbon .mod-sidedock.mod-left-split .workspace-tabs.mod-top-left-space .workspace-tab-header-container-inner {

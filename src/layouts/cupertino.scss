@@ -87,14 +87,14 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
   }
 
   &.show-ribbon {
-    &:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
-    &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.mod-macos) .workspace-ribbon:not(.is-collapsed),
+    &.mod-macos.is-frameless:not(.is-hidden-frameless) .workspace-ribbon:not(.is-collapsed) {
       margin-block: 8px;
     }
-    &:not(.mod-macos):not(.tab-top-left-stacked) .workspace-ribbon.mod-left:not(.is-collapsed) .sidebar-toggle-button {
+    &:not(.mod-macos):not(.tab-top-left-stacked) .workspace-ribbon:not(.is-collapsed) .sidebar-toggle-button {
       height: calc(var(--header-height) - 24px);
     }
-    &:not(.hover-ribbon) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &:not(.hover-ribbon) .workspace-ribbon:not(.is-collapsed) {
       margin-top: calc(var(--header-height) - 8px);
       padding-left: 16px;
     }
@@ -103,8 +103,8 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
       padding-left: calc(var(--ribbon-width) - 8px);
     }
 
-    .workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon:hover,
-    .workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action:hover {
+    .workspace-ribbon .sidebar-toggle-button .clickable-icon:hover,
+    .workspace-ribbon .side-dock-actions .side-dock-ribbon-action:hover {
       box-shadow: none !important;
       background-color: transparent !important;
       color: var(--text-normal);
@@ -147,7 +147,7 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
   // Ribbon
   &.layout-tahoe,
   &.layout-fusion:not(.tab-floating, .tab-floating-center) {
-    .mod-macos.is-hidden-frameless .workspace-ribbon.mod-left.is-collapsed {
+    .mod-macos.is-hidden-frameless .workspace-ribbon.is-collapsed {
       padding-top: 8px;
       box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
     }

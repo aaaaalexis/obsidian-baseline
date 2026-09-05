@@ -56,25 +56,25 @@ body.bold-folders .nav-folder-title {
 }
 
 // Ribbon
-body.mod-macos.is-hidden-frameless .workspace-ribbon.mod-left {
+body.mod-macos.is-hidden-frameless .workspace-ribbon {
   padding-top: 0;
 }
 body.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
   background-color: transparent;
 }
-.workspace-ribbon.mod-left {
-  border-right: none;
+.workspace-ribbon {
+  border-inline-end: none;
   z-index: 11;
   transition: var(--anim-duration-moderate) !important;
   position: relative;
 }
-.workspace-ribbon.mod-left:not(.is-collapsed) {
+.workspace-ribbon:not(.is-collapsed) {
   padding-left: 12px;
 }
-.workspace-ribbon.mod-left:before {
-  content: none;
+.workspace-ribbon::before {
+  content: none !important;
 }
-.workspace-ribbon.mod-left .sidebar-toggle-button {
+.workspace-ribbon .sidebar-toggle-button {
   position: relative;
   display: flex;
   height: var(--header-height);
@@ -83,32 +83,32 @@ body.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button
   align-items: center;
   justify-content: center;
 }
-.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon {
+.workspace-ribbon .sidebar-toggle-button .clickable-icon {
   pointer-events: auto;
   z-index: 1;
 }
-.workspace-ribbon.mod-left .side-dock-actions {
+.workspace-ribbon .side-dock-actions {
   gap: 4px;
   transition: var(--anim-duration-moderate);
   z-index: 1;
   color: var(--icon-color);
 }
-.workspace-ribbon.mod-left .sidebar-toggle-button .clickable-icon,
-.workspace-ribbon.mod-left .side-dock-actions .side-dock-ribbon-action {
+.workspace-ribbon .sidebar-toggle-button .clickable-icon,
+.workspace-ribbon .side-dock-actions .side-dock-ribbon-action {
   width: var(--tab-action-width);
 }
 
-body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left,
-body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon.mod-left {
+body:not(.mod-macos):not(.is-mobile):not(.layout-frame) .workspace-ribbon,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile):not(.layout-frame) .workspace-ribbon {
   margin-top: 0;
 }
-body:not(.mod-macos):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button,
-body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon.mod-left .sidebar-toggle-button {
+body:not(.mod-macos):not(.is-mobile) .workspace-ribbon .sidebar-toggle-button,
+body.mod-macos:not(.is-hidden-frameless):not(.is-mobile) .workspace-ribbon .sidebar-toggle-button {
   height: auto;
   padding: 0;
   margin: 0 auto;
 }
-body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon.mod-left .sidebar-toggle-button {
+body:not(.mod-macos):not(.is-mobile):not(.tab-top-left-stacked).css-settings-manager .workspace-ribbon .sidebar-toggle-button {
   height: calc(var(--header-height) - 16px);
 }
 

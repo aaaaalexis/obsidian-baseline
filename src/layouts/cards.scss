@@ -29,7 +29,7 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
   }
 
   // Ribbon
-  .workspace-ribbon.mod-left:not(.is-collapsed) {
+  .workspace-ribbon:not(.is-collapsed) {
     padding-left: 4px;
   }
   &.show-ribbon:not(.hover-ribbon) {
@@ -38,13 +38,13 @@ body:is(.layout-cards, .layout-border):not(.is-mobile) {
     .workspace:not(.is-primary-sidedock-open) .mod-root .workspace-tab-container {
       margin-left: 0 !important;
     }
-    &.tab-top-left-stacked:not(.mod-macos) .workspace-ribbon.mod-left:not(.is-collapsed),
-    &.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless) .workspace-ribbon.mod-left:not(.is-collapsed) {
+    &.tab-top-left-stacked:not(.mod-macos) .workspace-ribbon:not(.is-collapsed),
+    &.tab-top-left-stacked.mod-macos:not(.is-hidden-frameless) .workspace-ribbon:not(.is-collapsed) {
       margin-top: var(--header-height);
     }
   }
   &.mod-macos.is-hidden-frameless {
-    .workspace-ribbon.mod-left {
+    .workspace-ribbon {
       padding-top: 8px;
     }
   }
