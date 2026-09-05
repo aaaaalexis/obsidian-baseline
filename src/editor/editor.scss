@@ -496,15 +496,17 @@
 
   // Lightbox
   .lightbox {
-    --lightbox-titlebar-color: var(--text-muted);
-
     .modal-close-button {
       top: 8px;
       inset-inline-end: 8px;
+      opacity: 0.5;
     }
     .lightbox-titlebar {
       --lightbox-close-top: 8px;
       --lightbox-close-size: calc(var(--icon-m) + 8px * 2);
+    }
+    .lightbox-titlebar-text {
+      opacity: 0.5;
     }
     .media-wrapper img {
       padding: 0;
