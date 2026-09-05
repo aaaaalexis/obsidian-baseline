@@ -2,7 +2,7 @@ body {
   --nav-indentation-guide-color: var(--background-modifier-border-hover);
   --nav-indentation-guide-width: 0px;
   --nav-item-radius: var(--radius-s);
-  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 32px;
+  --nav-item-padding: calc(8px * var(--density-modifier)) 16px calc(8px * var(--density-modifier)) 36px;
   --nav-item-children-margin-start: calc(20px - var(--nav-indentation-guide-width) / 2);
 
   --ribbon-background: transparent;
@@ -23,7 +23,7 @@ body.is-mobile {
 
 @keyframes workspaceLeafIn {
   from {
-    transform: scale(0.995);
+    transform: scale(0.99);
   }
 }
 
@@ -50,6 +50,9 @@ body.bold-folders .nav-folder-title {
 .tree-item-self,
 .tree-item-inner {
   align-items: center;
+}
+.tree-item-self .tree-item-icon {
+  margin-inline-start: -24px;
 }
 
 // Ribbon
@@ -119,7 +122,7 @@ body:not(.is-mobile) {
     background-color: transparent;
   }
   .mod-sidedock .workspace-leaf:not([style*="display: none"]) {
-    animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
+    animation: workspaceLeafIn var(--anim-duration-fast) var(--anim-motion-baseline) forwards;
   }
 
   // Sidedock padding
@@ -237,11 +240,6 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
     inset: auto 0 0;
     z-index: 1;
     align-items: unset;
-    width: auto;
-
-    &:hover ~ .workspace-tabs:last-child {
-      mask: linear-gradient(to top, transparent, black 64px);
-    }
 
     .workspace-drawer-vault-switcher.has-active-menu {
       background-color: var(--interactive-normal);
@@ -251,17 +249,15 @@ body:not(.is-mobile):not(.hide-vault-switcher-off) .mod-sidedock.mod-left-split 
       pointer-events: none;
 
       .workspace-drawer-vault-switcher:not(.has-active-menu) {
-        opacity: 0;
-        filter: blur(4px);
         pointer-events: none;
-        transform: scale(0.995);
+        opacity: 0;
       }
     }
   }
 
   .workspace-drawer-vault-switcher,
   .workspace-drawer-vault-actions .clickable-icon {
-    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    transition: var(--anim-duration-fast);
     pointer-events: visible;
   }
 

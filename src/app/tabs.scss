@@ -492,7 +492,6 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)) .mod-sidedock.mod-le
     flex-direction: column;
     width: stretch;
     gap: 0;
-    animation: workspaceLeafIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
     padding: 0 8px;
     max-height: unset;
   }

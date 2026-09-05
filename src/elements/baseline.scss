@@ -1,5 +1,6 @@
 body {
   --input-height: 32px;
+  --button-transition: scale var(--anim-duration-fast) var(--anim-motion-baseline);
 
   /* 0 when <1, 1 when >=1 */
   --radius-modifier-check: clamp(0, (var(--radius-modifier) - 1) * 10000 + 1, 1);
@@ -61,16 +62,6 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
   --input-shadow-hover: inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover);
   --input-font-weight: var(--font-medium);
 
-  // Input
-  input:is([type="text"], [type="search"], [type="email"], [type="password"], [type="number"]):not(.prompt-input) {
-    transition-timing-function: ease;
-
-    &:focus,
-    &:focus-visible {
-      background-color: var(--interactive-hover);
-    }
-  }
-
   // Slider
   input[type="range"]::-webkit-slider-thumb {
     border: var(--border-width) solid var(--background-modifier-border);
@@ -81,6 +72,10 @@ body:is(.input-baseline, :not(.css-settings-manager)) {
 button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([data-type="markdown"]) button, .copy-code-button)) {
   padding: var(--font-ui-small);
   display: inline-flex;
+
+  &:active {
+    scale: 0.975;
+  }
 }
 
 .clickable-icon {
