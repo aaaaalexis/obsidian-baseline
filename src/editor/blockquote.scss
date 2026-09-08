@@ -1,8 +1,8 @@
 @media screen, print {
   body {
     --blockquote-background-color: var(--background-primary-alt);
-    --blockquote-border-color: var(--color-base-50);
-    --blockquote-border-thickness: 4px;
+    --blockquote-border-color: var(--background-modifier-border-hover);
+    --blockquote-border-thickness: 2px;
 
     --blockquote-size: var(--font-text-size);
   }
@@ -12,94 +12,83 @@
     corner-shape: var(--corner-shape);
     font-size: var(--blockquote-size);
   }
-
-  .cm-formatting-quote {
-    margin-left: 8px;
-  }
-
   .markdown-rendered blockquote {
     position: relative;
     border-inline-start: none;
-    border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
-    padding-inline: calc(var(--blockquote-border-thickness) + 16px) 16px;
-    padding-block: 8px;
-  }
-  .markdown-rendered blockquote::before {
-    top: 0;
-    bottom: 0;
-    inset-inline-start: 0;
-    position: absolute;
-    border-radius: var(--radius-s);
-    background-color: var(--blockquote-border-color);
-    width: var(--blockquote-border-thickness);
-    pointer-events: none;
-    content: "";
-  }
-
-  .HyperMD-quote {
-    border: 0px solid var(--blockquote-background-color);
-    background-color: var(--blockquote-background-color);
-    &::before {
-      width: 0 !important;
-    }
-  }
-  .HyperMD-quote:first-child,
-  .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
-    border-start-start-radius: calc(var(--blockquote-border-thickness) / 2);
-    border-start-end-radius: vaR(--radius-s);
-    padding-top: 8px;
 
     &::before {
-      border-start-start-radius: var(--radius-s);
-      border-start-end-radius: var(--radius-s);
-    }
-  }
-  .HyperMD-quote:last-child,
-  .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
-    border-end-start-radius: calc(var(--blockquote-border-thickness) / 2);
-    border-end-end-radius: vaR(--radius-s);
-    padding-bottom: 8px;
-
-    &::before {
-      border-end-start-radius: var(--radius-s);
-      border-end-end-radius: var(--radius-s);
+      position: absolute;
+      border-radius: var(--radius-m);
+      background-color: var(--blockquote-border-color);
+      width: var(--blockquote-border-thickness);
+      pointer-events: none;
+      content: "";
     }
   }
 
   // Blockquote: Block
-  body.blockquote-block {
+  body:is(.blockquote-block, :not(.css-settings-manager)) {
     .markdown-rendered blockquote {
       border-radius: var(--radius-s);
       padding-inline: calc(var(--blockquote-border-thickness) + 32px) 16px;
       padding-block: 16px;
+      border: var(--border-width) solid var(--background-modifier-border);
+
+      &::before {
+        inset: 16px;
+      }
     }
     .markdown-rendered blockquote > blockquote {
-      padding-inline-start: calc(16px + var(--blockquote-border-thickness));
-      padding-block: 0 !important;
-    }
-    .markdown-rendered blockquote > blockquote::before {
-      top: 0;
-      bottom: 0;
-      inset-inline-start: 0;
-    }
-    .markdown-rendered blockquote::before {
-      top: 16px;
-      bottom: 16px;
-      inset-inline-start: 16px;
+      padding-inline-start: calc(var(--blockquote-border-thickness) + 16px);
+      padding-block: 0;
+      border: none;
+
+      &::before {
+        inset: 0;
+      }
     }
 
     .HyperMD-quote {
+      border: 0px solid var(--blockquote-background-color);
       border-width: 0 16px;
     }
     .HyperMD-quote:first-child,
     .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
       border-top-width: 16px;
       border-start-start-radius: var(--radius-s);
+      border-start-end-radius: var(--radius-s);
     }
     .HyperMD-quote:last-child,
     .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
       border-bottom-width: 16px;
       border-end-start-radius: var(--radius-s);
+      border-end-end-radius: var(--radius-s);
+    }
+  }
+
+  // Blockquote: Edge
+  body.blockquote-edge {
+    .markdown-rendered blockquote {
+      border-radius: calc(var(--blockquote-border-thickness) / 2) var(--radius-s) var(--radius-s) calc(var(--blockquote-border-thickness) / 2);
+      padding-inline: calc(var(--blockquote-border-thickness) + 16px) 16px;
+      padding-block: 8px;
+
+      &::before {
+        inset: 0;
+      }
+    }
+
+    .HyperMD-quote:first-child,
+    .cm-line:not(.HyperMD-quote) + .HyperMD-quote {
+      border-start-start-radius: calc(var(--blockquote-border-thickness) / 2);
+      border-start-end-radius: var(--radius-s);
+      padding-top: 8px;
+    }
+    .HyperMD-quote:last-child,
+    .cm-line.HyperMD-quote:has(+ .cm-line:not(.HyperMD-quote)) {
+      border-end-start-radius: calc(var(--blockquote-border-thickness) / 2);
+      border-end-end-radius: var(--radius-s);
+      padding-bottom: 8px;
     }
   }
 }

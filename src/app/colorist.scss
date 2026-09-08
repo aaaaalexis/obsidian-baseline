@@ -110,7 +110,7 @@
   }
 }
 
-.theme-light:is(:not(.css-settings-manager), .baseline-light) {
+.theme-light:is(.baseline-light, :not(.css-settings-manager)) {
   --colorist-l-00: 0.995;
   --colorist-l-05: 0.99;
   --colorist-l-10: 0.985;
@@ -143,7 +143,7 @@
     --color-accent-2: oklch(0.75 max(0.15, calc(var(--colorist-c-light) * 0.1)) var(--colorist-h-light));
   }
 }
-.theme-dark:is(:not(.css-settings-manager), .baseline-dark) {
+.theme-dark:is(.baseline-dark, :not(.css-settings-manager)) {
   --colorist-l-00: 0.2;
   --colorist-l-05: 0.205;
   --colorist-l-10: 0.21;

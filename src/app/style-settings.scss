@@ -2624,20 +2624,20 @@ settings:
 		title: Blockquote style
 		type: class-select
 		allowEmpty: false
-		default: blockquote-edge
+		default: blockquote-block
 		options:
-			-
-				label: Edge
-				value: blockquote-edge
 			-
 				label: Block
 				value: blockquote-block
+			-
+				label: Edge
+				value: blockquote-edge
 	-
 		id: blockquote-border-thickness
 		title: Blockquote border thickness
 		type: variable-number-slider
 		format: px
-		default: 4
+		default: 2
 		min: 0
 		max: 8
 		step: 1
