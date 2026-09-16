@@ -14,7 +14,7 @@ body {
 }
 
 body.is-mobile {
-  --nav-item-padding: calc(10px * var(--density-modifier)) 24px;
+  --nav-item-padding: calc(12px * var(--density-modifier)) 24px;
   --nav-item-color: var(--text-muted);
   --nav-item-size: var(--font-ui-small);
   --nav-item-weight-active: var(--font-medium);
