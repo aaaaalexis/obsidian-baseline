@@ -85,7 +85,8 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   }
 
   // Workspace: Use sidedock for tint
-  &.layout-macos .workspace {
+  &.layout-macos .workspace,
+  &.layout-macos .vertical-tab-header {
     background-color: color-mix(in srgb, var(--background-primary-alt), var(--colorful-frame-background, var(--color-accent)) 2%);
   }
   &:is(.layout-tahoe, .layout-fusion) .mod-sidedock {
