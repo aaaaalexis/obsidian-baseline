@@ -1,30 +1,30 @@
 body.obsidian-app.theme-light {
   --color-base-00: var(--colorist-00, #fdfdfd);
   --color-base-05: var(--colorist-05, #fcfcfc);
-  --color-base-10: var(--colorist-10, #fafafa);
-  --color-base-20: var(--colorist-20, #f8f8f8);
-  --color-base-25: var(--colorist-25, #f3f3f3);
-  --color-base-30: var(--colorist-30, #eeeeee);
+  --color-base-10: var(--colorist-10, #f8f8f8);
+  --color-base-20: var(--colorist-20, #f5f5f5);
+  --color-base-25: var(--colorist-25, #f2f2f2);
+  --color-base-30: var(--colorist-30, #ebebeb);
   --color-base-35: var(--colorist-35, #e4e4e4);
   --color-base-40: var(--colorist-40, #d7d7d7);
-  --color-base-50: var(--colorist-50, #bababa);
-  --color-base-60: var(--colorist-60, #959595);
-  --color-base-70: var(--colorist-70, #6f6f6f);
-  --color-base-100: var(--colorist-100, #4d4d4d);
+  --color-base-50: var(--colorist-50, #b1b1b1);
+  --color-base-60: var(--colorist-60, #8c8c8c);
+  --color-base-70: var(--colorist-70, #747474);
+  --color-base-100: var(--colorist-100, #3d3d3d);
 }
 body.obsidian-app.theme-dark {
   --color-base-00: var(--colorist-00, #161616);
   --color-base-05: var(--colorist-05, #171717);
   --color-base-10: var(--colorist-10, #181818);
-  --color-base-20: var(--colorist-20, #1b1b1b);
-  --color-base-25: var(--colorist-25, #1f1f1f);
-  --color-base-30: var(--colorist-30, #242424);
-  --color-base-35: var(--colorist-35, #292929);
+  --color-base-20: var(--colorist-20, #1c1c1c);
+  --color-base-25: var(--colorist-25, #222222);
+  --color-base-30: var(--colorist-30, #292929);
+  --color-base-35: var(--colorist-35, #303030);
   --color-base-40: var(--colorist-40, #383838);
-  --color-base-50: var(--colorist-50, #4d4d4d);
+  --color-base-50: var(--colorist-50, #555555);
   --color-base-60: var(--colorist-60, #6e6e6e);
-  --color-base-70: var(--colorist-70, #989898);
-  --color-base-100: var(--colorist-100, #cacaca);
+  --color-base-70: var(--colorist-70, #898989);
+  --color-base-100: var(--colorist-100, #c1c1c1);
 }
 
 .css-settings-manager {
@@ -116,16 +116,16 @@ body.obsidian-app.theme-dark {
 .theme-light.baseline-light {
   --colorist-l-00: 0.995;
   --colorist-l-05: 0.99;
-  --colorist-l-10: 0.985;
-  --colorist-l-20: 0.98;
-  --colorist-l-25: 0.965;
-  --colorist-l-30: 0.95;
+  --colorist-l-10: 0.98;
+  --colorist-l-20: 0.97;
+  --colorist-l-25: 0.96;
+  --colorist-l-30: 0.94;
   --colorist-l-35: 0.92;
   --colorist-l-40: 0.88;
-  --colorist-l-50: 0.79;
-  --colorist-l-60: 0.67;
-  --colorist-l-70: 0.54;
-  --colorist-l-100: 0.42;
+  --colorist-l-50: 0.76;
+  --colorist-l-60: 0.64;
+  --colorist-l-70: 0.56;
+  --colorist-l-100: 0.36;
 
   --colorist-c-00: 0.025;
   --colorist-c-05: 0.025;
@@ -150,15 +150,15 @@ body.obsidian-app.theme-dark {
   --colorist-l-00: 0.2;
   --colorist-l-05: 0.205;
   --colorist-l-10: 0.21;
-  --colorist-l-20: 0.22;
-  --colorist-l-25: 0.24;
-  --colorist-l-30: 0.26;
-  --colorist-l-35: 0.28;
+  --colorist-l-20: 0.225;
+  --colorist-l-25: 0.25;
+  --colorist-l-30: 0.28;
+  --colorist-l-35: 0.31;
   --colorist-l-40: 0.34;
-  --colorist-l-50: 0.42;
+  --colorist-l-50: 0.45;
   --colorist-l-60: 0.54;
-  --colorist-l-70: 0.68;
-  --colorist-l-100: 0.84;
+  --colorist-l-70: 0.63;
+  --colorist-l-100: 0.81;
 
   --colorist-c-00: 0.015;
   --colorist-c-05: 0.015;
