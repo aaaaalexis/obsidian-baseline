@@ -2,6 +2,7 @@
   body {
     --callout-blend-mode: normal;
     --callout-border-width: var(--divider-width);
+    --callout-border-opacity: 0.15;
     --callout-padding: 16px;
     --callout-size: var(--font-text-size);
   }
@@ -47,12 +48,6 @@
 
   .callout:not([data-callout]) {
     --callout-color: var(--color-accent);
-    background-color: hsl(from var(--color-accent) h s l / 0.15);
-    border-color: hsl(from var(--color-accent) h s l / var(--callout-border-opacity));
-
-    .callout-title {
-      color: var(--callout-color);
-    }
   }
 
   // Callout: Tactile
