@@ -221,6 +221,8 @@ body.layout-cupertino:not(.is-phone) {
 // macOS specific
 body.layout-macos:not(.is-phone) .modal.mod-settings .vertical-tab-header {
   background-color: var(--background-secondary);
+  border-radius: var(--modal-radius) 0 0 var(--modal-radius);
+  margin: var(--border-width) 0 var(--border-width) var(--border-width);
 }
 
 body:is(.layout-macos, .layout-tahoe):not(.is-phone) {
