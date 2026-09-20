@@ -61,7 +61,7 @@ body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-fo
   --workspace-background-translucent: var(--background-secondary);
   --modal-background: var(--background-secondary);
   --menu-background: var(--background-secondary);
-  --blur-background: var(--background-modifier-hover);
+  --raised-background: var(--background-modifier-hover);
   --shadow-xs: none;
   --shadow-s: none;
   --shadow-l: none;
@@ -111,9 +111,13 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
     }
   }
 
-  &.layout-tahoe .mod-sidedock,
-  &.layout-fusion .mod-sidedock.mod-left-split {
-    background-color: var(--blur-background) !important;
+  &:not(.is-translucent).layout-tahoe .mod-sidedock,
+  &:not(.is-translucent).layout-fusion .mod-sidedock.mod-left-split {
+    background: var(--raised-background);
+  }
+  &.is-translucent.layout-tahoe .mod-sidedock,
+  &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
+    background-color: hsl(from white h s l / 0.025) !important;
   }
   .mod-sidedock {
     transition:
@@ -158,7 +162,7 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
     margin: 8px 0 8px 8px;
     box-shadow: var(--shadow-surface);
     border-radius: max(calc(var(--modal-radius) - 8px), var(--radius-s));
-    background-color: var(--blur-background);
+    background: var(--raised-background);
   }
 }
 
@@ -175,7 +179,7 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
   }
 
   .workspace-drawer.is-pinned.mod-left {
-    background-color: var(--blur-background);
+    background: var(--raised-background);
     box-shadow: var(--shadow-surface);
     border: none;
     margin: calc(var(--safe-area-inset-top) + 8px) 8px 8px;
@@ -193,7 +197,7 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
     border-radius: var(--radius-m);
     border: none;
     z-index: 1;
-    background-color: var(--blur-background);
+    background: var(--raised-background);
     box-shadow: var(--shadow-surface);
   }
 }
@@ -246,7 +250,7 @@ body.layout-tahoe:not(.is-phone) {
     margin-right: 0px;
     box-shadow:
       var(--shadow-surface),
-      -32px 0 0 32px var(--background-primary);
+      -32px 0 0 48px var(--background-primary);
   }
   .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
     border-color: var(--divider-color);

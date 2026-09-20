@@ -1,28 +1,27 @@
 body.input-cupertino {
-  --background-modifier-message: var(--modal-background);
-  --modal-background: hsl(from var(--background-primary-alt) h s l / 75%);
-  --menu-background: hsl(from var(--background-primary-alt) h s l / 75%);
+  --background-modifier-message: var(--raised-background);
+  --modal-background: var(--raised-background);
+  --menu-background: var(--raised-background);
 
   &.is-translucent {
-    --modal-background: var(--background-primary);
-    --menu-background: var(--background-primary);
+    --raised-background: var(--background-modifier-border);
   }
 
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-l);
-    background-color: var(--modal-background);
+    background: var(--modal-background);
   }
   .menu,
   .suggestion-container,
   .popover {
     backdrop-filter: var(--blur-m);
-    background-color: var(--menu-background);
+    background: var(--menu-background);
   }
   .cm-tooltip,
   .notice {
     backdrop-filter: var(--blur-s);
-    background-color: var(--blur-background);
+    background: var(--raised-background);
   }
 }
 

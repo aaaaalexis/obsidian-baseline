@@ -55,6 +55,7 @@ body:not(.is-phone) {
       align-items: center;
       font-size: var(--font-ui-small);
       border-radius: var(--radius-s);
+      line-height: normal;
     }
     .vertical-tab-nav-item:hover {
       background-color: var(--background-modifier-hover);

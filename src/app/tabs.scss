@@ -295,7 +295,7 @@ body.input-cupertino:not(.is-phone):is(.tab-floating, .tab-floating-center) {
       }
 
       &.is-active {
-        background-color: var(--blur-background);
+        background: var(--raised-background);
         box-shadow: var(--shadow-xs);
       }
     }
