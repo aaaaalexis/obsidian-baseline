@@ -1,6 +1,6 @@
 body.input-cupertino {
   --background-modifier-message: var(--raised-background);
-  --modal-background: var(--raised-background);
+  --modal-background: var(--raised-background) !important;
   --menu-background: var(--raised-background);
 
   &.is-translucent {

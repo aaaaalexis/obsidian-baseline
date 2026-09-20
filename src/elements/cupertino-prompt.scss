@@ -120,7 +120,6 @@ body.input-cupertino.is-phone {
 
   // Animation override: Prompt In
   .prompt {
-    transition: var(--anim-duration-moderate) !important;
     transform: none !important;
     overflow: visible;
     box-shadow: none;
