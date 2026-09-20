@@ -139,12 +139,6 @@ body.input-cupertino.is-phone {
   }
 
   // File explorer
-  &.theme-light .nav-files-container > div {
-    background-color: var(--background-primary);
-  }
-  &.theme-dark .nav-files-container > div {
-    background-color: var(--background-secondary);
-  }
   .nav-files-container > div {
     --nav-item-size: var(--font-ui-medium);
     --nav-item-color: var(--text-normal);
@@ -155,6 +149,7 @@ body.input-cupertino.is-phone {
     --nav-item-weight-hover: var(--font-normal);
     --nav-item-weight-active: var(--font-normal);
 
+    background-color: var(--setting-items-background);
     border-radius: var(--radius-m);
 
     .tree-item {
@@ -189,7 +184,7 @@ body.input-cupertino.is-phone {
     .tree-item:not(.nav-files-container > div > div:nth-child(2)):not(:last-child:only-child):before {
       position: absolute;
       inset: calc(-1 * (var(--border-width) / 2)) var(--side-padding) auto;
-      background: var(--background-modifier-border);
+      background: var(--setting-items-divider-color);
       height: var(--border-width);
       content: "";
     }

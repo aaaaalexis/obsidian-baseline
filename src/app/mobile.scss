@@ -56,8 +56,7 @@ body.is-mobile {
 
   // Default override
   &.theme-dark {
-    --settings-background: var(--background-primary);
-    --setting-items-background: var(--background-secondary);
+    --setting-items-background: var(--background-secondary-alt);
     --setting-items-divider-color: var(--background-modifier-hover);
     --menu-divider-color: var(--background-modifier-hover);
     --mobile-sidebar-background: var(--background-secondary);

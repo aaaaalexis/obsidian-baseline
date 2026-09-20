@@ -79,18 +79,10 @@ body.input-cupertino {
     &.theme-dark {
       --blur-background: hsl(0 0% 20% / 0.5);
     }
-    &.theme-dark .modal.mod-sidebar-layout {
-      --background-modifier-border: color-mix(in srgb, var(--background-secondary), white 15%);
-    }
   }
 
   &.is-phone {
     --nav-item-padding: calc(16px * var(--density-modifier)) var(--side-padding);
-
-    &.theme-dark {
-      --modal-sidebar-background: var(--background-secondary);
-      --mobile-sidebar-background: var(--background-primary);
-    }
   }
 
   &.is-tablet {
