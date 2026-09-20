@@ -47,6 +47,33 @@ body.mod-macos:not(.is-mobile) .mod-settings {
   --dropdown-icon-background: transparent;
 }
 
+// Popout modal (Settings)
+body.mod-macos.is-frameless:not(.is-mobile).is-popout-window {
+  --titlebar-height: 40px;
+  --traffic-lights-offset-x: 48px;
+  --traffic-lights-offset-y: 56px;
+
+  padding-top: 0px;
+
+  .titlebar {
+    background-color: hsl(0 0% 100% / 0.5);
+    border: none;
+  }
+  .titlebar-inner {
+    display: none;
+  }
+  .modal.mod-sidebar-layout {
+    -webkit-app-region: unset;
+  }
+  .vertical-tab-header {
+    padding-top: var(--titlebar-height);
+  }
+
+  .community-modal-search {
+    margin-left: var(--frame-left-space);
+  }
+}
+
 body:not(.is-phone) {
   .modal.mod-sidebar-layout {
     .vertical-tab-header-group-title,
