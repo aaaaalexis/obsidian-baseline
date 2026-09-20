@@ -20,10 +20,6 @@ body,
   --border-width-offset: calc(-1 * var(--border-width));
   --divider-width: var(--border-width);
 
-  --raised-mask: radial-gradient(200% 100%, white, transparent) padding-box, linear-gradient(white, white) border-box;
-  --raised-mask-border-width: 0px !important;
-  --raised-mask-background: transparent;
-
   --divider-color-hover: var(--color-base-50);
 
   --corner-shape: superellipse(1.1);
@@ -96,7 +92,6 @@ body,
   --code-value: #098658;
 
   --background-modifier-form-field: var(--background-primary);
-  --blur-background: hsl(0 0% 100% / 0.5);
 
   --shadow-tactile: inset 0px 1px hsl(0 0 100 / 0.5), 0px 2px 2px -2px hsl(0 0 0 / 0.05), 0px 4px 8px -4px hsl(0 0 0 / 0.05);
 
@@ -137,7 +132,6 @@ body,
   --code-value: #b5cea8;
 
   --background-modifier-form-field: var(--background-secondary);
-  --blur-background: hsl(0 0% 100% / 0.025);
 
   --shadow-tactile:
     inset 0px 2px 1px -1px hsl(0 0 100 / 0.05), inset 0px -4px 2px -2px hsl(0 0 0 / 0.1), 0px 2px 2px -2px hsl(0 0 0 / 0.1), 0px 4px 8px -4px hsl(0 0 0 / 0.1);

@@ -348,9 +348,9 @@ body.is-phone {
     }
   }
   &:not(.mode-switcher-off) {
-    .view-action,
+    .view-header-left .view-action,
     .view-actions {
-      backdrop-filter: none;
+      backdrop-filter: none !important;
     }
   }
 

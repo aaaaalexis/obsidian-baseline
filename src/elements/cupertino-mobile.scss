@@ -1,4 +1,4 @@
-body.input-cupertino.is-mobile {
+body.obsidian-app.input-cupertino {
   // Liquid Glass
   &:where(.is-phone):not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2),
   &:where(.is-phone) .prompt-input,
@@ -9,55 +9,60 @@ body.input-cupertino.is-mobile {
   .mobile-tab-switcher-menu-button,
   .mobile-tab-switcher-menu-spacer .clickable-icon,
   .pull-action {
-    backdrop-filter: var(--blur-s);
-    box-shadow: var(--shadow-xs);
+    backdrop-filter: var(--raised, var(--raised-blur));
+    transition: var(--anim-duration-moderate) var(--anim-motion-baseline);
+    box-shadow: var(--raised, var(--raised-shadow));
     border: none;
-    background-color: var(--blur-background);
+    background: var(--raised, var(--raised-background));
     color: var(--text-normal);
-    transition: var(--anim-duration-moderate);
   }
 
   // HDR effects
-  &.theme-dark .mod-raised::after {
-    content: none !important;
-  }
-  &.mod-macos.theme-light {
-    .mod-raised:not(.prompt-input-container)::after,
-    &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
-    &.is-phone .prompt-input-container::after,
-    &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
-    &.is-phone .prompt-input-container .search-input-clear-button::before,
-    &.is-tablet .menu::after,
-    &.is-tablet .workspace-drawer:not(.is-pinned)::after,
-    .search-input-container::after,
-    .mobile-tab-switcher-menu-button::after,
-    .mobile-tab-switcher-menu-spacer .clickable-icon::after,
-    .notice::after,
-    .pull-action::after,
-    .modal:not(.mod-sidebar-layout)::after,
-    .menu::after,
-    .suggestion-container::after,
-    .popover::after {
-      display: var(--raised-mask-display);
-      position: absolute;
-      content: "";
-      backdrop-filter: brightness(1.1);
-      background: var(--raised-mask-background);
-      mask: var(--raised-mask);
-      mask-composite: var(--raised-mask-composite);
-      inset: 0;
-      border: var(--raised-mask-border-width) solid transparent;
-      border-width: var(--border-width) 0;
-      border-radius: inherit;
-      pointer-events: none;
-      z-index: 1;
-    }
 
-    &.is-phone .prompt-input-container::after {
+  .mod-raised:not(.prompt-input-container)::after,
+  &.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2)::after,
+  &.is-phone .prompt-input-container::after,
+  &.is-phone .prompt-input-container .prompt-input-cta:not(:empty)::before,
+  &.is-phone .prompt-input-container .search-input-clear-button::before,
+  &.is-tablet .menu::after,
+  &.is-tablet .workspace-drawer:not(.is-pinned)::after,
+  .search-input-container::after,
+  .mobile-tab-switcher-menu-button::after,
+  .mobile-tab-switcher-menu-spacer .clickable-icon::after,
+  .notice::after,
+  .pull-action::after,
+  .modal:not(.mod-sidebar-layout)::after,
+  .menu::after,
+  .suggestion-container::after,
+  .popover::after {
+    display: var(--raised-mask-display);
+    position: absolute;
+    content: "";
+    backdrop-filter: brightness(1.1);
+    background: var(--raised-mask-background);
+    mask: var(--raised-mask);
+    mask-composite: var(--raised-mask-composite);
+    inset: 0;
+    border: var(--raised-mask-border-width) solid transparent;
+    border-width: var(--border-width) 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+  &.theme-dark {
+    --raised-mask-background: none;
+  }
+
+  &.is-phone .prompt-input-container {
+    background: none;
+
+    &::after {
       margin-right: 56px;
     }
   }
+}
 
+body.input-cupertino.is-mobile {
   // Side panels
   .workspace-leaf-content:not([data-type="empty"]) .mod-left-split-toggle svg.svg-icon {
     --icon-size: var(--icon-l);
