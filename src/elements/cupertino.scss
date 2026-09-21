@@ -20,10 +20,6 @@ body.input-cupertino {
   --raised-mask-border-width: 0px !important;
   --raised-mask-background: linear-gradient(transparent, white 35%, white 65%, transparent);
 
-  &.is-translucent {
-    --raised-background: var(--color-base-05) !important;
-  }
-
   &.theme-light {
     --blur-background: hsl(0 0% 95% / 0.5);
     --raised-background: linear-gradient(

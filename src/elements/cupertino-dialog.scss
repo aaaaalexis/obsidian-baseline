@@ -3,6 +3,11 @@ body.input-cupertino {
   --modal-background: var(--raised-background) !important;
   --menu-background: var(--raised-background);
 
+  &.is-translucent {
+    --modal-background: var(--background-primary) !important;
+    --menu-background: var(--background-primary);
+  }
+
   .prompt,
   .modal:not(.mod-sidebar-layout) {
     backdrop-filter: var(--blur-l);
