@@ -1,18 +1,14 @@
 body.input-cupertino {
-  --setting-nav-icon-background: var(--color-base-50);
+  --setting-nav-icon-background: var(--color-base-60);
 
   .modal.mod-settings .vertical-tab-nav-item {
     .vertical-tab-nav-item-icon {
       --icon-size: var(--icon-xs);
       --icon-stroke: var(--icon-xs-stroke-width);
-      box-shadow:
-        inset var(--border-width) var(--border-width) var(--border-width) hsla(0, 0%, 100%, 0.25),
-        inset var(--border-width-offset) var(--border-width-offset) var(--border-width) hsla(0, 0%, 100%, 0.25),
-        0 0 1px rgba(0, 0, 0, 0.25),
-        0 1px 2px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-edges);
       border-radius: 6px;
       background-image: linear-gradient(
-        oklch(from var(--setting-nav-icon-background) calc(l * 1.125) c h),
+        oklch(from var(--setting-nav-icon-background) calc(l * 1.075) c h),
         oklch(from var(--setting-nav-icon-background) calc(l * 0.975) c h)
       );
       background-color: var(--setting-nav-icon-background);
@@ -85,8 +81,8 @@ body.input-cupertino.is-mobile {
   .modal.mod-settings .vertical-tab-nav-item .vertical-tab-nav-item-icon {
     padding: 5px;
     border-radius: 8px;
-    box-shadow: 0 0 0 var(--border-width) var(--background-modifier-border);
-    margin-left: -4px;
+    margin-left: -2px;
+    margin-inline-end: 14px;
   }
 }
 
