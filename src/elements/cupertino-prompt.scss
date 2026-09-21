@@ -55,7 +55,7 @@ body.input-cupertino:not(.is-phone) {
     position: absolute;
     inset: auto var(--side-padding) 0;
     height: var(--border-width);
-    background-color: var(--background-modifier-border);
+    background-color: var(--background-modifier-hover);
     pointer-events: none;
   }
 }
