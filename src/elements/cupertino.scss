@@ -9,6 +9,9 @@ body.input-cupertino {
   --button-radius: var(--input-radius);
   --clickable-icon-radius: 100vh;
 
+  --interactive-normal: hsl(from var(--mono-100) h s l / 5%);
+  --interactive-hover: hsl(from var(--mono-100) h s l / 5%);
+
   --blur-radius-s: 2px;
   --blur-radius-m: 4px;
   --blur-radius-l: 8px;
