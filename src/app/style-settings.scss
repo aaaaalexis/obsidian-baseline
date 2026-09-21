@@ -854,9 +854,6 @@ settings:
 				label: Fusion
 				value: layout-fusion
 			-
-				label: Tahoe
-				value: layout-tahoe
-			-
 				label: Classic
 				value: layout-classic
 			-
@@ -3453,7 +3450,7 @@ settings:
 // Disabling input
 body:is(.tab-floating, .tab-floating-center) .setting-item[data-id="tab-divider"],
 body:not(.hover-sidedock) .setting-item[data-id="hover-sidedock-trigger-area"] ~ .setting-item,
-body:not(.layout-tahoe, .layout-fusion) .setting-item[data-id="reduce-contrast-change"],
+body:not(.layout-fusion) .setting-item[data-id="reduce-contrast-change"],
 body.view-header-title-hidden .setting-item[data-id="file-header-visibility"] ~ .setting-item,
 body.block-width-off .setting-item[data-id="line-width"] ~ .setting-item,
 body.unstyled-tags .setting-item[data-id="unstyled-tags"] ~ .setting-item,

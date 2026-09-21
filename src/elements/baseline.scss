@@ -82,7 +82,6 @@ button:where(:not(.clickable-icon, .ant-switch, .workspace-leaf-content:not([dat
 .clickable-icon {
   corner-shape: round;
   padding: 8px;
-  max-height: 100%;
 }
 
 // Toggle

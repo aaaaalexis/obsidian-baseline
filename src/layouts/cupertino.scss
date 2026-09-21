@@ -57,7 +57,7 @@ body:is(.layout-baseline, :not(.css-settings-manager), .layout-cupertino, .layou
 }
 
 // Unfocused
-body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
+body:is(.layout-macos, .layout-fusion):not(.is-mobile):not(.is-focused):not(.reduce-contrast-change) {
   --workspace-background-translucent: var(--background-secondary);
   --modal-background: var(--background-secondary);
   --menu-background: var(--background-secondary);
@@ -75,7 +75,7 @@ body:is(.layout-macos, .layout-tahoe, .layout-fusion):not(.is-mobile):not(.is-fo
   }
 }
 
-body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
+body.layout-fusion:not(.is-mobile) {
   // Side panels
   &.is-fullscreen .mod-sidedock.mod-left-split {
     border-radius: var(--radius-m);
@@ -111,11 +111,9 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
     }
   }
 
-  &:not(.is-translucent).layout-tahoe .mod-sidedock,
   &:not(.is-translucent).layout-fusion .mod-sidedock.mod-left-split {
     background: var(--raised-background);
   }
-  &.is-translucent.layout-tahoe .mod-sidedock,
   &.is-translucent.layout-fusion .mod-sidedock.mod-left-split {
     background-color: hsl(from white h s l / 0.025) !important;
   }
@@ -149,12 +147,8 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
   }
 
   // Ribbon
-  &.layout-tahoe,
-  &.layout-fusion:not(.tab-floating, .tab-floating-center) {
-    .mod-macos.is-hidden-frameless .workspace-ribbon.is-collapsed {
-      padding-top: 8px;
-      box-shadow: 0 calc(-1 * var(--tab-outline-width)) var(--tab-outline-color);
-    }
+  &:not(.tab-floating, .tab-floating-center).mod-macos.is-hidden-frameless .workspace-ribbon.is-collapsed {
+    padding-top: 8px;
   }
 
   // Settings
@@ -167,7 +161,7 @@ body:is(.layout-tahoe, .layout-fusion):not(.is-mobile) {
 }
 
 // Tablet
-body:is(.layout-tahoe, .layout-fusion).is-tablet {
+body.layout-fusion.is-tablet {
   .workspace {
     background-color: var(--background-primary);
   }
@@ -213,13 +207,7 @@ body.layout-cupertino:not(.is-phone) {
 }
 
 // macOS specific
-body.layout-macos:not(.is-phone) .modal.mod-settings .vertical-tab-header {
-  background-color: var(--background-secondary);
-  border-radius: var(--modal-radius) 0 0 var(--modal-radius);
-  margin: var(--border-width) 0 var(--border-width) var(--border-width);
-}
-
-body:is(.layout-macos, .layout-tahoe):not(.is-phone) {
+body.layout-macos:not(.is-phone) {
   .mod-root {
     background-color: var(--background-primary) !important;
   }
@@ -230,30 +218,11 @@ body:is(.layout-macos, .layout-tahoe):not(.is-phone) {
   &:is(.tab-floating, .tab-floating-center) {
     --tab-outline-color: transparent;
   }
-}
 
-// Tahoe specific
-body.layout-tahoe:not(.is-phone) {
-  &:not(.is-hidden-frameless) .titlebar {
-    background-color: var(--background-primary);
-  }
-  &:not(.is-translucent) .workspace {
-    background-color: var(--background-primary);
-  }
-
-  // Side panels
-  .mod-sidedock.mod-left-split {
-    margin-right: 0px;
-    box-shadow:
-      var(--shadow-surface),
-      -32px 0 0 48px var(--background-primary);
-  }
-  .mod-sidedock.mod-right-split > .workspace-leaf-resize-handle {
-    border-color: var(--divider-color);
-  }
-
-  .workspace-drawer.is-pinned.mod-left {
-    margin-right: 0px;
+  .modal.mod-settings .vertical-tab-header {
+    background-color: var(--background-secondary);
+    border-radius: var(--modal-radius) 0 0 var(--modal-radius);
+    margin: var(--border-width) 0 var(--border-width) var(--border-width);
   }
 }
 

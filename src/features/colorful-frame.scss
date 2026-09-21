@@ -89,7 +89,7 @@ body:not(.is-mobile):not(.is-translucent).colorful-frame {
   &.layout-macos .vertical-tab-header {
     background-color: color-mix(in srgb, var(--background-primary-alt), var(--colorful-frame-background, var(--color-accent)) 2%);
   }
-  &:is(.layout-tahoe, .layout-fusion) .mod-sidedock {
+  &.layout-fusion .mod-sidedock {
     background-color: color-mix(in srgb, var(--blur-background), var(--colorful-frame-background, var(--color-accent)) 2%);
   }
 

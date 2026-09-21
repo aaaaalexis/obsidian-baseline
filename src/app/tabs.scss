@@ -86,7 +86,6 @@ body:not(.is-phone) .workspace .mod-root {
 // Editor panel: Baseline
 body.is-tablet:is(.tab-default, :not(.css-settings-manager)):not(
     .layout-macos,
-    .layout-tahoe,
     .layout-classic,
     .layout-minimal,
     .layout-border,
@@ -538,7 +537,7 @@ body:is(.tab-top-left-stacked, :not(.css-settings-manager)):not(.mod-macos):not(
   margin-top: 8px;
 }
 
-body.tab-top-left-stacked:not(.mod-macos):is(.layout-tahoe, .layout-fusion):not(.show-ribbon)
+body.tab-top-left-stacked:not(.mod-macos).layout-fusion:not(.show-ribbon)
   .mod-sidedock.mod-left-split
   .mod-top-left-space
   .workspace-tab-header-container-inner {
