@@ -108,6 +108,7 @@ body.input-cupertino {
   &:not(.is-mobile) {
     .clickable-icon {
       transition: var(--anim-duration-superfast);
+      padding: 10px;
     }
     .clickable-icon:not([aria-disabled="true"]):hover,
     .clickable-icon.has-active-menu,
@@ -282,10 +283,10 @@ body.input-cupertino {
 
     .workspace-tab-header {
       border-radius: var(--clickable-icon-radius);
-      min-width: 40px;
+      min-width: var(--tab-action-width);
     }
     .workspace-tab-header-inner {
-      padding: 8px;
+      padding: 10px;
     }
     .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
       background-color: var(--background-modifier-hover);
@@ -315,11 +316,6 @@ body.input-cupertino {
     background: var(--raised-background);
     gap: 0;
 
-    .nav-action-button {
-      position: relative;
-      padding: 6px 9px;
-      border-radius: var(--clickable-icon-radius);
-    }
     .nav-action-button:hover:not([aria-disabled="true"]) {
       background-color: var(--background-modifier-hover);
       box-shadow: none;
