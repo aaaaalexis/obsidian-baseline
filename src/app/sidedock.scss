@@ -173,7 +173,7 @@ body:not(.is-mobile) .mod-sidedock .view-content .nav-header {
 body:not(.nav-action-center, .nav-action-left, .nav-action-bottom) .mod-sidedock .nav-header:first-child:not(:hover) .nav-buttons-container {
   gap: 4px !important;
   padding: 0 !important;
-  background-color: transparent !important;
+  background: transparent !important;
   box-shadow: none !important;
 
   .nav-action-button {
