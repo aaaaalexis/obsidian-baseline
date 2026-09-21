@@ -48,7 +48,7 @@ body.mod-macos:not(.is-mobile) .mod-settings {
 }
 
 // Popout modal (Settings)
-body.mod-macos.is-frameless:not(.is-mobile).is-popout-window {
+body.mod-macos.is-frameless:not(.is-mobile).is-popout-modal {
   --titlebar-height: 40px;
   --traffic-lights-offset-x: 48px;
   --traffic-lights-offset-y: 56px;
