@@ -13,18 +13,25 @@ body,
   --icon-size-modifier: 0px;
   --icon-opacity: 1;
 
+  --density-modifier: 1;
+
   --titlebar-background: transparent;
   --titlebar-background-focused: transparent;
 
+  --translucent-light-opacity: 50%;
+  --translucent-dark-opacity: 50%;
+
+  --blur-brightness: 1;
+  --blur-saturation: 1.5;
+  --blur-radius-s: 4px;
+  --blur-radius-m: 8px;
+  --blur-radius-l: 16px;
+
+  --corner-shape: superellipse(1.1);
   --border-width: 1px;
   --border-width-offset: calc(-1 * var(--border-width));
   --divider-width: var(--border-width);
-
   --divider-color-hover: var(--color-base-50);
-
-  --corner-shape: superellipse(1.1);
-
-  --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --anim-speed-modifier: 1;
   --anim-motion-baseline: cubic-bezier(0.1, 0, 0.1, 1.25);
@@ -40,10 +47,6 @@ body,
   --icon-l-stroke-width: calc(2px * var(--icon-stroke-modifier));
   --icon-xl-stroke-width: calc(1.25px * var(--icon-stroke-modifier));
 
-  --density-modifier: 1;
-  --translucent-light-opacity: 50%;
-  --translucent-dark-opacity: 50%;
-
   --color-red: rgb(var(--color-red-rgb));
   --color-orange: rgb(var(--color-orange-rgb));
   --color-yellow: rgb(var(--color-yellow-rgb));
@@ -52,6 +55,8 @@ body,
   --color-blue: rgb(var(--color-blue-rgb));
   --color-purple: rgb(var(--color-purple-rgb));
   --color-pink: rgb(var(--color-pink-rgb));
+
+  --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
   --background-modifier-cover: hsl(0 0% 0% / 0.35);
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;

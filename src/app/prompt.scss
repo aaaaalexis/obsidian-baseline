@@ -26,6 +26,10 @@ body {
   }
 }
 
+body.is-mobile {
+  --prompt-background: var(--modal-background);
+}
+
 body.is-phone {
   .prompt {
     animation: none;

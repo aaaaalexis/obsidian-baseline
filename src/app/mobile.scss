@@ -17,7 +17,6 @@ body.is-mobile {
   --font-ui-medium: calc(var(--font-text-size) + var(--font-ui-modifier));
   --font-ui-large: calc(var(--font-text-size) * 1.2 + var(--font-ui-modifier));
 
-  --mobile-sidebar-width: 100%;
   --view-header-height: var(--header-height);
   --keyboard-spacing: 8px;
 
@@ -89,7 +88,8 @@ body.is-mobile {
     --raised: none;
 
     .mobile-navbar {
-      background-color: var(--background-secondary) !important;
+      background-color: color-mix(in srgb, var(--background-secondary) var(--blur-opacity-s), transparent) !important;
+      backdrop-filter: var(--blur-m);
     }
   }
 
@@ -250,6 +250,36 @@ body.is-mobile {
 
 body.is-phone {
   --mobile-sidebar-radius: 0;
+
+  // Side panels: Floating editor panel
+  .workspace {
+    background-color: var(--mobile-sidebar-background);
+  }
+
+  .workspace-drawer.mod-primary:has(+ .mod-root[style]),
+  .mod-root[style] + .workspace-drawer.mod-secondary {
+    transform: none !important;
+    z-index: 0 !important;
+  }
+  .mod-root {
+    z-index: 1;
+  }
+  .mod-root[style*="transform: translateX"] {
+    border-radius: var(--safe-area-inset-top);
+    overflow: hidden;
+    box-shadow: var(--shadow-s);
+  }
+
+  .workspace-drawer-backdrop {
+    opacity: 0 !important;
+  }
+  .is-primary-sidedock-open .workspace-drawer-backdrop {
+    left: var(--mobile-sidebar-width);
+  }
+  .is-secondary-sidedock-open .workspace-drawer-backdrop {
+    left: unset;
+    right: var(--mobile-sidebar-width);
+  }
 
   // Side panels
   .workspace-drawer {
@@ -464,7 +494,8 @@ body.is-phone {
     border-radius: 100%;
     width: var(--touch-size-l);
     height: var(--touch-size-l);
-    background-color: var(--background-secondary);
+    background-color: color-mix(in srgb, var(--background-secondary) var(--blur-opacity-s), transparent);
+    backdrop-filter: var(--blur-m);
   }
   &.mod-toolbar-open:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     width: var(--touch-size-m);
@@ -525,7 +556,9 @@ body.is-phone {
     padding: 8px;
     transition:
       var(--anim-duration-moderate) var(--anim-motion-baseline),
-      background-color var(--anim-duration-moderate);
+      background-color var(--anim-duration-moderate),
+      transform 0s;
+    z-index: 2;
   }
 
   .mobile-navbar-action {
