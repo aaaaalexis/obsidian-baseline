@@ -172,12 +172,6 @@ body:is(.layout-tahoe, .layout-fusion).is-tablet {
     background-color: var(--background-primary);
   }
 
-  .workspace-drawer:not(.is-pinned) {
-    background-color: var(--modal-background);
-    box-shadow: var(--shadow-xs);
-    backdrop-filter: var(--blur-l);
-  }
-
   .workspace-drawer.is-pinned.mod-left {
     background: var(--raised-background);
     box-shadow: var(--shadow-surface);
