@@ -58,7 +58,6 @@ body,
 
   --shadow-surface: 0 0 0 1px var(--background-modifier-hover);
 
-  --background-modifier-cover: hsl(0 0% 0% / 0.35);
   --background-modifier-hover: hsl(from var(--mono-100) h s l / 0.05) !important;
   --interactive-normal: color-mix(in srgb, var(--background-primary), white 7%);
   --interactive-hover: color-mix(in srgb, var(--interactive-normal), var(--background-secondary) 50%);

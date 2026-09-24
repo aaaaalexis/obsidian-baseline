@@ -22,34 +22,8 @@ body.input-cupertino {
     border-bottom: none;
     padding-inline-start: calc(var(--search-icon-size) + var(--side-padding) + 12px) !important;
   }
-
-  .prompt .suggestion-item {
-    border-radius: var(--radius-m);
-    padding: calc(12px * var(--density-modifier)) var(--side-padding);
-  }
-
-  .prompt-instructions {
-    border-top: none;
-  }
 }
 body.input-cupertino:not(.is-phone) {
-  --prompt-input-height: 56px;
-
-  @keyframes bounceInScale {
-    from {
-      transform: scale(1.15);
-      opacity: 0;
-    }
-    50% {
-      transform: scale(0.99);
-    }
-  }
-
-  .prompt {
-    animation: var(--anim-duration-moderate) bounceInScale var(--anim-motion-baseline) forwards;
-    border-radius: var(--radius-xl);
-  }
-
   .prompt-input-container::after {
     content: "";
     position: absolute;
@@ -141,8 +115,4 @@ body.input-cupertino.is-phone {
   .prompt[style*="transform: translateY"] {
     opacity: 0;
   }
-}
-
-body.input-cupertino.is-tablet .prompt {
-  border-radius: var(--radius-l);
 }

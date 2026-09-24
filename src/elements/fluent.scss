@@ -1,8 +1,8 @@
 body.input-fluent {
   --radius-s: calc(4px * var(--radius-modifier));
-  --radius-m: calc(4px * var(--radius-modifier));
+  --radius-m: calc(6px * var(--radius-modifier));
   --radius-l: calc(8px * var(--radius-modifier));
-  --radius-xl: calc(8px * var(--radius-modifier));
+  --radius-xl: calc(12px * var(--radius-modifier));
   --input-radius: var(--radius-m);
   --button-radius: var(--input-radius);
   --clickable-icon-radius: var(--radius-m);
@@ -270,16 +270,14 @@ body.input-fluent:not(.is-mobile) {
     }
     .prompt-results .suggestion-item {
       position: relative;
-      padding: calc(12px * var(--density-modifier)) 20px;
     }
     .prompt-results .suggestion-item.is-selected::after {
       position: absolute;
-      top: 12px;
-      bottom: 12px;
       left: 0;
       border-radius: var(--button-radius);
       background-color: var(--interactive-accent);
       width: 4px;
+      height: 16px;
       content: "";
     }
   }

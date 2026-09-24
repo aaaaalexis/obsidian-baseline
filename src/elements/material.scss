@@ -41,6 +41,7 @@ body.input-material {
   --background-modifier-form-field: var(--background-modifier-hover);
 
   --menu-radius: var(--radius-l);
+  --prompt-input-height: 64px;
 
   --input-shadow: none;
   --input-shadow-hover: none;
@@ -204,7 +205,7 @@ body.input-material:not(.is-phone) {
     border-radius: var(--radius-l);
 
     .prompt-input-container {
-      margin: 16px 16px 0;
+      margin: 8px 8px 0;
     }
     .prompt-input {
       border: none;
@@ -214,11 +215,12 @@ body.input-material:not(.is-phone) {
     }
 
     .prompt-results {
-      padding: 16px;
+      padding: 8px;
     }
 
     .suggestion-item {
       border-radius: 100vh;
+      padding: 12px;
     }
   }
 }

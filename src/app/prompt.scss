@@ -1,28 +1,33 @@
 body {
-  --prompt-input-height: 64px;
+  --prompt-input-height: 48px;
   --prompt-background: var(--modal-background);
   --prompt-border-width: 0px;
+  --prompt-max-height: 60vh;
+}
 
-  .prompt {
-    animation: modalIn var(--anim-duration-slow) var(--anim-motion-baseline) forwards;
+.prompt {
+  top: 10rem;
+  border-radius: var(--menu-radius);
 
-    .prompt-input,
-    .prompt-input:hover,
-    .prompt-input:focus,
-    .prompt-input:focus-visible {
-      background-color: transparent;
-    }
-    .prompt-input,
-    .prompt-instructions {
-      border-color: var(--background-modifier-border);
-    }
+  .prompt-input {
+    background-color: transparent;
+    padding: 20px;
+  }
+  .prompt-results {
+    padding: 8px;
+  }
+  .suggestion-item {
+    padding: 8px 12px;
+    align-items: center;
+  }
+}
 
-    .prompt-results {
-      flex: 1;
-    }
-    .suggestion-item {
-      padding: 12px;
-    }
+body:not(.is-phone) .prompt {
+  .prompt-input {
+    font-size: var(--font-ui-small);
+  }
+  .suggestion-item {
+    font-size: var(--font-ui-small);
   }
 }
 
@@ -45,20 +50,10 @@ body.is-phone {
     .prompt-input {
       border: none;
       background-color: var(--background-primary);
+      padding: 24px;
     }
     .suggestion-item {
       padding: calc(16px * var(--density-modifier)) 16px;
     }
-  }
-}
-
-body.is-tablet {
-  --prompt-input-height: 64px;
-
-  .prompt {
-    border-radius: var(--modal-radius);
-  }
-  .prompt-input {
-    background-color: transparent;
   }
 }

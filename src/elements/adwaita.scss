@@ -281,12 +281,6 @@ body.input-adwaita:not(.is-phone) .prompt {
     font-size: var(--font-ui-large);
     font-weight: calc(var(--font-weight) + var(--bold-modifier));
   }
-  .prompt-results {
-    padding: 8px;
-    margin-inline: 8px;
-    border-radius: var(--radius-l);
-    background: var(--background-secondary-alt);
-  }
 }
 
 body.input-adwaita.is-mobile {
